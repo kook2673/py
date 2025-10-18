@@ -1,0 +1,42 @@
+{
+    "rebalance_period": "daily",
+    "rebalance_day": "MON",
+    "rebalance_after_time": "09:00",
+    "allocation_rate": 0.3,
+    "max_buy_stocks": 15,
+    "exclude_stock_codes": [
+        "005935",
+        "335890"
+    ],
+    "_exclude_stock_names": {
+        "005935": "삼성전자우",
+        "335890": "비올",
+        "335890_comment": "비올 상장폐지 얘기있음."
+    },
+    "momentum_threshold": 0.65,
+    "momentum_sl_threshold": 0.5,
+    "min_volume_threshold": 500000000,
+    "use_dual_ma_filter": false,
+    "use_trailing_stop": false,
+    "use_pyramiding": false,
+    "max_units_per_position": 4,
+    "score_weights": {
+        "ma_slope": 0.3,
+        "price_ma": 0.2,
+        "price_change": 0.2,
+        "volume": 0.15,
+        "rsi": 0.15
+    },
+    "slippage_bps": 0.0,
+    "monthly_update_day": 1,
+    "initial_allocation": 10153198.799999999,
+    "current_allocation": 5102194.8,
+    "realized_profit": 500.0,
+    "test_type": "crossing",
+    "use_market_filter": true,
+    "initial_portfolio_mode": false,
+    "initial_threshold_reduction": 0.15,
+    "initial_asset_1": 17007316.0,
+    "initial_asset_2": 17007316.0,
+    "current_total_asset": 17007316.0
+}

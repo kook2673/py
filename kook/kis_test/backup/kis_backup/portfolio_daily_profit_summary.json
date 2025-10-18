@@ -1,0 +1,107 @@
+{
+    "timestamp": "2025-08-29 16:03:49",
+    "performance": {
+        "total_value": 16690216.0,
+        "total_profit": 723604.0,
+        "total_profit_rate": 4.531982113675713,
+        "periods": {
+            "daily": {
+                "profit": 20416.0,
+                "profit_rate": 0.12247297508068483
+            },
+            "weekly": {
+                "profit": 140539.0,
+                "profit_rate": 0.8491948211436392
+            },
+            "monthly": {
+                "profit": 723604.0,
+                "profit_rate": 4.531982113675713
+            },
+            "yearly": {
+                "profit": 723604.0,
+                "profit_rate": 4.531982113675713
+            },
+            "total": {
+                "profit": 723604.0,
+                "profit_rate": 4.531982113675713
+            }
+        }
+    },
+    "bots": {
+        "Kosdaqpi_Bot": {
+            "total_value": 0.0,
+            "total_profit": 67805.0,
+            "profit_rate": 1.2868221291274433,
+            "initial_allocation": 5269182,
+            "periods": {
+                "daily": {
+                    "profit": 0.0,
+                    "profit_rate": 0
+                },
+                "weekly": {},
+                "monthly": {
+                    "profit": 0.0,
+                    "profit_rate": 0.0
+                },
+                "yearly": {
+                    "profit": 0.0,
+                    "profit_rate": 0.0
+                },
+                "total": {
+                    "profit": 67805.0,
+                    "profit_rate": 1.2868221291274433
+                }
+            }
+        },
+        "MA_Strategy_KR_Bot_v3": {
+            "total_value": 5683750.0,
+            "total_profit": 70578.0,
+            "profit_rate": 1.33944889358538,
+            "initial_allocation": 5269182,
+            "periods": {
+                "daily": {
+                    "profit": 70578.0,
+                    "profit_rate": 1.2733884404879718
+                },
+                "weekly": {},
+                "monthly": {
+                    "profit": 70578.0,
+                    "profit_rate": 1.33944889358538
+                },
+                "yearly": {
+                    "profit": 70578.0,
+                    "profit_rate": 1.33944889358538
+                },
+                "total": {
+                    "profit": 70578.0,
+                    "profit_rate": 1.33944889358538
+                }
+            }
+        },
+        "MA_Kosdaqpi100_Bot_v1": {
+            "total_value": 5535940.0,
+            "total_profit": 372003.0,
+            "profit_rate": 7.059976292335318,
+            "initial_allocation": 5269182,
+            "periods": {
+                "daily": {
+                    "profit": 112770.0,
+                    "profit_rate": 2.04147764095917
+                },
+                "weekly": {},
+                "monthly": {
+                    "profit": 372003.0,
+                    "profit_rate": 7.059976292335318
+                },
+                "yearly": {
+                    "profit": 372003.0,
+                    "profit_rate": 7.059976292335318
+                },
+                "total": {
+                    "profit": 372003.0,
+                    "profit_rate": 7.059976292335318
+                }
+            }
+        }
+    }
+}

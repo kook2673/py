@@ -1,0 +1,31 @@
+{
+    "start_money": 780.58822029,
+    "my_money": 780.58822029,
+    "coins": {
+        "BTC/USDT": {
+            "long": {
+                "position": 0,
+                "entry_price": 0,
+                "position_size": 0,
+                "stop_loss_price": 0
+            },
+            "short": {
+                "position": 0,
+                "entry_price": 0,
+                "position_size": 0,
+                "stop_loss_price": 0
+            }
+        }
+    },
+    "ml_model_info": {
+        "name": "AdvancedMAMLBot",
+        "last_update": "2025-09-11T14:28:37.526159",
+        "accuracy": 0.0,
+        "backtest_return": null
+    },
+    "position_tracking": {
+        "current_ratio": 0.01,
+        "consecutive_losses": 0,
+        "consecutive_wins": 0
+    }
+}

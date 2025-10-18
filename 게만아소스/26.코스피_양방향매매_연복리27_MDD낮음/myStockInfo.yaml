@@ -1,0 +1,15 @@
+# 실계좌 설정
+REAL_APP_KEY: "PShU5QrrswS8GflEp1hcgymfTNaNUtV5KbgZ"
+REAL_APP_SECRET: "1KZBSQpz1hd4tNTwUcDigRyw+KJ0tUQz/b/TZGRbWr29E1pFTTq97oHhyj7BZt5tG+tp1n8A4tSnVSgn8XD6HIoODUzUKNfeNBTB5+FoQcmgUDea62n9Y6EpOg1DsFv/WMFzfmNFmbtf82xdkBNEcTxzkUGvBdYLyQAJ5QrUekimCMbM7q4="
+REAL_CANO: "72454590"
+REAL_ACNT_PRDT_CD: "01"
+REAL_TOKEN_PATH: "real_token.json"
+REAL_URL: "https://openapi.koreainvestment.com:9443"
+
+# 모의계좌 설정
+VIRTUAL_APP_KEY: "PSoSLFbcsq3heCqOKfeUNBbc5JnM5pXpE0kl"
+VIRTUAL_APP_SECRET: "YYNgzUdRMxjv24Vhp3oKRrDsvJ7l1TCrxxt+O30UzxUQYPiLpskZQonvERm17lUgsjBTDYwAvZecELVnBXfXsUdZRCxDMSZ1qVKsNn3dElUZKVYh4JWh+Qj6EaZDr+qcNmdEaekY48beEjI5+saD0QFRbPnMYCDzZksvUJNm4c0jY85hyqE="
+VIRTUAL_CANO: "12231231"
+VIRTUAL_ACNT_PRDT_CD: "01"
+VIRTUAL_TOKEN_PATH: "virtual_token.json"
+VIRTUAL_URL: "https://openapivts.koreainvestment.com:29443"

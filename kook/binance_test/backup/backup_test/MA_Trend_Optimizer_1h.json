@@ -1,0 +1,487 @@
+{
+  "2024_01": {
+    "long_strategy": {},
+    "short_strategy": {},
+    "optimization_info": {}
+  },
+  "2024_02": {
+    "long_strategy": {
+      "ma1": 3,
+      "ma2": 20,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.2
+      }
+    },
+    "short_strategy": {
+      "ma1": 12,
+      "ma2": 105,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 75,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.1
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2024-01-11 01:00 ~ 2024-01-31 20:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 07:31:30"
+    }
+  },
+  "2024_03": {
+    "long_strategy": {
+      "ma1": 17,
+      "ma2": 127,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 80,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 3,
+      "ma2": 181,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 80,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.1
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2024-02-08 23:00 ~ 2024-02-29 18:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 07:43:43"
+    }
+  },
+  "2024_04": {
+    "long_strategy": {
+      "ma1": 20,
+      "ma2": 49,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 75,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 6,
+      "ma2": 20,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 75,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.1
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2024-03-11 01:00 ~ 2024-03-31 20:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 07:56:22"
+    }
+  },
+  "2024_05": {
+    "long_strategy": {
+      "ma1": 11,
+      "ma2": 49,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 75,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.2
+      }
+    },
+    "short_strategy": {
+      "ma1": 8,
+      "ma2": 57,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.2
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2024-04-10 04:00 ~ 2024-04-30 23:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 08:08:59"
+    }
+  },
+  "2024_06": {
+    "long_strategy": {
+      "ma1": 7,
+      "ma2": 102,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.2
+      }
+    },
+    "short_strategy": {
+      "ma1": 9,
+      "ma2": 161,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.1
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2024-05-11 01:00 ~ 2024-05-31 20:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 08:21:23"
+    }
+  },
+  "2024_07": {
+    "long_strategy": {
+      "ma1": 11,
+      "ma2": 26,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 75,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 8,
+      "ma2": 114,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2024-06-10 04:00 ~ 2024-06-30 23:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 08:34:01"
+    }
+  },
+  "2024_08": {
+    "long_strategy": {
+      "ma1": 4,
+      "ma2": 20,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.2
+      }
+    },
+    "short_strategy": {
+      "ma1": 13,
+      "ma2": 20,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.2
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2024-07-11 01:00 ~ 2024-07-31 20:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 08:47:01"
+    }
+  },
+  "2025_01": {
+    "long_strategy": {
+      "ma1": 8,
+      "ma2": 82,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 5,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 21,
+      "ma2": 33,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 80,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.2
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2024-12-11 01:00 ~ 2024-12-31 20:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 08:59:52"
+    }
+  },
+  "2025_02": {
+    "long_strategy": {
+      "ma1": 10,
+      "ma2": 164,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 3,
+      "ma2": 120,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2025-01-11 01:00 ~ 2025-01-31 20:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 09:12:31"
+    }
+  },
+  "2025_03": {
+    "long_strategy": {
+      "ma1": 15,
+      "ma2": 39,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 8,
+      "ma2": 128,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2025-02-08 04:00 ~ 2025-02-28 23:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 09:25:24"
+    }
+  },
+  "2025_04": {
+    "long_strategy": {
+      "ma1": 3,
+      "ma2": 22,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 80,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.2
+      }
+    },
+    "short_strategy": {
+      "ma1": 13,
+      "ma2": 84,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 80,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2025-03-11 01:00 ~ 2025-03-31 20:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 09:38:34"
+    }
+  },
+  "2025_05": {
+    "long_strategy": {
+      "ma1": 15,
+      "ma2": 80,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 4,
+      "ma2": 123,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.2
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2025-04-10 04:00 ~ 2025-04-30 23:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 09:51:36"
+    }
+  },
+  "2025_06": {
+    "long_strategy": {
+      "ma1": 9,
+      "ma2": 124,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 75,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 7,
+      "ma2": 39,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2025-05-11 01:00 ~ 2025-05-31 20:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 10:04:58"
+    }
+  },
+  "2025_07": {
+    "long_strategy": {
+      "ma1": 17,
+      "ma2": 69,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 18,
+      "ma2": 140,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2025-06-10 04:00 ~ 2025-06-30 23:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 10:18:53"
+    }
+  },
+  "2025_08": {
+    "long_strategy": {
+      "ma1": 17,
+      "ma2": 69,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 70,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "short_strategy": {
+      "ma1": 18,
+      "ma2": 123,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 20,
+        "rsi_overbought": 75,
+        "momentum_period": 3,
+        "bb_threshold": 0.3,
+        "volume_multiplier": 1.0
+      }
+    },
+    "optimization_info": {
+      "ma_calculation_period": "2025-06-11 15:00 ~ 2025-07-02 10:00",
+      "lookback_candles": 500,
+      "ma_calculation_candles": 500,
+      "optimization_date": "2025-08-29 10:32:41"
+    }
+  }
+}

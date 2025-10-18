@@ -1,0 +1,66 @@
+{
+  "2018": {
+    "total_return": -96.85935727977565,
+    "final_capital": 314.06427202243424,
+    "total_trades": 454,
+    "win_rate": 31.938325991189426,
+    "max_drawdown": 97.60431406626017,
+    "trades_count": 454
+  },
+  "2019": {
+    "total_return": 9.03346661280326,
+    "final_capital": 10903.346661280326,
+    "total_trades": 202,
+    "win_rate": 36.13861386138614,
+    "max_drawdown": 52.97778333735332,
+    "trades_count": 202
+  },
+  "2020": {
+    "total_return": -9.145716997091094,
+    "final_capital": 9085.42830029089,
+    "total_trades": 211,
+    "win_rate": 37.44075829383886,
+    "max_drawdown": 39.65147237892837,
+    "trades_count": 211
+  },
+  "2021": {
+    "total_return": -91.79041130966264,
+    "final_capital": 820.9588690337354,
+    "total_trades": 396,
+    "win_rate": 30.808080808080806,
+    "max_drawdown": 95.00686505917157,
+    "trades_count": 396
+  },
+  "2022": {
+    "total_return": -59.790252924162104,
+    "final_capital": 4020.9747075837895,
+    "total_trades": 176,
+    "win_rate": 35.79545454545455,
+    "max_drawdown": 63.1714211704985,
+    "trades_count": 176
+  },
+  "2023": {
+    "total_return": 65.796443197419,
+    "final_capital": 16579.6443197419,
+    "total_trades": 47,
+    "win_rate": 55.319148936170215,
+    "max_drawdown": 24.44554638037475,
+    "trades_count": 47
+  },
+  "2024": {
+    "total_return": 105.88481155469607,
+    "final_capital": 20588.481155469606,
+    "total_trades": 87,
+    "win_rate": 50.57471264367817,
+    "max_drawdown": 13.569817849055173,
+    "trades_count": 87
+  },
+  "2025": {
+    "total_return": 27.047803407873378,
+    "final_capital": 12704.780340787338,
+    "total_trades": 48,
+    "win_rate": 43.75,
+    "max_drawdown": 19.409423952416898,
+    "trades_count": 48
+  }
+}

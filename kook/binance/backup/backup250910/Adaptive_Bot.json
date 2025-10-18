@@ -1,0 +1,32 @@
+{
+    "start_money": 794.51781181,
+    "my_money": 780.63847189,
+    "coins": {
+        "BTC/USDT": {
+            "long": {
+                "position": 1,
+                "entry_price": 110516.3,
+                "position_size": 0.001,
+                "stop_loss_price": 110492.91801505531
+            },
+            "short": {
+                "position": 0,
+                "entry_price": 0,
+                "position_size": 0,
+                "stop_loss_price": 0
+            }
+        }
+    },
+    "strategy_info": {
+        "name": "StochasticStrategy",
+        "params": {
+            "fastk_period": 14,
+            "slowk_period": 5,
+            "slowd_period": 5,
+            "oversold": 15,
+            "overbought": 85,
+            "atr_multiplier": 1.5
+        },
+        "last_update": "2025-09-06T02:20:40.806690"
+    }
+}

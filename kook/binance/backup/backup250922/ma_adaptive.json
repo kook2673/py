@@ -1,0 +1,49 @@
+{
+    "start_money": 779.51993287,
+    "my_money": 778.87719806,
+    "last_rebalance_year": 2025,
+    "coins": {
+        "BTC/USDT": {
+            "moving_average_long": {
+                "position": 0,
+                "entry_price": 0.0,
+                "position_size": 0.0,
+                "allocated_capital": 129.8841552734375
+            },
+            "macd_long": {
+                "position": 0,
+                "entry_price": 0.0,
+                "position_size": 0.0,
+                "allocated_capital": 129.8841552734375
+            },
+            "bb_short": {
+                "position": 0,
+                "entry_price": 0.0,
+                "position_size": 0.0,
+                "allocated_capital": 129.8841552734375
+            }
+        }
+    },
+    "strategy_performance": {
+        "moving_average_long": {
+            "trades": 0,
+            "wins": 0,
+            "total_return": 0
+        },
+        "macd_long": {
+            "trades": 0,
+            "wins": 0,
+            "total_return": 0
+        },
+        "bb_short": {
+            "trades": 0,
+            "wins": 0,
+            "total_return": 0
+        }
+    },
+    "position_tracking": {
+        "consecutive_losses": 0,
+        "consecutive_wins": 0
+    },
+    "current_price": 115450.0
+}

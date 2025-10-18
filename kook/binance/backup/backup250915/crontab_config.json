@@ -1,0 +1,25 @@
+{
+    "crontab_jobs": [
+        {
+            "name": "ML Model Trainer",
+            "description": "보름마다 머신러닝 모델 학습 및 저장",
+            "command": "cd C:\\work\\GitHub\\py && python kook\\binance\\ml_model_trainer.py",
+            "schedule": "0 3 1,15 * *",
+            "enabled": true,
+            "log_file": "logs/ml_trainer.log"
+        },
+        {
+            "name": "Live ML Trading Bot",
+            "description": "1분마다 머신러닝 기반 실시간 트레이딩",
+            "command": "cd C:\\work\\GitHub\\py && python kook\\binance\\live_ml_bot.py",
+            "schedule": "* * * * *",
+            "enabled": true,
+            "log_file": "logs/live_ml_bot.log"
+        }
+    ],
+    "settings": {
+        "timezone": "Asia/Seoul",
+        "max_concurrent_jobs": 2,
+        "log_retention_days": 30
+    }
+}

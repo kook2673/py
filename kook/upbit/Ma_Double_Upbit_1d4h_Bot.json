@@ -1,0 +1,219 @@
+{
+  "tickers": [
+    "KRW-BTC",
+    "KRW-ETH",
+    "KRW-SOL",
+    "KRW-XLM",
+    "KRW-SUI"
+  ],
+  "description": "업비트 더블 이동평균 4시간 봇용 코인 목록",
+  "last_updated": "2025-09-26 13:20:46",
+  "total_coins": 2,
+  "default_settings": {
+    "KRW-BTC": {
+      "small_ma": 7,
+      "big_ma": 42,
+      "invest_rate": 0.2
+    },
+    "KRW-ETH": {
+      "small_ma": 12,
+      "big_ma": 27,
+      "invest_rate": 0.2
+    },
+    "KRW-SOL": {
+      "small_ma": 12,
+      "big_ma": 27,
+      "invest_rate": 0.2
+    },
+    "KRW-XLM": {
+      "small_ma": 12,
+      "big_ma": 27,
+      "invest_rate": 0.2
+    },
+    "KRW-SUI": {
+      "small_ma": 12,
+      "big_ma": 27,
+      "invest_rate": 0.2
+    }
+  },
+  "initial_capital": 1037766,
+  "current_capital": 996878.45,
+  "additional_info": {
+    "strategy": "더블 이동평균 전략",
+    "timeframe": "4시간",
+    "exchange": "업비트",
+    "base_currency": "KRW",
+    "investment_start_date": "2025-08-14",
+    "investment_period_days": 0
+  },
+  "profit_rate": -3.94,
+  "profit_amount": 12105.61,
+  "portfolio_summary": {
+    "total_invested": 0,
+    "total_current_value": 0,
+    "total_profit_loss": -40887.55,
+    "total_profit_rate": -3.94,
+    "last_rebalance": "2025-09-26 13:20:46"
+  },
+  "trading_history": {
+    "total_trades": 0,
+    "winning_trades": 0,
+    "losing_trades": 0,
+    "win_rate": 0.0,
+    "avg_profit_per_trade": 0,
+    "largest_gain": 0,
+    "largest_loss": 0
+  },
+  "coin_details": {
+    "KRW-BTC": {
+      "current_price": 161525000.0,
+      "quantity": 0.00060914,
+      "total_value": 98391.3385,
+      "profit_loss": -360.77,
+      "profit_rate": -0.37,
+      "avg_buy_price": 162117263.77028278,
+      "investment_date": "2025-08-14",
+      "peak_price": 168599000.0,
+      "peak_date": "2025-08-14 11:50:42",
+      "mdd": -8.23,
+      "mdd_date": "2025-09-08 11:20:20",
+      "last_trade": "2025-09-22 01:20:49",
+      "status": "보유중"
+    },
+    "KRW-ETH": {
+      "current_price": 6266000.0,
+      "quantity": 0.01557625,
+      "total_value": 97600.7825,
+      "profit_loss": -140.89,
+      "profit_rate": -0.14,
+      "avg_buy_price": 6275045.37100293,
+      "investment_date": "2025-08-14",
+      "peak_price": 6831000.0,
+      "peak_date": "2025-08-25 03:20:09",
+      "mdd": -12.97,
+      "mdd_date": "2025-08-20 08:50:58",
+      "last_trade": "2025-09-22 01:20:49",
+      "status": "보유중"
+    },
+    "KRW-XLM": {
+      "current_price": 533.0,
+      "quantity": 181.15054756,
+      "total_value": 96553.24184948001,
+      "profit_loss": -1944.79,
+      "profit_rate": -1.97,
+      "avg_buy_price": 543.73575923,
+      "investment_date": "2025-08-14",
+      "peak_price": 633.0,
+      "peak_date": "2025-08-14 11:37:31",
+      "mdd": -18.33,
+      "mdd_date": "2025-09-10 09:20:38",
+      "last_trade": "2025-09-22 01:20:49",
+      "status": "보유중"
+    },
+    "KRW-SOL": {
+      "current_price": 335800.0,
+      "quantity": 0.29454205,
+      "total_value": 98907.22039,
+      "profit_loss": 147.27,
+      "profit_rate": 0.15,
+      "avg_buy_price": 335300.0,
+      "investment_date": "2025-08-14",
+      "peak_price": 349600.0,
+      "peak_date": "2025-09-19 02:21:01",
+      "mdd": -13.5,
+      "mdd_date": "2025-08-20 08:50:58",
+      "last_trade": "2025-09-21 16:51:04",
+      "status": "보유중"
+    },
+    "KRW-SUI": {
+      "current_price": 5075.0,
+      "quantity": 19.3639961,
+      "total_value": 98272.2802075,
+      "profit_loss": -3472.29,
+      "profit_rate": -3.41,
+      "avg_buy_price": 5254.31668375,
+      "investment_date": "2025-08-14",
+      "peak_price": 5609.0,
+      "peak_date": "2025-08-14 11:50:42",
+      "mdd": -13.98,
+      "mdd_date": "2025-08-20 03:50:20",
+      "last_trade": "2025-09-22 01:20:49",
+      "status": "보유중"
+    },
+    "KRW-AVNT": {
+      "current_price": 2407.0,
+      "quantity": 457.79480337,
+      "total_value": 1101912.09171159,
+      "profit_loss": -8240.01,
+      "profit_rate": -0.74,
+      "avg_buy_price": 2424.9993502,
+      "investment_date": "2025-09-22",
+      "peak_price": 3376.0,
+      "peak_date": "2025-09-22 08:20:22",
+      "mdd": -32.49,
+      "mdd_date": "2025-09-26 05:50:49",
+      "last_trade": "2025-09-26 07:21:05",
+      "status": "보유중"
+    },
+    "KRW-UXLINK": {
+      "current_price": 261.0,
+      "quantity": 2189.23488447,
+      "total_value": 571390.30484667,
+      "profit_loss": 0.0,
+      "profit_rate": 0.0,
+      "avg_buy_price": 261.0,
+      "investment_date": "2025-09-23",
+      "peak_price": 261.0,
+      "peak_date": "2025-09-23 18:20:13",
+      "mdd": 0,
+      "mdd_date": "2025-09-23 18:20:13",
+      "last_trade": "2025-09-23 18:20:13",
+      "status": "보유중"
+    },
+    "KRW-BARD": {
+      "current_price": 1704.0,
+      "quantity": 633.20016292,
+      "total_value": 1078973.07761568,
+      "profit_loss": -15196.8,
+      "profit_rate": -1.39,
+      "avg_buy_price": 1728.0,
+      "investment_date": "2025-09-24",
+      "peak_price": 1806.0,
+      "peak_date": "2025-09-24 17:50:14",
+      "mdd": -5.65,
+      "mdd_date": "2025-09-26 07:50:44",
+      "last_trade": "2025-09-26 07:50:44",
+      "status": "보유중"
+    },
+    "KRW-0G": {
+      "current_price": 7175.0,
+      "quantity": 82.74986091,
+      "total_value": 593730.2520292499,
+      "profit_loss": -827.5,
+      "profit_rate": -0.14,
+      "avg_buy_price": 7185.0,
+      "investment_date": "2025-09-24",
+      "peak_price": 7175.0,
+      "peak_date": "2025-09-24 23:20:40",
+      "mdd": 0,
+      "mdd_date": "2025-09-24 23:20:40",
+      "last_trade": "2025-09-24 23:20:40",
+      "status": "보유중"
+    },
+    "KRW-XPL": {
+      "current_price": 1304.0,
+      "quantity": 900.37167045,
+      "total_value": 1174084.6582668,
+      "profit_loss": -19808.18,
+      "profit_rate": -1.66,
+      "avg_buy_price": 1326.0,
+      "investment_date": "2025-09-25",
+      "peak_price": 1304.0,
+      "peak_date": "2025-09-25 23:50:24",
+      "mdd": 0,
+      "mdd_date": "2025-09-25 22:20:17",
+      "last_trade": "2025-09-25 23:50:24",
+      "status": "보유중"
+    }
+  }
+}

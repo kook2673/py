@@ -1,0 +1,17 @@
+{
+  "symbol": "DOGEUSDT",
+  "interval": "5m",
+  "data_count": 1000,
+  "start_date": "2025-07-14T14:55:00",
+  "end_date": "2025-07-18T02:10:00",
+  "last_updated": "2025-08-13T14:52:16.020084",
+  "columns": [
+    "timestamp",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "close_time"
+  ]
+}

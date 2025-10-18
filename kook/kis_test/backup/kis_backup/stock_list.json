@@ -1,0 +1,1958 @@
+{
+    "last_updated": "2025-08-23 06:51:04",
+    "stocks": {
+        "005930": {
+            "stock_code": "005930",
+            "stock_name": "삼성전자",
+            "small_ma": 13,
+            "big_ma": 21,
+            "revenue_rate": 23.54090469187014,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:18"
+        },
+        "000660": {
+            "stock_code": "000660",
+            "stock_name": "SK하이닉스",
+            "small_ma": 11,
+            "big_ma": 29,
+            "revenue_rate": 134.85022394671836,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:19"
+        },
+        "373220": {
+            "stock_code": "373220",
+            "stock_name": "LG에너지솔루션",
+            "small_ma": 6,
+            "big_ma": 89,
+            "revenue_rate": 18.73532752560121,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:21"
+        },
+        "207940": {
+            "stock_code": "207940",
+            "stock_name": "삼성바이오로직스",
+            "small_ma": 4,
+            "big_ma": 49,
+            "revenue_rate": 21.22937390937484,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:23"
+        },
+        "005935": {
+            "stock_code": "005935",
+            "stock_name": "삼성전자우",
+            "small_ma": 7,
+            "big_ma": 54,
+            "revenue_rate": 31.20671815195617,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:24"
+        },
+        "012450": {
+            "stock_code": "012450",
+            "stock_name": "한화에어로스페이스",
+            "small_ma": 5,
+            "big_ma": 71,
+            "revenue_rate": 796.6558461452757,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:26"
+        },
+        "005380": {
+            "stock_code": "005380",
+            "stock_name": "현대차",
+            "small_ma": 12,
+            "big_ma": 65,
+            "revenue_rate": 64.01329378776143,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:27"
+        },
+        "329180": {
+            "stock_code": "329180",
+            "stock_name": "HD현대중공업",
+            "small_ma": 13,
+            "big_ma": 90,
+            "revenue_rate": 347.8054373608332,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:29"
+        },
+        "000270": {
+            "stock_code": "000270",
+            "stock_name": "기아",
+            "small_ma": 10,
+            "big_ma": 41,
+            "revenue_rate": 57.51130557364896,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:30"
+        },
+        "105560": {
+            "stock_code": "105560",
+            "stock_name": "KB금융",
+            "small_ma": 6,
+            "big_ma": 100,
+            "revenue_rate": 85.45812958765647,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:32"
+        },
+        "068270": {
+            "stock_code": "068270",
+            "stock_name": "셀트리온",
+            "small_ma": 14,
+            "big_ma": 41,
+            "revenue_rate": 18.5697161807972,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:33"
+        },
+        "034020": {
+            "stock_code": "034020",
+            "stock_name": "두산에너빌리티",
+            "small_ma": 11,
+            "big_ma": 20,
+            "revenue_rate": 282.6344923012399,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:35"
+        },
+        "035420": {
+            "stock_code": "035420",
+            "stock_name": "NAVER",
+            "small_ma": 15,
+            "big_ma": 25,
+            "revenue_rate": 38.91503154756057,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:36"
+        },
+        "042660": {
+            "stock_code": "042660",
+            "stock_name": "한화오션",
+            "small_ma": 8,
+            "big_ma": 68,
+            "revenue_rate": 509.5225081381898,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:38"
+        },
+        "055550": {
+            "stock_code": "055550",
+            "stock_name": "신한지주",
+            "small_ma": 11,
+            "big_ma": 95,
+            "revenue_rate": 111.72681433881033,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:39"
+        },
+        "028260": {
+            "stock_code": "028260",
+            "stock_name": "삼성물산",
+            "small_ma": 15,
+            "big_ma": 65,
+            "revenue_rate": 36.58162398732395,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:41"
+        },
+        "035720": {
+            "stock_code": "035720",
+            "stock_name": "카카오",
+            "small_ma": 4,
+            "big_ma": 98,
+            "revenue_rate": 35.517154334160175,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:43"
+        },
+        "032830": {
+            "stock_code": "032830",
+            "stock_name": "삼성생명",
+            "small_ma": 14,
+            "big_ma": 72,
+            "revenue_rate": 75.29209000570452,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:44"
+        },
+        "012330": {
+            "stock_code": "012330",
+            "stock_name": "현대모비스",
+            "small_ma": 5,
+            "big_ma": 21,
+            "revenue_rate": -2.778662507801468,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:46"
+        },
+        "009540": {
+            "stock_code": "009540",
+            "stock_name": "HD한국조선해양",
+            "small_ma": 8,
+            "big_ma": 93,
+            "revenue_rate": 315.9421151482829,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:47"
+        },
+        "015760": {
+            "stock_code": "015760",
+            "stock_name": "한국전력",
+            "small_ma": 6,
+            "big_ma": 59,
+            "revenue_rate": 99.1662661089204,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:49"
+        },
+        "005490": {
+            "stock_code": "005490",
+            "stock_name": "POSCO홀딩스",
+            "small_ma": 15,
+            "big_ma": 36,
+            "revenue_rate": 66.6284195702991,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:50"
+        },
+        "086790": {
+            "stock_code": "086790",
+            "stock_name": "하나금융지주",
+            "small_ma": 3,
+            "big_ma": 22,
+            "revenue_rate": 54.62349202183114,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:51"
+        },
+        "138040": {
+            "stock_code": "138040",
+            "stock_name": "메리츠금융지주",
+            "small_ma": 5,
+            "big_ma": 24,
+            "revenue_rate": 176.78946576104522,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:53"
+        },
+        "011200": {
+            "stock_code": "011200",
+            "stock_name": "HMM",
+            "small_ma": 14,
+            "big_ma": 72,
+            "revenue_rate": 21.014124077670346,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:55"
+        },
+        "000810": {
+            "stock_code": "000810",
+            "stock_name": "삼성화재",
+            "small_ma": 11,
+            "big_ma": 71,
+            "revenue_rate": 39.50956453417419,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:56"
+        },
+        "051910": {
+            "stock_code": "051910",
+            "stock_name": "LG화학",
+            "small_ma": 7,
+            "big_ma": 46,
+            "revenue_rate": 9.91151616994571,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:58"
+        },
+        "064350": {
+            "stock_code": "064350",
+            "stock_name": "현대로템",
+            "small_ma": 10,
+            "big_ma": 66,
+            "revenue_rate": 575.9654558055157,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:45:59"
+        },
+        "316140": {
+            "stock_code": "316140",
+            "stock_name": "우리금융지주",
+            "small_ma": 13,
+            "big_ma": 95,
+            "revenue_rate": 73.73845276911426,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:01"
+        },
+        "402340": {
+            "stock_code": "402340",
+            "stock_name": "SK스퀘어",
+            "small_ma": 10,
+            "big_ma": 33,
+            "revenue_rate": 185.6060338568035,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:03"
+        },
+        "267260": {
+            "stock_code": "267260",
+            "stock_name": "HD현대일렉트릭",
+            "small_ma": 14,
+            "big_ma": 34,
+            "revenue_rate": 738.6211773735602,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:05"
+        },
+        "010140": {
+            "stock_code": "010140",
+            "stock_name": "삼성중공업",
+            "small_ma": 10,
+            "big_ma": 34,
+            "revenue_rate": 237.8619836957421,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:07"
+        },
+        "006400": {
+            "stock_code": "006400",
+            "stock_name": "삼성SDI",
+            "small_ma": 13,
+            "big_ma": 56,
+            "revenue_rate": 4.6955513795725645,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:09"
+        },
+        "033780": {
+            "stock_code": "033780",
+            "stock_name": "KT&G",
+            "small_ma": 11,
+            "big_ma": 47,
+            "revenue_rate": 65.85613950591136,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:11"
+        },
+        "010130": {
+            "stock_code": "010130",
+            "stock_name": "고려아연",
+            "small_ma": 15,
+            "big_ma": 91,
+            "revenue_rate": 50.161088933409616,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:12"
+        },
+        "096770": {
+            "stock_code": "096770",
+            "stock_name": "SK이노베이션",
+            "small_ma": 13,
+            "big_ma": 31,
+            "revenue_rate": -10.782966352568648,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:14"
+        },
+        "259960": {
+            "stock_code": "259960",
+            "stock_name": "크래프톤",
+            "small_ma": 15,
+            "big_ma": 77,
+            "revenue_rate": 94.65699466970248,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:16"
+        },
+        "024110": {
+            "stock_code": "024110",
+            "stock_name": "기업은행",
+            "small_ma": 15,
+            "big_ma": 95,
+            "revenue_rate": 57.877136148205544,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:18"
+        },
+        "030200": {
+            "stock_code": "030200",
+            "stock_name": "KT",
+            "small_ma": 4,
+            "big_ma": 87,
+            "revenue_rate": 67.76914487175777,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:19"
+        },
+        "003670": {
+            "stock_code": "003670",
+            "stock_name": "포스코퓨처엠",
+            "small_ma": 5,
+            "big_ma": 28,
+            "revenue_rate": 97.03938147217534,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:21"
+        },
+        "034730": {
+            "stock_code": "034730",
+            "stock_name": "SK",
+            "small_ma": 3,
+            "big_ma": 100,
+            "revenue_rate": 20.964908980449547,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:23"
+        },
+        "086280": {
+            "stock_code": "086280",
+            "stock_name": "현대글로비스",
+            "small_ma": 4,
+            "big_ma": 38,
+            "revenue_rate": 64.35297854231189,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:24"
+        },
+        "066570": {
+            "stock_code": "066570",
+            "stock_name": "LG전자",
+            "small_ma": 6,
+            "big_ma": 40,
+            "revenue_rate": 4.066533329002932,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:26"
+        },
+        "323410": {
+            "stock_code": "323410",
+            "stock_name": "카카오뱅크",
+            "small_ma": 11,
+            "big_ma": 48,
+            "revenue_rate": 8.924900619261713,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:27"
+        },
+        "017670": {
+            "stock_code": "017670",
+            "stock_name": "SK텔레콤",
+            "small_ma": 14,
+            "big_ma": 32,
+            "revenue_rate": -3.0209234971748202,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:29"
+        },
+        "352820": {
+            "stock_code": "352820",
+            "stock_name": "하이브",
+            "small_ma": 5,
+            "big_ma": 30,
+            "revenue_rate": 104.25751936227773,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:30"
+        },
+        "009150": {
+            "stock_code": "009150",
+            "stock_name": "삼성전기",
+            "small_ma": 15,
+            "big_ma": 36,
+            "revenue_rate": 26.53448803080346,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:32"
+        },
+        "079550": {
+            "stock_code": "079550",
+            "stock_name": "LIG넥스원",
+            "small_ma": 3,
+            "big_ma": 31,
+            "revenue_rate": 418.6132271356243,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:33"
+        },
+        "018260": {
+            "stock_code": "018260",
+            "stock_name": "삼성에스디에스",
+            "small_ma": 8,
+            "big_ma": 27,
+            "revenue_rate": 21.28199386890002,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:35"
+        },
+        "003550": {
+            "stock_code": "003550",
+            "stock_name": "LG",
+            "small_ma": 12,
+            "big_ma": 26,
+            "revenue_rate": -5.702791020102415,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:36"
+        },
+        "298040": {
+            "stock_code": "298040",
+            "stock_name": "효성중공업",
+            "small_ma": 9,
+            "big_ma": 75,
+            "revenue_rate": 1022.9319702302472,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:38"
+        },
+        "003230": {
+            "stock_code": "003230",
+            "stock_name": "삼양식품",
+            "small_ma": 14,
+            "big_ma": 65,
+            "revenue_rate": 1014.8915281575352,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:39"
+        },
+        "006800": {
+            "stock_code": "006800",
+            "stock_name": "미래에셋증권",
+            "small_ma": 7,
+            "big_ma": 20,
+            "revenue_rate": 148.0929507479608,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:41"
+        },
+        "267250": {
+            "stock_code": "267250",
+            "stock_name": "HD현대",
+            "small_ma": 15,
+            "big_ma": 52,
+            "revenue_rate": 53.13175176688624,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:42"
+        },
+        "272210": {
+            "stock_code": "272210",
+            "stock_name": "한화시스템",
+            "small_ma": 15,
+            "big_ma": 84,
+            "revenue_rate": 198.46935756732924,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:44"
+        },
+        "005830": {
+            "stock_code": "005830",
+            "stock_name": "DB손해보험",
+            "small_ma": 12,
+            "big_ma": 87,
+            "revenue_rate": 68.7864663163858,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:46"
+        },
+        "000100": {
+            "stock_code": "000100",
+            "stock_name": "유한양행",
+            "small_ma": 14,
+            "big_ma": 21,
+            "revenue_rate": 95.75637587794758,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:47"
+        },
+        "000150": {
+            "stock_code": "000150",
+            "stock_name": "두산",
+            "small_ma": 5,
+            "big_ma": 43,
+            "revenue_rate": 473.8007876299063,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:48"
+        },
+        "003490": {
+            "stock_code": "003490",
+            "stock_name": "대한항공",
+            "small_ma": 15,
+            "big_ma": 47,
+            "revenue_rate": 8.937904076094762,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:50"
+        },
+        "047810": {
+            "stock_code": "047810",
+            "stock_name": "한국항공우주",
+            "small_ma": 13,
+            "big_ma": 75,
+            "revenue_rate": 45.832507661667954,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:51"
+        },
+        "459580": {
+            "stock_code": "459580",
+            "stock_name": "KODEX CD금리액티브(합성)",
+            "small_ma": null,
+            "big_ma": null,
+            "revenue_rate": null,
+            "mdd": null,
+            "last_updated": "2025-08-23 06:46:53"
+        },
+        "360750": {
+            "stock_code": "360750",
+            "stock_name": "TIGER 미국S&P500",
+            "small_ma": 10,
+            "big_ma": 30,
+            "revenue_rate": 75.15575587232367,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:55"
+        },
+        "047050": {
+            "stock_code": "047050",
+            "stock_name": "포스코인터내셔널",
+            "small_ma": 5,
+            "big_ma": 29,
+            "revenue_rate": 176.70028388373115,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:56"
+        },
+        "278470": {
+            "stock_code": "278470",
+            "stock_name": "에이피알",
+            "small_ma": 10,
+            "big_ma": 34,
+            "revenue_rate": 307.70758688506265,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:58"
+        },
+        "377300": {
+            "stock_code": "377300",
+            "stock_name": "카카오페이",
+            "small_ma": 4,
+            "big_ma": 97,
+            "revenue_rate": 91.54872170304037,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:46:59"
+        },
+        "443060": {
+            "stock_code": "443060",
+            "stock_name": "HD현대마린솔루션",
+            "small_ma": 9,
+            "big_ma": 31,
+            "revenue_rate": 50.29289430937385,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:01"
+        },
+        "010120": {
+            "stock_code": "010120",
+            "stock_name": "LS ELECTRIC",
+            "small_ma": 5,
+            "big_ma": 65,
+            "revenue_rate": 553.346274866142,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:02"
+        },
+        "042700": {
+            "stock_code": "042700",
+            "stock_name": "한미반도체",
+            "small_ma": 10,
+            "big_ma": 40,
+            "revenue_rate": 1327.9230335436705,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:04"
+        },
+        "326030": {
+            "stock_code": "326030",
+            "stock_name": "SK바이오팜",
+            "small_ma": 15,
+            "big_ma": 91,
+            "revenue_rate": 27.525327057762837,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:06"
+        },
+        "010620": {
+            "stock_code": "010620",
+            "stock_name": "HD현대미포",
+            "small_ma": 6,
+            "big_ma": 47,
+            "revenue_rate": 161.88972988145704,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:07"
+        },
+        "021240": {
+            "stock_code": "021240",
+            "stock_name": "코웨이",
+            "small_ma": 13,
+            "big_ma": 100,
+            "revenue_rate": 79.25490974012614,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:08"
+        },
+        "180640": {
+            "stock_code": "180640",
+            "stock_name": "한진칼",
+            "small_ma": 15,
+            "big_ma": 20,
+            "revenue_rate": 207.41254660486254,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:10"
+        },
+        "090430": {
+            "stock_code": "090430",
+            "stock_name": "아모레퍼시픽",
+            "small_ma": 11,
+            "big_ma": 21,
+            "revenue_rate": 26.47785609566448,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:12"
+        },
+        "071050": {
+            "stock_code": "071050",
+            "stock_name": "한국금융지주",
+            "small_ma": 5,
+            "big_ma": 21,
+            "revenue_rate": 92.76197463978524,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:13"
+        },
+        "000720": {
+            "stock_code": "000720",
+            "stock_name": "현대건설",
+            "small_ma": 14,
+            "big_ma": 26,
+            "revenue_rate": 138.78763934277958,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:15"
+        },
+        "488770": {
+            "stock_code": "488770",
+            "stock_name": "KODEX 머니마켓액티브",
+            "small_ma": null,
+            "big_ma": null,
+            "revenue_rate": null,
+            "mdd": null,
+            "last_updated": "2025-08-23 06:47:16"
+        },
+        "069500": {
+            "stock_code": "069500",
+            "stock_name": "KODEX 200",
+            "small_ma": 15,
+            "big_ma": 87,
+            "revenue_rate": 39.15337671299838,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:17"
+        },
+        "010950": {
+            "stock_code": "010950",
+            "stock_name": "S-Oil",
+            "small_ma": 4,
+            "big_ma": 59,
+            "revenue_rate": 8.10510758459631,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:19"
+        },
+        "064400": {
+            "stock_code": "064400",
+            "stock_name": "LG씨엔에스",
+            "small_ma": null,
+            "big_ma": null,
+            "revenue_rate": null,
+            "mdd": null,
+            "last_updated": "2025-08-23 06:47:20"
+        },
+        "032640": {
+            "stock_code": "032640",
+            "stock_name": "LG유플러스",
+            "small_ma": 12,
+            "big_ma": 79,
+            "revenue_rate": 25.40532274568118,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:21"
+        },
+        "005940": {
+            "stock_code": "005940",
+            "stock_name": "NH투자증권",
+            "small_ma": 3,
+            "big_ma": 100,
+            "revenue_rate": 56.80865156710727,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:23"
+        },
+        "000880": {
+            "stock_code": "000880",
+            "stock_name": "한화",
+            "small_ma": 4,
+            "big_ma": 40,
+            "revenue_rate": 229.81416673232894,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:24"
+        },
+        "016360": {
+            "stock_code": "016360",
+            "stock_name": "삼성증권",
+            "small_ma": 7,
+            "big_ma": 83,
+            "revenue_rate": 40.62662171718292,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:26"
+        },
+        "005387": {
+            "stock_code": "005387",
+            "stock_name": "현대차2우B",
+            "small_ma": 10,
+            "big_ma": 62,
+            "revenue_rate": 91.22326706557398,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:27"
+        },
+        "029780": {
+            "stock_code": "029780",
+            "stock_name": "삼성카드",
+            "small_ma": 9,
+            "big_ma": 26,
+            "revenue_rate": 65.0471161656342,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:29"
+        },
+        "034220": {
+            "stock_code": "034220",
+            "stock_name": "LG디스플레이",
+            "small_ma": 15,
+            "big_ma": 81,
+            "revenue_rate": 16.5093585557278,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:30"
+        },
+        "028050": {
+            "stock_code": "028050",
+            "stock_name": "삼성E&A",
+            "small_ma": 4,
+            "big_ma": 34,
+            "revenue_rate": 113.86527754948983,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:32"
+        },
+        "088980": {
+            "stock_code": "088980",
+            "stock_name": "맥쿼리인프라",
+            "small_ma": 13,
+            "big_ma": 64,
+            "revenue_rate": 8.80971832682353,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:33"
+        },
+        "133690": {
+            "stock_code": "133690",
+            "stock_name": "TIGER 미국나스닥100",
+            "small_ma": 4,
+            "big_ma": 33,
+            "revenue_rate": 112.82217903192704,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:35"
+        },
+        "039490": {
+            "stock_code": "039490",
+            "stock_name": "키움증권",
+            "small_ma": 12,
+            "big_ma": 20,
+            "revenue_rate": 14.221703736360697,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:36"
+        },
+        "251270": {
+            "stock_code": "251270",
+            "stock_name": "넷마블",
+            "small_ma": 10,
+            "big_ma": 35,
+            "revenue_rate": 41.25328898783335,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:38"
+        },
+        "241560": {
+            "stock_code": "241560",
+            "stock_name": "두산밥캣",
+            "small_ma": 14,
+            "big_ma": 41,
+            "revenue_rate": 107.5447177629001,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:40"
+        },
+        "006260": {
+            "stock_code": "006260",
+            "stock_name": "LS",
+            "small_ma": 15,
+            "big_ma": 39,
+            "revenue_rate": 148.76463009975856,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:41"
+        },
+        "379800": {
+            "stock_code": "379800",
+            "stock_name": "KODEX 미국S&P500",
+            "small_ma": 9,
+            "big_ma": 30,
+            "revenue_rate": 76.09237193355223,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:43"
+        },
+        "161390": {
+            "stock_code": "161390",
+            "stock_name": "한국타이어앤테크놀로지",
+            "small_ma": 9,
+            "big_ma": 20,
+            "revenue_rate": 6.733687867130618,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:44"
+        },
+        "009830": {
+            "stock_code": "009830",
+            "stock_name": "한화솔루션",
+            "small_ma": 12,
+            "big_ma": 75,
+            "revenue_rate": 50.835194882101845,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:46"
+        },
+        "357870": {
+            "stock_code": "357870",
+            "stock_name": "TIGER CD금리투자KIS(합성)",
+            "small_ma": null,
+            "big_ma": null,
+            "revenue_rate": null,
+            "mdd": null,
+            "last_updated": "2025-08-23 06:47:47"
+        },
+        "051900": {
+            "stock_code": "051900",
+            "stock_name": "LG생활건강",
+            "small_ma": 15,
+            "big_ma": 32,
+            "revenue_rate": -0.9507264082210256,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:49"
+        },
+        "138930": {
+            "stock_code": "138930",
+            "stock_name": "BNK금융지주",
+            "small_ma": 11,
+            "big_ma": 95,
+            "revenue_rate": 85.02237770332648,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:51"
+        },
+        "001040": {
+            "stock_code": "001040",
+            "stock_name": "CJ",
+            "small_ma": 15,
+            "big_ma": 52,
+            "revenue_rate": 127.866745653975,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:52"
+        },
+        "196170": {
+            "stock_code": "196170",
+            "stock_name": "알테오젠",
+            "small_ma": 3,
+            "big_ma": 98,
+            "revenue_rate": 507.875624965733,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:54"
+        },
+        "247540": {
+            "stock_code": "247540",
+            "stock_name": "에코프로비엠",
+            "small_ma": 9,
+            "big_ma": 29,
+            "revenue_rate": 223.13525427017646,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:56"
+        },
+        "087010": {
+            "stock_code": "087010",
+            "stock_name": "펩트론",
+            "small_ma": 15,
+            "big_ma": 99,
+            "revenue_rate": 3910.3568531677297,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:57"
+        },
+        "086520": {
+            "stock_code": "086520",
+            "stock_name": "에코프로",
+            "small_ma": 15,
+            "big_ma": 62,
+            "revenue_rate": 551.7207186389876,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:47:59"
+        },
+        "214450": {
+            "stock_code": "214450",
+            "stock_name": "파마리서치",
+            "small_ma": 4,
+            "big_ma": 98,
+            "revenue_rate": 846.7406870332799,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:00"
+        },
+        "141080": {
+            "stock_code": "141080",
+            "stock_name": "리가켐바이오",
+            "small_ma": 15,
+            "big_ma": 89,
+            "revenue_rate": 190.42795357799884,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:02"
+        },
+        "277810": {
+            "stock_code": "277810",
+            "stock_name": "레인보우로보틱스",
+            "small_ma": 15,
+            "big_ma": 49,
+            "revenue_rate": 555.3491980238778,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:04"
+        },
+        "028300": {
+            "stock_code": "028300",
+            "stock_name": "HLB",
+            "small_ma": 8,
+            "big_ma": 44,
+            "revenue_rate": 75.4738427081398,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:06"
+        },
+        "298380": {
+            "stock_code": "298380",
+            "stock_name": "에이비엘바이오",
+            "small_ma": 15,
+            "big_ma": 89,
+            "revenue_rate": 82.06478071281386,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:07"
+        },
+        "000250": {
+            "stock_code": "000250",
+            "stock_name": "삼천당제약",
+            "small_ma": 15,
+            "big_ma": 22,
+            "revenue_rate": 510.4722184142891,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:09"
+        },
+        "145020": {
+            "stock_code": "145020",
+            "stock_name": "휴젤",
+            "small_ma": 5,
+            "big_ma": 94,
+            "revenue_rate": 184.51655215067677,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:11"
+        },
+        "214150": {
+            "stock_code": "214150",
+            "stock_name": "클래시스",
+            "small_ma": 13,
+            "big_ma": 22,
+            "revenue_rate": 192.93455456496355,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:13"
+        },
+        "058470": {
+            "stock_code": "058470",
+            "stock_name": "리노공업",
+            "small_ma": 14,
+            "big_ma": 20,
+            "revenue_rate": 83.38807586679637,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:15"
+        },
+        "041510": {
+            "stock_code": "041510",
+            "stock_name": "에스엠",
+            "small_ma": 13,
+            "big_ma": 62,
+            "revenue_rate": 108.70114668544004,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:17"
+        },
+        "950160": {
+            "stock_code": "950160",
+            "stock_name": "코오롱티슈진",
+            "small_ma": 14,
+            "big_ma": 100,
+            "revenue_rate": 182.96696803248074,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:19"
+        },
+        "257720": {
+            "stock_code": "257720",
+            "stock_name": "실리콘투",
+            "small_ma": 15,
+            "big_ma": 24,
+            "revenue_rate": 1611.230560547382,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:21"
+        },
+        "035900": {
+            "stock_code": "035900",
+            "stock_name": "JYP Ent.",
+            "small_ma": 11,
+            "big_ma": 42,
+            "revenue_rate": 108.30305393108554,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:23"
+        },
+        "214370": {
+            "stock_code": "214370",
+            "stock_name": "케어젠",
+            "small_ma": 3,
+            "big_ma": 63,
+            "revenue_rate": 118.30332172420927,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:25"
+        },
+        "039030": {
+            "stock_code": "039030",
+            "stock_name": "이오테크닉스",
+            "small_ma": 15,
+            "big_ma": 89,
+            "revenue_rate": 169.48517510797618,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:27"
+        },
+        "068760": {
+            "stock_code": "068760",
+            "stock_name": "셀트리온제약",
+            "small_ma": 4,
+            "big_ma": 67,
+            "revenue_rate": 2.2557359242301667,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:28"
+        },
+        "403870": {
+            "stock_code": "403870",
+            "stock_name": "HPSP",
+            "small_ma": 15,
+            "big_ma": 45,
+            "revenue_rate": 104.20303652462037,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:30"
+        },
+        "082270": {
+            "stock_code": "082270",
+            "stock_name": "젬백스",
+            "small_ma": 3,
+            "big_ma": 20,
+            "revenue_rate": 523.102340776579,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:32"
+        },
+        "310210": {
+            "stock_code": "310210",
+            "stock_name": "보로노이",
+            "small_ma": 3,
+            "big_ma": 21,
+            "revenue_rate": 568.4559936363287,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:33"
+        },
+        "263750": {
+            "stock_code": "263750",
+            "stock_name": "펄어비스",
+            "small_ma": 9,
+            "big_ma": 63,
+            "revenue_rate": 31.582717625155066,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:35"
+        },
+        "240810": {
+            "stock_code": "240810",
+            "stock_name": "원익IPS",
+            "small_ma": 15,
+            "big_ma": 44,
+            "revenue_rate": 41.379624541358,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:37"
+        },
+        "122870": {
+            "stock_code": "122870",
+            "stock_name": "와이지엔터테인먼트",
+            "small_ma": 15,
+            "big_ma": 82,
+            "revenue_rate": 308.07480756483676,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:38"
+        },
+        "237690": {
+            "stock_code": "237690",
+            "stock_name": "에스티팜",
+            "small_ma": 11,
+            "big_ma": 67,
+            "revenue_rate": 43.0505426948962,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:40"
+        },
+        "348370": {
+            "stock_code": "348370",
+            "stock_name": "엔켐",
+            "small_ma": 6,
+            "big_ma": 83,
+            "revenue_rate": 443.0811665922267,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:41"
+        },
+        "357780": {
+            "stock_code": "357780",
+            "stock_name": "솔브레인",
+            "small_ma": 13,
+            "big_ma": 23,
+            "revenue_rate": 52.64509449998811,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:43"
+        },
+        "140860": {
+            "stock_code": "140860",
+            "stock_name": "파크시스템스",
+            "small_ma": 14,
+            "big_ma": 46,
+            "revenue_rate": 76.93152188235086,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:45"
+        },
+        "035760": {
+            "stock_code": "035760",
+            "stock_name": "CJ ENM",
+            "small_ma": 14,
+            "big_ma": 99,
+            "revenue_rate": 21.84321135663637,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:46"
+        },
+        "065350": {
+            "stock_code": "065350",
+            "stock_name": "신성델타테크",
+            "small_ma": 3,
+            "big_ma": 48,
+            "revenue_rate": 1995.3087205069085,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:48"
+        },
+        "083650": {
+            "stock_code": "083650",
+            "stock_name": "비에이치아이",
+            "small_ma": 11,
+            "big_ma": 24,
+            "revenue_rate": 420.1158645448781,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:49"
+        },
+        "005290": {
+            "stock_code": "005290",
+            "stock_name": "동진쎄미켐",
+            "small_ma": 11,
+            "big_ma": 24,
+            "revenue_rate": 47.270015420498765,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:51"
+        },
+        "253450": {
+            "stock_code": "253450",
+            "stock_name": "스튜디오드래곤",
+            "small_ma": 7,
+            "big_ma": 20,
+            "revenue_rate": -0.2878294309968012,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:53"
+        },
+        "347850": {
+            "stock_code": "347850",
+            "stock_name": "디앤디파마텍",
+            "small_ma": 8,
+            "big_ma": 26,
+            "revenue_rate": 285.3578331378733,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:54"
+        },
+        "018290": {
+            "stock_code": "018290",
+            "stock_name": "브이티",
+            "small_ma": 6,
+            "big_ma": 54,
+            "revenue_rate": 302.75649788584775,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:56"
+        },
+        "096530": {
+            "stock_code": "096530",
+            "stock_name": "씨젠",
+            "small_ma": 15,
+            "big_ma": 44,
+            "revenue_rate": 32.93365267387845,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:58"
+        },
+        "195940": {
+            "stock_code": "195940",
+            "stock_name": "HK이노엔",
+            "small_ma": 6,
+            "big_ma": 87,
+            "revenue_rate": 58.17713891894337,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:48:59"
+        },
+        "293490": {
+            "stock_code": "293490",
+            "stock_name": "카카오게임즈",
+            "small_ma": 15,
+            "big_ma": 32,
+            "revenue_rate": 9.20407182659877,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:01"
+        },
+        "007390": {
+            "stock_code": "007390",
+            "stock_name": "네이처셀",
+            "small_ma": 6,
+            "big_ma": 62,
+            "revenue_rate": -36.08969920958999,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:02"
+        },
+        "064760": {
+            "stock_code": "064760",
+            "stock_name": "티씨케이",
+            "small_ma": 8,
+            "big_ma": 36,
+            "revenue_rate": 78.977807077487,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:04"
+        },
+        "036930": {
+            "stock_code": "036930",
+            "stock_name": "주성엔지니어링",
+            "small_ma": 15,
+            "big_ma": 61,
+            "revenue_rate": 100.4863488674991,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:05"
+        },
+        "039200": {
+            "stock_code": "039200",
+            "stock_name": "오스코텍",
+            "small_ma": 3,
+            "big_ma": 50,
+            "revenue_rate": 31.493887525852166,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:07"
+        },
+        "376300": {
+            "stock_code": "376300",
+            "stock_name": "디어유",
+            "small_ma": 7,
+            "big_ma": 20,
+            "revenue_rate": 63.22737042415694,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:09"
+        },
+        "095340": {
+            "stock_code": "095340",
+            "stock_name": "ISC",
+            "small_ma": 3,
+            "big_ma": 52,
+            "revenue_rate": 54.853715185996464,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:10"
+        },
+        "101490": {
+            "stock_code": "101490",
+            "stock_name": "에스앤에스텍",
+            "small_ma": 15,
+            "big_ma": 37,
+            "revenue_rate": 305.52615475748325,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:12"
+        },
+        "328130": {
+            "stock_code": "328130",
+            "stock_name": "루닛",
+            "small_ma": 3,
+            "big_ma": 74,
+            "revenue_rate": 391.94245247465335,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:13"
+        },
+        "140410": {
+            "stock_code": "140410",
+            "stock_name": "메지온",
+            "small_ma": 3,
+            "big_ma": 63,
+            "revenue_rate": 171.64152696861197,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:15"
+        },
+        "108490": {
+            "stock_code": "108490",
+            "stock_name": "로보티즈",
+            "small_ma": 13,
+            "big_ma": 83,
+            "revenue_rate": 335.29729298471494,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:17"
+        },
+        "084370": {
+            "stock_code": "084370",
+            "stock_name": "유진테크",
+            "small_ma": 13,
+            "big_ma": 71,
+            "revenue_rate": 64.34567556894943,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:18"
+        },
+        "226950": {
+            "stock_code": "226950",
+            "stock_name": "올릭스",
+            "small_ma": 5,
+            "big_ma": 22,
+            "revenue_rate": 135.56027808353485,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:20"
+        },
+        "078600": {
+            "stock_code": "078600",
+            "stock_name": "대주전자재료",
+            "small_ma": 6,
+            "big_ma": 24,
+            "revenue_rate": 53.69288522198957,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:22"
+        },
+        "089030": {
+            "stock_code": "089030",
+            "stock_name": "테크윙",
+            "small_ma": 10,
+            "big_ma": 30,
+            "revenue_rate": 588.9813036433263,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:23"
+        },
+        "178320": {
+            "stock_code": "178320",
+            "stock_name": "서진시스템",
+            "small_ma": 10,
+            "big_ma": 34,
+            "revenue_rate": 18.38083633485618,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:25"
+        },
+        "358570": {
+            "stock_code": "358570",
+            "stock_name": "지아이이노베이션",
+            "small_ma": 12,
+            "big_ma": 24,
+            "revenue_rate": 105.7572455514124,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:26"
+        },
+        "213420": {
+            "stock_code": "213420",
+            "stock_name": "덕산네오룩스",
+            "small_ma": 15,
+            "big_ma": 31,
+            "revenue_rate": 34.97554772007463,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:28"
+        },
+        "112040": {
+            "stock_code": "112040",
+            "stock_name": "위메이드",
+            "small_ma": 5,
+            "big_ma": 28,
+            "revenue_rate": 84.25649712481909,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:30"
+        },
+        "204270": {
+            "stock_code": "204270",
+            "stock_name": "제이앤티씨",
+            "small_ma": 10,
+            "big_ma": 25,
+            "revenue_rate": 181.45278262109994,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:32"
+        },
+        "137400": {
+            "stock_code": "137400",
+            "stock_name": "피엔티",
+            "small_ma": 4,
+            "big_ma": 20,
+            "revenue_rate": 102.35485869607727,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:33"
+        },
+        "042000": {
+            "stock_code": "042000",
+            "stock_name": "카페24",
+            "small_ma": 13,
+            "big_ma": 20,
+            "revenue_rate": 326.77558488653796,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:35"
+        },
+        "098460": {
+            "stock_code": "098460",
+            "stock_name": "고영",
+            "small_ma": 12,
+            "big_ma": 32,
+            "revenue_rate": 66.28410332436252,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:37"
+        },
+        "225570": {
+            "stock_code": "225570",
+            "stock_name": "넥슨게임즈",
+            "small_ma": 10,
+            "big_ma": 36,
+            "revenue_rate": 77.49521973011205,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:38"
+        },
+        "003380": {
+            "stock_code": "003380",
+            "stock_name": "하림지주",
+            "small_ma": 10,
+            "big_ma": 56,
+            "revenue_rate": 81.43767029507691,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:40"
+        },
+        "033500": {
+            "stock_code": "033500",
+            "stock_name": "동성화인텍",
+            "small_ma": 6,
+            "big_ma": 36,
+            "revenue_rate": 164.96614516266578,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:42"
+        },
+        "323280": {
+            "stock_code": "323280",
+            "stock_name": "태성",
+            "small_ma": 11,
+            "big_ma": 31,
+            "revenue_rate": 1948.2763748041318,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:44"
+        },
+        "067160": {
+            "stock_code": "067160",
+            "stock_name": "SOOP",
+            "small_ma": 4,
+            "big_ma": 26,
+            "revenue_rate": 32.482984958814484,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:45"
+        },
+        "025980": {
+            "stock_code": "025980",
+            "stock_name": "아난티",
+            "small_ma": 14,
+            "big_ma": 91,
+            "revenue_rate": 59.18520210802143,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:47"
+        },
+        "160190": {
+            "stock_code": "160190",
+            "stock_name": "하이젠알앤엠",
+            "small_ma": 15,
+            "big_ma": 41,
+            "revenue_rate": 330.38044774910026,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:48"
+        },
+        "232140": {
+            "stock_code": "232140",
+            "stock_name": "와이씨",
+            "small_ma": 15,
+            "big_ma": 62,
+            "revenue_rate": 393.532191426525,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:50"
+        },
+        "336570": {
+            "stock_code": "336570",
+            "stock_name": "원텍",
+            "small_ma": 3,
+            "big_ma": 20,
+            "revenue_rate": 380.1616346881769,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:51"
+        },
+        "036830": {
+            "stock_code": "036830",
+            "stock_name": "솔브레인홀딩스",
+            "small_ma": 3,
+            "big_ma": 99,
+            "revenue_rate": 84.23757027696391,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:53"
+        },
+        "086900": {
+            "stock_code": "086900",
+            "stock_name": "메디톡스",
+            "small_ma": 12,
+            "big_ma": 27,
+            "revenue_rate": 216.10314376774667,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:55"
+        },
+        "251970": {
+            "stock_code": "251970",
+            "stock_name": "펌텍코리아",
+            "small_ma": 5,
+            "big_ma": 24,
+            "revenue_rate": 268.4525227531002,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:56"
+        },
+        "041190": {
+            "stock_code": "041190",
+            "stock_name": "우리기술투자",
+            "small_ma": 7,
+            "big_ma": 67,
+            "revenue_rate": 104.81101378850389,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:58"
+        },
+        "085660": {
+            "stock_code": "085660",
+            "stock_name": "차바이오텍",
+            "small_ma": 11,
+            "big_ma": 29,
+            "revenue_rate": 1.115133564698987,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:49:59"
+        },
+        "281740": {
+            "stock_code": "281740",
+            "stock_name": "레이크머티리얼즈",
+            "small_ma": 11,
+            "big_ma": 40,
+            "revenue_rate": 420.71310144466975,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:01"
+        },
+        "056190": {
+            "stock_code": "056190",
+            "stock_name": "에스에프에이",
+            "small_ma": 7,
+            "big_ma": 64,
+            "revenue_rate": -8.30830797934814,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:02"
+        },
+        "060370": {
+            "stock_code": "060370",
+            "stock_name": "LS마린솔루션",
+            "small_ma": 9,
+            "big_ma": 31,
+            "revenue_rate": 644.0792804050029,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:04"
+        },
+        "014620": {
+            "stock_code": "014620",
+            "stock_name": "성광벤드",
+            "small_ma": 10,
+            "big_ma": 43,
+            "revenue_rate": 71.58361780076689,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:05"
+        },
+        "183300": {
+            "stock_code": "183300",
+            "stock_name": "코미코",
+            "small_ma": 12,
+            "big_ma": 33,
+            "revenue_rate": 118.89885082420004,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:07"
+        },
+        "067310": {
+            "stock_code": "067310",
+            "stock_name": "하나마이크론",
+            "small_ma": 15,
+            "big_ma": 92,
+            "revenue_rate": 111.59123275662107,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:09"
+        },
+        "460930": {
+            "stock_code": "460930",
+            "stock_name": "현대힘스",
+            "small_ma": 15,
+            "big_ma": 69,
+            "revenue_rate": 34.50934182163296,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:10"
+        },
+        "086450": {
+            "stock_code": "086450",
+            "stock_name": "동국제약",
+            "small_ma": 10,
+            "big_ma": 53,
+            "revenue_rate": 9.134725001177332,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:12"
+        },
+        "052400": {
+            "stock_code": "052400",
+            "stock_name": "코나아이",
+            "small_ma": 4,
+            "big_ma": 29,
+            "revenue_rate": 228.89960340708114,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:13"
+        },
+        "222800": {
+            "stock_code": "222800",
+            "stock_name": "심텍",
+            "small_ma": 15,
+            "big_ma": 26,
+            "revenue_rate": 80.65684469338275,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:15"
+        },
+        "290650": {
+            "stock_code": "290650",
+            "stock_name": "엘앤씨바이오",
+            "small_ma": 4,
+            "big_ma": 40,
+            "revenue_rate": 89.83553699978857,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:17"
+        },
+        "044490": {
+            "stock_code": "044490",
+            "stock_name": "태웅",
+            "small_ma": 14,
+            "big_ma": 88,
+            "revenue_rate": 431.83286209807096,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:18"
+        },
+        "335890": {
+            "stock_code": "335890",
+            "stock_name": "비올",
+            "small_ma": 13,
+            "big_ma": 23,
+            "revenue_rate": 349.1037385800584,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:20"
+        },
+        "388720": {
+            "stock_code": "388720",
+            "stock_name": "유일로보틱스",
+            "small_ma": 10,
+            "big_ma": 47,
+            "revenue_rate": 138.7342286793285,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:22"
+        },
+        "121600": {
+            "stock_code": "121600",
+            "stock_name": "나노신소재",
+            "small_ma": 7,
+            "big_ma": 20,
+            "revenue_rate": 40.93490662143063,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:23"
+        },
+        "161580": {
+            "stock_code": "161580",
+            "stock_name": "필옵틱스",
+            "small_ma": 12,
+            "big_ma": 33,
+            "revenue_rate": 690.2705396546598,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:25"
+        },
+        "053800": {
+            "stock_code": "053800",
+            "stock_name": "안랩",
+            "small_ma": 14,
+            "big_ma": 26,
+            "revenue_rate": 38.07101049642223,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:27"
+        },
+        "131970": {
+            "stock_code": "131970",
+            "stock_name": "두산테스나",
+            "small_ma": 8,
+            "big_ma": 100,
+            "revenue_rate": 83.56726772054294,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:28"
+        },
+        "417200": {
+            "stock_code": "417200",
+            "stock_name": "LS머트리얼즈",
+            "small_ma": 11,
+            "big_ma": 100,
+            "revenue_rate": -9.837615905165567,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:30"
+        },
+        "031980": {
+            "stock_code": "031980",
+            "stock_name": "피에스케이홀딩스",
+            "small_ma": 3,
+            "big_ma": 48,
+            "revenue_rate": 444.80734590570876,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:31"
+        },
+        "241710": {
+            "stock_code": "241710",
+            "stock_name": "코스메카코리아",
+            "small_ma": 14,
+            "big_ma": 24,
+            "revenue_rate": 1254.9672365172962,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:33"
+        },
+        "082920": {
+            "stock_code": "082920",
+            "stock_name": "비츠로셀",
+            "small_ma": 15,
+            "big_ma": 55,
+            "revenue_rate": 85.39845635957678,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:35"
+        },
+        "445680": {
+            "stock_code": "445680",
+            "stock_name": "큐리옥스바이오시스템즈",
+            "small_ma": 3,
+            "big_ma": 29,
+            "revenue_rate": 79.13902521236321,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:36"
+        },
+        "218410": {
+            "stock_code": "218410",
+            "stock_name": "RFHIC",
+            "small_ma": 9,
+            "big_ma": 29,
+            "revenue_rate": 62.84665547841897,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:38"
+        },
+        "036570": {
+            "stock_code": "036570",
+            "stock_name": "엔씨소프트",
+            "small_ma": 14,
+            "big_ma": 57,
+            "revenue_rate": -4.395086012498557,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:39"
+        },
+        "007660": {
+            "stock_code": "007660",
+            "stock_name": "이수페타시스",
+            "small_ma": 11,
+            "big_ma": 23,
+            "revenue_rate": 927.367405853289,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:41"
+        },
+        "214430": {
+            "stock_code": "214430",
+            "stock_name": "아이쓰리시스템",
+            "small_ma": 10,
+            "big_ma": 20,
+            "revenue_rate": 498.22003881571766,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:42"
+        },
+        "200670": {
+            "stock_code": "200670",
+            "stock_name": "휴메딕스",
+            "small_ma": 4,
+            "big_ma": 31,
+            "revenue_rate": 167.12333291797572,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:44"
+        },
+        "078930": {
+            "stock_code": "078930",
+            "stock_name": "GS",
+            "small_ma": 7,
+            "big_ma": 49,
+            "revenue_rate": 25.051151977430425,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:46"
+        },
+        "004020": {
+            "stock_code": "004020",
+            "stock_name": "현대제철",
+            "small_ma": 5,
+            "big_ma": 29,
+            "revenue_rate": 20.297064308343383,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:47"
+        },
+        "175330": {
+            "stock_code": "175330",
+            "stock_name": "JB금융지주",
+            "small_ma": 7,
+            "big_ma": 94,
+            "revenue_rate": 103.14577673310718,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:49"
+        },
+        "271560": {
+            "stock_code": "271560",
+            "stock_name": "오리온",
+            "small_ma": 15,
+            "big_ma": 66,
+            "revenue_rate": 1.0414233380972293,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:50"
+        },
+        "439260": {
+            "stock_code": "439260",
+            "stock_name": "대한조선",
+            "small_ma": null,
+            "big_ma": null,
+            "revenue_rate": null,
+            "mdd": null,
+            "last_updated": "2025-08-23 06:50:51"
+        },
+        "307950": {
+            "stock_code": "307950",
+            "stock_name": "현대오토에버",
+            "small_ma": 3,
+            "big_ma": 27,
+            "revenue_rate": 58.505784661818716,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:53"
+        },
+        "035250": {
+            "stock_code": "035250",
+            "stock_name": "강원랜드",
+            "small_ma": 3,
+            "big_ma": 89,
+            "revenue_rate": 12.633836482745387,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:54"
+        },
+        "454910": {
+            "stock_code": "454910",
+            "stock_name": "두산로보틱스",
+            "small_ma": 6,
+            "big_ma": 23,
+            "revenue_rate": 45.95189769488247,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:56"
+        },
+        "419530": {
+            "stock_code": "419530",
+            "stock_name": "SAMG엔터",
+            "small_ma": 12,
+            "big_ma": 57,
+            "revenue_rate": 528.1032850922018,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:58"
+        },
+        "078130": {
+            "stock_code": "078130",
+            "stock_name": "국일제지",
+            "small_ma": 13,
+            "big_ma": 48,
+            "revenue_rate": 0.3528787473233533,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:50:59"
+        },
+        "148070": {
+            "stock_code": "148070",
+            "stock_name": "KOSEF 국고채10년",
+            "small_ma": 4,
+            "big_ma": 97,
+            "revenue_rate": 11.563605468134746,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:51:01"
+        },
+        "305080": {
+            "stock_code": "305080",
+            "stock_name": "TIGER 미국채10년선물",
+            "small_ma": 15,
+            "big_ma": 60,
+            "revenue_rate": 10.095317472522986,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:51:02"
+        },
+        "132030": {
+            "stock_code": "132030",
+            "stock_name": "KODEX 골드선물(H)",
+            "small_ma": 5,
+            "big_ma": 97,
+            "revenue_rate": 61.49329869719615,
+            "mdd": 0,
+            "last_updated": "2025-08-23 06:51:04"
+        }
+    }
+}

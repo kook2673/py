@@ -1,0 +1,302 @@
+{
+  "system_type": "Adaptive Trading System",
+  "test_period": "2024-01-01 ~ 2024-12-31",
+  "result": {
+    "total_return": 8.5538918977299,
+    "final_capital": 10855.38918977299,
+    "total_trades": 36,
+    "win_rate": 55.55555555555556,
+    "max_drawdown": 0.0,
+    "trades": [
+      {
+        "entry_time": 44691.45,
+        "exit_time": 45378.96,
+        "position": "long",
+        "pnl": 133.5474116979308,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 42430.01,
+        "exit_time": 42139.31,
+        "position": "short",
+        "pnl": 49.279412018292845,
+        "strategy": "macd_dc",
+        "exit_reason": "롱 신호"
+      },
+      {
+        "entry_time": 42992.67,
+        "exit_time": 43066.92,
+        "position": "long",
+        "pnl": -2.794310633743692,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 43483.28,
+        "exit_time": 43861.07,
+        "position": "long",
+        "pnl": 67.92938269411941,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 45111.09,
+        "exit_time": 45430.51,
+        "position": "long",
+        "pnl": 51.94274685090442,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 46915.39,
+        "exit_time": 46886.43,
+        "position": "long",
+        "pnl": -26.9244669582292,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 46597.99,
+        "exit_time": 46112.0,
+        "position": "long",
+        "pnl": -127.45258948807671,
+        "strategy": "macd_dc",
+        "exit_reason": "숏 신호"
+      },
+      {
+        "entry_time": 45939.48,
+        "exit_time": 46020.0,
+        "position": "short",
+        "pnl": -38.12944703247602,
+        "strategy": "bb_dc",
+        "exit_reason": "롱 신호"
+      },
+      {
+        "entry_time": 45265.99,
+        "exit_time": 46590.44,
+        "position": "long",
+        "pnl": 274.9496495637706,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 46502.25,
+        "exit_time": 45701.45,
+        "position": "long",
+        "pnl": -199.1777339210437,
+        "strategy": "bb_dc",
+        "exit_reason": "숏 신호"
+      },
+      {
+        "entry_time": 45753.55,
+        "exit_time": 45653.56,
+        "position": "long",
+        "pnl": -42.5558724271388,
+        "strategy": "bb_dc",
+        "exit_reason": "숏 신호"
+      },
+      {
+        "entry_time": 45732.11,
+        "exit_time": 46532.0,
+        "position": "long",
+        "pnl": 156.75184336342227,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 46533.42,
+        "exit_time": 46588.14,
+        "position": "long",
+        "pnl": -8.489379877934063,
+        "strategy": "bb_dc",
+        "exit_reason": "숏 신호"
+      },
+      {
+        "entry_time": 46601.1,
+        "exit_time": 46105.26,
+        "position": "short",
+        "pnl": 89.09541272610325,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      },
+      {
+        "entry_time": 46054.0,
+        "exit_time": 45927.16,
+        "position": "short",
+        "pnl": 7.863077989059791,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      },
+      {
+        "entry_time": 43787.77,
+        "exit_time": 42536.94,
+        "position": "short",
+        "pnl": 276.4805429466201,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      },
+      {
+        "entry_time": 43113.06,
+        "exit_time": 41816.71,
+        "position": "long",
+        "pnl": -341.26383099324516,
+        "strategy": "bb_dc",
+        "exit_reason": "숏 신호"
+      },
+      {
+        "entry_time": 41634.12,
+        "exit_time": 40758.54,
+        "position": "short",
+        "pnl": 196.82708278960845,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      },
+      {
+        "entry_time": 39975.66,
+        "exit_time": 39758.24,
+        "position": "short",
+        "pnl": 36.26244934216897,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      },
+      {
+        "entry_time": 39040.6,
+        "exit_time": 39761.1,
+        "position": "short",
+        "pnl": -216.29758597790683,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      },
+      {
+        "entry_time": 43155.83,
+        "exit_time": 43719.71,
+        "position": "long",
+        "pnl": 114.15077234099047,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 49519.99,
+        "exit_time": 50143.6,
+        "position": "long",
+        "pnl": 110.47688451693146,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 48797.9,
+        "exit_time": 49461.1,
+        "position": "short",
+        "pnl": -164.98537619240682,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      },
+      {
+        "entry_time": 51346.72,
+        "exit_time": 51772.01,
+        "position": "long",
+        "pnl": 65.17309905735172,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 51761.1,
+        "exit_time": 51164.0,
+        "position": "short",
+        "pnl": 99.9893570722241,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      },
+      {
+        "entry_time": 53406.97,
+        "exit_time": 54497.94,
+        "position": "long",
+        "pnl": 194.2330304751179,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 54448.09,
+        "exit_time": 55100.01,
+        "position": "long",
+        "pnl": 107.04511193940642,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 56456.99,
+        "exit_time": 56384.74,
+        "position": "long",
+        "pnl": -35.58131895613564,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 59111.11,
+        "exit_time": 59389.99,
+        "position": "long",
+        "pnl": 29.34986694767696,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 60356.22,
+        "exit_time": 62031.52,
+        "position": "long",
+        "pnl": 279.0798333886556,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매수"
+      },
+      {
+        "entry_time": 61790.47,
+        "exit_time": 59891.78,
+        "position": "short",
+        "pnl": 320.5987190053117,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      },
+      {
+        "entry_time": 60886.01,
+        "exit_time": 61024.0,
+        "position": "short",
+        "pnl": -48.9562760117886,
+        "strategy": "bb_dc",
+        "exit_reason": "롱 신호"
+      },
+      {
+        "entry_time": 60951.11,
+        "exit_time": 59836.53,
+        "position": "long",
+        "pnl": -230.99678235004987,
+        "strategy": "macd_dc",
+        "exit_reason": "숏 신호"
+      },
+      {
+        "entry_time": 61719.99,
+        "exit_time": 61371.1,
+        "position": "long",
+        "pnl": -85.38985427459683,
+        "strategy": "bb_dc",
+        "exit_reason": "숏 신호"
+      },
+      {
+        "entry_time": 61376.07,
+        "exit_time": 62436.23,
+        "position": "short",
+        "pnl": -214.1845037326445,
+        "strategy": "bb_dc",
+        "exit_reason": "롱 신호"
+      },
+      {
+        "entry_time": 61898.89,
+        "exit_time": 61902.75,
+        "position": "short",
+        "pnl": -22.457168125255844,
+        "strategy": "ma_dc",
+        "exit_reason": "RSI 과매도"
+      }
+    ]
+  },
+  "last_updated": "2025-10-17 08:41:36"
+}

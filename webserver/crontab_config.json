@@ -1,0 +1,242 @@
+{
+  "schedules": [
+    {
+      "cron": "* * * * *",
+      "description": "바이낸스:1분마다 ml_bot 봇 실행",
+      "enabled": false,
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/binance/ml_bot.py",
+          "description": "바이낸스 ml_bot 봇 실행",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "*/1 8-16 * * 1-5",
+      "description": "KIS: 평일 아침 8-16시 매 1분 DantaBot 실행",
+      "enabled": false,
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/DantaBot.py",
+          "description": "아침단타 전략 라이브(분당 모니터링)",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "50 14 * * *",
+      "description": "한투:매일 오후 14:50 MA 전략 봇 실행",
+      "enabled": true,
+      "guarantee": { "enabled": true, "window_days": 1 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/MA_Strategy_KR_Bot_v3.py",
+          "description": "MA 전략 KR 봇 실행",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "55 14 * * 1-5",
+      "description": "KIS: 평일 14:55 ETFStrength 실행",
+      "enabled": true,
+      "guarantee": { "enabled": true, "window_days": 1 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/ETFStrength.py",
+          "description": "ETF 강도 기반 롱/숏 라이브",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "0 15 * * 1-5",
+      "description": "KIS: 평일 15:00 KOSPIDrawdown 실행",
+      "enabled": true,
+      "guarantee": { "enabled": true, "window_days": 1 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/KOSPIDrawdown.py",
+          "description": "KOSPI 드로우다운 피라미딩 라이브",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "5 15 * * 1-5",
+      "description": "KIS: 평일 15:05 Momentum 리밸런싱 실행",
+      "enabled": true,
+      "guarantee": { "enabled": true, "window_days": 1 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/Momentum.py",
+          "description": "Momentum Top30 라이브 리밸런싱",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "20,50 * * * *",
+      "description": "업비트:매시간 20분, 50분마다 업비트 더블이평선 봇 실행",
+      "enabled": false,
+      "guarantee": { "enabled": true, "window_minutes": 30 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/upbit/Ma_Double_Upbit_1d4h_Bot.py",
+          "description": "업비트 더블이평선1d4h 봇 실행",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "0 17 1 * *",
+      "description": "업비트:매월 1일 오후 5시 업비트 이평선 최적화",
+      "enabled": false,
+      "guarantee": { "enabled": true, "window_days": 30 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/upbit/MakeDoubleMa_Upbit.py",
+          "description": "업비트 일일 최적 이평선 구하기",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "0 20 * * 0",
+      "description": "업비트:매주 일요일 오후 8시 업비트 4시간 이평선 최적화",
+      "enabled": false,
+      "guarantee": { "enabled": true, "window_days": 7 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/upbit/MakeDoubleMa_4h_Upbit.py",
+          "description": "업비트 4시간 최적 이평선 구하기",
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "task_types": {
+    "python_script": "Python 스크립트 실행",
+    "powershell_command": "PowerShell 명령어 실행",
+    "batch_file": "배치 파일 실행",
+    "external_program": "외부 프로그램 실행"
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "crontab.log",
+    "max_size_mb": 10,
+    "backup_count": 5
+  },
+  "powershell": {
+    "encoding": "utf-8",
+    "execution_policy": "Bypass"
+  },
+  "backup": [
+    {
+      "cron": "* * * * *",
+      "description": "바이낸스:1분마다 MA_Martingale_v1 봇 실행",
+      "enabled": true,
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/binance/MA_Martingale_v1.py",
+          "description": "바이낸스 MA_Martingale_v1 봇 실행",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "* * * * *",
+      "description": "바이낸스:1분마다 양방향v3 봇 실행",
+      "enabled": true,
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/binance/yang_bot_v3.py",
+          "description": "바이낸스 양방향v3 봇 실행",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "40 15 * * *",
+      "description": "매일 오후 15시 40분 포트폴리오 일일 수익률 정리",
+      "enabled": true,
+      "guarantee": { "enabled": true, "window_days": 1 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/portfolio_daily_profit_summary.py",
+          "description": "매일매일 수익률 정리",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "30 14 * * *",
+      "description": "한투:매일 오후 2시 30분 코스닥피 봇 실행",
+      "enabled": true,
+      "guarantee": { "enabled": true, "window_days": 1 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/Kosdaqpi_Bot.py",
+          "description": "코스닥피 봇 실행",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "40 14 * * *",
+      "description": "한투:매일 오후 2시 40분 코스닥피100 MA 봇 실행",
+      "enabled": true,
+      "guarantee": { "enabled": true, "window_days": 1 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/MA_Kosdaqpi100_Bot_v1.py",
+          "description": "코스닥피100 MA 봇 실행",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "0 2 15 * *",
+      "description": "한투:매월 15일 새벽 2시 주식 MA값 업데이트",
+      "enabled": true,
+      "guarantee": { "enabled": true, "window_days": 30 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/stock_list.py",
+          "description": "주식 MA값 업데이트",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "cron": "0 9 * * *",
+      "description": "매일 오전 9시 코스피 전고점 대비 하락 체크",
+      "enabled": true,
+      "guarantee": { "enabled": true, "window_days": 1 },
+      "tasks": [
+        {
+          "type": "python_script",
+          "script": "../kook/kis/kospi_check.py",
+          "description": "코스피 1년내 전고점 대비 하락했을때 체크",
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}

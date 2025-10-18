@@ -1,0 +1,1965 @@
+{
+    "initial_investment": 15966612,
+    "initial_investment_old": 13999999,
+    "dividend_income": 3000,
+    "investment_date": "2025-07-31",
+    "portfolio_name": "자동매매 포트폴리오",
+    "bots": {
+        "Kosdaqpi_Bot": {
+            "enabled": true,
+            "allocation_rate": 0.33,
+            "description": "코스닥피 양방향 전략",
+            "initial_allocation": 5269182,
+            "current_allocation": 5334212.0,
+            "total_holding_value": 1923075.0,
+            "cash_balance": 3411137.0,
+            "total_sold_profit": 67805,
+            "daily_sold_profit": 0,
+            "monthly_sold_profit": 0,
+            "yearly_sold_profit": 0,
+            "holdings": [
+                {
+                    "stock_code": "251340",
+                    "stock_name": "KODEX 코스닥150선물인버스",
+                    "purchase_price": 3470.0,
+                    "current_price": 3465.0,
+                    "quantity": 555,
+                    "profit_rate": -0.14,
+                    "current_value": 1923075.0,
+                    "profit_loss": -2775.0
+                }
+            ],
+            "last_daily_reset": "2025-09-01",
+            "last_monthly_reset": "2025-09",
+            "last_yearly_reset": "2025"
+        },
+        "MA_Strategy_KR_Bot_v3": {
+            "enabled": true,
+            "allocation_rate": 0.33,
+            "description": "이동평균자산배분전략_KR",
+            "fix_rate": 0.1,
+            "dynamic_rate": 0.6,
+            "initial_allocation": 5269182,
+            "current_allocation": 5338140.0,
+            "total_holding_value": 5682130.0,
+            "cash_balance": -343990.0,
+            "total_sold_profit": 0,
+            "daily_sold_profit": 0,
+            "monthly_sold_profit": 0,
+            "yearly_sold_profit": 0,
+            "holdings": [
+                {
+                    "stock_code": "069500",
+                    "stock_name": "KODEX 200",
+                    "purchase_price": 43090.0,
+                    "current_price": 43115.0,
+                    "quantity": 25,
+                    "profit_rate": 0.05,
+                    "current_value": 1077875.0,
+                    "profit_loss": 625.0
+                },
+                {
+                    "stock_code": "132030",
+                    "stock_name": "KODEX 골드선물(H)",
+                    "purchase_price": 19883.9273,
+                    "current_price": 20925.0,
+                    "quantity": 55,
+                    "profit_rate": 5.23,
+                    "current_value": 1150875.0,
+                    "profit_loss": 57259.0
+                },
+                {
+                    "stock_code": "133690",
+                    "stock_name": "TIGER 미국나스닥100",
+                    "purchase_price": 143314.2941,
+                    "current_price": 143940.0,
+                    "quantity": 17,
+                    "profit_rate": 0.43,
+                    "current_value": 2446980.0,
+                    "profit_loss": 10637.0
+                },
+                {
+                    "stock_code": "148070",
+                    "stock_name": "KIWOOM 국고채10년",
+                    "purchase_price": 117115.75,
+                    "current_price": 116150.0,
+                    "quantity": 4,
+                    "profit_rate": -0.82,
+                    "current_value": 464600.0,
+                    "profit_loss": -3863.0
+                },
+                {
+                    "stock_code": "305080",
+                    "stock_name": "TIGER 미국채10년선물",
+                    "purchase_price": 12500.0,
+                    "current_price": 12600.0,
+                    "quantity": 43,
+                    "profit_rate": 0.8,
+                    "current_value": 541800.0,
+                    "profit_loss": 4300.0
+                }
+            ],
+            "invest_stock_list": [
+                {
+                    "stock_code": "133690",
+                    "stock_name": "TIGER 미국나스닥100",
+                    "small_ma": 4,
+                    "big_ma": 33,
+                    "invest_rate": 0.4
+                },
+                {
+                    "stock_code": "069500",
+                    "stock_name": "KODEX 200",
+                    "small_ma": 15,
+                    "big_ma": 87,
+                    "invest_rate": 0.2
+                },
+                {
+                    "stock_code": "148070",
+                    "stock_name": "KOSEF 국고채10년",
+                    "small_ma": 4,
+                    "big_ma": 97,
+                    "invest_rate": 0.1
+                },
+                {
+                    "stock_code": "305080",
+                    "stock_name": "TIGER 미국채10년선물",
+                    "small_ma": 15,
+                    "big_ma": 60,
+                    "invest_rate": 0.1
+                },
+                {
+                    "stock_code": "132030",
+                    "stock_name": "KODEX 골드선물(H)",
+                    "small_ma": 5,
+                    "big_ma": 97,
+                    "invest_rate": 0.2
+                }
+            ]
+        },
+        "MA_Kosdaqpi100_Bot_v1": {
+            "enabled": true,
+            "allocation_rate": 0.33,
+            "description": "코스피,코스닥100 이동평균자산배분전략_KR",
+            "fix_rate": 0.0,
+            "dynamic_rate": 1.0,
+            "max_buy_stocks": 30,
+            "initial_allocation": 5269182,
+            "current_allocation": 5667805.0,
+            "total_holding_value": 5562560.0,
+            "cash_balance": 105245.0,
+            "total_sold_profit": 259233,
+            "daily_sold_profit": 0,
+            "monthly_sold_profit": 259233,
+            "yearly_sold_profit": 259233,
+            "holdings": [
+                {
+                    "stock_code": "005930",
+                    "stock_name": "삼성전자",
+                    "purchase_price": 71850.0,
+                    "current_price": 69650.0,
+                    "quantity": 2,
+                    "profit_rate": -3.06,
+                    "current_value": 139300.0,
+                    "profit_loss": -4400.0
+                },
+                {
+                    "stock_code": "009150",
+                    "stock_name": "삼성전기",
+                    "purchase_price": 161200.0,
+                    "current_price": 174500.0,
+                    "quantity": 1,
+                    "profit_rate": 8.25,
+                    "current_value": 174500.0,
+                    "profit_loss": 13300.0
+                },
+                {
+                    "stock_code": "009540",
+                    "stock_name": "HD한국조선해양",
+                    "purchase_price": 364500.0,
+                    "current_price": 411000.0,
+                    "quantity": 1,
+                    "profit_rate": 12.75,
+                    "current_value": 411000.0,
+                    "profit_loss": 46500.0
+                },
+                {
+                    "stock_code": "010120",
+                    "stock_name": "LS ELECTRIC",
+                    "purchase_price": 315000.0,
+                    "current_price": 292000.0,
+                    "quantity": 1,
+                    "profit_rate": -7.3,
+                    "current_value": 292000.0,
+                    "profit_loss": -23000.0
+                },
+                {
+                    "stock_code": "010140",
+                    "stock_name": "삼성중공업",
+                    "purchase_price": 19420.0,
+                    "current_price": 21000.0,
+                    "quantity": 9,
+                    "profit_rate": 8.13,
+                    "current_value": 189000.0,
+                    "profit_loss": 14220.0
+                },
+                {
+                    "stock_code": "010620",
+                    "stock_name": "HD현대미포",
+                    "purchase_price": 192100.0,
+                    "current_price": 199200.0,
+                    "quantity": 1,
+                    "profit_rate": 3.69,
+                    "current_value": 199200.0,
+                    "profit_loss": 7100.0
+                },
+                {
+                    "stock_code": "015760",
+                    "stock_name": "한국전력",
+                    "purchase_price": 39950.0,
+                    "current_price": 36950.0,
+                    "quantity": 4,
+                    "profit_rate": -7.5,
+                    "current_value": 147800.0,
+                    "profit_loss": -12000.0
+                },
+                {
+                    "stock_code": "021240",
+                    "stock_name": "코웨이",
+                    "purchase_price": 107400.0,
+                    "current_price": 101300.0,
+                    "quantity": 1,
+                    "profit_rate": -5.67,
+                    "current_value": 101300.0,
+                    "profit_loss": -6100.0
+                },
+                {
+                    "stock_code": "028050",
+                    "stock_name": "삼성E&A",
+                    "purchase_price": 26750.0,
+                    "current_price": 28600.0,
+                    "quantity": 6,
+                    "profit_rate": 6.91,
+                    "current_value": 171600.0,
+                    "profit_loss": 11100.0
+                },
+                {
+                    "stock_code": "033780",
+                    "stock_name": "KT&G",
+                    "purchase_price": 145700.0,
+                    "current_price": 135500.0,
+                    "quantity": 1,
+                    "profit_rate": -7.0,
+                    "current_value": 135500.0,
+                    "profit_loss": -10200.0
+                },
+                {
+                    "stock_code": "034220",
+                    "stock_name": "LG디스플레이",
+                    "purchase_price": 10890.0,
+                    "current_price": 12000.0,
+                    "quantity": 16,
+                    "profit_rate": 10.19,
+                    "current_value": 192000.0,
+                    "profit_loss": 17760.0
+                },
+                {
+                    "stock_code": "035720",
+                    "stock_name": "카카오",
+                    "purchase_price": 65200.0,
+                    "current_price": 58900.0,
+                    "quantity": 2,
+                    "profit_rate": -9.66,
+                    "current_value": 117800.0,
+                    "profit_loss": -12600.0
+                },
+                {
+                    "stock_code": "039030",
+                    "stock_name": "이오테크닉스",
+                    "purchase_price": 233000.0,
+                    "current_price": 196700.0,
+                    "quantity": 1,
+                    "profit_rate": -15.57,
+                    "current_value": 196700.0,
+                    "profit_loss": -36300.0
+                },
+                {
+                    "stock_code": "041510",
+                    "stock_name": "에스엠",
+                    "purchase_price": 148500.0,
+                    "current_price": 135700.0,
+                    "quantity": 1,
+                    "profit_rate": -8.61,
+                    "current_value": 135700.0,
+                    "profit_loss": -12800.0
+                },
+                {
+                    "stock_code": "042660",
+                    "stock_name": "한화오션",
+                    "purchase_price": 117200.0,
+                    "current_price": 117900.0,
+                    "quantity": 1,
+                    "profit_rate": 0.59,
+                    "current_value": 117900.0,
+                    "profit_loss": 700.0
+                },
+                {
+                    "stock_code": "086280",
+                    "stock_name": "현대글로비스",
+                    "purchase_price": 168700.0,
+                    "current_price": 187700.0,
+                    "quantity": 1,
+                    "profit_rate": 11.26,
+                    "current_value": 187700.0,
+                    "profit_loss": 19000.0
+                },
+                {
+                    "stock_code": "087010",
+                    "stock_name": "펩트론",
+                    "purchase_price": 301500.0,
+                    "current_price": 301500.0,
+                    "quantity": 1,
+                    "profit_rate": 0.0,
+                    "current_value": 301500.0,
+                    "profit_loss": 0.0
+                },
+                {
+                    "stock_code": "122870",
+                    "stock_name": "와이지엔터테인먼트",
+                    "purchase_price": 92600.0,
+                    "current_price": 100000.0,
+                    "quantity": 1,
+                    "profit_rate": 7.99,
+                    "current_value": 100000.0,
+                    "profit_loss": 7400.0
+                },
+                {
+                    "stock_code": "141080",
+                    "stock_name": "리가켐바이오",
+                    "purchase_price": 147700.0,
+                    "current_price": 151800.0,
+                    "quantity": 1,
+                    "profit_rate": 2.77,
+                    "current_value": 151800.0,
+                    "profit_loss": 4100.0
+                },
+                {
+                    "stock_code": "183300",
+                    "stock_name": "코미코",
+                    "purchase_price": 78300.0,
+                    "current_price": 81100.0,
+                    "quantity": 2,
+                    "profit_rate": 3.57,
+                    "current_value": 162200.0,
+                    "profit_loss": 5600.0
+                },
+                {
+                    "stock_code": "214370",
+                    "stock_name": "케어젠",
+                    "purchase_price": 48150.0,
+                    "current_price": 52100.0,
+                    "quantity": 5,
+                    "profit_rate": 8.2,
+                    "current_value": 260500.0,
+                    "profit_loss": 19750.0
+                },
+                {
+                    "stock_code": "226950",
+                    "stock_name": "올릭스",
+                    "purchase_price": 52200.0,
+                    "current_price": 82400.0,
+                    "quantity": 3,
+                    "profit_rate": 57.85,
+                    "current_value": 247200.0,
+                    "profit_loss": 90600.0
+                },
+                {
+                    "stock_code": "251270",
+                    "stock_name": "넷마블",
+                    "purchase_price": 56700.0,
+                    "current_price": 59300.0,
+                    "quantity": 3,
+                    "profit_rate": 4.58,
+                    "current_value": 177900.0,
+                    "profit_loss": 7800.0
+                },
+                {
+                    "stock_code": "267260",
+                    "stock_name": "HD현대일렉트릭",
+                    "purchase_price": 490500.0,
+                    "current_price": 499500.0,
+                    "quantity": 1,
+                    "profit_rate": 1.83,
+                    "current_value": 499500.0,
+                    "profit_loss": 9000.0
+                },
+                {
+                    "stock_code": "272210",
+                    "stock_name": "한화시스템",
+                    "purchase_price": 53200.0,
+                    "current_price": 53400.0,
+                    "quantity": 3,
+                    "profit_rate": 0.37,
+                    "current_value": 160200.0,
+                    "profit_loss": 600.0
+                },
+                {
+                    "stock_code": "278470",
+                    "stock_name": "에이피알",
+                    "purchase_price": 231500.0,
+                    "current_price": 212500.0,
+                    "quantity": 1,
+                    "profit_rate": -8.2,
+                    "current_value": 212500.0,
+                    "profit_loss": -19000.0
+                },
+                {
+                    "stock_code": "360750",
+                    "stock_name": "TIGER 미국S&P500",
+                    "purchase_price": 21875.0,
+                    "current_price": 22220.0,
+                    "quantity": 8,
+                    "profit_rate": 1.57,
+                    "current_value": 177760.0,
+                    "profit_loss": 2760.0
+                },
+                {
+                    "stock_code": "443060",
+                    "stock_name": "HD현대마린솔루션",
+                    "purchase_price": 204000.0,
+                    "current_price": 202500.0,
+                    "quantity": 1,
+                    "profit_rate": -0.73,
+                    "current_value": 202500.0,
+                    "profit_loss": -1500.0
+                }
+            ],
+            "my_stock_list": [],
+            "exclude_stock_list": [
+                {
+                    "005935": "삼성전자우"
+                },
+                {
+                    "148070": "KIWOOM 국고채10년"
+                },
+                {
+                    "305080": "TIGER 미국채10년선물"
+                },
+                {
+                    "132030": "KODEX 골드선물(H)"
+                },
+                {
+                    "069500": "KODEX 200"
+                },
+                {
+                    "133690": "TIGER 미국나스닥100"
+                },
+                {
+                    "122630": "KODEX 레버리지"
+                },
+                {
+                    "252670": "KODEX 200선물인버스2X"
+                },
+                {
+                    "233740": "KODEX 코스닥150레버리지"
+                },
+                {
+                    "251340": "KODEX 코스닥150선물인버스"
+                }
+            ],
+            "invest_stock_list": [
+                {
+                    "stock_code": "005930",
+                    "stock_name": "삼성전자",
+                    "small_ma": 13,
+                    "big_ma": 21,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "000660",
+                    "stock_name": "SK하이닉스",
+                    "small_ma": 11,
+                    "big_ma": 29,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "373220",
+                    "stock_name": "LG에너지솔루션",
+                    "small_ma": 6,
+                    "big_ma": 89,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "207940",
+                    "stock_name": "삼성바이오로직스",
+                    "small_ma": 4,
+                    "big_ma": 49,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "005935",
+                    "stock_name": "삼성전자우",
+                    "small_ma": 7,
+                    "big_ma": 54,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "012450",
+                    "stock_name": "한화에어로스페이스",
+                    "small_ma": 5,
+                    "big_ma": 71,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "005380",
+                    "stock_name": "현대차",
+                    "small_ma": 12,
+                    "big_ma": 65,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "329180",
+                    "stock_name": "HD현대중공업",
+                    "small_ma": 13,
+                    "big_ma": 90,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "000270",
+                    "stock_name": "기아",
+                    "small_ma": 10,
+                    "big_ma": 41,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "105560",
+                    "stock_name": "KB금융",
+                    "small_ma": 6,
+                    "big_ma": 100,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "068270",
+                    "stock_name": "셀트리온",
+                    "small_ma": 14,
+                    "big_ma": 41,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "034020",
+                    "stock_name": "두산에너빌리티",
+                    "small_ma": 11,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "035420",
+                    "stock_name": "NAVER",
+                    "small_ma": 15,
+                    "big_ma": 25,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "042660",
+                    "stock_name": "한화오션",
+                    "small_ma": 8,
+                    "big_ma": 68,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "055550",
+                    "stock_name": "신한지주",
+                    "small_ma": 11,
+                    "big_ma": 95,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "028260",
+                    "stock_name": "삼성물산",
+                    "small_ma": 15,
+                    "big_ma": 65,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "035720",
+                    "stock_name": "카카오",
+                    "small_ma": 4,
+                    "big_ma": 98,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "032830",
+                    "stock_name": "삼성생명",
+                    "small_ma": 14,
+                    "big_ma": 72,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "012330",
+                    "stock_name": "현대모비스",
+                    "small_ma": 5,
+                    "big_ma": 21,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "009540",
+                    "stock_name": "HD한국조선해양",
+                    "small_ma": 8,
+                    "big_ma": 93,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "015760",
+                    "stock_name": "한국전력",
+                    "small_ma": 6,
+                    "big_ma": 59,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "005490",
+                    "stock_name": "POSCO홀딩스",
+                    "small_ma": 15,
+                    "big_ma": 36,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "086790",
+                    "stock_name": "하나금융지주",
+                    "small_ma": 3,
+                    "big_ma": 22,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "138040",
+                    "stock_name": "메리츠금융지주",
+                    "small_ma": 5,
+                    "big_ma": 24,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "011200",
+                    "stock_name": "HMM",
+                    "small_ma": 14,
+                    "big_ma": 72,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "000810",
+                    "stock_name": "삼성화재",
+                    "small_ma": 11,
+                    "big_ma": 71,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "051910",
+                    "stock_name": "LG화학",
+                    "small_ma": 7,
+                    "big_ma": 46,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "064350",
+                    "stock_name": "현대로템",
+                    "small_ma": 10,
+                    "big_ma": 66,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "316140",
+                    "stock_name": "우리금융지주",
+                    "small_ma": 13,
+                    "big_ma": 95,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "402340",
+                    "stock_name": "SK스퀘어",
+                    "small_ma": 10,
+                    "big_ma": 33,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "267260",
+                    "stock_name": "HD현대일렉트릭",
+                    "small_ma": 14,
+                    "big_ma": 34,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "010140",
+                    "stock_name": "삼성중공업",
+                    "small_ma": 10,
+                    "big_ma": 34,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "006400",
+                    "stock_name": "삼성SDI",
+                    "small_ma": 13,
+                    "big_ma": 56,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "033780",
+                    "stock_name": "KT&G",
+                    "small_ma": 11,
+                    "big_ma": 47,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "010130",
+                    "stock_name": "고려아연",
+                    "small_ma": 15,
+                    "big_ma": 91,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "096770",
+                    "stock_name": "SK이노베이션",
+                    "small_ma": 13,
+                    "big_ma": 31,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "259960",
+                    "stock_name": "크래프톤",
+                    "small_ma": 15,
+                    "big_ma": 77,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "024110",
+                    "stock_name": "기업은행",
+                    "small_ma": 15,
+                    "big_ma": 95,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "030200",
+                    "stock_name": "KT",
+                    "small_ma": 4,
+                    "big_ma": 87,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "003670",
+                    "stock_name": "포스코퓨처엠",
+                    "small_ma": 5,
+                    "big_ma": 28,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "034730",
+                    "stock_name": "SK",
+                    "small_ma": 3,
+                    "big_ma": 100,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "086280",
+                    "stock_name": "현대글로비스",
+                    "small_ma": 4,
+                    "big_ma": 38,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "066570",
+                    "stock_name": "LG전자",
+                    "small_ma": 6,
+                    "big_ma": 40,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "323410",
+                    "stock_name": "카카오뱅크",
+                    "small_ma": 11,
+                    "big_ma": 48,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "017670",
+                    "stock_name": "SK텔레콤",
+                    "small_ma": 14,
+                    "big_ma": 32,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "352820",
+                    "stock_name": "하이브",
+                    "small_ma": 5,
+                    "big_ma": 30,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "009150",
+                    "stock_name": "삼성전기",
+                    "small_ma": 15,
+                    "big_ma": 36,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "079550",
+                    "stock_name": "LIG넥스원",
+                    "small_ma": 3,
+                    "big_ma": 31,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "018260",
+                    "stock_name": "삼성에스디에스",
+                    "small_ma": 8,
+                    "big_ma": 27,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "003550",
+                    "stock_name": "LG",
+                    "small_ma": 12,
+                    "big_ma": 26,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "298040",
+                    "stock_name": "효성중공업",
+                    "small_ma": 9,
+                    "big_ma": 75,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "003230",
+                    "stock_name": "삼양식품",
+                    "small_ma": 14,
+                    "big_ma": 65,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "006800",
+                    "stock_name": "미래에셋증권",
+                    "small_ma": 7,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "267250",
+                    "stock_name": "HD현대",
+                    "small_ma": 15,
+                    "big_ma": 52,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "272210",
+                    "stock_name": "한화시스템",
+                    "small_ma": 15,
+                    "big_ma": 84,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "005830",
+                    "stock_name": "DB손해보험",
+                    "small_ma": 12,
+                    "big_ma": 87,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "000100",
+                    "stock_name": "유한양행",
+                    "small_ma": 14,
+                    "big_ma": 21,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "000150",
+                    "stock_name": "두산",
+                    "small_ma": 5,
+                    "big_ma": 43,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "003490",
+                    "stock_name": "대한항공",
+                    "small_ma": 15,
+                    "big_ma": 47,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "047810",
+                    "stock_name": "한국항공우주",
+                    "small_ma": 13,
+                    "big_ma": 75,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "459580",
+                    "stock_name": "KODEX CD금리액티브(합성)",
+                    "small_ma": null,
+                    "big_ma": null,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "360750",
+                    "stock_name": "TIGER 미국S&P500",
+                    "small_ma": 10,
+                    "big_ma": 30,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "047050",
+                    "stock_name": "포스코인터내셔널",
+                    "small_ma": 5,
+                    "big_ma": 29,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "278470",
+                    "stock_name": "에이피알",
+                    "small_ma": 10,
+                    "big_ma": 34,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "377300",
+                    "stock_name": "카카오페이",
+                    "small_ma": 4,
+                    "big_ma": 97,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "443060",
+                    "stock_name": "HD현대마린솔루션",
+                    "small_ma": 9,
+                    "big_ma": 31,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "010120",
+                    "stock_name": "LS ELECTRIC",
+                    "small_ma": 5,
+                    "big_ma": 65,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "042700",
+                    "stock_name": "한미반도체",
+                    "small_ma": 10,
+                    "big_ma": 40,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "326030",
+                    "stock_name": "SK바이오팜",
+                    "small_ma": 15,
+                    "big_ma": 91,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "010620",
+                    "stock_name": "HD현대미포",
+                    "small_ma": 6,
+                    "big_ma": 47,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "021240",
+                    "stock_name": "코웨이",
+                    "small_ma": 13,
+                    "big_ma": 100,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "180640",
+                    "stock_name": "한진칼",
+                    "small_ma": 15,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "090430",
+                    "stock_name": "아모레퍼시픽",
+                    "small_ma": 11,
+                    "big_ma": 21,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "071050",
+                    "stock_name": "한국금융지주",
+                    "small_ma": 5,
+                    "big_ma": 21,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "000720",
+                    "stock_name": "현대건설",
+                    "small_ma": 14,
+                    "big_ma": 26,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "488770",
+                    "stock_name": "KODEX 머니마켓액티브",
+                    "small_ma": null,
+                    "big_ma": null,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "069500",
+                    "stock_name": "KODEX 200",
+                    "small_ma": 15,
+                    "big_ma": 87,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "010950",
+                    "stock_name": "S-Oil",
+                    "small_ma": 4,
+                    "big_ma": 59,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "064400",
+                    "stock_name": "LG씨엔에스",
+                    "small_ma": null,
+                    "big_ma": null,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "032640",
+                    "stock_name": "LG유플러스",
+                    "small_ma": 12,
+                    "big_ma": 79,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "005940",
+                    "stock_name": "NH투자증권",
+                    "small_ma": 3,
+                    "big_ma": 100,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "000880",
+                    "stock_name": "한화",
+                    "small_ma": 4,
+                    "big_ma": 40,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "016360",
+                    "stock_name": "삼성증권",
+                    "small_ma": 7,
+                    "big_ma": 83,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "005387",
+                    "stock_name": "현대차2우B",
+                    "small_ma": 10,
+                    "big_ma": 62,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "029780",
+                    "stock_name": "삼성카드",
+                    "small_ma": 9,
+                    "big_ma": 26,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "034220",
+                    "stock_name": "LG디스플레이",
+                    "small_ma": 15,
+                    "big_ma": 81,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "028050",
+                    "stock_name": "삼성E&A",
+                    "small_ma": 4,
+                    "big_ma": 34,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "088980",
+                    "stock_name": "맥쿼리인프라",
+                    "small_ma": 13,
+                    "big_ma": 64,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "133690",
+                    "stock_name": "TIGER 미국나스닥100",
+                    "small_ma": 4,
+                    "big_ma": 33,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "039490",
+                    "stock_name": "키움증권",
+                    "small_ma": 12,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "251270",
+                    "stock_name": "넷마블",
+                    "small_ma": 10,
+                    "big_ma": 35,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "241560",
+                    "stock_name": "두산밥캣",
+                    "small_ma": 14,
+                    "big_ma": 41,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "006260",
+                    "stock_name": "LS",
+                    "small_ma": 15,
+                    "big_ma": 39,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "379800",
+                    "stock_name": "KODEX 미국S&P500",
+                    "small_ma": 9,
+                    "big_ma": 30,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "161390",
+                    "stock_name": "한국타이어앤테크놀로지",
+                    "small_ma": 9,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "009830",
+                    "stock_name": "한화솔루션",
+                    "small_ma": 12,
+                    "big_ma": 75,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "357870",
+                    "stock_name": "TIGER CD금리투자KIS(합성)",
+                    "small_ma": null,
+                    "big_ma": null,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "051900",
+                    "stock_name": "LG생활건강",
+                    "small_ma": 15,
+                    "big_ma": 32,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "138930",
+                    "stock_name": "BNK금융지주",
+                    "small_ma": 11,
+                    "big_ma": 95,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "001040",
+                    "stock_name": "CJ",
+                    "small_ma": 15,
+                    "big_ma": 52,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "196170",
+                    "stock_name": "알테오젠",
+                    "small_ma": 3,
+                    "big_ma": 98,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "247540",
+                    "stock_name": "에코프로비엠",
+                    "small_ma": 9,
+                    "big_ma": 29,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "087010",
+                    "stock_name": "펩트론",
+                    "small_ma": 15,
+                    "big_ma": 99,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "086520",
+                    "stock_name": "에코프로",
+                    "small_ma": 15,
+                    "big_ma": 62,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "214450",
+                    "stock_name": "파마리서치",
+                    "small_ma": 4,
+                    "big_ma": 98,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "141080",
+                    "stock_name": "리가켐바이오",
+                    "small_ma": 15,
+                    "big_ma": 89,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "277810",
+                    "stock_name": "레인보우로보틱스",
+                    "small_ma": 15,
+                    "big_ma": 49,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "028300",
+                    "stock_name": "HLB",
+                    "small_ma": 8,
+                    "big_ma": 44,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "298380",
+                    "stock_name": "에이비엘바이오",
+                    "small_ma": 15,
+                    "big_ma": 89,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "000250",
+                    "stock_name": "삼천당제약",
+                    "small_ma": 15,
+                    "big_ma": 22,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "145020",
+                    "stock_name": "휴젤",
+                    "small_ma": 5,
+                    "big_ma": 94,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "214150",
+                    "stock_name": "클래시스",
+                    "small_ma": 13,
+                    "big_ma": 22,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "058470",
+                    "stock_name": "리노공업",
+                    "small_ma": 14,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "041510",
+                    "stock_name": "에스엠",
+                    "small_ma": 13,
+                    "big_ma": 62,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "950160",
+                    "stock_name": "코오롱티슈진",
+                    "small_ma": 14,
+                    "big_ma": 100,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "257720",
+                    "stock_name": "실리콘투",
+                    "small_ma": 15,
+                    "big_ma": 24,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "035900",
+                    "stock_name": "JYP Ent.",
+                    "small_ma": 11,
+                    "big_ma": 42,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "214370",
+                    "stock_name": "케어젠",
+                    "small_ma": 3,
+                    "big_ma": 63,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "039030",
+                    "stock_name": "이오테크닉스",
+                    "small_ma": 15,
+                    "big_ma": 89,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "068760",
+                    "stock_name": "셀트리온제약",
+                    "small_ma": 4,
+                    "big_ma": 67,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "403870",
+                    "stock_name": "HPSP",
+                    "small_ma": 15,
+                    "big_ma": 45,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "082270",
+                    "stock_name": "젬백스",
+                    "small_ma": 3,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "310210",
+                    "stock_name": "보로노이",
+                    "small_ma": 3,
+                    "big_ma": 21,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "263750",
+                    "stock_name": "펄어비스",
+                    "small_ma": 9,
+                    "big_ma": 63,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "240810",
+                    "stock_name": "원익IPS",
+                    "small_ma": 15,
+                    "big_ma": 44,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "122870",
+                    "stock_name": "와이지엔터테인먼트",
+                    "small_ma": 15,
+                    "big_ma": 82,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "237690",
+                    "stock_name": "에스티팜",
+                    "small_ma": 11,
+                    "big_ma": 67,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "348370",
+                    "stock_name": "엔켐",
+                    "small_ma": 6,
+                    "big_ma": 83,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "357780",
+                    "stock_name": "솔브레인",
+                    "small_ma": 13,
+                    "big_ma": 23,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "140860",
+                    "stock_name": "파크시스템스",
+                    "small_ma": 14,
+                    "big_ma": 46,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "035760",
+                    "stock_name": "CJ ENM",
+                    "small_ma": 14,
+                    "big_ma": 99,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "065350",
+                    "stock_name": "신성델타테크",
+                    "small_ma": 3,
+                    "big_ma": 48,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "083650",
+                    "stock_name": "비에이치아이",
+                    "small_ma": 11,
+                    "big_ma": 24,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "005290",
+                    "stock_name": "동진쎄미켐",
+                    "small_ma": 11,
+                    "big_ma": 24,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "253450",
+                    "stock_name": "스튜디오드래곤",
+                    "small_ma": 7,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "347850",
+                    "stock_name": "디앤디파마텍",
+                    "small_ma": 8,
+                    "big_ma": 26,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "018290",
+                    "stock_name": "브이티",
+                    "small_ma": 6,
+                    "big_ma": 54,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "096530",
+                    "stock_name": "씨젠",
+                    "small_ma": 15,
+                    "big_ma": 44,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "195940",
+                    "stock_name": "HK이노엔",
+                    "small_ma": 6,
+                    "big_ma": 87,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "293490",
+                    "stock_name": "카카오게임즈",
+                    "small_ma": 15,
+                    "big_ma": 32,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "007390",
+                    "stock_name": "네이처셀",
+                    "small_ma": 6,
+                    "big_ma": 62,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "064760",
+                    "stock_name": "티씨케이",
+                    "small_ma": 8,
+                    "big_ma": 36,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "036930",
+                    "stock_name": "주성엔지니어링",
+                    "small_ma": 15,
+                    "big_ma": 61,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "039200",
+                    "stock_name": "오스코텍",
+                    "small_ma": 3,
+                    "big_ma": 50,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "376300",
+                    "stock_name": "디어유",
+                    "small_ma": 7,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "095340",
+                    "stock_name": "ISC",
+                    "small_ma": 3,
+                    "big_ma": 52,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "101490",
+                    "stock_name": "에스앤에스텍",
+                    "small_ma": 15,
+                    "big_ma": 37,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "328130",
+                    "stock_name": "루닛",
+                    "small_ma": 3,
+                    "big_ma": 74,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "140410",
+                    "stock_name": "메지온",
+                    "small_ma": 3,
+                    "big_ma": 63,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "108490",
+                    "stock_name": "로보티즈",
+                    "small_ma": 13,
+                    "big_ma": 83,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "084370",
+                    "stock_name": "유진테크",
+                    "small_ma": 13,
+                    "big_ma": 71,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "226950",
+                    "stock_name": "올릭스",
+                    "small_ma": 5,
+                    "big_ma": 22,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "078600",
+                    "stock_name": "대주전자재료",
+                    "small_ma": 6,
+                    "big_ma": 24,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "089030",
+                    "stock_name": "테크윙",
+                    "small_ma": 10,
+                    "big_ma": 30,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "178320",
+                    "stock_name": "서진시스템",
+                    "small_ma": 10,
+                    "big_ma": 34,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "358570",
+                    "stock_name": "지아이이노베이션",
+                    "small_ma": 12,
+                    "big_ma": 24,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "213420",
+                    "stock_name": "덕산네오룩스",
+                    "small_ma": 15,
+                    "big_ma": 31,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "112040",
+                    "stock_name": "위메이드",
+                    "small_ma": 5,
+                    "big_ma": 28,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "204270",
+                    "stock_name": "제이앤티씨",
+                    "small_ma": 10,
+                    "big_ma": 25,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "137400",
+                    "stock_name": "피엔티",
+                    "small_ma": 4,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "042000",
+                    "stock_name": "카페24",
+                    "small_ma": 13,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "098460",
+                    "stock_name": "고영",
+                    "small_ma": 12,
+                    "big_ma": 32,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "225570",
+                    "stock_name": "넥슨게임즈",
+                    "small_ma": 10,
+                    "big_ma": 36,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "003380",
+                    "stock_name": "하림지주",
+                    "small_ma": 10,
+                    "big_ma": 56,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "033500",
+                    "stock_name": "동성화인텍",
+                    "small_ma": 6,
+                    "big_ma": 36,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "323280",
+                    "stock_name": "태성",
+                    "small_ma": 11,
+                    "big_ma": 31,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "067160",
+                    "stock_name": "SOOP",
+                    "small_ma": 4,
+                    "big_ma": 26,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "025980",
+                    "stock_name": "아난티",
+                    "small_ma": 14,
+                    "big_ma": 91,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "160190",
+                    "stock_name": "하이젠알앤엠",
+                    "small_ma": 15,
+                    "big_ma": 41,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "232140",
+                    "stock_name": "와이씨",
+                    "small_ma": 15,
+                    "big_ma": 62,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "336570",
+                    "stock_name": "원텍",
+                    "small_ma": 3,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "036830",
+                    "stock_name": "솔브레인홀딩스",
+                    "small_ma": 3,
+                    "big_ma": 99,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "086900",
+                    "stock_name": "메디톡스",
+                    "small_ma": 12,
+                    "big_ma": 27,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "251970",
+                    "stock_name": "펌텍코리아",
+                    "small_ma": 5,
+                    "big_ma": 24,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "041190",
+                    "stock_name": "우리기술투자",
+                    "small_ma": 7,
+                    "big_ma": 67,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "085660",
+                    "stock_name": "차바이오텍",
+                    "small_ma": 11,
+                    "big_ma": 29,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "281740",
+                    "stock_name": "레이크머티리얼즈",
+                    "small_ma": 11,
+                    "big_ma": 40,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "056190",
+                    "stock_name": "에스에프에이",
+                    "small_ma": 7,
+                    "big_ma": 64,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "060370",
+                    "stock_name": "LS마린솔루션",
+                    "small_ma": 9,
+                    "big_ma": 31,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "014620",
+                    "stock_name": "성광벤드",
+                    "small_ma": 10,
+                    "big_ma": 43,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "183300",
+                    "stock_name": "코미코",
+                    "small_ma": 12,
+                    "big_ma": 33,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "067310",
+                    "stock_name": "하나마이크론",
+                    "small_ma": 15,
+                    "big_ma": 92,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "460930",
+                    "stock_name": "현대힘스",
+                    "small_ma": 15,
+                    "big_ma": 69,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "086450",
+                    "stock_name": "동국제약",
+                    "small_ma": 10,
+                    "big_ma": 53,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "052400",
+                    "stock_name": "코나아이",
+                    "small_ma": 4,
+                    "big_ma": 29,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "222800",
+                    "stock_name": "심텍",
+                    "small_ma": 15,
+                    "big_ma": 26,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "290650",
+                    "stock_name": "엘앤씨바이오",
+                    "small_ma": 4,
+                    "big_ma": 40,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "044490",
+                    "stock_name": "태웅",
+                    "small_ma": 14,
+                    "big_ma": 88,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "335890",
+                    "stock_name": "비올",
+                    "small_ma": 13,
+                    "big_ma": 23,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "388720",
+                    "stock_name": "유일로보틱스",
+                    "small_ma": 10,
+                    "big_ma": 47,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "121600",
+                    "stock_name": "나노신소재",
+                    "small_ma": 7,
+                    "big_ma": 20,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "161580",
+                    "stock_name": "필옵틱스",
+                    "small_ma": 12,
+                    "big_ma": 33,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "053800",
+                    "stock_name": "안랩",
+                    "small_ma": 14,
+                    "big_ma": 26,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "131970",
+                    "stock_name": "두산테스나",
+                    "small_ma": 8,
+                    "big_ma": 100,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "417200",
+                    "stock_name": "LS머트리얼즈",
+                    "small_ma": 11,
+                    "big_ma": 100,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "031980",
+                    "stock_name": "피에스케이홀딩스",
+                    "small_ma": 3,
+                    "big_ma": 48,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "241710",
+                    "stock_name": "코스메카코리아",
+                    "small_ma": 14,
+                    "big_ma": 24,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "082920",
+                    "stock_name": "비츠로셀",
+                    "small_ma": 15,
+                    "big_ma": 55,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "445680",
+                    "stock_name": "큐리옥스바이오시스템즈",
+                    "small_ma": 3,
+                    "big_ma": 29,
+                    "invest_rate": 0.05
+                },
+                {
+                    "stock_code": "218410",
+                    "stock_name": "RFHIC",
+                    "small_ma": 9,
+                    "big_ma": 29,
+                    "invest_rate": 0.05
+                }
+            ]
+        }
+    },
+    "performance": {
+        "total_value": 16358820.0,
+        "total_profit": 392208.0,
+        "total_profit_rate": 2.456425946844578,
+        "last_updated": "2025-08-09 05:12:09",
+        "periods": {
+            "daily": {
+                "profit": 392208.0,
+                "profit_rate": 2.456425946844578
+            },
+            "weekly": {
+                "profit": 392208.0,
+                "profit_rate": 2.456425946844578
+            },
+            "monthly": {
+                "profit": 392208.0,
+                "profit_rate": 2.456425946844578
+            },
+            "yearly": {
+                "profit": 392208.0,
+                "profit_rate": 2.456425946844578
+            },
+            "total": {
+                "profit": 392208.0,
+                "profit_rate": 2.456425946844578
+            }
+        }
+    },
+    "last_daily_report_date": "2025-08-10",
+    "bot_profits": {
+        "MA_Strategy_KR_Bot_v3": {
+            "total_profit": 850472.0,
+            "total_profit_rate": 1.3103669840615662,
+            "monthly_profits": {
+                "2025-08": {
+                    "profit": 668028.0,
+                    "profit_rate": 0
+                },
+                "2025-09": {
+                    "profit": 182444.0,
+                    "profit_rate": 0
+                }
+            },
+            "yearly_profits": {
+                "2025": {
+                    "profit": 850472.0,
+                    "profit_rate": 0
+                }
+            },
+            "last_updated": "2025-09-03 14:35:30"
+        },
+        "MA_Kosdaqpi100_Bot_v1": {
+            "total_profit": 133960.0,
+            "total_profit_rate": 2.647380481826512,
+            "monthly_profits": {
+                "2025-08": {
+                    "profit": -159700.0,
+                    "profit_rate": 0
+                },
+                "2025-09": {
+                    "profit": 293660.0,
+                    "profit_rate": 0
+                }
+            },
+            "yearly_profits": {
+                "2025": {
+                    "profit": 133960.0,
+                    "profit_rate": 0
+                }
+            },
+            "last_updated": "2025-09-03 14:45:30"
+        },
+        "Kosdaqpi_Bot": {
+            "total_profit": -23075.0,
+            "total_profit_rate": -0.052666720460739634,
+            "monthly_profits": {
+                "2025-09": {
+                    "profit": -23075.0,
+                    "profit_rate": 0
+                }
+            },
+            "yearly_profits": {
+                "2025": {
+                    "profit": -23075.0,
+                    "profit_rate": 0
+                }
+            },
+            "last_updated": "2025-09-03 14:31:00"
+        }
+    },
+    "last_monthly_report_date": "2025-08"
+}

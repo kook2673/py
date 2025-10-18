@@ -1,0 +1,240 @@
+{
+  "wfo_type": "Walk-Forward Optimization (MA + DC)",
+  "timeframe": "10분봉",
+  "optimization_period": "2년",
+  "test_period": "6개월",
+  "strategies": [
+    "MA + DC"
+  ],
+  "results": [
+    {
+      "period": "2020년 1월~6월",
+      "optimization_period": "2018-01-01 ~ 2019-12-31",
+      "test_period": "2020-01-01 ~ 2020-06-30",
+      "ma_optimal_params": {
+        "sma_short": 12,
+        "sma_long": 40,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -32.5537395932181,
+        "final_capital": 6744.62604067819,
+        "total_trades": 57,
+        "win_rate": 43.859649122807014,
+        "max_drawdown": 39.66027582705466,
+        "long_trades": 33,
+        "short_trades": 24
+      }
+    },
+    {
+      "period": "2020년 7월~12월",
+      "optimization_period": "2018-07-01 ~ 2020-06-30",
+      "test_period": "2020-07-01 ~ 2020-12-31",
+      "ma_optimal_params": {
+        "sma_short": 15,
+        "sma_long": 30,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -14.3182218679737,
+        "final_capital": 8568.17781320263,
+        "total_trades": 34,
+        "win_rate": 55.88235294117647,
+        "max_drawdown": 14.763935342332246,
+        "long_trades": 21,
+        "short_trades": 13
+      }
+    },
+    {
+      "period": "2021년 1월~6월",
+      "optimization_period": "2019-01-01 ~ 2020-12-31",
+      "test_period": "2021-01-01 ~ 2021-06-30",
+      "ma_optimal_params": {
+        "sma_short": 15,
+        "sma_long": 30,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -25.10889812600725,
+        "final_capital": 7489.110187399275,
+        "total_trades": 154,
+        "win_rate": 49.35064935064935,
+        "max_drawdown": 57.223487068888055,
+        "long_trades": 89,
+        "short_trades": 65
+      }
+    },
+    {
+      "period": "2021년 7월~12월",
+      "optimization_period": "2019-07-01 ~ 2021-06-30",
+      "test_period": "2021-07-01 ~ 2021-12-31",
+      "ma_optimal_params": {
+        "sma_short": 15,
+        "sma_long": 40,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -25.551942531105503,
+        "final_capital": 7444.805746889449,
+        "total_trades": 48,
+        "win_rate": 54.166666666666664,
+        "max_drawdown": 29.390610727254558,
+        "long_trades": 27,
+        "short_trades": 21
+      }
+    },
+    {
+      "period": "2022년 1월~6월",
+      "optimization_period": "2020-01-01 ~ 2021-12-31",
+      "test_period": "2022-01-01 ~ 2022-06-30",
+      "ma_optimal_params": {
+        "sma_short": 15,
+        "sma_long": 50,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -9.035226431103364,
+        "final_capital": 9096.477356889663,
+        "total_trades": 54,
+        "win_rate": 57.407407407407405,
+        "max_drawdown": 31.68925521275466,
+        "long_trades": 32,
+        "short_trades": 22
+      }
+    },
+    {
+      "period": "2022년 7월~12월",
+      "optimization_period": "2020-07-01 ~ 2022-06-30",
+      "test_period": "2022-07-01 ~ 2022-12-31",
+      "ma_optimal_params": {
+        "sma_short": 15,
+        "sma_long": 50,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -6.433099369202355,
+        "final_capital": 9356.690063079765,
+        "total_trades": 27,
+        "win_rate": 48.148148148148145,
+        "max_drawdown": 17.743657099355907,
+        "long_trades": 11,
+        "short_trades": 16
+      }
+    },
+    {
+      "period": "2023년 1월~6월",
+      "optimization_period": "2021-01-01 ~ 2022-12-31",
+      "test_period": "2023-01-01 ~ 2023-06-30",
+      "ma_optimal_params": {
+        "sma_short": 15,
+        "sma_long": 50,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -6.848265130260897,
+        "final_capital": 9315.17348697391,
+        "total_trades": 9,
+        "win_rate": 55.55555555555556,
+        "max_drawdown": 14.532428834913194,
+        "long_trades": 5,
+        "short_trades": 4
+      }
+    },
+    {
+      "period": "2023년 7월~12월",
+      "optimization_period": "2021-07-01 ~ 2023-06-30",
+      "test_period": "2023-07-01 ~ 2023-12-31",
+      "ma_optimal_params": {
+        "sma_short": 15,
+        "sma_long": 50,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -0.8378234286099906,
+        "final_capital": 9916.217657139001,
+        "total_trades": 7,
+        "win_rate": 57.14285714285714,
+        "max_drawdown": 2.7793537550169094,
+        "long_trades": 4,
+        "short_trades": 3
+      }
+    },
+    {
+      "period": "2024년 1월~6월",
+      "optimization_period": "2022-01-01 ~ 2023-12-31",
+      "test_period": "2024-01-01 ~ 2024-06-30",
+      "ma_optimal_params": {
+        "sma_short": 12,
+        "sma_long": 40,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -11.08709221276462,
+        "final_capital": 8891.290778723538,
+        "total_trades": 26,
+        "win_rate": 42.30769230769231,
+        "max_drawdown": 15.288733663964113,
+        "long_trades": 12,
+        "short_trades": 14
+      }
+    },
+    {
+      "period": "2024년 7월~12월",
+      "optimization_period": "2022-07-01 ~ 2024-06-30",
+      "test_period": "2024-07-01 ~ 2024-12-31",
+      "ma_optimal_params": {
+        "sma_short": 3,
+        "sma_long": 20,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -0.9406184373862743,
+        "final_capital": 9905.938156261373,
+        "total_trades": 41,
+        "win_rate": 63.41463414634146,
+        "max_drawdown": 9.283061417449359,
+        "long_trades": 29,
+        "short_trades": 12
+      }
+    },
+    {
+      "period": "2025년 1월~6월",
+      "optimization_period": "2023-01-01 ~ 2024-12-31",
+      "test_period": "2025-01-01 ~ 2025-06-30",
+      "ma_optimal_params": {
+        "sma_short": 3,
+        "sma_long": 30,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": 5.59876125276236,
+        "final_capital": 10559.876125276236,
+        "total_trades": 44,
+        "win_rate": 59.09090909090909,
+        "max_drawdown": 14.65149647047963,
+        "long_trades": 33,
+        "short_trades": 11
+      }
+    },
+    {
+      "period": "2025년 7월~12월",
+      "optimization_period": "2023-07-01 ~ 2025-06-30",
+      "test_period": "2025-07-01 ~ 2025-12-31",
+      "ma_optimal_params": {
+        "sma_short": 3,
+        "sma_long": 20,
+        "dc_period": 25
+      },
+      "ma_test_result": {
+        "total_return": -3.4320032582973727,
+        "final_capital": 9656.799674170263,
+        "total_trades": 6,
+        "win_rate": 50.0,
+        "max_drawdown": 3.4320032582973727,
+        "long_trades": 4,
+        "short_trades": 2
+      }
+    }
+  ],
+  "last_updated": "2025-10-17 08:41:29"
+}

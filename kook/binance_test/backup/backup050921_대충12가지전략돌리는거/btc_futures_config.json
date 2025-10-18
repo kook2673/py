@@ -1,0 +1,27 @@
+{
+  "allocation_rate": 0.50,
+  "leverage": 5.0,
+  "rebalance_period": "daily",
+  "rebalance_after_time": "14:50",
+  "best_params": {
+    "up_pct": 0.005,
+    "up_ctr": 0.5,
+    "up_vol": 1.0,
+    "down_pct": 0.01,
+    "down_ctr": 0.6,
+    "down_vol": 0.7,
+    "atr_mult": 2.5,
+    "entry_at_open": true,
+    "entry_same_day": true
+  },
+  "risk_management": {
+    "max_position_size": 0.5,
+    "stop_loss_pct": 0.15,
+    "take_profit_pct": 0.30
+  },
+  "notifications": {
+    "enable_telegram": false,
+    "telegram_token": "",
+    "telegram_chat_id": ""
+  }
+}

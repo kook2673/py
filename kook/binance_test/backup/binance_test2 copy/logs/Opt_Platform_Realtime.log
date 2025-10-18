@@ -1,0 +1,218 @@
+[2025-08-31 15:14:10] 🚀 전략 플랫폼 옵티마이저 시작
+[2025-08-31 15:14:10] 총 39개의 파라미터 조합 테스트 시작
+[2025-08-31 15:14:10] 대기 작업: 39개 (이미 완료: 0개)
+[2025-08-31 15:14:10] 병렬 워커 수: 11개
+[2025-08-31 15:14:10] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:10] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:10] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:10] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:10] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:10] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:11] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:11] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:11] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:11] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:11] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:11] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:14:12] 🟢 1/39 | RsiMeanReversion_rsi_window21_oversold_threshold20_overbought_threshold70 => Return=701649012816409542845777601564278172060200953955032292026304733208106249037506601583047729596250389458256556843239022285996963811191246236515859862560758833298276352.00%, MDD=-5.79%
+[2025-08-31 15:14:12] 🔴 2/39 | RsiMeanReversion_rsi_window14_oversold_threshold20_overbought_threshold70 => Return=nan%, MDD=-4.46%
+[2025-08-31 15:14:12] 🟢 3/39 | RsiMeanReversion_rsi_window21_oversold_threshold20_overbought_threshold75 => Return=780636858923048287632019257297949503663031179710768430501497342496582295841925137038103516112707867922878008224016520790991335943545925132091392.00%, MDD=-7.24%
+[2025-08-31 15:14:12] 🔴 4/39 | RsiMeanReversion_rsi_window14_oversold_threshold20_overbought_threshold75 => Return=nan%, MDD=-6.86%
+[2025-08-31 15:14:12] 🔴 5/39 | RsiMeanReversion_rsi_window14_oversold_threshold25_overbought_threshold70 => Return=nan%, MDD=-4.46%
+[2025-08-31 15:14:12] 🔴 6/39 | RsiMeanReversion_rsi_window14_oversold_threshold20_overbought_threshold80 => Return=nan%, MDD=-6.86%
+[2025-08-31 15:14:12] 🔴 7/39 | RsiMeanReversion_rsi_window14_oversold_threshold25_overbought_threshold75 => Return=nan%, MDD=-6.25%
+[2025-08-31 15:14:12] 🔴 8/39 | RsiMeanReversion_rsi_window14_oversold_threshold30_overbought_threshold70 => Return=nan%, MDD=-2.69%
+[2025-08-31 15:14:12] 🔴 9/39 | RsiMeanReversion_rsi_window14_oversold_threshold30_overbought_threshold75 => Return=nan%, MDD=-6.25%
+[2025-08-31 15:14:12] 🔴 10/39 | RsiMeanReversion_rsi_window14_oversold_threshold25_overbought_threshold80 => Return=nan%, MDD=-6.86%
+[2025-08-31 15:14:12] 🔴 11/39 | RsiMeanReversion_rsi_window14_oversold_threshold30_overbought_threshold80 => Return=nan%, MDD=-6.25%
+[2025-08-31 15:14:13] 🟢 12/39 | RsiMeanReversion_rsi_window30_oversold_threshold20_overbought_threshold70 => Return=878133151085812086082063426048948666147429941248.00%, MDD=-5.03%
+[2025-08-31 15:14:13] 🔴 13/39 | RsiMeanReversion_rsi_window21_oversold_threshold25_overbought_threshold70 => Return=nan%, MDD=-6.36%
+[2025-08-31 15:14:13] 🟢 14/39 | RsiMeanReversion_rsi_window21_oversold_threshold20_overbought_threshold80 => Return=73222009572237766200141400316169167330957500690848683832161659725618632046968666040806417591263196872704.00%, MDD=-7.82%
+[2025-08-31 15:14:13] 🟢 15/39 | RsiMeanReversion_rsi_window21_oversold_threshold25_overbought_threshold75 => Return=64354523073118107317883940399670112668509068108200058808570368709951747800127832912464673367426221696097814436074227196073956139030323258844052453698757586928122362108826213695601260428924222721799658657821181526217983558268559890736757136179627745672830108155653390336.00%, MDD=-7.24%
+[2025-08-31 15:14:13] 🟢 16/39 | RsiMeanReversion_rsi_window30_oversold_threshold20_overbought_threshold75 => Return=919522377010111090284920021044548488658944.00%, MDD=-8.10%
+[2025-08-31 15:14:13] 🔴 17/39 | RsiMeanReversion_rsi_window21_oversold_threshold30_overbought_threshold70 => Return=nan%, MDD=-6.36%
+[2025-08-31 15:14:13] 🟢 18/39 | RsiMeanReversion_rsi_window30_oversold_threshold25_overbought_threshold70 => Return=82658643404340909084165107639852440251575152630354113814940657458413102420709124334404638538222324923918193976556686483128320.00%, MDD=-5.71%
+[2025-08-31 15:14:13] 🟢 19/39 | RsiMeanReversion_rsi_window21_oversold_threshold25_overbought_threshold80 => Return=760982831186925106190275795264712619246421518719671017127326297988511509909361883883534581997409865741791442202980031694599177530877050545660552070187268033216512.00%, MDD=-9.62%
+[2025-08-31 15:14:13] 🟢 20/39 | RsiMeanReversion_rsi_window30_oversold_threshold20_overbought_threshold80 => Return=95138938081759062641705222144.00%, MDD=-13.77%
+[2025-08-31 15:14:13] 🔴 21/39 | RsiMeanReversion_rsi_window21_oversold_threshold30_overbought_threshold75 => Return=nan%, MDD=-6.86%
+[2025-08-31 15:14:14] 🟢 22/39 | RsiMeanReversion_rsi_window21_oversold_threshold30_overbought_threshold80 => Return=71717957319624713661989955396083714165755136534372530122335983459188551114847065498033831278221679092567270161178523351005176842524340861737763335779674410225610088814763126025862407161643008.00%, MDD=-9.94%
+[2025-08-31 15:14:14] 🟢 23/39 | RsiMeanReversion_rsi_window30_oversold_threshold25_overbought_threshold75 => Return=8677186732359330884974245430461465741517632834757989161526096667437741961089367009844367720448.00%, MDD=-9.06%
+[2025-08-31 15:14:14] 🟢 24/39 | RsiMeanReversion_rsi_window30_oversold_threshold30_overbought_threshold70 => Return=726539192662611178570091292444987801764188608474789794710864579087929403355262486259651732641608896024426417403792971228045592949504292996957730448503550753009293184864675328471133703661719540310365224407610090571587628564480.00%, MDD=-6.36%
+[2025-08-31 15:14:14] 🔴 25/39 | BollingerBandStrategy_window20_std_dev2.5 => Return=nan%, MDD=-1.84%
+[2025-08-31 15:14:14] 🔴 26/39 | BollingerBandStrategy_window20_std_dev2.0 => Return=nan%, MDD=-0.73%
+[2025-08-31 15:14:14] 🔴 27/39 | BollingerBandStrategy_window30_std_dev2.5 => Return=nan%, MDD=-2.24%
+[2025-08-31 15:14:14] 🟢 28/39 | RsiMeanReversion_rsi_window30_oversold_threshold25_overbought_threshold80 => Return=93763080426308036864897687769257771271016683667456.00%, MDD=-14.16%
+[2025-08-31 15:14:14] 🔴 29/39 | BollingerBandStrategy_window30_std_dev2.0 => Return=nan%, MDD=-1.05%
+[2025-08-31 15:14:14] 🟢 30/39 | RsiMeanReversion_rsi_window30_oversold_threshold30_overbought_threshold75 => Return=8259928111878994612396909373508967331623258041344572848415167111867616622564610856234878631151583389131104353224156393626787817753176702976.00%, MDD=-9.66%
+[2025-08-31 15:14:14] 🟢 31/39 | RsiMeanReversion_rsi_window30_oversold_threshold30_overbought_threshold80 => Return=8985785917373640537585112170907531423920450078205018112.00%, MDD=-14.16%
+[2025-08-31 15:14:14] 🔴 32/39 | MacdStrategy_fastperiod12_slowperiod26_signalperiod9 => Return=nan%, MDD=-0.77%
+[2025-08-31 15:14:15] 🔴 33/39 | MacdStrategy_fastperiod12_slowperiod26_signalperiod12 => Return=nan%, MDD=-0.68%
+[2025-08-31 15:14:15] 🔴 34/39 | MacdStrategy_fastperiod12_slowperiod40_signalperiod9 => Return=nan%, MDD=-0.68%
+[2025-08-31 15:14:15] 🔴 35/39 | MacdStrategy_fastperiod12_slowperiod40_signalperiod12 => Return=nan%, MDD=-0.86%
+[2025-08-31 15:14:15] 🔴 36/39 | MacdStrategy_fastperiod20_slowperiod26_signalperiod9 => Return=nan%, MDD=-0.86%
+[2025-08-31 15:14:15] 🔴 37/39 | MacdStrategy_fastperiod20_slowperiod26_signalperiod12 => Return=nan%, MDD=-1.31%
+[2025-08-31 15:14:15] 🔴 38/39 | MacdStrategy_fastperiod20_slowperiod40_signalperiod9 => Return=nan%, MDD=-1.09%
+[2025-08-31 15:14:15] 🔴 39/39 | MacdStrategy_fastperiod20_slowperiod40_signalperiod12 => Return=nan%, MDD=-1.09%
+[2025-08-31 15:14:15] 
+✅ 최적화 완료
+[2025-08-31 15:14:15] 💾 최종 결과 저장 완료: C:\work\GitHub\py\kook\binance_test2\logs\Opt_Platform_Results.csv
+[2025-08-31 15:14:15] 
+🏆 TOP 10 전략 (수익률 기준):
+[2025-08-31 15:14:44] 🚀 전략 플랫폼 옵티마이저 시작
+[2025-08-31 15:14:44] 총 39개의 파라미터 조합 테스트 시작
+[2025-08-31 15:14:44] 대기 작업: 0개 (이미 완료: 39개)
+[2025-08-31 15:14:44] ✅ 모든 작업이 이미 완료되었습니다.
+[2025-08-31 15:15:06] 🚀 전략 플랫폼 옵티마이저 시작
+[2025-08-31 15:15:06] 총 39개의 파라미터 조합 테스트 시작
+[2025-08-31 15:15:06] 대기 작업: 39개 (이미 완료: 0개)
+[2025-08-31 15:15:06] 병렬 워커 수: 11개
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:07] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:15:08] 🔴 1/39 | RsiMeanReversion_rsi_window21_oversold_threshold20_overbought_threshold70 => Return=-54.16%, MDD=-96.75%
+[2025-08-31 15:15:08] 🟢 2/39 | RsiMeanReversion_rsi_window14_oversold_threshold20_overbought_threshold70 => Return=509.09%, MDD=-95.76%
+[2025-08-31 15:15:08] 🔴 3/39 | RsiMeanReversion_rsi_window21_oversold_threshold20_overbought_threshold75 => Return=-28.45%, MDD=-95.84%
+[2025-08-31 15:15:08] 🟢 4/39 | RsiMeanReversion_rsi_window14_oversold_threshold20_overbought_threshold75 => Return=117.57%, MDD=-97.41%
+[2025-08-31 15:15:08] 🟢 5/39 | RsiMeanReversion_rsi_window14_oversold_threshold25_overbought_threshold70 => Return=218.97%, MDD=-95.25%
+[2025-08-31 15:15:08] 🟢 6/39 | RsiMeanReversion_rsi_window14_oversold_threshold20_overbought_threshold80 => Return=2.29%, MDD=-97.66%
+[2025-08-31 15:15:08] 🟢 7/39 | RsiMeanReversion_rsi_window14_oversold_threshold25_overbought_threshold75 => Return=9.59%, MDD=-97.12%
+[2025-08-31 15:15:08] 🟢 8/39 | RsiMeanReversion_rsi_window14_oversold_threshold30_overbought_threshold70 => Return=64.71%, MDD=-96.07%
+[2025-08-31 15:15:08] 🔴 9/39 | RsiMeanReversion_rsi_window14_oversold_threshold30_overbought_threshold75 => Return=-45.51%, MDD=-97.42%
+[2025-08-31 15:15:08] 🟢 10/39 | RsiMeanReversion_rsi_window14_oversold_threshold25_overbought_threshold80 => Return=5.61%, MDD=-97.11%
+[2025-08-31 15:15:08] 🔴 11/39 | RsiMeanReversion_rsi_window14_oversold_threshold30_overbought_threshold80 => Return=-38.52%, MDD=-97.70%
+[2025-08-31 15:15:09] 🔴 12/39 | RsiMeanReversion_rsi_window30_oversold_threshold20_overbought_threshold70 => Return=-44.04%, MDD=-95.01%
+[2025-08-31 15:15:09] 🔴 13/39 | RsiMeanReversion_rsi_window21_oversold_threshold25_overbought_threshold70 => Return=-27.23%, MDD=-97.26%
+[2025-08-31 15:15:09] 🔴 14/39 | RsiMeanReversion_rsi_window21_oversold_threshold20_overbought_threshold80 => Return=-84.17%, MDD=-98.81%
+[2025-08-31 15:15:09] 🔴 15/39 | RsiMeanReversion_rsi_window21_oversold_threshold25_overbought_threshold75 => Return=-28.35%, MDD=-98.26%
+[2025-08-31 15:15:09] 🔴 16/39 | RsiMeanReversion_rsi_window30_oversold_threshold20_overbought_threshold75 => Return=-44.33%, MDD=-96.35%
+[2025-08-31 15:15:09] 🔴 17/39 | RsiMeanReversion_rsi_window21_oversold_threshold30_overbought_threshold70 => Return=-8.50%, MDD=-97.17%
+[2025-08-31 15:15:09] 🔴 18/39 | RsiMeanReversion_rsi_window30_oversold_threshold25_overbought_threshold70 => Return=-3.74%, MDD=-95.74%
+[2025-08-31 15:15:09] 🔴 19/39 | RsiMeanReversion_rsi_window21_oversold_threshold25_overbought_threshold80 => Return=-68.14%, MDD=-98.96%
+[2025-08-31 15:15:10] 🔴 20/39 | RsiMeanReversion_rsi_window30_oversold_threshold20_overbought_threshold80 => Return=-33.83%, MDD=-95.37%
+[2025-08-31 15:15:10] 🔴 21/39 | RsiMeanReversion_rsi_window21_oversold_threshold30_overbought_threshold75 => Return=-3.72%, MDD=-97.79%
+[2025-08-31 15:15:10] 🔴 22/39 | RsiMeanReversion_rsi_window21_oversold_threshold30_overbought_threshold80 => Return=-68.88%, MDD=-98.89%
+[2025-08-31 15:15:10] 🔴 23/39 | BollingerBandStrategy_window20_std_dev2.5 => Return=-57.69%, MDD=-97.12%
+[2025-08-31 15:15:10] 🟢 24/39 | RsiMeanReversion_rsi_window30_oversold_threshold30_overbought_threshold70 => Return=17.21%, MDD=-97.06%
+[2025-08-31 15:15:10] 🔴 25/39 | RsiMeanReversion_rsi_window30_oversold_threshold25_overbought_threshold75 => Return=-58.95%, MDD=-97.39%
+[2025-08-31 15:15:10] 🟢 26/39 | BollingerBandStrategy_window30_std_dev2.5 => Return=133.44%, MDD=-98.31%
+[2025-08-31 15:15:10] 🟢 27/39 | BollingerBandStrategy_window30_std_dev2.0 => Return=87.80%, MDD=-98.57%
+[2025-08-31 15:15:10] 🔴 28/39 | BollingerBandStrategy_window20_std_dev2.0 => Return=-49.86%, MDD=-96.94%
+[2025-08-31 15:15:11] 🔴 29/39 | RsiMeanReversion_rsi_window30_oversold_threshold30_overbought_threshold75 => Return=-71.29%, MDD=-98.89%
+[2025-08-31 15:15:11] 🔴 30/39 | RsiMeanReversion_rsi_window30_oversold_threshold25_overbought_threshold80 => Return=-48.97%, MDD=-97.74%
+[2025-08-31 15:15:11] 🔴 31/39 | MacdStrategy_fastperiod12_slowperiod26_signalperiod9 => Return=-79.29%, MDD=-99.05%
+[2025-08-31 15:15:11] 🟢 32/39 | RsiMeanReversion_rsi_window30_oversold_threshold30_overbought_threshold80 => Return=219.73%, MDD=-98.52%
+[2025-08-31 15:15:11] 🔴 33/39 | MacdStrategy_fastperiod12_slowperiod26_signalperiod12 => Return=-74.99%, MDD=-99.19%
+[2025-08-31 15:15:11] 🔴 34/39 | MacdStrategy_fastperiod12_slowperiod40_signalperiod9 => Return=-65.03%, MDD=-98.95%
+[2025-08-31 15:15:11] 🔴 35/39 | MacdStrategy_fastperiod12_slowperiod40_signalperiod12 => Return=-80.48%, MDD=-99.29%
+[2025-08-31 15:15:11] 🔴 36/39 | MacdStrategy_fastperiod20_slowperiod26_signalperiod12 => Return=-70.90%, MDD=-99.12%
+[2025-08-31 15:15:11] 🔴 37/39 | MacdStrategy_fastperiod20_slowperiod26_signalperiod9 => Return=-77.57%, MDD=-99.32%
+[2025-08-31 15:15:11] 🔴 38/39 | MacdStrategy_fastperiod20_slowperiod40_signalperiod9 => Return=-80.87%, MDD=-98.98%
+[2025-08-31 15:15:11] 🔴 39/39 | MacdStrategy_fastperiod20_slowperiod40_signalperiod12 => Return=-77.70%, MDD=-99.25%
+[2025-08-31 15:15:11] 
+✅ 최적화 완료
+[2025-08-31 15:15:11] 💾 최종 결과 저장 완료: C:\work\GitHub\py\kook\binance_test2\logs\Opt_Platform_Results.csv
+[2025-08-31 15:15:11] 
+🏆 TOP 10 전략 (수익률 기준):
+[2025-08-31 15:17:27] 🚀 전략 플랫폼 옵티마이저 시작
+[2025-08-31 15:17:27] 총 39개의 파라미터 조합 테스트 시작
+[2025-08-31 15:17:27] 대기 작업: 39개 (이미 완료: 0개)
+[2025-08-31 15:17:27] 병렬 워커 수: 11개
+[2025-08-31 15:17:27] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:27] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:27] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:27] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:27] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:28] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:28] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:28] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:28] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:28] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:28] 📥 워커에서 데이터 로드 중...
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:28] 🎉 데이터 로드 완료: 총 84,780개 데이터
+[2025-08-31 15:17:29] 🟢 1/39 | RsiMeanReversion_rsi_window14_oversold_threshold20_overbought_threshold75 => Return=444.10%, MDD=-85.54%
+[2025-08-31 15:17:29] 🟢 2/39 | RsiMeanReversion_rsi_window14_oversold_threshold20_overbought_threshold70 => Return=2970.40%, MDD=-75.43%
+[2025-08-31 15:17:29] 🟢 3/39 | RsiMeanReversion_rsi_window14_oversold_threshold20_overbought_threshold80 => Return=121.84%, MDD=-76.90%
+[2025-08-31 15:17:29] 🟢 4/39 | RsiMeanReversion_rsi_window14_oversold_threshold25_overbought_threshold70 => Return=1386.35%, MDD=-65.07%
+[2025-08-31 15:17:29] 🟢 5/39 | RsiMeanReversion_rsi_window14_oversold_threshold25_overbought_threshold75 => Return=163.42%, MDD=-73.21%
+[2025-08-31 15:17:29] 🟢 6/39 | RsiMeanReversion_rsi_window14_oversold_threshold25_overbought_threshold80 => Return=320.08%, MDD=-67.75%
+[2025-08-31 15:17:29] 🔴 7/39 | RsiMeanReversion_rsi_window21_oversold_threshold20_overbought_threshold70 => Return=-72.96%, MDD=-93.60%
+[2025-08-31 15:17:29] 🔴 8/39 | RsiMeanReversion_rsi_window21_oversold_threshold20_overbought_threshold75 => Return=-17.88%, MDD=-93.06%
+[2025-08-31 15:17:29] 🟢 9/39 | RsiMeanReversion_rsi_window14_oversold_threshold30_overbought_threshold70 => Return=432.00%, MDD=-76.52%
+[2025-08-31 15:17:29] 🔴 10/39 | RsiMeanReversion_rsi_window14_oversold_threshold30_overbought_threshold75 => Return=-14.58%, MDD=-89.55%
+[2025-08-31 15:17:29] 🟢 11/39 | RsiMeanReversion_rsi_window14_oversold_threshold30_overbought_threshold80 => Return=84.97%, MDD=-81.75%
+[2025-08-31 15:17:30] 🔴 12/39 | RsiMeanReversion_rsi_window21_oversold_threshold20_overbought_threshold80 => Return=-92.88%, MDD=-94.73%
+[2025-08-31 15:17:30] 🔴 13/39 | RsiMeanReversion_rsi_window21_oversold_threshold25_overbought_threshold70 => Return=-31.34%, MDD=-90.40%
+[2025-08-31 15:17:30] 🟢 14/39 | RsiMeanReversion_rsi_window21_oversold_threshold30_overbought_threshold70 => Return=91.99%, MDD=-89.40%
+[2025-08-31 15:17:30] 🟢 15/39 | RsiMeanReversion_rsi_window21_oversold_threshold25_overbought_threshold75 => Return=14.75%, MDD=-88.88%
+[2025-08-31 15:17:30] 🔴 16/39 | RsiMeanReversion_rsi_window21_oversold_threshold30_overbought_threshold80 => Return=-34.73%, MDD=-89.79%
+[2025-08-31 15:17:30] 🔴 17/39 | RsiMeanReversion_rsi_window21_oversold_threshold25_overbought_threshold80 => Return=-45.18%, MDD=-95.46%
+[2025-08-31 15:17:30] 🔴 18/39 | RsiMeanReversion_rsi_window30_oversold_threshold20_overbought_threshold80 => Return=-44.36%, MDD=-103.89%
+[2025-08-31 15:17:30] 🔴 19/39 | RsiMeanReversion_rsi_window30_oversold_threshold20_overbought_threshold70 => Return=-91.70%, MDD=-100.25%
+[2025-08-31 15:17:30] 🟢 20/39 | RsiMeanReversion_rsi_window21_oversold_threshold30_overbought_threshold75 => Return=258.64%, MDD=-91.51%
+[2025-08-31 15:17:30] 🔴 21/39 | RsiMeanReversion_rsi_window30_oversold_threshold20_overbought_threshold75 => Return=-75.22%, MDD=-97.48%
+[2025-08-31 15:17:30] 🟢 22/39 | RsiMeanReversion_rsi_window30_oversold_threshold25_overbought_threshold70 => Return=1.13%, MDD=-88.37%
+[2025-08-31 15:17:31] 🟢 23/39 | RsiMeanReversion_rsi_window30_oversold_threshold25_overbought_threshold80 => Return=21.17%, MDD=-108.27%
+[2025-08-31 15:17:31] 🔴 24/39 | RsiMeanReversion_rsi_window30_oversold_threshold25_overbought_threshold75 => Return=-43.11%, MDD=-84.92%
+[2025-08-31 15:17:31] 🔴 25/39 | RsiMeanReversion_rsi_window30_oversold_threshold30_overbought_threshold80 => Return=-30.17%, MDD=-100.57%
+[2025-08-31 15:17:31] 🔴 26/39 | RsiMeanReversion_rsi_window30_oversold_threshold30_overbought_threshold75 => Return=-23.46%, MDD=-89.34%
+[2025-08-31 15:17:31] 🟢 27/39 | RsiMeanReversion_rsi_window30_oversold_threshold30_overbought_threshold70 => Return=135.41%, MDD=-87.71%
+[2025-08-31 15:17:31] 🔴 28/39 | BollingerBandStrategy_window30_std_dev2.0 => Return=-95.56%, MDD=-96.33%
+[2025-08-31 15:17:31] 🔴 29/39 | BollingerBandStrategy_window20_std_dev2.5 => Return=-84.98%, MDD=-89.36%
+[2025-08-31 15:17:31] 🔴 30/39 | BollingerBandStrategy_window30_std_dev2.5 => Return=-95.58%, MDD=-96.29%
+[2025-08-31 15:17:31] 🔴 31/39 | BollingerBandStrategy_window20_std_dev2.0 => Return=-69.65%, MDD=-81.57%
+[2025-08-31 15:17:31] 🔴 32/39 | MacdStrategy_fastperiod12_slowperiod26_signalperiod9 => Return=-88.90%, MDD=-94.27%
+[2025-08-31 15:17:31] 🔴 33/39 | MacdStrategy_fastperiod12_slowperiod26_signalperiod12 => Return=-82.95%, MDD=-93.81%
+[2025-08-31 15:17:32] 🔴 34/39 | MacdStrategy_fastperiod20_slowperiod40_signalperiod9 => Return=-90.12%, MDD=-92.28%
+[2025-08-31 15:17:32] 🔴 35/39 | MacdStrategy_fastperiod12_slowperiod40_signalperiod9 => Return=-66.77%, MDD=-89.91%
+[2025-08-31 15:17:32] 🔴 36/39 | MacdStrategy_fastperiod20_slowperiod26_signalperiod9 => Return=-86.47%, MDD=-96.17%
+[2025-08-31 15:17:32] 🔴 37/39 | MacdStrategy_fastperiod12_slowperiod40_signalperiod12 => Return=-89.63%, MDD=-94.38%
+[2025-08-31 15:17:32] 🔴 38/39 | MacdStrategy_fastperiod20_slowperiod26_signalperiod12 => Return=-77.78%, MDD=-92.57%
+[2025-08-31 15:17:32] 🔴 39/39 | MacdStrategy_fastperiod20_slowperiod40_signalperiod12 => Return=-86.06%, MDD=-93.02%
+[2025-08-31 15:17:32] 
+✅ 최적화 완료
+[2025-08-31 15:17:32] 💾 최종 결과 저장 완료: C:\work\GitHub\py\kook\binance_test2\logs\Opt_Platform_Results.csv
+[2025-08-31 15:17:32] 
+🏆 TOP 10 전략 (수익률 기준):
+[2025-08-31 23:58:21] 🚀 전략 플랫폼 옵티마이저 시작
+[2025-08-31 23:58:21] 총 39개의 파라미터 조합 테스트 시작
+[2025-08-31 23:58:21] 대기 작업: 0개 (이미 완료: 39개)
+[2025-08-31 23:58:21] ✅ 모든 작업이 이미 완료되었습니다.

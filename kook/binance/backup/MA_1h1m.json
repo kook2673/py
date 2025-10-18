@@ -1,0 +1,46 @@
+{
+    "yesterday": 0,
+    "today": 0,
+    "start_money": 798.31519295,
+    "my_money": 798.31519295,
+    "coins": {
+        "BTC/USDT": {
+            "long": {
+                "position": 1,
+                "entry_price": 111265.8,
+                "position_size": 0.001,
+                "entry_time": "2025-08-29T14:59:48.918661",
+                "slices_count": 1,
+                "total_trades": 0,
+                "success_trades": 0,
+                "failed_trades": 0,
+                "success_rate": 0.0,
+                "total_profit": 0
+            },
+            "short": {
+                "position": 0,
+                "entry_price": 0,
+                "position_size": 0,
+                "entry_time": null,
+                "slices_count": 0,
+                "total_trades": 0,
+                "success_trades": 0,
+                "failed_trades": 0,
+                "success_rate": 0.0,
+                "total_profit": 0
+            },
+            "no": 1,
+            "total_trades": 0,
+            "success_trades": 0,
+            "failed_trades": 0,
+            "success_rate": 0.0,
+            "total_profit": 0,
+            "last_trade_time": null
+        }
+    },
+    "settings": {
+        "investment_ratio": 0.5,
+        "divide": 200,
+        "last_update": "2025-08-29T12:49:56.710244"
+    }
+}

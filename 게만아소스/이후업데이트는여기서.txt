@@ -1,0 +1,45 @@
+
+앞으로 신규 컨텐츠 추가나 혹시 버그 등 수정사항이 있다면 아래 구글드라이브 링크에 업데이트 되니 권한 요청 해주세요 ^^
+
+클래스101에서 구매하신 분들은 결제내역이나 주문 및 배송탭에서 구매내역 스샷을 함께 zacra@naver.com로 보내주셔야 승인이 되니 참고해 주셔요!!
+https://drive.google.com/drive/folders/1xiORqzYK2oXf_-WMCfpDA2kUXsbYHmU2?usp=sharing
+
+
+새로운 컨텐츠 추가나 버그 수정 이력은 
+아래 게만아 블로그 공지사항 포스팅의 날짜를 확인하세요.
+https://blog.naver.com/zacra/223910423439
+
+
+중간 부분에 아래 같은 제목의 패키지 포스팅이 있고
+
+OO여개의 유용한 학습용 패키지 코드 - 25.06.24 update
+https://blog.naver.com/zacra/223049832963
+
+위 포스팅 맨 아래 부분에 업데이트 이력이 있습니다.
+
+
+즉 종종 게만아 블로그 공지사항 글 제목의 날짜가 바뀌었다면
+업데이트 내역이 있다고 판단하고 찾아보시면 됩니다 :)
+
+감사합니다!
+
+
+GMA_Free_Stock_Backtest_Single.py를 얻을수 있는 경로
+1. 블로그
+https://blog.naver.com/zacra/223799590835?trackingCode=blog_bloghome_searchlist
+
+2. 다운로드 받을수 있는 주소.
+https://drive.google.com/drive/folders/1Td1A4muBh-kEHv5O5B4HBuo6cV40jtJg?usp=sharing
+
+
+3. 개당 10만원짜리 게만아 추가 개선 코드 학습용 코드 구매
+https://docs.google.com/forms/d/e/1FAIpQLSfWfOYvCi30HKubs4LbuZma9n40pp3N92mgBZcIKFU3O-ALeA/viewform
+
+1) 코스닥피 전략 게만아 개선 버전 (연복리 64% MDD -10%)
+2) 바이낸스 비트코인 게만아 개선 버전 (MDD -7%) - RSI+양방향 봇 포함
+3) 알트코인 투자 게만아 개선 버전 (연복리 51% MDD -18%) - 업비트 & 바이낸스 & 빗썸 & 코인원
+4) 국내 섹터 돌파 전략 개선 버전 (연복리 33% MDD -13%)
+5) 업비트 비트코인 이더리움 안전전략 개선 버전 (연복리 95% MDD -12%) - 빗썸&코인원 포함
+6) 미국주식 투자 종결! 심플 강력 전략! (연복리 30%, MDD - 28%) & 더블 이동평균 미국
+7) 이동평균 자산배분 전략 with 최적 조합 자동 찾기 시스템
+8) 일봉 & 4시간봉 조합 더블 이동평균 전략(업비트,빗썸,코인원)

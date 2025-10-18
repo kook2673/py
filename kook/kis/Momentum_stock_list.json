@@ -1,0 +1,1007 @@
+{
+  "last_updated": "2025-09-04 11:56:18",
+  "kospi": [
+    {
+      "stock_code": "005930",
+      "stock_name": "삼성전자",
+      "market_value": "4,114,148"
+    },
+    {
+      "stock_code": "000660",
+      "stock_name": "SK하이닉스",
+      "market_value": "1,947,406"
+    },
+    {
+      "stock_code": "373220",
+      "stock_name": "LG에너지솔루션",
+      "market_value": "826,020"
+    },
+    {
+      "stock_code": "207940",
+      "stock_name": "삼성바이오로직스",
+      "market_value": "720,281"
+    },
+    {
+      "stock_code": "012450",
+      "stock_name": "한화에어로스페이스",
+      "market_value": "486,243"
+    },
+    {
+      "stock_code": "005935",
+      "stock_name": "삼성전자우",
+      "market_value": "464,290"
+    },
+    {
+      "stock_code": "329180",
+      "stock_name": "HD현대중공업",
+      "market_value": "456,294"
+    },
+    {
+      "stock_code": "005380",
+      "stock_name": "현대차",
+      "market_value": "452,515"
+    },
+    {
+      "stock_code": "000270",
+      "stock_name": "기아",
+      "market_value": "419,976"
+    },
+    {
+      "stock_code": "105560",
+      "stock_name": "KB금융",
+      "market_value": "414,649"
+    },
+    {
+      "stock_code": "034020",
+      "stock_name": "두산에너빌리티",
+      "market_value": "406,756"
+    },
+    {
+      "stock_code": "068270",
+      "stock_name": "셀트리온",
+      "market_value": "392,828"
+    },
+    {
+      "stock_code": "042660",
+      "stock_name": "한화오션",
+      "market_value": "368,922"
+    },
+    {
+      "stock_code": "035420",
+      "stock_name": "NAVER",
+      "market_value": "357,624"
+    },
+    {
+      "stock_code": "055550",
+      "stock_name": "신한지주",
+      "market_value": "313,630"
+    },
+    {
+      "stock_code": "009540",
+      "stock_name": "HD한국조선해양",
+      "market_value": "302,555"
+    },
+    {
+      "stock_code": "028260",
+      "stock_name": "삼성물산",
+      "market_value": "298,479"
+    },
+    {
+      "stock_code": "032830",
+      "stock_name": "삼성생명",
+      "market_value": "298,200"
+    },
+    {
+      "stock_code": "012330",
+      "stock_name": "현대모비스",
+      "market_value": "295,121"
+    },
+    {
+      "stock_code": "035720",
+      "stock_name": "카카오",
+      "market_value": "259,085"
+    },
+    {
+      "stock_code": "015760",
+      "stock_name": "한국전력",
+      "market_value": "239,453"
+    },
+    {
+      "stock_code": "086790",
+      "stock_name": "하나금융지주",
+      "market_value": "233,189"
+    },
+    {
+      "stock_code": "011200",
+      "stock_name": "HMM",
+      "market_value": "230,121"
+    },
+    {
+      "stock_code": "005490",
+      "stock_name": "POSCO홀딩스",
+      "market_value": "229,445"
+    },
+    {
+      "stock_code": "064350",
+      "stock_name": "현대로템",
+      "market_value": "223,196"
+    },
+    {
+      "stock_code": "138040",
+      "stock_name": "메리츠금융지주",
+      "market_value": "222,498"
+    },
+    {
+      "stock_code": "000810",
+      "stock_name": "삼성화재",
+      "market_value": "209,581"
+    },
+    {
+      "stock_code": "402340",
+      "stock_name": "SK스퀘어",
+      "market_value": "198,414"
+    },
+    {
+      "stock_code": "051910",
+      "stock_name": "LG화학",
+      "market_value": "196,247"
+    },
+    {
+      "stock_code": "010140",
+      "stock_name": "삼성중공업",
+      "market_value": "185,240"
+    },
+    {
+      "stock_code": "010130",
+      "stock_name": "고려아연",
+      "market_value": "180,410"
+    },
+    {
+      "stock_code": "316140",
+      "stock_name": "우리금융지주",
+      "market_value": "180,821"
+    },
+    {
+      "stock_code": "267260",
+      "stock_name": "HD현대일렉트릭",
+      "market_value": "178,073"
+    },
+    {
+      "stock_code": "033780",
+      "stock_name": "KT&G",
+      "market_value": "165,883"
+    },
+    {
+      "stock_code": "006400",
+      "stock_name": "삼성SDI",
+      "market_value": "162,783"
+    },
+    {
+      "stock_code": "259960",
+      "stock_name": "크래프톤",
+      "market_value": "158,175"
+    },
+    {
+      "stock_code": "096770",
+      "stock_name": "SK이노베이션",
+      "market_value": "157,076"
+    },
+    {
+      "stock_code": "024110",
+      "stock_name": "기업은행",
+      "market_value": "151,750"
+    },
+    {
+      "stock_code": "034730",
+      "stock_name": "SK",
+      "market_value": "147,543"
+    },
+    {
+      "stock_code": "086280",
+      "stock_name": "현대글로비스",
+      "market_value": "139,200"
+    },
+    {
+      "stock_code": "030200",
+      "stock_name": "KT",
+      "market_value": "133,445"
+    },
+    {
+      "stock_code": "009150",
+      "stock_name": "삼성전기",
+      "market_value": "133,328"
+    },
+    {
+      "stock_code": "066570",
+      "stock_name": "LG전자",
+      "market_value": "123,305"
+    },
+    {
+      "stock_code": "003670",
+      "stock_name": "포스코퓨처엠",
+      "market_value": "119,988"
+    },
+    {
+      "stock_code": "003550",
+      "stock_name": "LG",
+      "market_value": "118,410"
+    },
+    {
+      "stock_code": "352820",
+      "stock_name": "하이브",
+      "market_value": "117,875"
+    },
+    {
+      "stock_code": "017670",
+      "stock_name": "SK텔레콤",
+      "market_value": "117,490"
+    },
+    {
+      "stock_code": "003230",
+      "stock_name": "삼양식품",
+      "market_value": "117,289"
+    },
+    {
+      "stock_code": "018260",
+      "stock_name": "삼성에스디에스",
+      "market_value": "117,073"
+    },
+    {
+      "stock_code": "298040",
+      "stock_name": "효성중공업",
+      "market_value": "113,759"
+    },
+    {
+      "stock_code": "323410",
+      "stock_name": "카카오뱅크",
+      "market_value": "113,762"
+    },
+    {
+      "stock_code": "267250",
+      "stock_name": "HD현대",
+      "market_value": "109,326"
+    },
+    {
+      "stock_code": "079550",
+      "stock_name": "LIG넥스원",
+      "market_value": "109,450"
+    },
+    {
+      "stock_code": "006800",
+      "stock_name": "미래에셋증권",
+      "market_value": "108,132"
+    },
+    {
+      "stock_code": "272210",
+      "stock_name": "한화시스템",
+      "market_value": "101,355"
+    },
+    {
+      "stock_code": "005830",
+      "stock_name": "DB손해보험",
+      "market_value": "97,421"
+    },
+    {
+      "stock_code": "000100",
+      "stock_name": "유한양행",
+      "market_value": "94,363"
+    },
+    {
+      "stock_code": "047810",
+      "stock_name": "한국항공우주",
+      "market_value": "93,625"
+    },
+    {
+      "stock_code": "443060",
+      "stock_name": "HD현대마린솔루션",
+      "market_value": "91,676"
+    },
+    {
+      "stock_code": "360750",
+      "stock_name": "TIGER 미국S&P500",
+      "market_value": "91,410"
+    },
+    {
+      "stock_code": "459580",
+      "stock_name": "KODEX CD금리액티브(합성)",
+      "market_value": "89,503"
+    },
+    {
+      "stock_code": "000150",
+      "stock_name": "두산",
+      "market_value": "89,063"
+    },
+    {
+      "stock_code": "010120",
+      "stock_name": "LS ELECTRIC",
+      "market_value": "87,750"
+    },
+    {
+      "stock_code": "003490",
+      "stock_name": "대한항공",
+      "market_value": "86,716"
+    },
+    {
+      "stock_code": "047050",
+      "stock_name": "포스코인터내셔널",
+      "market_value": "85,586"
+    },
+    {
+      "stock_code": "326030",
+      "stock_name": "SK바이오팜",
+      "market_value": "84,500"
+    },
+    {
+      "stock_code": "278470",
+      "stock_name": "에이피알",
+      "market_value": "81,037"
+    },
+    {
+      "stock_code": "010620",
+      "stock_name": "HD현대미포",
+      "market_value": "80,683"
+    },
+    {
+      "stock_code": "042700",
+      "stock_name": "한미반도체",
+      "market_value": "78,966"
+    },
+    {
+      "stock_code": "488770",
+      "stock_name": "KODEX 머니마켓액티브",
+      "market_value": "78,834"
+    },
+    {
+      "stock_code": "180640",
+      "stock_name": "한진칼",
+      "market_value": "73,772"
+    },
+    {
+      "stock_code": "021240",
+      "stock_name": "코웨이",
+      "market_value": "73,347"
+    },
+    {
+      "stock_code": "071050",
+      "stock_name": "한국금융지주",
+      "market_value": "72,332"
+    },
+    {
+      "stock_code": "069500",
+      "stock_name": "KODEX 200",
+      "market_value": "71,320"
+    },
+    {
+      "stock_code": "377300",
+      "stock_name": "카카오페이",
+      "market_value": "69,698"
+    },
+    {
+      "stock_code": "090430",
+      "stock_name": "아모레퍼시픽",
+      "market_value": "69,489"
+    },
+    {
+      "stock_code": "005940",
+      "stock_name": "NH투자증권",
+      "market_value": "68,632"
+    },
+    {
+      "stock_code": "010950",
+      "stock_name": "S-Oil",
+      "market_value": "67,775"
+    },
+    {
+      "stock_code": "000720",
+      "stock_name": "현대건설",
+      "market_value": "66,702"
+    },
+    {
+      "stock_code": "064400",
+      "stock_name": "LG씨엔에스",
+      "market_value": "65,882"
+    },
+    {
+      "stock_code": "000880",
+      "stock_name": "한화",
+      "market_value": "63,490"
+    },
+    {
+      "stock_code": "032640",
+      "stock_name": "LG유플러스",
+      "market_value": "62,067"
+    },
+    {
+      "stock_code": "016360",
+      "stock_name": "삼성증권",
+      "market_value": "61,171"
+    },
+    {
+      "stock_code": "005387",
+      "stock_name": "현대차2우B",
+      "market_value": "60,627"
+    },
+    {
+      "stock_code": "034220",
+      "stock_name": "LG디스플레이",
+      "market_value": "59,900"
+    },
+    {
+      "stock_code": "029780",
+      "stock_name": "삼성카드",
+      "market_value": "58,625"
+    },
+    {
+      "stock_code": "006260",
+      "stock_name": "LS",
+      "market_value": "56,479"
+    },
+    {
+      "stock_code": "133690",
+      "stock_name": "TIGER 미국나스닥100",
+      "market_value": "55,709"
+    },
+    {
+      "stock_code": "088980",
+      "stock_name": "맥쿼리인프라",
+      "market_value": "55,507"
+    },
+    {
+      "stock_code": "039490",
+      "stock_name": "키움증권",
+      "market_value": "53,791"
+    },
+    {
+      "stock_code": "028050",
+      "stock_name": "삼성E&A",
+      "market_value": "53,900"
+    },
+    {
+      "stock_code": "251270",
+      "stock_name": "넷마블",
+      "market_value": "51,830"
+    },
+    {
+      "stock_code": "379800",
+      "stock_name": "KODEX 미국S&P500",
+      "market_value": "51,384"
+    },
+    {
+      "stock_code": "241560",
+      "stock_name": "두산밥캣",
+      "market_value": "50,708"
+    },
+    {
+      "stock_code": "009830",
+      "stock_name": "한화솔루션",
+      "market_value": "49,247"
+    },
+    {
+      "stock_code": "161390",
+      "stock_name": "한국타이어앤테크놀로지",
+      "market_value": "48,993"
+    },
+    {
+      "stock_code": "001040",
+      "stock_name": "CJ",
+      "market_value": "48,113"
+    },
+    {
+      "stock_code": "357870",
+      "stock_name": "TIGER CD금리투자KIS(합성)",
+      "market_value": "46,263"
+    },
+    {
+      "stock_code": "007660",
+      "stock_name": "이수페타시스",
+      "market_value": "46,028"
+    },
+    {
+      "stock_code": "307950",
+      "stock_name": "현대오토에버",
+      "market_value": "45,634"
+    }
+  ],
+  "kosdaq": [
+    {
+      "stock_code": "196170",
+      "stock_name": "알테오젠",
+      "market_value": "249,681"
+    },
+    {
+      "stock_code": "247540",
+      "stock_name": "에코프로비엠",
+      "market_value": "115,601"
+    },
+    {
+      "stock_code": "087010",
+      "stock_name": "펩트론",
+      "market_value": "71,872"
+    },
+    {
+      "stock_code": "086520",
+      "stock_name": "에코프로",
+      "market_value": "68,295"
+    },
+    {
+      "stock_code": "214450",
+      "stock_name": "파마리서치",
+      "market_value": "65,766"
+    },
+    {
+      "stock_code": "141080",
+      "stock_name": "리가켐바이오",
+      "market_value": "54,806"
+    },
+    {
+      "stock_code": "277810",
+      "stock_name": "레인보우로보틱스",
+      "market_value": "54,223"
+    },
+    {
+      "stock_code": "028300",
+      "stock_name": "HLB",
+      "market_value": "52,510"
+    },
+    {
+      "stock_code": "298380",
+      "stock_name": "에이비엘바이오",
+      "market_value": "52,501"
+    },
+    {
+      "stock_code": "000250",
+      "stock_name": "삼천당제약",
+      "market_value": "46,657"
+    },
+    {
+      "stock_code": "145020",
+      "stock_name": "휴젤",
+      "market_value": "41,095"
+    },
+    {
+      "stock_code": "058470",
+      "stock_name": "리노공업",
+      "market_value": "34,943"
+    },
+    {
+      "stock_code": "214150",
+      "stock_name": "클래시스",
+      "market_value": "35,046"
+    },
+    {
+      "stock_code": "950160",
+      "stock_name": "코오롱티슈진",
+      "market_value": "32,288"
+    },
+    {
+      "stock_code": "041510",
+      "stock_name": "에스엠",
+      "market_value": "31,251"
+    },
+    {
+      "stock_code": "214370",
+      "stock_name": "케어젠",
+      "market_value": "28,684"
+    },
+    {
+      "stock_code": "257720",
+      "stock_name": "실리콘투",
+      "market_value": "26,457"
+    },
+    {
+      "stock_code": "035900",
+      "stock_name": "JYP Ent.",
+      "market_value": "26,259"
+    },
+    {
+      "stock_code": "310210",
+      "stock_name": "보로노이",
+      "market_value": "26,189"
+    },
+    {
+      "stock_code": "039030",
+      "stock_name": "이오테크닉스",
+      "market_value": "25,009"
+    },
+    {
+      "stock_code": "068760",
+      "stock_name": "셀트리온제약",
+      "market_value": "22,975"
+    },
+    {
+      "stock_code": "403870",
+      "stock_name": "HPSP",
+      "market_value": "22,586"
+    },
+    {
+      "stock_code": "263750",
+      "stock_name": "펄어비스",
+      "market_value": "21,073"
+    },
+    {
+      "stock_code": "237690",
+      "stock_name": "에스티팜",
+      "market_value": "19,871"
+    },
+    {
+      "stock_code": "240810",
+      "stock_name": "원익IPS",
+      "market_value": "19,045"
+    },
+    {
+      "stock_code": "140860",
+      "stock_name": "파크시스템스",
+      "market_value": "18,740"
+    },
+    {
+      "stock_code": "122870",
+      "stock_name": "와이지엔터테인먼트",
+      "market_value": "18,654"
+    },
+    {
+      "stock_code": "082270",
+      "stock_name": "젬백스",
+      "market_value": "18,267"
+    },
+    {
+      "stock_code": "347850",
+      "stock_name": "디앤디파마텍",
+      "market_value": "16,794"
+    },
+    {
+      "stock_code": "065350",
+      "stock_name": "신성델타테크",
+      "market_value": "16,325"
+    },
+    {
+      "stock_code": "083650",
+      "stock_name": "비에이치아이",
+      "market_value": "16,370"
+    },
+    {
+      "stock_code": "226950",
+      "stock_name": "올릭스",
+      "market_value": "16,286"
+    },
+    {
+      "stock_code": "035760",
+      "stock_name": "CJ ENM",
+      "market_value": "15,921"
+    },
+    {
+      "stock_code": "357780",
+      "stock_name": "솔브레인",
+      "market_value": "15,790"
+    },
+    {
+      "stock_code": "348370",
+      "stock_name": "엔켐",
+      "market_value": "15,316"
+    },
+    {
+      "stock_code": "140410",
+      "stock_name": "메지온",
+      "market_value": "15,012"
+    },
+    {
+      "stock_code": "039200",
+      "stock_name": "오스코텍",
+      "market_value": "14,977"
+    },
+    {
+      "stock_code": "005290",
+      "stock_name": "동진쎄미켐",
+      "market_value": "14,807"
+    },
+    {
+      "stock_code": "089030",
+      "stock_name": "테크윙",
+      "market_value": "14,531"
+    },
+    {
+      "stock_code": "007390",
+      "stock_name": "네이처셀",
+      "market_value": "13,950"
+    },
+    {
+      "stock_code": "096530",
+      "stock_name": "씨젠",
+      "market_value": "13,579"
+    },
+    {
+      "stock_code": "095340",
+      "stock_name": "ISC",
+      "market_value": "13,418"
+    },
+    {
+      "stock_code": "253450",
+      "stock_name": "스튜디오드래곤",
+      "market_value": "13,271"
+    },
+    {
+      "stock_code": "036930",
+      "stock_name": "주성엔지니어링",
+      "market_value": "13,164"
+    },
+    {
+      "stock_code": "293490",
+      "stock_name": "카카오게임즈",
+      "market_value": "13,143"
+    },
+    {
+      "stock_code": "108490",
+      "stock_name": "로보티즈",
+      "market_value": "13,075"
+    },
+    {
+      "stock_code": "195940",
+      "stock_name": "HK이노엔",
+      "market_value": "13,018"
+    },
+    {
+      "stock_code": "064760",
+      "stock_name": "티씨케이",
+      "market_value": "12,644"
+    },
+    {
+      "stock_code": "018290",
+      "stock_name": "브이티",
+      "market_value": "12,064"
+    },
+    {
+      "stock_code": "328130",
+      "stock_name": "루닛",
+      "market_value": "12,105"
+    },
+    {
+      "stock_code": "060370",
+      "stock_name": "LS마린솔루션",
+      "market_value": "11,963"
+    },
+    {
+      "stock_code": "376300",
+      "stock_name": "디어유",
+      "market_value": "11,786"
+    },
+    {
+      "stock_code": "213420",
+      "stock_name": "덕산네오룩스",
+      "market_value": "11,472"
+    },
+    {
+      "stock_code": "160190",
+      "stock_name": "하이젠알앤엠",
+      "market_value": "11,305"
+    },
+    {
+      "stock_code": "358570",
+      "stock_name": "지아이이노베이션",
+      "market_value": "11,310"
+    },
+    {
+      "stock_code": "101490",
+      "stock_name": "에스앤에스텍",
+      "market_value": "11,283"
+    },
+    {
+      "stock_code": "178320",
+      "stock_name": "서진시스템",
+      "market_value": "11,193"
+    },
+    {
+      "stock_code": "078600",
+      "stock_name": "대주전자재료",
+      "market_value": "10,620"
+    },
+    {
+      "stock_code": "084370",
+      "stock_name": "유진테크",
+      "market_value": "10,610"
+    },
+    {
+      "stock_code": "204270",
+      "stock_name": "제이앤티씨",
+      "market_value": "10,343"
+    },
+    {
+      "stock_code": "098460",
+      "stock_name": "고영",
+      "market_value": "10,017"
+    },
+    {
+      "stock_code": "033500",
+      "stock_name": "동성화인텍",
+      "market_value": "9,837"
+    },
+    {
+      "stock_code": "460930",
+      "stock_name": "현대힘스",
+      "market_value": "9,810"
+    },
+    {
+      "stock_code": "014620",
+      "stock_name": "성광벤드",
+      "market_value": "9,587"
+    },
+    {
+      "stock_code": "042000",
+      "stock_name": "카페24",
+      "market_value": "9,568"
+    },
+    {
+      "stock_code": "112040",
+      "stock_name": "위메이드",
+      "market_value": "9,455"
+    },
+    {
+      "stock_code": "003380",
+      "stock_name": "하림지주",
+      "market_value": "9,408"
+    },
+    {
+      "stock_code": "225570",
+      "stock_name": "넥슨게임즈",
+      "market_value": "9,181"
+    },
+    {
+      "stock_code": "067310",
+      "stock_name": "하나마이크론",
+      "market_value": "9,059"
+    },
+    {
+      "stock_code": "041190",
+      "stock_name": "우리기술투자",
+      "market_value": "8,954"
+    },
+    {
+      "stock_code": "137400",
+      "stock_name": "피엔티",
+      "market_value": "8,892"
+    },
+    {
+      "stock_code": "336570",
+      "stock_name": "원텍",
+      "market_value": "8,790"
+    },
+    {
+      "stock_code": "067160",
+      "stock_name": "SOOP",
+      "market_value": "8,771"
+    },
+    {
+      "stock_code": "086900",
+      "stock_name": "메디톡스",
+      "market_value": "8,758"
+    },
+    {
+      "stock_code": "232140",
+      "stock_name": "와이씨",
+      "market_value": "8,721"
+    },
+    {
+      "stock_code": "183300",
+      "stock_name": "코미코",
+      "market_value": "8,641"
+    },
+    {
+      "stock_code": "388720",
+      "stock_name": "유일로보틱스",
+      "market_value": "8,348"
+    },
+    {
+      "stock_code": "056190",
+      "stock_name": "에스에프에이",
+      "market_value": "8,295"
+    },
+    {
+      "stock_code": "323280",
+      "stock_name": "태성",
+      "market_value": "8,266"
+    },
+    {
+      "stock_code": "085660",
+      "stock_name": "차바이오텍",
+      "market_value": "8,185"
+    },
+    {
+      "stock_code": "025980",
+      "stock_name": "아난티",
+      "market_value": "8,184"
+    },
+    {
+      "stock_code": "222800",
+      "stock_name": "심텍",
+      "market_value": "8,105"
+    },
+    {
+      "stock_code": "036830",
+      "stock_name": "솔브레인홀딩스",
+      "market_value": "8,082"
+    },
+    {
+      "stock_code": "456160",
+      "stock_name": "지투지바이오",
+      "market_value": "8,049"
+    },
+    {
+      "stock_code": "484590",
+      "stock_name": "삼양컴텍",
+      "market_value": "7,974"
+    },
+    {
+      "stock_code": "290650",
+      "stock_name": "엘앤씨바이오",
+      "market_value": "7,927"
+    },
+    {
+      "stock_code": "281740",
+      "stock_name": "레이크머티리얼즈",
+      "market_value": "7,802"
+    },
+    {
+      "stock_code": "251970",
+      "stock_name": "펌텍코리아",
+      "market_value": "7,713"
+    },
+    {
+      "stock_code": "086450",
+      "stock_name": "동국제약",
+      "market_value": "7,684"
+    },
+    {
+      "stock_code": "440110",
+      "stock_name": "파두",
+      "market_value": "7,668"
+    },
+    {
+      "stock_code": "458870",
+      "stock_name": "씨어스테크놀로지",
+      "market_value": "7,688"
+    },
+    {
+      "stock_code": "052400",
+      "stock_name": "코나아이",
+      "market_value": "7,689"
+    },
+    {
+      "stock_code": "044490",
+      "stock_name": "태웅",
+      "market_value": "7,663"
+    },
+    {
+      "stock_code": "031980",
+      "stock_name": "피에스케이홀딩스",
+      "market_value": "7,450"
+    },
+    {
+      "stock_code": "023160",
+      "stock_name": "태광",
+      "market_value": "7,354"
+    },
+    {
+      "stock_code": "445680",
+      "stock_name": "큐리옥스바이오시스템즈",
+      "market_value": "7,324"
+    },
+    {
+      "stock_code": "335890",
+      "stock_name": "비올",
+      "market_value": "7,302"
+    },
+    {
+      "stock_code": "161580",
+      "stock_name": "필옵틱스",
+      "market_value": "7,312"
+    },
+    {
+      "stock_code": "319400",
+      "stock_name": "현대무벡스",
+      "market_value": "7,251"
+    },
+    {
+      "stock_code": "032820",
+      "stock_name": "우리기술",
+      "market_value": "6,952"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+    "yesterday": -1.9218640000000278,
+    "today": 0,
+    "start_money": 775.98663045,
+    "my_money": 774.06476645,
+    "item": [
+        {
+            "no": 1,
+            "type": "N",
+            "enter_price": 116352.0,
+            "original_enter_price": 116352.0,
+            "amt": -0.002
+        },
+        {
+            "no": 2,
+            "type": "N",
+            "enter_price": 117286.6,
+            "original_enter_price": 117286.6,
+            "amt": 0.002
+        }
+    ],
+    "no": 2,
+    "current_base_money": 775.98663045,
+    "position_reset_done": false,
+    "position_reset_count": 0
+}

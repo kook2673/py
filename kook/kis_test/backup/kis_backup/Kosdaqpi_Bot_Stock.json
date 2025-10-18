@@ -1,0 +1,34 @@
+[
+    {
+        "DayStatus": "BUY_DAY",
+        "Status": "READY",
+        "StockCode": "122630",
+        "StockName": "KODEX 레버리지",
+        "TargetPrice": 0,
+        "TryBuyCnt": 0
+    },
+    {
+        "DayStatus": "BUY_DAY",
+        "Status": "READY",
+        "StockCode": "252670",
+        "StockName": "KODEX 200선물인버스2X",
+        "TargetPrice": 0,
+        "TryBuyCnt": 0
+    },
+    {
+        "DayStatus": "BUY_DAY",
+        "Status": "INVESTING_TRY",
+        "StockCode": "233740",
+        "StockName": "KODEX 코스닥150레버리지",
+        "TargetPrice": 8716.5,
+        "TryBuyCnt": 411
+    },
+    {
+        "DayStatus": "BUY_DAY",
+        "Status": "READY",
+        "StockCode": "251340",
+        "StockName": "KODEX 코스닥150선물인버스",
+        "TargetPrice": 3499.0,
+        "TryBuyCnt": 0
+    }
+]

@@ -1,0 +1,2683 @@
+{
+    "005930": {
+        "small_ma": 14,
+        "big_ma": 20,
+        "revenue_rate": 32.29280548646897,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:41"
+    },
+    "000660": {
+        "small_ma": 11,
+        "big_ma": 29,
+        "revenue_rate": 134.85022394671836,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:42"
+    },
+    "373220": {
+        "small_ma": 9,
+        "big_ma": 76,
+        "revenue_rate": 17.647923761343794,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:44"
+    },
+    "207940": {
+        "small_ma": 4,
+        "big_ma": 49,
+        "revenue_rate": 25.654972665484387,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:45"
+    },
+    "012450": {
+        "small_ma": 8,
+        "big_ma": 70,
+        "revenue_rate": 969.9485767611213,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:46"
+    },
+    "005935": {
+        "small_ma": 12,
+        "big_ma": 21,
+        "revenue_rate": 29.057643808492717,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:48"
+    },
+    "005380": {
+        "small_ma": 12,
+        "big_ma": 65,
+        "revenue_rate": 58.79468898542351,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:49"
+    },
+    "329180": {
+        "small_ma": 13,
+        "big_ma": 90,
+        "revenue_rate": 354.75893794097027,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:50"
+    },
+    "105560": {
+        "small_ma": 6,
+        "big_ma": 100,
+        "revenue_rate": 89.73530047298067,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:52"
+    },
+    "034020": {
+        "small_ma": 5,
+        "big_ma": 21,
+        "revenue_rate": 365.5742650023621,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:53"
+    },
+    "068270": {
+        "small_ma": 14,
+        "big_ma": 41,
+        "revenue_rate": 22.35492196973807,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:55"
+    },
+    "000270": {
+        "small_ma": 3,
+        "big_ma": 87,
+        "revenue_rate": 57.00813154150368,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:56"
+    },
+    "035420": {
+        "small_ma": 11,
+        "big_ma": 62,
+        "revenue_rate": 49.070627994271135,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:57"
+    },
+    "042660": {
+        "small_ma": 7,
+        "big_ma": 79,
+        "revenue_rate": 526.5871215849385,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:25:59"
+    },
+    "055550": {
+        "small_ma": 11,
+        "big_ma": 95,
+        "revenue_rate": 115.85342391362971,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:00"
+    },
+    "028260": {
+        "small_ma": 15,
+        "big_ma": 67,
+        "revenue_rate": 43.213917633661886,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:01"
+    },
+    "012330": {
+        "small_ma": 5,
+        "big_ma": 20,
+        "revenue_rate": 1.3231026426087482,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:03"
+    },
+    "035720": {
+        "small_ma": 4,
+        "big_ma": 71,
+        "revenue_rate": 36.88708363896811,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:04"
+    },
+    "009540": {
+        "small_ma": 7,
+        "big_ma": 81,
+        "revenue_rate": 318.6950648287576,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:06"
+    },
+    "032830": {
+        "small_ma": 8,
+        "big_ma": 22,
+        "revenue_rate": 57.88113157615308,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:07"
+    },
+    "005490": {
+        "small_ma": 4,
+        "big_ma": 71,
+        "revenue_rate": 75.2200610836321,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:08"
+    },
+    "015760": {
+        "small_ma": 14,
+        "big_ma": 52,
+        "revenue_rate": 90.6040890630256,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:09"
+    },
+    "086790": {
+        "small_ma": 3,
+        "big_ma": 21,
+        "revenue_rate": 54.861142919685946,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:11"
+    },
+    "196170": {
+        "small_ma": 3,
+        "big_ma": 98,
+        "revenue_rate": 502.5345850068331,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:13"
+    },
+    "011200": {
+        "small_ma": 14,
+        "big_ma": 72,
+        "revenue_rate": 25.59152470211971,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:14"
+    },
+    "064350": {
+        "small_ma": 9,
+        "big_ma": 63,
+        "revenue_rate": 665.9410771238109,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:15"
+    },
+    "051910": {
+        "small_ma": 15,
+        "big_ma": 52,
+        "revenue_rate": 12.05988017722629,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:17"
+    },
+    "138040": {
+        "small_ma": 14,
+        "big_ma": 20,
+        "revenue_rate": 248.4375625516912,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:18"
+    },
+    "000810": {
+        "small_ma": 12,
+        "big_ma": 73,
+        "revenue_rate": 39.61170286115455,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:20"
+    },
+    "402340": {
+        "small_ma": 10,
+        "big_ma": 87,
+        "revenue_rate": 189.7866741578164,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:21"
+    },
+    "316140": {
+        "small_ma": 14,
+        "big_ma": 100,
+        "revenue_rate": 70.69415642968134,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:23"
+    },
+    "267260": {
+        "small_ma": 13,
+        "big_ma": 21,
+        "revenue_rate": 921.7293678604816,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:24"
+    },
+    "010140": {
+        "small_ma": 10,
+        "big_ma": 34,
+        "revenue_rate": 207.1577755853275,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:26"
+    },
+    "096770": {
+        "small_ma": 7,
+        "big_ma": 21,
+        "revenue_rate": -11.342265308219881,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:27"
+    },
+    "006400": {
+        "small_ma": 13,
+        "big_ma": 56,
+        "revenue_rate": -2.5749730217866715,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:29"
+    },
+    "010130": {
+        "small_ma": 15,
+        "big_ma": 91,
+        "revenue_rate": 48.49561777035394,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:30"
+    },
+    "033780": {
+        "small_ma": 11,
+        "big_ma": 37,
+        "revenue_rate": 54.381718935927466,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:31"
+    },
+    "259960": {
+        "small_ma": 15,
+        "big_ma": 77,
+        "revenue_rate": 94.65699466970248,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:33"
+    },
+    "024110": {
+        "small_ma": 15,
+        "big_ma": 95,
+        "revenue_rate": 60.01951899781584,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:34"
+    },
+    "034730": {
+        "small_ma": 3,
+        "big_ma": 100,
+        "revenue_rate": 35.6678260940954,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:36"
+    },
+    "030200": {
+        "small_ma": 4,
+        "big_ma": 87,
+        "revenue_rate": 68.37921448947324,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:37"
+    },
+    "079550": {
+        "small_ma": 3,
+        "big_ma": 31,
+        "revenue_rate": 549.116043869459,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:39"
+    },
+    "323410": {
+        "small_ma": 10,
+        "big_ma": 20,
+        "revenue_rate": 49.11747238768604,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:40"
+    },
+    "066570": {
+        "small_ma": 10,
+        "big_ma": 21,
+        "revenue_rate": 2.1232432179936325,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:42"
+    },
+    "003550": {
+        "small_ma": 12,
+        "big_ma": 26,
+        "revenue_rate": -3.609881326343841,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:43"
+    },
+    "018260": {
+        "small_ma": 8,
+        "big_ma": 26,
+        "revenue_rate": 20.083705081270054,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:45"
+    },
+    "017670": {
+        "small_ma": 14,
+        "big_ma": 32,
+        "revenue_rate": -2.9346012895741036,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:46"
+    },
+    "298040": {
+        "small_ma": 5,
+        "big_ma": 31,
+        "revenue_rate": 1283.198600633846,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:48"
+    },
+    "267250": {
+        "small_ma": 15,
+        "big_ma": 21,
+        "revenue_rate": 67.2159244407196,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:49"
+    },
+    "272210": {
+        "small_ma": 15,
+        "big_ma": 83,
+        "revenue_rate": 250.38531488083615,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:51"
+    },
+    "009150": {
+        "small_ma": 14,
+        "big_ma": 27,
+        "revenue_rate": 24.150188113379688,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:52"
+    },
+    "086280": {
+        "small_ma": 14,
+        "big_ma": 98,
+        "revenue_rate": 43.031192300612716,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:53"
+    },
+    "003670": {
+        "small_ma": 5,
+        "big_ma": 20,
+        "revenue_rate": 98.92659239561078,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:55"
+    },
+    "006800": {
+        "small_ma": 7,
+        "big_ma": 20,
+        "revenue_rate": 176.06421480287844,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:56"
+    },
+    "247540": {
+        "small_ma": 10,
+        "big_ma": 28,
+        "revenue_rate": 187.17228094871487,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:58"
+    },
+    "003230": {
+        "small_ma": 14,
+        "big_ma": 54,
+        "revenue_rate": 980.621475349934,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:26:59"
+    },
+    "352820": {
+        "small_ma": 5,
+        "big_ma": 30,
+        "revenue_rate": 124.90591024656756,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:00"
+    },
+    "000150": {
+        "small_ma": 5,
+        "big_ma": 43,
+        "revenue_rate": 430.4760738650445,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:02"
+    },
+    "000100": {
+        "small_ma": 14,
+        "big_ma": 21,
+        "revenue_rate": 102.0893411126478,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:03"
+    },
+    "010120": {
+        "small_ma": 5,
+        "big_ma": 66,
+        "revenue_rate": 606.9782270671409,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:04"
+    },
+    "047810": {
+        "small_ma": 13,
+        "big_ma": 75,
+        "revenue_rate": 50.076146903309414,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:06"
+    },
+    "443060": {
+        "small_ma": 9,
+        "big_ma": 31,
+        "revenue_rate": 60.88986750574801,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:07"
+    },
+    "005830": {
+        "small_ma": 3,
+        "big_ma": 94,
+        "revenue_rate": 71.90135938297573,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:08"
+    },
+    "360750": {
+        "small_ma": 10,
+        "big_ma": 30,
+        "revenue_rate": 76.03113675128573,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:10"
+    },
+    "042700": {
+        "small_ma": 10,
+        "big_ma": 40,
+        "revenue_rate": 1266.3263536653158,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:11"
+    },
+    "003490": {
+        "small_ma": 7,
+        "big_ma": 20,
+        "revenue_rate": 5.349338721136493,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:13"
+    },
+    "377300": {
+        "small_ma": 3,
+        "big_ma": 99,
+        "revenue_rate": 90.55559183832985,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:14"
+    },
+    "047050": {
+        "small_ma": 3,
+        "big_ma": 34,
+        "revenue_rate": 189.95176423361647,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:17"
+    },
+    "010620": {
+        "small_ma": 11,
+        "big_ma": 44,
+        "revenue_rate": 189.32778119641063,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:19"
+    },
+    "071050": {
+        "small_ma": 5,
+        "big_ma": 21,
+        "revenue_rate": 117.23968570515537,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:20"
+    },
+    "090430": {
+        "small_ma": 13,
+        "big_ma": 20,
+        "revenue_rate": 44.75783349808427,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:21"
+    },
+    "021240": {
+        "small_ma": 13,
+        "big_ma": 100,
+        "revenue_rate": 78.64031110675214,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:23"
+    },
+    "326030": {
+        "small_ma": 9,
+        "big_ma": 20,
+        "revenue_rate": 55.65725325472732,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:24"
+    },
+    "000720": {
+        "small_ma": 14,
+        "big_ma": 26,
+        "revenue_rate": 122.70206085046664,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:26"
+    },
+    "000880": {
+        "small_ma": 5,
+        "big_ma": 29,
+        "revenue_rate": 278.50276810927545,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:27"
+    },
+    "180640": {
+        "small_ma": 15,
+        "big_ma": 20,
+        "revenue_rate": 213.92554456450057,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:29"
+    },
+    "010950": {
+        "small_ma": 3,
+        "big_ma": 67,
+        "revenue_rate": 9.223586709764554,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:31"
+    },
+    "069500": {
+        "small_ma": 15,
+        "big_ma": 87,
+        "revenue_rate": 41.52179062913384,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:33"
+    },
+    "278470": {
+        "small_ma": 10,
+        "big_ma": 34,
+        "revenue_rate": 228.4907180297633,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:34"
+    },
+    "087010": {
+        "small_ma": 15,
+        "big_ma": 99,
+        "revenue_rate": 3642.5746785523975,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:36"
+    },
+    "086520": {
+        "small_ma": 4,
+        "big_ma": 85,
+        "revenue_rate": 535.5267942785533,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:39"
+    },
+    "005940": {
+        "small_ma": 15,
+        "big_ma": 100,
+        "revenue_rate": 59.8266399359483,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:40"
+    },
+    "032640": {
+        "small_ma": 12,
+        "big_ma": 79,
+        "revenue_rate": 22.639028861585285,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:41"
+    },
+    "016360": {
+        "small_ma": 15,
+        "big_ma": 21,
+        "revenue_rate": 47.7136651647398,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:43"
+    },
+    "028300": {
+        "small_ma": 8,
+        "big_ma": 44,
+        "revenue_rate": 75.4738427081398,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:44"
+    },
+    "214450": {
+        "small_ma": 4,
+        "big_ma": 77,
+        "revenue_rate": 637.4100729617487,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:46"
+    },
+    "005387": {
+        "small_ma": 9,
+        "big_ma": 81,
+        "revenue_rate": 87.97406948015211,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:47"
+    },
+    "029780": {
+        "small_ma": 9,
+        "big_ma": 26,
+        "revenue_rate": 69.90144311168272,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:49"
+    },
+    "088980": {
+        "small_ma": 13,
+        "big_ma": 66,
+        "revenue_rate": 14.41177183572282,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:50"
+    },
+    "039490": {
+        "small_ma": 12,
+        "big_ma": 20,
+        "revenue_rate": 31.681957645347065,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:52"
+    },
+    "006260": {
+        "small_ma": 15,
+        "big_ma": 39,
+        "revenue_rate": 153.89379773068123,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:53"
+    },
+    "161390": {
+        "small_ma": 6,
+        "big_ma": 20,
+        "revenue_rate": 2.6499152908540564,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:54"
+    },
+    "133690": {
+        "small_ma": 4,
+        "big_ma": 37,
+        "revenue_rate": 116.91673681788338,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:56"
+    },
+    "034220": {
+        "small_ma": 15,
+        "big_ma": 94,
+        "revenue_rate": 12.858631725271419,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:57"
+    },
+    "277810": {
+        "small_ma": 15,
+        "big_ma": 49,
+        "revenue_rate": 558.2489732363723,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:27:59"
+    },
+    "241560": {
+        "small_ma": 15,
+        "big_ma": 46,
+        "revenue_rate": 97.85975371493208,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:28:00"
+    },
+    "009830": {
+        "small_ma": 12,
+        "big_ma": 75,
+        "revenue_rate": 61.469429500029214,
+        "mdd": 0,
+        "last_updated": "2025-07-31 21:28:01"
+    },
+    "195940": {
+        "small_ma": 9,
+        "big_ma": 20,
+        "revenue_rate": 46.72722369025291,
+        "mdd": 0,
+        "last_updated": "2025-08-01 07:21:10"
+    },
+    "403870": {
+        "small_ma": 15,
+        "big_ma": 45,
+        "revenue_rate": 93.41162989834186,
+        "mdd": 0,
+        "last_updated": "2025-08-01 07:21:12"
+    },
+    "028050": {
+        "small_ma": 15,
+        "big_ma": 20,
+        "revenue_rate": 88.34978733913502,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:32:54"
+    },
+    "251270": {
+        "small_ma": 9,
+        "big_ma": 71,
+        "revenue_rate": 54.35149949057314,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:32:57"
+    },
+    "051900": {
+        "small_ma": 15,
+        "big_ma": 37,
+        "revenue_rate": 2.6631814127124964,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:32:59"
+    },
+    "379800": {
+        "small_ma": 9,
+        "big_ma": 30,
+        "revenue_rate": 76.96411634906485,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:01"
+    },
+    "007660": {
+        "small_ma": 11,
+        "big_ma": 23,
+        "revenue_rate": 1065.3924130786565,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:06"
+    },
+    "004020": {
+        "small_ma": 5,
+        "big_ma": 29,
+        "revenue_rate": 36.014881577593385,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:09"
+    },
+    "141080": {
+        "small_ma": 15,
+        "big_ma": 90,
+        "revenue_rate": 166.82335962390752,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:12"
+    },
+    "000250": {
+        "small_ma": 15,
+        "big_ma": 22,
+        "revenue_rate": 662.8084651022988,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:14"
+    },
+    "145020": {
+        "small_ma": 14,
+        "big_ma": 56,
+        "revenue_rate": 184.6247335804146,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:17"
+    },
+    "298380": {
+        "small_ma": 9,
+        "big_ma": 94,
+        "revenue_rate": 68.00448059573459,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:19"
+    },
+    "214150": {
+        "small_ma": 14,
+        "big_ma": 20,
+        "revenue_rate": 276.67486706355334,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:24"
+    },
+    "058470": {
+        "small_ma": 13,
+        "big_ma": 24,
+        "revenue_rate": 91.15011029985534,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:26"
+    },
+    "257720": {
+        "small_ma": 12,
+        "big_ma": 48,
+        "revenue_rate": 1670.6912996245571,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:29"
+    },
+    "950160": {
+        "small_ma": 14,
+        "big_ma": 100,
+        "revenue_rate": 182.96696803248074,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:31"
+    },
+    "041510": {
+        "small_ma": 15,
+        "big_ma": 89,
+        "revenue_rate": 134.45913409868226,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:34"
+    },
+    "039030": {
+        "small_ma": 15,
+        "big_ma": 89,
+        "revenue_rate": 186.24225326923593,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:37"
+    },
+    "214370": {
+        "small_ma": 4,
+        "big_ma": 43,
+        "revenue_rate": 160.81354011205173,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:39"
+    },
+    "035900": {
+        "small_ma": 14,
+        "big_ma": 38,
+        "revenue_rate": 120.17361492873792,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:42"
+    },
+    "263750": {
+        "small_ma": 9,
+        "big_ma": 63,
+        "revenue_rate": 31.582717625155066,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:44"
+    },
+    "007390": {
+        "small_ma": 6,
+        "big_ma": 62,
+        "revenue_rate": 11.60663732499443,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:47"
+    },
+    "068760": {
+        "small_ma": 4,
+        "big_ma": 67,
+        "revenue_rate": 6.857397258156444,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:49"
+    },
+    "082270": {
+        "small_ma": 3,
+        "big_ma": 20,
+        "revenue_rate": 523.4291879833439,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:52"
+    },
+    "310210": {
+        "small_ma": 4,
+        "big_ma": 28,
+        "revenue_rate": 692.0857813408566,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:54"
+    },
+    "140860": {
+        "small_ma": 14,
+        "big_ma": 46,
+        "revenue_rate": 85.4704726300348,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:33:58"
+    },
+    "065350": {
+        "small_ma": 3,
+        "big_ma": 48,
+        "revenue_rate": 1791.6874024149763,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:00"
+    },
+    "357780": {
+        "small_ma": 13,
+        "big_ma": 23,
+        "revenue_rate": 71.02739365249641,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:03"
+    },
+    "237690": {
+        "small_ma": 10,
+        "big_ma": 71,
+        "revenue_rate": 26.87949714004027,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:05"
+    },
+    "005290": {
+        "small_ma": 11,
+        "big_ma": 24,
+        "revenue_rate": 61.500725776780094,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:08"
+    },
+    "240810": {
+        "small_ma": 14,
+        "big_ma": 51,
+        "revenue_rate": 5.092897255848418,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:11"
+    },
+    "122870": {
+        "small_ma": 13,
+        "big_ma": 97,
+        "revenue_rate": 275.38422805915775,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:13"
+    },
+    "096530": {
+        "small_ma": 14,
+        "big_ma": 49,
+        "revenue_rate": 29.000861416705696,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:16"
+    },
+    "348370": {
+        "small_ma": 14,
+        "big_ma": 86,
+        "revenue_rate": 389.35563181128066,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:18"
+    },
+    "035760": {
+        "small_ma": 5,
+        "big_ma": 38,
+        "revenue_rate": 24.50964986338902,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:21"
+    },
+    "293490": {
+        "small_ma": 15,
+        "big_ma": 32,
+        "revenue_rate": 8.327433635330223,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:23"
+    },
+    "347850": {
+        "small_ma": 5,
+        "big_ma": 37,
+        "revenue_rate": 290.16873696035964,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:26"
+    },
+    "253450": {
+        "small_ma": 11,
+        "big_ma": 31,
+        "revenue_rate": 4.314721642268006,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:28"
+    },
+    "328130": {
+        "small_ma": 3,
+        "big_ma": 76,
+        "revenue_rate": 533.8029182127027,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:31"
+    },
+    "018290": {
+        "small_ma": 6,
+        "big_ma": 54,
+        "revenue_rate": 304.8163975315222,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:33"
+    },
+    "036930": {
+        "small_ma": 15,
+        "big_ma": 61,
+        "revenue_rate": 100.4863488674991,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:36"
+    },
+    "095340": {
+        "small_ma": 3,
+        "big_ma": 52,
+        "revenue_rate": 61.43957858434567,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:38"
+    },
+    "064760": {
+        "small_ma": 15,
+        "big_ma": 26,
+        "revenue_rate": 80.51547440357629,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:41"
+    },
+    "083650": {
+        "small_ma": 3,
+        "big_ma": 20,
+        "revenue_rate": 289.21001052393075,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:43"
+    },
+    "178320": {
+        "small_ma": 3,
+        "big_ma": 39,
+        "revenue_rate": 36.17712915809995,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:46"
+    },
+    "039200": {
+        "small_ma": 12,
+        "big_ma": 40,
+        "revenue_rate": 26.37513148669028,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:48"
+    },
+    "376300": {
+        "small_ma": 9,
+        "big_ma": 85,
+        "revenue_rate": 89.77501584722707,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:51"
+    },
+    "358570": {
+        "small_ma": 12,
+        "big_ma": 24,
+        "revenue_rate": 105.7572455514124,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:53"
+    },
+    "336570": {
+        "small_ma": 3,
+        "big_ma": 20,
+        "revenue_rate": 519.0453212977894,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:34:58"
+    },
+    "140410": {
+        "small_ma": 4,
+        "big_ma": 95,
+        "revenue_rate": 167.5570533769982,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:00"
+    },
+    "078600": {
+        "small_ma": 3,
+        "big_ma": 21,
+        "revenue_rate": 59.23747246912231,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:03"
+    },
+    "108490": {
+        "small_ma": 15,
+        "big_ma": 78,
+        "revenue_rate": 358.6007733866149,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:05"
+    },
+    "101490": {
+        "small_ma": 15,
+        "big_ma": 37,
+        "revenue_rate": 234.84514242563787,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:08"
+    },
+    "086900": {
+        "small_ma": 12,
+        "big_ma": 27,
+        "revenue_rate": 207.73563749433754,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:11"
+    },
+    "112040": {
+        "small_ma": 5,
+        "big_ma": 22,
+        "revenue_rate": 59.182133964059666,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:13"
+    },
+    "042000": {
+        "small_ma": 13,
+        "big_ma": 22,
+        "revenue_rate": 396.06744529170703,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:16"
+    },
+    "003380": {
+        "small_ma": 15,
+        "big_ma": 67,
+        "revenue_rate": 102.74069321470583,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:18"
+    },
+    "089030": {
+        "small_ma": 11,
+        "big_ma": 22,
+        "revenue_rate": 600.2197583505402,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:21"
+    },
+    "084370": {
+        "small_ma": 13,
+        "big_ma": 70,
+        "revenue_rate": 65.25815505052816,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:23"
+    },
+    "213420": {
+        "small_ma": 15,
+        "big_ma": 31,
+        "revenue_rate": 34.487741354630074,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:26"
+    },
+    "098460": {
+        "small_ma": 12,
+        "big_ma": 32,
+        "revenue_rate": 68.07853609404984,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:29"
+    },
+    "160190": {
+        "small_ma": 15,
+        "big_ma": 41,
+        "revenue_rate": 330.38044774910026,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:31"
+    },
+    "323280": {
+        "small_ma": 12,
+        "big_ma": 32,
+        "revenue_rate": 2213.6410419965914,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:34"
+    },
+    "204270": {
+        "small_ma": 11,
+        "big_ma": 28,
+        "revenue_rate": 227.9094013069569,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:36"
+    },
+    "036830": {
+        "small_ma": 15,
+        "big_ma": 29,
+        "revenue_rate": 82.21665728698333,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:39"
+    },
+    "232140": {
+        "small_ma": 15,
+        "big_ma": 62,
+        "revenue_rate": 402.96274285505723,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:42"
+    },
+    "225570": {
+        "small_ma": 10,
+        "big_ma": 36,
+        "revenue_rate": 62.93590952033317,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:44"
+    },
+    "067160": {
+        "small_ma": 4,
+        "big_ma": 26,
+        "revenue_rate": 32.198075313741995,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:47"
+    },
+    "226950": {
+        "small_ma": 5,
+        "big_ma": 22,
+        "revenue_rate": 119.97212271528477,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:49"
+    },
+    "056190": {
+        "small_ma": 7,
+        "big_ma": 64,
+        "revenue_rate": 2.0640553714043226,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:51"
+    },
+    "025980": {
+        "small_ma": 13,
+        "big_ma": 20,
+        "revenue_rate": 47.60503023684782,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:54"
+    },
+    "060370": {
+        "small_ma": 9,
+        "big_ma": 31,
+        "revenue_rate": 638.9446639195587,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:56"
+    },
+    "067310": {
+        "small_ma": 15,
+        "big_ma": 92,
+        "revenue_rate": 107.73285557328,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:35:59"
+    },
+    "014620": {
+        "small_ma": 11,
+        "big_ma": 47,
+        "revenue_rate": 84.31615906941813,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:01"
+    },
+    "085660": {
+        "small_ma": 11,
+        "big_ma": 22,
+        "revenue_rate": 4.36856088303373,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:04"
+    },
+    "033500": {
+        "small_ma": 12,
+        "big_ma": 21,
+        "revenue_rate": 145.38921186127115,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:06"
+    },
+    "086450": {
+        "small_ma": 10,
+        "big_ma": 53,
+        "revenue_rate": 14.341760073489626,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:08"
+    },
+    "137400": {
+        "small_ma": 4,
+        "big_ma": 20,
+        "revenue_rate": 77.68310462905467,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:11"
+    },
+    "251970": {
+        "small_ma": 5,
+        "big_ma": 24,
+        "revenue_rate": 262.5415197142807,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:14"
+    },
+    "052400": {
+        "small_ma": 4,
+        "big_ma": 29,
+        "revenue_rate": 218.59220842851235,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:16"
+    },
+    "281740": {
+        "small_ma": 11,
+        "big_ma": 40,
+        "revenue_rate": 431.77400065836366,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:19"
+    },
+    "214430": {
+        "small_ma": 7,
+        "big_ma": 39,
+        "revenue_rate": 570.4905055089123,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:21"
+    },
+    "290650": {
+        "small_ma": 3,
+        "big_ma": 40,
+        "revenue_rate": 137.75258404835975,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:24"
+    },
+    "044490": {
+        "small_ma": 14,
+        "big_ma": 88,
+        "revenue_rate": 557.8171112769576,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:28"
+    },
+    "388720": {
+        "small_ma": 10,
+        "big_ma": 47,
+        "revenue_rate": 138.7342286793285,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:30"
+    },
+    "041190": {
+        "small_ma": 14,
+        "big_ma": 23,
+        "revenue_rate": 98.28383517195466,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:33"
+    },
+    "161580": {
+        "small_ma": 12,
+        "big_ma": 33,
+        "revenue_rate": 684.3384591620396,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:35"
+    },
+    "200670": {
+        "small_ma": 4,
+        "big_ma": 31,
+        "revenue_rate": 227.75242635492128,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:38"
+    },
+    "183300": {
+        "small_ma": 12,
+        "big_ma": 33,
+        "revenue_rate": 121.04860751607688,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:41"
+    },
+    "218410": {
+        "small_ma": 8,
+        "big_ma": 30,
+        "revenue_rate": 76.72189991270453,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:43"
+    },
+    "222800": {
+        "small_ma": 8,
+        "big_ma": 22,
+        "revenue_rate": 99.68395087188789,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:46"
+    },
+    "335890": {
+        "small_ma": 12,
+        "big_ma": 20,
+        "revenue_rate": 422.366422151273,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:49"
+    },
+    "417200": {
+        "small_ma": 9,
+        "big_ma": 100,
+        "revenue_rate": -6.740692505896208,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:51"
+    },
+    "031980": {
+        "small_ma": 8,
+        "big_ma": 38,
+        "revenue_rate": 410.1733093850048,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:53"
+    },
+    "460930": {
+        "small_ma": 15,
+        "big_ma": 69,
+        "revenue_rate": 25.85126924460824,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:56"
+    },
+    "241710": {
+        "small_ma": 14,
+        "big_ma": 24,
+        "revenue_rate": 1262.5016463414588,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:36:59"
+    },
+    "082920": {
+        "small_ma": 15,
+        "big_ma": 55,
+        "revenue_rate": 109.30778589480154,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:37:01"
+    },
+    "053800": {
+        "small_ma": 12,
+        "big_ma": 28,
+        "revenue_rate": 43.416881736791275,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:37:04"
+    },
+    "078130": {
+        "small_ma": 11,
+        "big_ma": 60,
+        "revenue_rate": 4.043044836956542,
+        "mdd": 0,
+        "last_updated": "2025-08-01 08:37:06"
+    },
+    "138930": {
+        "small_ma": 14,
+        "big_ma": 20,
+        "revenue_rate": 84.34783813666809,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:39:50"
+    },
+    "078930": {
+        "small_ma": 9,
+        "big_ma": 98,
+        "revenue_rate": 22.807237933943444,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:39:53"
+    },
+    "271560": {
+        "small_ma": 15,
+        "big_ma": 69,
+        "revenue_rate": 3.8293004401643174,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:39:55"
+    },
+    "001040": {
+        "small_ma": 15,
+        "big_ma": 52,
+        "revenue_rate": 114.3344388192066,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:39:58"
+    },
+    "175330": {
+        "small_ma": 15,
+        "big_ma": 32,
+        "revenue_rate": 116.99595671196744,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:01"
+    },
+    "307950": {
+        "small_ma": 3,
+        "big_ma": 27,
+        "revenue_rate": 52.25228115638527,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:03"
+    },
+    "036570": {
+        "small_ma": 15,
+        "big_ma": 57,
+        "revenue_rate": -4.697275714169222,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:06"
+    },
+    "035250": {
+        "small_ma": 3,
+        "big_ma": 89,
+        "revenue_rate": 15.513856759680552,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:11"
+    },
+    "036460": {
+        "small_ma": 14,
+        "big_ma": 80,
+        "revenue_rate": 66.04721342812583,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:13"
+    },
+    "454910": {
+        "small_ma": 7,
+        "big_ma": 24,
+        "revenue_rate": 51.53422579907735,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:16"
+    },
+    "103140": {
+        "small_ma": 3,
+        "big_ma": 22,
+        "revenue_rate": 366.64465950831436,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:18"
+    },
+    "097950": {
+        "small_ma": 15,
+        "big_ma": 35,
+        "revenue_rate": -0.31012740635010416,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:20"
+    },
+    "011790": {
+        "small_ma": 14,
+        "big_ma": 20,
+        "revenue_rate": 135.48741674914066,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:23"
+    },
+    "005385": {
+        "small_ma": 7,
+        "big_ma": 82,
+        "revenue_rate": 83.50213593651073,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:27"
+    },
+    "011070": {
+        "small_ma": 14,
+        "big_ma": 35,
+        "revenue_rate": 6.949002387952152,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:29"
+    },
+    "062040": {
+        "small_ma": 6,
+        "big_ma": 43,
+        "revenue_rate": 238.29505148152452,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:31"
+    },
+    "273130": {
+        "small_ma": 11,
+        "big_ma": 66,
+        "revenue_rate": 11.982792174133564,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:34"
+    },
+    "128940": {
+        "small_ma": 14,
+        "big_ma": 20,
+        "revenue_rate": -12.389290050341236,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:37"
+    },
+    "022100": {
+        "small_ma": 14,
+        "big_ma": 94,
+        "revenue_rate": 628.5155387610188,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:39"
+    },
+    "302440": {
+        "small_ma": 11,
+        "big_ma": 29,
+        "revenue_rate": -7.653760017943976,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:41"
+    },
+    "450080": {
+        "small_ma": 11,
+        "big_ma": 97,
+        "revenue_rate": -13.875747266146307,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:44"
+    },
+    "381170": {
+        "small_ma": 4,
+        "big_ma": 34,
+        "revenue_rate": 226.0947869951942,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:48"
+    },
+    "052690": {
+        "small_ma": 15,
+        "big_ma": 30,
+        "revenue_rate": 38.988642631873255,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:51"
+    },
+    "017800": {
+        "small_ma": 11,
+        "big_ma": 100,
+        "revenue_rate": 143.8692672908499,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:53"
+    },
+    "008930": {
+        "small_ma": 10,
+        "big_ma": 89,
+        "revenue_rate": 104.60509886997127,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:55"
+    },
+    "011780": {
+        "small_ma": 13,
+        "big_ma": 39,
+        "revenue_rate": -26.197104032147188,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:40:58"
+    },
+    "002380": {
+        "small_ma": 9,
+        "big_ma": 54,
+        "revenue_rate": 29.116053736603725,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:00"
+    },
+    "489790": {
+        "small_ma": 12,
+        "big_ma": 42,
+        "revenue_rate": 75.37351246576875,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:02"
+    },
+    "088350": {
+        "small_ma": 14,
+        "big_ma": 21,
+        "revenue_rate": 36.46046903579496,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:06"
+    },
+    "026960": {
+        "small_ma": 13,
+        "big_ma": 34,
+        "revenue_rate": 47.056141931423056,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:09"
+    },
+    "082740": {
+        "small_ma": 9,
+        "big_ma": 89,
+        "revenue_rate": 287.60814958973424,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:11"
+    },
+    "379810": {
+        "small_ma": 5,
+        "big_ma": 37,
+        "revenue_rate": 115.35696939836522,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:14"
+    },
+    "042670": {
+        "small_ma": 8,
+        "big_ma": 20,
+        "revenue_rate": 116.89780513823871,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:16"
+    },
+    "102110": {
+        "small_ma": 15,
+        "big_ma": 86,
+        "revenue_rate": 36.62328416931063,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:19"
+    },
+    "001440": {
+        "small_ma": 9,
+        "big_ma": 23,
+        "revenue_rate": 103.82398334452192,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:21"
+    },
+    "004990": {
+        "small_ma": 13,
+        "big_ma": 98,
+        "revenue_rate": -2.597840066429181,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:23"
+    },
+    "012750": {
+        "small_ma": 12,
+        "big_ma": 91,
+        "revenue_rate": 14.60474164260854,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:30"
+    },
+    "278530": {
+        "small_ma": 15,
+        "big_ma": 80,
+        "revenue_rate": 35.39488747989214,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:33"
+    },
+    "011170": {
+        "small_ma": 13,
+        "big_ma": 99,
+        "revenue_rate": -37.76544797733487,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:35"
+    },
+    "192820": {
+        "small_ma": 4,
+        "big_ma": 28,
+        "revenue_rate": 292.55336927081316,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:38"
+    },
+    "122630": {
+        "small_ma": 3,
+        "big_ma": 20,
+        "revenue_rate": 63.01866434969218,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:40"
+    },
+    "383220": {
+        "small_ma": 10,
+        "big_ma": 23,
+        "revenue_rate": -19.00931549147344,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:42"
+    },
+    "111770": {
+        "small_ma": 14,
+        "big_ma": 90,
+        "revenue_rate": 71.30783966535776,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:45"
+    },
+    "381180": {
+        "small_ma": 6,
+        "big_ma": 81,
+        "revenue_rate": 122.71741829966507,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:47"
+    },
+    "066970": {
+        "small_ma": 9,
+        "big_ma": 93,
+        "revenue_rate": -18.75271333858891,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:50"
+    },
+    "139480": {
+        "small_ma": 14,
+        "big_ma": 22,
+        "revenue_rate": 19.423783601429708,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:52"
+    },
+    "462870": {
+        "small_ma": 14,
+        "big_ma": 82,
+        "revenue_rate": -2.7867456896551537,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:41:55"
+    },
+    "002790": {
+        "small_ma": 8,
+        "big_ma": 21,
+        "revenue_rate": 107.5838903313888,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:02"
+    },
+    "004370": {
+        "small_ma": 11,
+        "big_ma": 32,
+        "revenue_rate": 32.33981055032408,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:04"
+    },
+    "001450": {
+        "small_ma": 7,
+        "big_ma": 49,
+        "revenue_rate": 12.35305483508592,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:06"
+    },
+    "018670": {
+        "small_ma": 14,
+        "big_ma": 21,
+        "revenue_rate": 104.84551525209065,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:08"
+    },
+    "030000": {
+        "small_ma": 14,
+        "big_ma": 48,
+        "revenue_rate": -3.355355628822744,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:11"
+    },
+    "453850": {
+        "small_ma": 15,
+        "big_ma": 44,
+        "revenue_rate": 0.29266468715847005,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:13"
+    },
+    "051600": {
+        "small_ma": 15,
+        "big_ma": 29,
+        "revenue_rate": 32.5468427390947,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:19"
+    },
+    "360200": {
+        "small_ma": 12,
+        "big_ma": 28,
+        "revenue_rate": 76.7198323777584,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:22"
+    },
+    "000240": {
+        "small_ma": 12,
+        "big_ma": 93,
+        "revenue_rate": 82.38044271722333,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:24"
+    },
+    "139130": {
+        "small_ma": 15,
+        "big_ma": 96,
+        "revenue_rate": 68.85516783013398,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:27"
+    },
+    "161890": {
+        "small_ma": 12,
+        "big_ma": 25,
+        "revenue_rate": 215.8435831272628,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:29"
+    },
+    "028670": {
+        "small_ma": 14,
+        "big_ma": 92,
+        "revenue_rate": -21.635658721136732,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:32"
+    },
+    "081660": {
+        "small_ma": 15,
+        "big_ma": 52,
+        "revenue_rate": -7.7520436707988845,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:36"
+    },
+    "018880": {
+        "small_ma": 15,
+        "big_ma": 62,
+        "revenue_rate": -12.997085777308595,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:38"
+    },
+    "071970": {
+        "small_ma": 3,
+        "big_ma": 26,
+        "revenue_rate": 800.233023868363,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:41"
+    },
+    "012510": {
+        "small_ma": 3,
+        "big_ma": 20,
+        "revenue_rate": 89.6010147322622,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:43"
+    },
+    "458730": {
+        "small_ma": 15,
+        "big_ma": 28,
+        "revenue_rate": 22.058381060941915,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:45"
+    },
+    "003690": {
+        "small_ma": 7,
+        "big_ma": 21,
+        "revenue_rate": 113.55870465254515,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:47"
+    },
+    "023530": {
+        "small_ma": 6,
+        "big_ma": 43,
+        "revenue_rate": 11.307556602544523,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:50"
+    },
+    "000120": {
+        "small_ma": 8,
+        "big_ma": 99,
+        "revenue_rate": 26.996489409792467,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:52"
+    },
+    "001720": {
+        "small_ma": 5,
+        "big_ma": 29,
+        "revenue_rate": 95.67648428194003,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:54"
+    },
+    "103590": {
+        "small_ma": 14,
+        "big_ma": 23,
+        "revenue_rate": 695.195689734136,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:57"
+    },
+    "014680": {
+        "small_ma": 9,
+        "big_ma": 27,
+        "revenue_rate": 54.80130058253852,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:42:59"
+    },
+    "000990": {
+        "small_ma": 11,
+        "big_ma": 56,
+        "revenue_rate": 34.34320220705376,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:01"
+    },
+    "006040": {
+        "small_ma": 15,
+        "big_ma": 48,
+        "revenue_rate": 60.615606347839154,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:03"
+    },
+    "282330": {
+        "small_ma": 3,
+        "big_ma": 20,
+        "revenue_rate": -26.28585199474216,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:06"
+    },
+    "020560": {
+        "small_ma": 13,
+        "big_ma": 39,
+        "revenue_rate": 17.733495847120064,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:08"
+    },
+    "361610": {
+        "small_ma": 4,
+        "big_ma": 20,
+        "revenue_rate": 35.40587063722187,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:13"
+    },
+    "112610": {
+        "small_ma": 14,
+        "big_ma": 27,
+        "revenue_rate": 44.33659702846508,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:15"
+    },
+    "003570": {
+        "small_ma": 11,
+        "big_ma": 23,
+        "revenue_rate": 476.8055460055212,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:17"
+    },
+    "009970": {
+        "small_ma": 6,
+        "big_ma": 20,
+        "revenue_rate": 74.76037400781304,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:22"
+    },
+    "008770": {
+        "small_ma": 10,
+        "big_ma": 35,
+        "revenue_rate": 15.648049742820394,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:25"
+    },
+    "010060": {
+        "small_ma": 15,
+        "big_ma": 42,
+        "revenue_rate": 63.25519620764649,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:27"
+    },
+    "233740": {
+        "small_ma": 14,
+        "big_ma": 37,
+        "revenue_rate": 74.10669802070686,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:29"
+    },
+    "375500": {
+        "small_ma": 8,
+        "big_ma": 100,
+        "revenue_rate": 20.04465822212093,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:32"
+    },
+    "453540": {
+        "small_ma": 9,
+        "big_ma": 64,
+        "revenue_rate": 8.969479611616093,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:34"
+    },
+    "367380": {
+        "small_ma": 5,
+        "big_ma": 37,
+        "revenue_rate": 114.0299312139574,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:37"
+    },
+    "069620": {
+        "small_ma": 6,
+        "big_ma": 99,
+        "revenue_rate": 15.550590924743865,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:39"
+    },
+    "007340": {
+        "small_ma": 15,
+        "big_ma": 23,
+        "revenue_rate": 115.77883314863988,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:41"
+    },
+    "004170": {
+        "small_ma": 3,
+        "big_ma": 29,
+        "revenue_rate": -3.642932283969072,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:44"
+    },
+    "385540": {
+        "small_ma": 14,
+        "big_ma": 65,
+        "revenue_rate": 12.936303229257906,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:46"
+    },
+    "034230": {
+        "small_ma": 9,
+        "big_ma": 34,
+        "revenue_rate": 74.6129748241373,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:48"
+    },
+    "006360": {
+        "small_ma": 4,
+        "big_ma": 21,
+        "revenue_rate": 31.01930800686062,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:51"
+    },
+    "006280": {
+        "small_ma": 6,
+        "big_ma": 21,
+        "revenue_rate": 20.307484333415378,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:53"
+    },
+    "252670": {
+        "small_ma": 15,
+        "big_ma": 90,
+        "revenue_rate": -4.9221158270877785,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:55"
+    },
+    "419530": {
+        "small_ma": 12,
+        "big_ma": 57,
+        "revenue_rate": 528.1032850922018,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:43:58"
+    },
+    "033100": {
+        "small_ma": 7,
+        "big_ma": 26,
+        "revenue_rate": 568.8684006540169,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:01"
+    },
+    "030520": {
+        "small_ma": 3,
+        "big_ma": 20,
+        "revenue_rate": 125.54639645221728,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:03"
+    },
+    "121600": {
+        "small_ma": 7,
+        "big_ma": 20,
+        "revenue_rate": 30.396991208237946,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:05"
+    },
+    "101730": {
+        "small_ma": 15,
+        "big_ma": 23,
+        "revenue_rate": 42.58809436547556,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:08"
+    },
+    "131970": {
+        "small_ma": 8,
+        "big_ma": 100,
+        "revenue_rate": 44.227613509014624,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:10"
+    },
+    "445680": {
+        "small_ma": 3,
+        "big_ma": 29,
+        "revenue_rate": 87.51048847266324,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:13"
+    },
+    "060250": {
+        "small_ma": 13,
+        "big_ma": 62,
+        "revenue_rate": 94.37408226379445,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:15"
+    },
+    "032190": {
+        "small_ma": 11,
+        "big_ma": 22,
+        "revenue_rate": 249.82666595007333,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:17"
+    },
+    "102710": {
+        "small_ma": 5,
+        "big_ma": 51,
+        "revenue_rate": 163.0518140809793,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:20"
+    },
+    "023160": {
+        "small_ma": 9,
+        "big_ma": 25,
+        "revenue_rate": 97.49633638643198,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:22"
+    },
+    "025320": {
+        "small_ma": 12,
+        "big_ma": 76,
+        "revenue_rate": 253.02619589889147,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:25"
+    },
+    "032820": {
+        "small_ma": 15,
+        "big_ma": 52,
+        "revenue_rate": 141.09041053566443,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:27"
+    },
+    "009520": {
+        "small_ma": 10,
+        "big_ma": 74,
+        "revenue_rate": 149.29686869261275,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:29"
+    },
+    "440110": {
+        "small_ma": 6,
+        "big_ma": 26,
+        "revenue_rate": 22.576308096112054,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:32"
+    },
+    "211050": {
+        "small_ma": 9,
+        "big_ma": 52,
+        "revenue_rate": 602.3773334659336,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:34"
+    },
+    "319660": {
+        "small_ma": 15,
+        "big_ma": 58,
+        "revenue_rate": 61.39929014716148,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:37"
+    },
+    "058970": {
+        "small_ma": 4,
+        "big_ma": 41,
+        "revenue_rate": 464.5524209187049,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:39"
+    },
+    "319400": {
+        "small_ma": 4,
+        "big_ma": 51,
+        "revenue_rate": 45.583273440082536,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:42"
+    },
+    "222080": {
+        "small_ma": 12,
+        "big_ma": 73,
+        "revenue_rate": -19.030038673304336,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:44"
+    },
+    "347700": {
+        "small_ma": 5,
+        "big_ma": 75,
+        "revenue_rate": 375.9956114476892,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:47"
+    },
+    "067630": {
+        "small_ma": 14,
+        "big_ma": 60,
+        "revenue_rate": 47.329993546997756,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:49"
+    },
+    "006730": {
+        "small_ma": 10,
+        "big_ma": 21,
+        "revenue_rate": 43.2442594857838,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:51"
+    },
+    "064260": {
+        "small_ma": 8,
+        "big_ma": 38,
+        "revenue_rate": 114.82193787872382,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:54"
+    },
+    "099320": {
+        "small_ma": 15,
+        "big_ma": 25,
+        "revenue_rate": 156.30430963745766,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:56"
+    },
+    "058610": {
+        "small_ma": 3,
+        "big_ma": 20,
+        "revenue_rate": 51.03031121870261,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:44:59"
+    },
+    "215200": {
+        "small_ma": 14,
+        "big_ma": 93,
+        "revenue_rate": 15.552415459579322,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:01"
+    },
+    "119850": {
+        "small_ma": 14,
+        "big_ma": 65,
+        "revenue_rate": 586.4616430464285,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:04"
+    },
+    "383310": {
+        "small_ma": 15,
+        "big_ma": 28,
+        "revenue_rate": -11.997455334651178,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:06"
+    },
+    "272290": {
+        "small_ma": 12,
+        "big_ma": 21,
+        "revenue_rate": 25.218120367749826,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:09"
+    },
+    "053030": {
+        "small_ma": 14,
+        "big_ma": 38,
+        "revenue_rate": 120.50241084844512,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:11"
+    },
+    "084110": {
+        "small_ma": 14,
+        "big_ma": 69,
+        "revenue_rate": 17.953814348689118,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:14"
+    },
+    "095660": {
+        "small_ma": 15,
+        "big_ma": 78,
+        "revenue_rate": 3.135640989772824,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:16"
+    },
+    "399720": {
+        "small_ma": 13,
+        "big_ma": 47,
+        "revenue_rate": 451.4856587268356,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:18"
+    },
+    "036620": {
+        "small_ma": 14,
+        "big_ma": 20,
+        "revenue_rate": 327.2878806680224,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:21"
+    },
+    "047920": {
+        "small_ma": 9,
+        "big_ma": 44,
+        "revenue_rate": 107.04299196303583,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:23"
+    },
+    "032500": {
+        "small_ma": 6,
+        "big_ma": 31,
+        "revenue_rate": 81.75945668815247,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:26"
+    },
+    "036540": {
+        "small_ma": 13,
+        "big_ma": 58,
+        "revenue_rate": -6.641121161636547,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:28"
+    },
+    "189300": {
+        "small_ma": 12,
+        "big_ma": 21,
+        "revenue_rate": -5.376384422240895,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:30"
+    },
+    "372320": {
+        "small_ma": 8,
+        "big_ma": 64,
+        "revenue_rate": -3.12943570128656,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:33"
+    },
+    "194480": {
+        "small_ma": 10,
+        "big_ma": 30,
+        "revenue_rate": 59.27810450681997,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:35"
+    },
+    "095610": {
+        "small_ma": 11,
+        "big_ma": 79,
+        "revenue_rate": 62.109895037279074,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:38"
+    },
+    "080220": {
+        "small_ma": 14,
+        "big_ma": 24,
+        "revenue_rate": 1064.2957750155447,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:40"
+    },
+    "069080": {
+        "small_ma": 15,
+        "big_ma": 43,
+        "revenue_rate": 9.566345853209867,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:42"
+    },
+    "166090": {
+        "small_ma": 14,
+        "big_ma": 29,
+        "revenue_rate": -5.916129067099245,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:47"
+    },
+    "099190": {
+        "small_ma": 7,
+        "big_ma": 27,
+        "revenue_rate": 37.10171818817008,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:49"
+    },
+    "340570": {
+        "small_ma": 13,
+        "big_ma": 50,
+        "revenue_rate": 101.26036689610223,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:52"
+    },
+    "078340": {
+        "small_ma": 3,
+        "big_ma": 42,
+        "revenue_rate": -12.41606363961274,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:54"
+    },
+    "348210": {
+        "small_ma": 6,
+        "big_ma": 25,
+        "revenue_rate": 36.462126313435846,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:45:57"
+    },
+    "036810": {
+        "small_ma": 13,
+        "big_ma": 22,
+        "revenue_rate": 170.6274066083083,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:00"
+    },
+    "052020": {
+        "small_ma": 12,
+        "big_ma": 69,
+        "revenue_rate": -28.265546923092938,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:02"
+    },
+    "059090": {
+        "small_ma": 11,
+        "big_ma": 40,
+        "revenue_rate": 68.93317978991446,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:05"
+    },
+    "074600": {
+        "small_ma": 14,
+        "big_ma": 33,
+        "revenue_rate": 2.1829515772114854,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:07"
+    },
+    "304100": {
+        "small_ma": 3,
+        "big_ma": 51,
+        "revenue_rate": 340.4585743984046,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:10"
+    },
+    "015750": {
+        "small_ma": 8,
+        "big_ma": 89,
+        "revenue_rate": 61.44565836637018,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:12"
+    },
+    "206650": {
+        "small_ma": 12,
+        "big_ma": 100,
+        "revenue_rate": 56.53628006219831,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:15"
+    },
+    "389260": {
+        "small_ma": 11,
+        "big_ma": 21,
+        "revenue_rate": 97.94424908964038,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:17"
+    },
+    "025900": {
+        "small_ma": 9,
+        "big_ma": 96,
+        "revenue_rate": -25.22494724446257,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:20"
+    },
+    "034950": {
+        "small_ma": 10,
+        "big_ma": 83,
+        "revenue_rate": 33.454143257185656,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:24"
+    },
+    "365340": {
+        "small_ma": 6,
+        "big_ma": 84,
+        "revenue_rate": 24.64276496887994,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:26"
+    },
+    "030530": {
+        "small_ma": 10,
+        "big_ma": 97,
+        "revenue_rate": 83.2697510654353,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:29"
+    },
+    "397030": {
+        "small_ma": 13,
+        "big_ma": 20,
+        "revenue_rate": 95.40236642872843,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:34"
+    },
+    "093320": {
+        "small_ma": 10,
+        "big_ma": 53,
+        "revenue_rate": 80.00389647748595,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:36"
+    },
+    "314930": {
+        "small_ma": 9,
+        "big_ma": 32,
+        "revenue_rate": 276.6705130778695,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:39"
+    },
+    "278280": {
+        "small_ma": 13,
+        "big_ma": 85,
+        "revenue_rate": -14.11708489896116,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:41"
+    },
+    "295310": {
+        "small_ma": 14,
+        "big_ma": 46,
+        "revenue_rate": 188.2575929303801,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:44"
+    },
+    "389650": {
+        "small_ma": 10,
+        "big_ma": 70,
+        "revenue_rate": 61.964730444968396,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:46"
+    },
+    "352480": {
+        "small_ma": 3,
+        "big_ma": 69,
+        "revenue_rate": 127.07990930961965,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:49"
+    },
+    "200130": {
+        "small_ma": 5,
+        "big_ma": 49,
+        "revenue_rate": 9.770147012660816,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:51"
+    },
+    "131290": {
+        "small_ma": 14,
+        "big_ma": 55,
+        "revenue_rate": -27.65028710504066,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:54"
+    },
+    "448280": {
+        "small_ma": 7,
+        "big_ma": 98,
+        "revenue_rate": 123.40745652995496,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:56"
+    },
+    "179900": {
+        "small_ma": 13,
+        "big_ma": 23,
+        "revenue_rate": -2.7313925434920936,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:46:59"
+    },
+    "458870": {
+        "small_ma": 10,
+        "big_ma": 22,
+        "revenue_rate": 367.7788204138741,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:02"
+    },
+    "099430": {
+        "small_ma": 12,
+        "big_ma": 35,
+        "revenue_rate": 15.043977126365993,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:04"
+    },
+    "046890": {
+        "small_ma": 12,
+        "big_ma": 20,
+        "revenue_rate": -31.61628063528702,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:09"
+    },
+    "215000": {
+        "small_ma": 14,
+        "big_ma": 72,
+        "revenue_rate": -6.296615688949917,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:11"
+    },
+    "035890": {
+        "small_ma": 6,
+        "big_ma": 55,
+        "revenue_rate": 28.061339872463513,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:13"
+    },
+    "065680": {
+        "small_ma": 10,
+        "big_ma": 53,
+        "revenue_rate": 180.95311284140539,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:16"
+    },
+    "215600": {
+        "small_ma": 12,
+        "big_ma": 33,
+        "revenue_rate": -37.41409786509478,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:20"
+    },
+    "102940": {
+        "small_ma": 4,
+        "big_ma": 20,
+        "revenue_rate": 26.559960342690886,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:23"
+    },
+    "101360": {
+        "small_ma": 8,
+        "big_ma": 26,
+        "revenue_rate": 344.2150324249642,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:25"
+    },
+    "402030": {
+        "small_ma": 15,
+        "big_ma": 62,
+        "revenue_rate": 405.02348600961204,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:28"
+    },
+    "101160": {
+        "small_ma": 14,
+        "big_ma": 94,
+        "revenue_rate": 5.075466786676809,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:30"
+    },
+    "095500": {
+        "small_ma": 7,
+        "big_ma": 23,
+        "revenue_rate": 49.60087791928456,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:33"
+    },
+    "094480": {
+        "small_ma": 9,
+        "big_ma": 23,
+        "revenue_rate": 71.2620908086644,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:35"
+    },
+    "441270": {
+        "small_ma": 11,
+        "big_ma": 51,
+        "revenue_rate": 132.18041978489197,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:38"
+    },
+    "220100": {
+        "small_ma": 13,
+        "big_ma": 55,
+        "revenue_rate": 174.5037289442462,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:41"
+    },
+    "064550": {
+        "small_ma": 5,
+        "big_ma": 91,
+        "revenue_rate": 3.8932737964544795,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:43"
+    },
+    "124500": {
+        "small_ma": 4,
+        "big_ma": 29,
+        "revenue_rate": 815.5046046684586,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:45"
+    },
+    "050890": {
+        "small_ma": 6,
+        "big_ma": 20,
+        "revenue_rate": 58.13128560159612,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:49"
+    },
+    "093520": {
+        "small_ma": 8,
+        "big_ma": 34,
+        "revenue_rate": 396.495970056286,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:52"
+    },
+    "122640": {
+        "small_ma": 9,
+        "big_ma": 38,
+        "revenue_rate": 56.12580374766004,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:56"
+    },
+    "041960": {
+        "small_ma": 4,
+        "big_ma": 20,
+        "revenue_rate": 9.673363399367267,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:47:59"
+    },
+    "171090": {
+        "small_ma": 11,
+        "big_ma": 32,
+        "revenue_rate": 409.5594760903272,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:48:02"
+    },
+    "437730": {
+        "small_ma": 15,
+        "big_ma": 40,
+        "revenue_rate": 14.479737704604212,
+        "mdd": 0,
+        "last_updated": "2025-08-01 12:48:04"
+    }
+}

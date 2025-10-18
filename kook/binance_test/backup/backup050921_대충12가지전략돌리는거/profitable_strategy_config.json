@@ -1,0 +1,36 @@
+{
+  "enabled_strategies": [
+    "momentum_long",
+    "momentum_short",
+    "macd_long",
+    "macd_short"
+  ],
+  "strategy_descriptions": {
+    "momentum_long": "모멘텀 롱 전략 (개선됨)",
+    "momentum_short": "모멘텀 숏 전략 (개선됨)",
+    "scalping_long": "스캘핑 롱 전략",
+    "scalping_short": "스캘핑 숏 전략",
+    "macd_long": "MACD 롱 전략 (개선됨)",
+    "macd_short": "MACD 숏 전략 (개선됨)",
+    "moving_average_long": "이동평균 롱 전략",
+    "moving_average_short": "이동평균 숏 전략",
+    "trend_long": "트렌드 롱 전략",
+    "trend_short": "트렌드 숏 전략",
+    "bb_long": "볼린저밴드 롱 전략",
+    "bb_short": "볼린저밴드 숏 전략"
+  },
+  "all_strategies": [
+    "momentum_long",
+    "momentum_short",
+    "scalping_long",
+    "scalping_short",
+    "macd_long",
+    "macd_short",
+    "moving_average_long",
+    "moving_average_short",
+    "trend_long",
+    "trend_short",
+    "bb_long",
+    "bb_short"
+  ]
+}

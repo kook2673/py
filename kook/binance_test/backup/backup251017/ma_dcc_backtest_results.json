@@ -1,0 +1,36 @@
+{
+  "optimization_period": "2024년",
+  "test_period": "2025년 전체",
+  "strategy_type": "통합 전략 (볼륨 필터 없음)",
+  "combined_optimal": {
+    "total_return": 0.0,
+    "final_capital": 10000,
+    "total_trades": 0,
+    "win_rate": 0.0,
+    "max_drawdown": 0.0,
+    "long_trades": 0,
+    "short_trades": 0,
+    "params": {
+      "sma_short": 3,
+      "sma_long": 20,
+      "dcc_period": 25
+    }
+  },
+  "test_result": {
+    "combined_result": {
+      "total_return": 5.847105579723702,
+      "final_capital": 10584.71055797237,
+      "total_trades": 60,
+      "win_rate": 58.333333333333336,
+      "max_drawdown": 11.168143113935379,
+      "long_trades": 37,
+      "short_trades": 23
+    },
+    "params": {
+      "sma_short": 3,
+      "sma_long": 20,
+      "dcc_period": 25
+    }
+  },
+  "last_updated": "2025-10-17 08:28:59"
+}

@@ -1,0 +1,112 @@
+{
+  "portfolio_settings": {
+    "initial_capital": 100000,
+    "rebalance_frequency_hours": 24,
+    "min_allocation_percent": 1.0,
+    "max_allocation_percent": 20.0,
+    "deactivation_threshold_return": -50.0,
+    "deactivation_threshold_winrate": 30.0,
+    "reactivation_threshold_return": 0.0,
+    "reactivation_threshold_winrate": 50.0
+  },
+  "strategy_settings": {
+    "volatility_breakout": {
+      "name": "변동성돌파",
+      "timeframe": "1h",
+      "lookback_period": 20,
+      "k_factor": 0.5,
+      "enabled": true
+    },
+    "momentum": {
+      "name": "모멘텀",
+      "timeframe": "1h",
+      "short_period": 12,
+      "long_period": 26,
+      "enabled": true
+    },
+    "swing_trading": {
+      "name": "스윙",
+      "timeframe": "4h",
+      "swing_period": 5,
+      "enabled": true
+    },
+    "breakout": {
+      "name": "브레이크아웃",
+      "timeframe": "1h",
+      "lookback_period": 20,
+      "enabled": true
+    },
+    "scalping": {
+      "name": "스캘핑",
+      "timeframe": "1m",
+      "short_ma": 5,
+      "long_ma": 20,
+      "enabled": true
+    },
+    "rsi": {
+      "name": "RSI",
+      "timeframe": "1h",
+      "period": 14,
+      "oversold": 30,
+      "overbought": 70,
+      "enabled": true
+    },
+    "macd": {
+      "name": "MACD",
+      "timeframe": "1h",
+      "fast_period": 12,
+      "slow_period": 26,
+      "signal_period": 9,
+      "enabled": true
+    },
+    "bollinger_bands": {
+      "name": "볼린저밴드",
+      "timeframe": "1h",
+      "period": 20,
+      "std_dev": 2,
+      "enabled": true
+    },
+    "moving_average": {
+      "name": "이동평균",
+      "timeframe": "1h",
+      "short_period": 10,
+      "long_period": 30,
+      "enabled": true
+    },
+    "stochastic": {
+      "name": "스토캐스틱",
+      "timeframe": "1h",
+      "k_period": 14,
+      "d_period": 3,
+      "oversold": 20,
+      "overbought": 80,
+      "enabled": true
+    }
+  },
+  "backtest_settings": {
+    "default_symbol": "BTCUSDT",
+    "default_timeframe": "1h",
+    "default_start_date": "2024-01-01",
+    "default_end_date": "2024-12-31",
+    "min_data_points": 50,
+    "performance_weights": {
+      "return_weight": 0.5,
+      "winrate_weight": 0.3,
+      "sharpe_weight": 0.2
+    }
+  },
+  "risk_management": {
+    "max_drawdown_limit": -80.0,
+    "stop_loss_percent": -10.0,
+    "take_profit_percent": 20.0,
+    "position_sizing": "fixed_fractional",
+    "max_position_size": 0.1
+  },
+  "logging": {
+    "log_level": "INFO",
+    "log_file": "logs/multi_strategy.log",
+    "save_trades": true,
+    "save_performance": true,
+    "create_charts": true
+  }
+}

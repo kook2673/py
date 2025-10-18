@@ -1,0 +1,57 @@
+{
+  "start_money": 777.43692694,
+  "my_money": 776.1011465,
+  "coins": {
+    "BTC/USDT": {
+      "long": {
+        "position": 1,
+        "entry_price": 114090.1,
+        "position_size": 0.001,
+        "stop_loss_price": 0,
+        "slide_level": 0,
+        "total_cost": 114.0901,
+        "avg_price": 114090.1,
+        "partial_sell_done": false,
+        "second_partial_sell_done": false,
+        "trailing_stop_triggered": false,
+        "highest_price": 0,
+        "position_side": "LONG"
+      },
+      "short": {
+        "position": 1,
+        "entry_price": 112021.9,
+        "position_size": 0.001,
+        "stop_loss_price": 0,
+        "slide_level": 0,
+        "total_cost": 112.0219,
+        "avg_price": 112021.9,
+        "partial_sell_done": false,
+        "second_partial_sell_done": false,
+        "position_side": "SHORT"
+      }
+    }
+  },
+  "water_bot_config": {
+    "rsi_period": 14,
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "bb_period": 20,
+    "bb_std": 2.0,
+    "ma_period": 20,
+    "ema_short": 5,
+    "ema_long": 20,
+    "martingale_trigger_pct": 0.05,
+    "profit_target_1": 0.002,
+    "profit_target_2": 0.004,
+    "trailing_stop_activation": 0.004,
+    "trailing_stop_base": 0.004,
+    "trailing_stop_multiplier": 0.5,
+    "stop_loss_4": 0.85,
+    "stop_loss_5": 0.75
+  },
+  "position_tracking": {
+    "current_ratio": 0.01,
+    "consecutive_losses": 0,
+    "consecutive_wins": 0
+  }
+}

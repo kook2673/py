@@ -1,0 +1,56 @@
+[
+  {
+    "coin_ticker": "KRW-BTC",
+    "ma_str": "9 21",
+    "RevenueRate": 83.71,
+    "MDD": -10.09,
+    "RevenueRate_rank": 3244.0,
+    "MDD_rank": 3230.5,
+    "Score": 6474.5
+  },
+  {
+    "coin_ticker": "KRW-ETH",
+    "ma_str": "20 57",
+    "RevenueRate": 138.31,
+    "MDD": -14.07,
+    "RevenueRate_rank": 3244.0,
+    "MDD_rank": 3231.5,
+    "Score": 6475.5
+  },
+  {
+    "coin_ticker": "KRW-SOL",
+    "ma_str": "7 30",
+    "RevenueRate": 119.03,
+    "MDD": -15.7,
+    "RevenueRate_rank": 3250.0,
+    "MDD_rank": 3256.5,
+    "Score": 6506.5
+  },
+  {
+    "coin_ticker": "KRW-XLM",
+    "ma_str": "10 80",
+    "RevenueRate": 593.58,
+    "MDD": -17.47,
+    "RevenueRate_rank": 3253.0,
+    "MDD_rank": 3242.0,
+    "Score": 6495.0
+  },
+  {
+    "coin_ticker": "KRW-DOGE",
+    "ma_str": "8 41",
+    "RevenueRate": 267.71,
+    "MDD": -22.68,
+    "RevenueRate_rank": 3251.0,
+    "MDD_rank": 3111.5,
+    "Score": 6362.5
+  },
+  {
+    "coin_ticker": "KRW-SUI",
+    "ma_str": "16 34",
+    "RevenueRate": 321.8,
+    "MDD": -20.66,
+    "RevenueRate_rank": 3222.0,
+    "MDD_rank": 3256.0,
+    "Score": 6478.0
+  }
+]

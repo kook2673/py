@@ -1,0 +1,32 @@
+{
+    "initial_capital": 10000,
+    "trading_fee": 0.0005,
+    "leverage": 5,
+    "enable_long_short": true,
+    "enable_technical_exit": false,
+    "volatility_based_martingale": true,
+    "dynamic_cooldown_candles": 5,
+    "slides": {
+        "entry": 1,
+        "martingale1": 1,
+        "martingale2": 2,
+        "martingale4": 4,
+        "martingale8": 8
+    },
+    "profit_targets": {
+        "partial_sell_threshold": 0.002,
+        "second_partial_sell_threshold": 0.004,
+        "trailing_stop_activation": 0.004,
+        "trailing_stop_base": 0.004,
+        "trailing_stop_multiplier": 0.5
+    },
+    "stop_loss": {
+        "martingale4_threshold": 0.85,
+        "martingale5_threshold": 0.75
+    },
+    "technical_indicators": {
+        "ma_short": 5,
+        "ma_long": 20,
+        "atr_period": 14
+    }
+}

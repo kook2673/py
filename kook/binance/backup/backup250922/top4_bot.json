@@ -1,0 +1,33 @@
+{
+    "start_money": 780.58822029,
+    "my_money": 779.54123347,
+    "coins": {
+        "BTC/USDT": {
+            "momentum": {
+                "position": 0,
+                "entry_price": 0.0,
+                "position_size": 0.0
+            },
+            "scalping": {
+                "position": 0,
+                "entry_price": 0.0,
+                "position_size": 0.0
+            },
+            "macd": {
+                "position": 1,
+                "entry_price": 115758.3,
+                "position_size": 0.001
+            },
+            "moving_average": {
+                "position": 1,
+                "entry_price": 115763.1,
+                "position_size": 0.001
+            }
+        }
+    },
+    "position_tracking": {
+        "consecutive_losses": 0,
+        "consecutive_wins": 0
+    },
+    "current_price": 116599.7
+}

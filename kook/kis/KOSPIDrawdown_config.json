@@ -1,0 +1,13 @@
+{
+  "allocation_rate": 0.1,
+  "rebalance_period": "daily",
+  "rebalance_after_time": "14:50",
+  "thresholds": [-15, -20, -25, -30, -35],
+  "units": [0.10, 0.10, 0.20, 0.40, 0.20],
+  "exit_mode": "recover",
+  "recover_buffer_pct": 0.0,
+  "take_profit_pct": 0.05,
+  "use_trailing_stop": true,
+  "atr_mult": 3.2,
+  "dd_window": 252
+}

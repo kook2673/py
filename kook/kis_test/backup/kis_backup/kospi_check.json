@@ -1,0 +1,140 @@
+{
+  "last_analysis_date": "2025-09-03",
+  "last_analysis_time": "00:00:00",
+  "current_kospi": 3184.42,
+  "max_kospi": 3254.47,
+  "max_date": "2025-07-30",
+  "change_percentage": -2.15,
+  "analysis_summary": {
+    "status": "하락",
+    "level": "정상"
+  },
+  "notification_history": [
+    {
+      "date": "2025-08-14",
+      "time": "00:00:00",
+      "current_kospi": 3224.49,
+      "change_percentage": -0.92,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-20",
+      "time": "00:00:00",
+      "current_kospi": 3130.09,
+      "change_percentage": -3.82,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-20",
+      "time": "00:00:00",
+      "current_kospi": 3130.09,
+      "change_percentage": -3.82,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-21",
+      "time": "00:00:00",
+      "current_kospi": 3141.74,
+      "change_percentage": -3.46,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-22",
+      "time": "00:00:00",
+      "current_kospi": 3168.73,
+      "change_percentage": -2.63,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-22",
+      "time": "00:00:00",
+      "current_kospi": 3168.73,
+      "change_percentage": -2.63,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-22",
+      "time": "00:00:00",
+      "current_kospi": 3168.73,
+      "change_percentage": -2.63,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-22",
+      "time": "00:00:00",
+      "current_kospi": 3168.73,
+      "change_percentage": -2.63,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-25",
+      "time": "00:00:00",
+      "current_kospi": 3209.86,
+      "change_percentage": -1.37,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-26",
+      "time": "00:00:00",
+      "current_kospi": 3179.36,
+      "change_percentage": -2.31,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-27",
+      "time": "00:00:00",
+      "current_kospi": 3187.16,
+      "change_percentage": -2.07,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-28",
+      "time": "00:00:00",
+      "current_kospi": 3196.32,
+      "change_percentage": -1.79,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-29",
+      "time": "00:00:00",
+      "current_kospi": 3186.01,
+      "change_percentage": -2.1,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-29",
+      "time": "00:00:00",
+      "current_kospi": 3186.01,
+      "change_percentage": -2.1,
+      "status": "하락"
+    },
+    {
+      "date": "2025-08-29",
+      "time": "00:00:00",
+      "current_kospi": 3186.01,
+      "change_percentage": -2.1,
+      "status": "하락"
+    },
+    {
+      "date": "2025-09-01",
+      "time": "00:00:00",
+      "current_kospi": 3142.93,
+      "change_percentage": -3.43,
+      "status": "하락"
+    },
+    {
+      "date": "2025-09-02",
+      "time": "00:00:00",
+      "current_kospi": 3172.35,
+      "change_percentage": -2.52,
+      "status": "하락"
+    },
+    {
+      "date": "2025-09-03",
+      "time": "00:00:00",
+      "current_kospi": 3184.42,
+      "change_percentage": -2.15,
+      "status": "하락"
+    }
+  ]
+}

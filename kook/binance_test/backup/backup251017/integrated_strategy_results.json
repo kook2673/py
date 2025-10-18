@@ -1,0 +1,168 @@
+{
+  "test_period": "2025년 전체",
+  "strategy_types": [
+    "MACD + DCC",
+    "MA + DCC",
+    "통합 전략"
+  ],
+  "timeframes_tested": [
+    "10분봉",
+    "15분봉",
+    "30분봉",
+    "1시간봉",
+    "4시간봉"
+  ],
+  "results": {
+    "10분봉": {
+      "timeframe": "10T",
+      "macd_strategy": {
+        "total_return": 11.490643796086006,
+        "final_capital": 11149.0643796086,
+        "total_trades": 44,
+        "win_rate": 68.18181818181817,
+        "max_drawdown": 9.228947902811637,
+        "long_trades": 30,
+        "short_trades": 14
+      },
+      "ma_strategy": {
+        "total_return": 17.866695456853176,
+        "final_capital": 11786.669545685318,
+        "total_trades": 50,
+        "win_rate": 62.0,
+        "max_drawdown": 11.031134186014096,
+        "long_trades": 31,
+        "short_trades": 19
+      },
+      "integrated_strategy": {
+        "total_return": 25.921203722652535,
+        "final_capital": 12592.120372265254,
+        "total_trades": 71,
+        "win_rate": 63.38028169014085,
+        "max_drawdown": 11.114593544675067,
+        "long_trades": 41,
+        "short_trades": 30
+      }
+    },
+    "15분봉": {
+      "timeframe": "15T",
+      "macd_strategy": {
+        "total_return": 13.827691461466877,
+        "final_capital": 11382.769146146687,
+        "total_trades": 58,
+        "win_rate": 62.06896551724138,
+        "max_drawdown": 15.585496282981188,
+        "long_trades": 34,
+        "short_trades": 24
+      },
+      "ma_strategy": {
+        "total_return": 14.407548515318465,
+        "final_capital": 11440.754851531847,
+        "total_trades": 54,
+        "win_rate": 64.81481481481481,
+        "max_drawdown": 10.565201937605798,
+        "long_trades": 27,
+        "short_trades": 27
+      },
+      "integrated_strategy": {
+        "total_return": 12.94769859637032,
+        "final_capital": 11294.769859637032,
+        "total_trades": 84,
+        "win_rate": 63.095238095238095,
+        "max_drawdown": 16.653741398297804,
+        "long_trades": 45,
+        "short_trades": 39
+      }
+    },
+    "30분봉": {
+      "timeframe": "30T",
+      "macd_strategy": {
+        "total_return": -22.5231814474149,
+        "final_capital": 7747.68185525851,
+        "total_trades": 51,
+        "win_rate": 45.09803921568628,
+        "max_drawdown": 30.71040967992012,
+        "long_trades": 27,
+        "short_trades": 24
+      },
+      "ma_strategy": {
+        "total_return": -12.129666438750245,
+        "final_capital": 8787.033356124975,
+        "total_trades": 51,
+        "win_rate": 49.01960784313725,
+        "max_drawdown": 24.38348464268382,
+        "long_trades": 27,
+        "short_trades": 24
+      },
+      "integrated_strategy": {
+        "total_return": -18.033478298652952,
+        "final_capital": 8196.652170134705,
+        "total_trades": 84,
+        "win_rate": 48.80952380952381,
+        "max_drawdown": 29.596330914054263,
+        "long_trades": 44,
+        "short_trades": 40
+      }
+    },
+    "1시간봉": {
+      "timeframe": "1H",
+      "macd_strategy": {
+        "total_return": -0.11847469877642651,
+        "final_capital": 9988.152530122357,
+        "total_trades": 52,
+        "win_rate": 46.15384615384615,
+        "max_drawdown": 18.352634015992393,
+        "long_trades": 33,
+        "short_trades": 19
+      },
+      "ma_strategy": {
+        "total_return": -8.796938802610184,
+        "final_capital": 9120.306119738982,
+        "total_trades": 57,
+        "win_rate": 50.877192982456144,
+        "max_drawdown": 21.659515759095584,
+        "long_trades": 36,
+        "short_trades": 21
+      },
+      "integrated_strategy": {
+        "total_return": -4.847283262698311,
+        "final_capital": 9515.271673730169,
+        "total_trades": 79,
+        "win_rate": 45.56962025316456,
+        "max_drawdown": 22.21032263078979,
+        "long_trades": 48,
+        "short_trades": 31
+      }
+    },
+    "4시간봉": {
+      "timeframe": "4H",
+      "macd_strategy": {
+        "total_return": 2.7548817220827733,
+        "final_capital": 10275.488172208277,
+        "total_trades": 37,
+        "win_rate": 51.35135135135135,
+        "max_drawdown": 15.34787109183656,
+        "long_trades": 24,
+        "short_trades": 13
+      },
+      "ma_strategy": {
+        "total_return": 9.131499218061126,
+        "final_capital": 10913.149921806113,
+        "total_trades": 37,
+        "win_rate": 54.054054054054056,
+        "max_drawdown": 11.962239171276174,
+        "long_trades": 17,
+        "short_trades": 20
+      },
+      "integrated_strategy": {
+        "total_return": -13.857143085331137,
+        "final_capital": 8614.285691466886,
+        "total_trades": 54,
+        "win_rate": 42.592592592592595,
+        "max_drawdown": 22.91069593418797,
+        "long_trades": 31,
+        "short_trades": 23
+      }
+    }
+  },
+  "last_updated": "2025-10-16 22:31:02"
+}

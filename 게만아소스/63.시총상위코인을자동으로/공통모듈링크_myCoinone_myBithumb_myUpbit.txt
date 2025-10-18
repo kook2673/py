@@ -1,0 +1,5 @@
+
+코인원(myCoinone.py),빗썸(myBithumb.py),업비트 공통모듈(myUpbit.py) 다운로드 링크!
+번거롭지만 여기서 일괄적으로 관리하기로 정해져서 아래 링크에 권한요청 해주세요 :)
+
+https://drive.google.com/drive/folders/1ePyJfZYypleXFcers9K4QobtOerkjani?usp=sharing

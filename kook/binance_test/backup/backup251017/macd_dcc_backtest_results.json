@@ -1,0 +1,38 @@
+{
+  "optimization_period": "2024년",
+  "test_period": "2025년 전체",
+  "strategy_type": "MACD + DCC 전략 (10분봉)",
+  "combined_optimal": {
+    "total_return": 0.0,
+    "final_capital": 10000,
+    "total_trades": 0,
+    "win_rate": 0.0,
+    "max_drawdown": 0.0,
+    "long_trades": 0,
+    "short_trades": 0,
+    "params": {
+      "macd_fast": 12,
+      "macd_slow": 24,
+      "macd_signal": 11,
+      "dcc_period": 25
+    }
+  },
+  "test_result": {
+    "result": {
+      "total_return": 11.490643796086006,
+      "final_capital": 11149.0643796086,
+      "total_trades": 44,
+      "win_rate": 68.18181818181817,
+      "max_drawdown": 9.228947902811637,
+      "long_trades": 30,
+      "short_trades": 14
+    },
+    "params": {
+      "macd_fast": 12,
+      "macd_slow": 24,
+      "macd_signal": 11,
+      "dcc_period": 25
+    }
+  },
+  "last_updated": "2025-10-16 22:25:40"
+}

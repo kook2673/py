@@ -1,0 +1,69 @@
+{
+  "allocation_rate": 0.1,
+  "max_parallel_positions": 10,
+  "min_price": 500,
+  "max_price": 200000,
+  "exclude_codes": [],
+  
+  "nxt": {
+    "enabled": true,
+    "strategy_type": "volatility_consecutive",
+    "start_time": "08:00",
+    "end_time": "08:30",
+    "max_candidates": 30,
+    "max_positions": 2,
+    "min_volume_amount": 500000000,
+    "consecutive_rise_periods": 5,
+    "min_volume_increase": 20.0,
+    "stop_loss_pct": 1.0,
+    "take_profit_pct": 3.0,
+    "force_close_time": "08:30",
+    "description": "변동률 상위 종목 중 5번 연속 상승 + 거래대금 증가 패턴"
+  },
+  
+  "volatility_consecutive": {
+    "enabled": true,
+    "strategy_type": "volatility_consecutive",
+    "start_time": "09:00",
+    "end_time": "15:00",
+    "max_candidates": 30,
+    "max_positions": 2,
+    "min_volume_amount": 500000000,
+    "consecutive_rise_periods": 5,
+    "min_volume_increase": 20.0,
+    "stop_loss_pct": 1.0,
+    "take_profit_pct": 3.0,
+    "force_close_time": "15:10",
+    "description": "변동률 상위 종목 중 5번 연속 상승 + 거래대금 증가 패턴"
+  },
+  
+  "spike_3pct": {
+    "enabled": true,
+    "strategy_type": "spike_3pct",
+    "start_time": "09:00",
+    "end_time": "15:00",
+    "max_candidates": 30,
+    "max_positions": 2,
+    "min_volume_amount": 500000000,
+    "min_spike_pct": 3.0,
+    "stop_loss_pct": 1.0,
+    "trailing_stop": {
+      "profit_ratio": 0.5,
+      "min_pct": 1.0,
+      "max_pct": 10.0
+    },
+    "partial_sell": {
+      "2%_up": 0.10,
+      "3%_up": 0.20,
+      "4%_up": 0.30,
+      "5%_up": 0.50,
+      "trailing_stop": true
+    },
+    "force_close_time": "15:10",
+    "description": "1분봉에서 3% 이상 급등한 종목 즉시 매수 + 부분매도 전략"
+  },
+  
+  "buy_price_offset": 1.01,
+  "sell_price_offset": 0.99,
+  "fluct_tr_id": "FHPST01700000"
+}

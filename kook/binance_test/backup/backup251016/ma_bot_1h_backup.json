@@ -1,0 +1,56 @@
+{
+  "use_saved_params": false,
+  "optimize_params": true,
+  "data_settings": {
+    "timeframe": "5m",
+    "resample_to": "1H",
+    "start_date": "2021-01-01",
+    "end_date": "2024-12-31"
+  },
+  "strategy_settings": {
+    "use_volume_filter": true,
+    "volume_threshold_range": [0.3, 0.5],
+    "sma_short_range": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "sma_long_range": [10, 12, 15, 18, 20, 22, 25, 28, 30, 32, 35, 38, 40, 42, 45, 48, 50, 55, 60, 65, 70, 75, 80, 85, 90, 100],
+    "rsi_overbought": 70,
+    "rsi_oversold": 30,
+    "rsi_strong_overbought": 80,
+    "rsi_strong_oversold": 20
+  },
+  "risk_settings": {
+    "initial_capital": 10000,
+    "position_size_ratio": 0.475,
+    "stop_loss_ratio": 0.05,
+    "use_rapid_decline_stop": true,
+    "trading_fee_buy": 0.0005,
+    "trading_fee_sell": 0.0005
+  },
+  "backtest_settings": {
+    "train_period": "2021-2023",
+    "test_period": "2024",
+    "save_results": true,
+    "generate_plots": true
+  },
+  "optimal_params": {
+    "long": {
+      "sma_short": 3,
+      "sma_long": 10,
+      "volume_threshold": 0.3,
+      "total_return": 1200.0,
+      "win_rate": 50.0,
+      "max_drawdown": 20.0,
+      "total_trades": 600,
+      "final_capital": 130000.0
+    },
+    "short": {
+      "sma_short": 3,
+      "sma_long": 10,
+      "volume_threshold": 0.3,
+      "total_return": 1200.0,
+      "win_rate": 50.0,
+      "max_drawdown": 20.0,
+      "total_trades": 600,
+      "final_capital": 130000.0
+    }
+  }
+}

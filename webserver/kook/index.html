@@ -1,0 +1,3123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스케줄러 관리 시스템</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-right: 0;
+            padding-right: 0;
+        }
+        
+        .main-container {
+            padding: 0;
+            margin-right: 0;
+            padding-right: 0;
+        }
+        
+        /* 레이아웃: 불필요한 가로 스크롤 및 오른쪽 여백 제거 */
+        html, body { overflow-x: hidden; }
+        /* 최상위 행만 가터 제거 (카드 내부 행들은 기본 가터 유지) */
+        .main-container > .row { margin-left: 0; margin-right: 0; --bs-gutter-x: 0; }
+        .row.portfolio-grid { --bs-gutter-x: 0 !important; margin-left: 0 !important; margin-right: 0 !important; }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            font-weight: 600;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .status-running {
+            background-color: #28a745;
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+        }
+        
+        .status-stopped {
+            background-color: #dc3545;
+            box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+        }
+        
+        .btn-action {
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 4px;
+        }
+        
+        .btn-start {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            border: none;
+            color: white;
+        }
+        
+        .btn-stop {
+            background: linear-gradient(45deg, #dc3545, #fd7e14);
+            border: none;
+            color: white;
+        }
+        
+        .btn-report {
+            background: linear-gradient(45deg, #007bff, #6610f2);
+            border: none;
+            color: white;
+        }
+        
+        .btn-restart {
+            background: linear-gradient(45deg, #ffc107, #fd7e14);
+            border: none;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .process-card {
+            transition: all 0.3s ease;
+        }
+        
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .task-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .task-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .task-card.registered {
+            border-color: #28a745;
+        }
+        
+        .task-card.not-registered {
+            border-color: #6c757d;
+        }
+        
+        .task-status {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .task-status.registered {
+            color: #28a745;
+        }
+        
+        .task-status.not-registered {
+            color: #6c757d;
+        }
+        
+        .stats-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+        
+        .stats-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stats-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .refresh-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .refresh-btn:hover {
+            transform: rotate(180deg);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+        }
+        
+        .script-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .script-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .script-card.registered {
+            border-color: #28a745;
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
+        }
+        
+        .script-card.not-registered {
+            border-color: #6c757d;
+            background: linear-gradient(135deg, rgba(108, 117, 125, 0.1), rgba(108, 117, 125, 0.05));
+            opacity: 0.7;
+        }
+        
+        .script-card.not-registered:hover {
+            opacity: 1;
+        }
+        
+        .script-status {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .script-status.registered {
+            color: #28a745;
+        }
+        
+        .script-status.not-registered {
+            color: #6c757d;
+        }
+
+        /* Bot card compact spacing */
+        .bot-card .card-body { padding-bottom: 0.5rem; }
+        .bot-card .collapse { margin-bottom: 0 !important; }
+        .bot-card .table { margin-bottom: 0.25rem; }
+        .bot-card .mt-3 { margin-top: 0.75rem !important; }
+
+        /* Period summary box theme */
+        .period-box {
+            background: linear-gradient(180deg, rgba(102,126,234,0.12), rgba(118,75,162,0.10));
+            border: 1px solid rgba(102,126,234,0.18);
+            border-radius: 12px;
+            /* 하단 여백 최소화 */
+            padding: 0.25rem 0.5rem 0rem;
+        }
+        .period-box .card-body {
+            padding: 1rem 0.5rem !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .period-title { margin-bottom: 0.15rem !important; }
+        .period-box:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        /* Custom gutter for summary rows */
+        .period-row {
+            --bs-gutter-x: 1rem;
+            margin-top: 0.5rem;
+            /* margin-bottom: 0.75rem; */
+        }
+
+        /* White outline transparent icon button (for dark headers) */
+        .btn-icon-white {
+            background-color: transparent !important;
+            color: #ffffff !important;
+            border: 1.5px solid rgba(255,255,255,0.85) !important;
+            width: 32px; height: 32px;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 8px;
+            box-shadow: none;
+            padding: 0;
+        }
+        .btn-icon-white:hover {
+            background-color: rgba(255,255,255,0.12) !important;
+            color: #ffffff !important;
+            border-color: #ffffff !important;
+            box-shadow: none;
+        }
+        .btn-icon-white i { font-size: 14px; line-height: 1; color:#ffffff !important; }
+        
+        /* Python 프로세스 카드 스타일 */
+        .process-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        
+        .process-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .process-card .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-bottom: none;
+        }
+        
+        .process-card .card-footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .process-card .text-info {
+            color: #17a2b8 !important;
+        }
+        
+        .process-card .text-warning {
+            color: #ffc107 !important;
+        }
+        
+        .process-card .text-break {
+            word-break: break-all;
+            font-size: 0.85rem;
+        }
+        /* 보유종목 표: 칼럼 균등 배분, 긴 종목명은 줄바꿈 */
+        .holdings-table {
+            table-layout: fixed;
+            width: 100%;
+        }
+        .holdings-table th,
+        .holdings-table td {
+            vertical-align: middle;
+            white-space: normal; /* 줄바꿈 허용 */
+            word-break: break-word;
+        }
+        /* 모든 칼럼 균등 폭 배분 */
+        .holdings-table thead th,
+        .holdings-table tbody td {
+            width: calc(100% / 7); /* 종목/수량/평단/현재가/평가금액/손익/수익률 = 7개 */
+        }
+        
+        /* 암호화폐 테이블: 컬럼 균등 배분, 일정한 크기 */
+        .crypto-table {
+            table-layout: fixed;
+            width: 100%;
+        }
+        
+        .crypto-table th,
+        .crypto-table td {
+            vertical-align: middle;
+            white-space: normal;
+            word-break: break-word;
+            padding: 8px;
+        }
+        
+        /* 암호화폐 테이블 컬럼 너비 설정 */
+        .crypto-table th:nth-child(1) { /* 코인 컬럼 */
+            width: 10%;
+            min-width: 80px;
+        }
+        
+        .crypto-table th:nth-child(2) { /* 현재가 컬럼 */
+            width: 12%;
+            min-width: 90px;
+        }
+        
+        .crypto-table th:nth-child(3) { /* 보유수량 컬럼 */
+            width: 10%;
+            min-width: 80px;
+        }
+        
+        .crypto-table th:nth-child(4) { /* 평가금액 컬럼 */
+            width: 12%;
+            min-width: 90px;
+        }
+        
+        .crypto-table th:nth-child(5) { /* 평균매수가 컬럼 */
+            width: 12%;
+            min-width: 90px;
+        }
+        
+        .crypto-table th:nth-child(6) { /* 손익 컬럼 */
+            width: 10%;
+            min-width: 80px;
+        }
+        
+        .crypto-table th:nth-child(7) { /* 수익률 컬럼 */
+            width: 10%;
+            min-width: 70px;
+        }
+        
+        .crypto-table th:nth-child(8) { /* MDD 컬럼 */
+            width: 10%;
+            min-width: 70px;
+        }
+        
+        .crypto-table th:nth-child(9) { /* 상태 컬럼 */
+            width: 8%;
+            min-width: 60px;
+        }
+        
+        .table th:nth-child(1) { /* PID 컬럼 */
+            width: 120px;
+            min-width: 80px;
+        }
+        
+        .table th:nth-child(2) { /* 프로세스명 컬럼 */
+            width: 120px;
+            min-width: 100px;
+            max-width: 300px;
+        }
+        
+        .table th:nth-child(3) { /* 메모리 컬럼 */
+            width: 120px;
+            min-width: 100px;
+        }
+        
+        .table th:nth-child(4) { /* CPU 컬럼 */
+            width: 120px;
+            min-width: 80px;
+        }
+        
+        .table th:nth-child(5) { /* 상태 컬럼 */
+            width: 120px;
+            min-width: 100px;
+        }
+        
+        .table th:nth-child(6) { /* 동작 컬럼 */
+            width: 120px;
+            min-width: 100px;
+        }
+        
+        .table td:nth-child(2) { /* 프로세스명 셀 */
+            word-wrap: break-word;
+            word-break: break-all;
+            white-space: normal;
+            max-width: 300px;
+            line-height: 1.2;
+        }
+        
+                 /* 포트폴리오 레이아웃 강제 적용 */
+         .portfolio-grid {
+             display: flex !important;
+             flex-wrap: wrap !important;
+             --bs-gutter-x: 0 !important;
+             margin-right: 0 !important;
+             margin-left: 0 !important;
+         }
+         
+         /* PC에서는 2x2 그리드 (lg 이상에서 2열) */
+         @media (min-width: 992px) {
+             .portfolio-grid > div {
+                 flex: 0 0 50% !important;
+                 max-width: 50% !important;
+                 padding-right: 0.5rem !important;
+                 padding-left: 0.5rem !important;
+             }
+         }
+         
+         /* 모바일에서는 1열 수직 배치 */
+         @media (max-width: 991.98px) {
+             .portfolio-grid > div {
+                 flex: 0 0 100% !important;
+                 max-width: 100% !important;
+                 padding-right: 0 !important;
+                 padding-left: 0 !important;
+             }
+         }
+         
+         /* 각 카드 내부의 데이터 배치 */
+         .portfolio-grid .bot-card {
+             height: 100% !important;
+             margin-bottom: 0;
+         }
+         
+         /* 그리드 내 카드 컨테이너 간격 조정 */
+         .portfolio-grid > div {
+             margin-bottom: 1rem;
+         }
+         
+         /* 카드 내 높이 조정 */
+         .portfolio-grid .card-body {
+             display: flex;
+             flex-direction: column;
+         }
+         
+         /* 차트 영역 높이 조정 */
+         .chart-container {
+             height: 200px;
+             max-height: 200px;
+             position: relative;
+             margin-top: 0.75rem !important;
+             overflow: hidden;
+         }
+         
+         /* 차트 캔버스 크기 제한 */
+         .chart-container canvas {
+             max-height: 100%;
+             width: 100% !important;
+             height: 100% !important;
+         }
+    </style>
+</head>
+<body>
+    <div class="container-fluid main-container">
+        <div class="row">
+            <div class="col-12">
+
+                        <!-- 포트폴리오 정보 섹션 -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="mb-0">
+                                            <i class="fas fa-chart-pie me-2"></i>
+                                            한국투자증권 투자현황
+                                        </h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row" id="portfolio-container">
+                                            <!-- 포트폴리오 정보가 여기에 표시됩니다 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 업비트 투자현황 섹션 -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="mb-0">
+                                            <i class="fas fa-chart-pie me-2"></i>
+                                            업비트 투자현황
+                                        </h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row" id="upbit-container">
+                                            <!-- 업비트 정보가 여기에 표시됩니다 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 포트폴리오 옵션 모달 -->
+                        <div class="modal fade" id="portfolioOptionsModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">포트폴리오 옵션</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="portfolioOptionsForm">
+                                            <div class="mb-3">
+                                                <label class="form-label">초기 금액</label>
+                                                <input type="number" step="1" class="form-control" id="opt_initial_investment" />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">초기 금액(실제투입금액)</label>
+                                                <input type="number" step="1" class="form-control" id="opt_initial_investment_old" />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">배당금</label>
+                                                <input type="number" step="1" class="form-control" id="opt_dividend_income" />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">투자 시작일</label>
+                                                <input type="date" class="form-control" id="opt_investment_date" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                        <button type="button" class="btn btn-primary" onclick="savePortfolioOptions()">저장</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Python 프로세스 관리 섹션 -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="mb-0">
+                                            <i class="fas fa-cogs me-2"></i>
+                                            Python 프로세스 관리
+                                        </h5>
+                                        <button class="btn btn-sm btn-outline-light" onclick="getPythonProcesses()">
+                                            <i class="fas fa-sync me-1"></i>
+                                            새로고침
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row" id="python-processes-container">
+                                            <!-- Python 프로세스 카드들이 여기에 동적으로 추가됩니다 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 매수/매도 로그 섹션 -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <i class="fas fa-list me-2"></i>
+                                            매수/매도 로그
+                                        </h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="trade-logs-container">
+                                            <!-- 매수/매도 로그가 여기에 표시됩니다 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        
+
+                        
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                
+                        
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <i class="fas fa-file-alt me-2"></i>
+                                            보고서 관리
+                                        </h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column gap-3">
+                                            <button class="btn btn-report btn-action w-100" onclick="sendDailyReport()">
+                                                <i class="fas fa-calendar-day me-2"></i>
+                                                일일 보고서 전송
+                                            </button>
+                                            <button class="btn btn-report btn-action w-100" onclick="sendMonthlyReport()">
+                                                <i class="fas fa-calendar-alt me-2"></i>
+                                                월간 보고서 전송
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="refresh-btn" onclick="refreshStatus()" id="refresh-btn">
+        <i class="fas fa-sync-alt"></i>
+    </button>
+    
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentStatus = {};
+        let portfolioData = {};
+        
+        function showToast(message, type = 'info') {
+            const toastContainer = document.getElementById('toast-container');
+            const toastId = 'toast-' + Date.now();
+            
+            const toastHtml = `
+                <div class="toast align-items-center text-white bg-${type} border-0" role="alert" id="${toastId}">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            ${message}
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                    </div>
+                </div>
+            `;
+            
+            toastContainer.insertAdjacentHTML('beforeend', toastHtml);
+            const toastElement = document.getElementById(toastId);
+            const toast = new bootstrap.Toast(toastElement);
+            toast.show();
+            
+            // 5초 후 자동 제거
+            setTimeout(() => {
+                if (toastElement.parentNode) {
+                    toastElement.parentNode.removeChild(toastElement);
+                }
+            }, 5000);
+        }
+        
+        // function updateProcessCards(processes) { // processes-container가 삭제되어 주석 처리
+        //     const container = document.getElementById('processes-container');
+        //     container.innerHTML = '';
+        //     
+        //     let runningCount = 0;
+        //     let stoppedCount = 0;
+        //     
+        //     Object.entries(processes).forEach(([name, status]) => {
+        //         if (status.running) runningCount++;
+        //         else stoppedCount++;
+        //         
+        //                                  const cardHtml = `
+        //                      <div class="col-md-6 mb-3">
+        //                          <div class="card process-card h-100">
+        //                              <div class="card-body d-flex flex-column">
+        //                                  <div class="d-flex justify-content-between align-items-center mb-3">
+        //                                      <h6 class="card-title mb-0">
+        //                                          <span class="status-indicator ${status.running ? 'status-running' : 'status-stopped'}"></span>
+        //                                          ${name}
+        //                                      </h6>
+        //                                      <span class="badge bg-${status.running ? 'success' : 'danger'}">
+        //                                          ${status.running ? '실행 중' : '중지됨'}
+        //                                      </span>
+        //                                  </div>
+        //                                  
+        //                                  <div class="row text-center mb-3 flex-grow-1">
+        //                                      <div class="div class="col-4">
+        //                                          <small class="text-muted">PID</small>
+        //                                          <div class="fw-bold">${status.pid || '-'}</div>
+        //                                      </div>
+        //                                      <div class="col-4">
+        //                                          <small class="text-muted">메모리</small>
+        //                                          <div class="fw-bold">${status.memory.toFixed(1)} MB</div>
+        //                                      </div>
+        //                                      <div class="col-4">
+        //                                          <small class="text-muted">CPU</small>
+        //                                          <div class="fw-bold">${status.cpu_percent.toFixed(1)}%</div>
+        //                                      </div>
+        //                                  </div>
+        //                                  
+        //                                  <div class="d-flex gap-3 mt-auto">
+        //                                      <button class="btn btn-start btn-action flex-fill" 
+        //                                              onclick="startProcess('${getProcessKey(name)}')"
+        //                                              ${status.running ? 'disabled' : ''}>
+        //                                          <i class="fas fa-play me-1"></i> 시작
+        //                                      </button>
+        //                                      <button class="btn btn-stop btn-action flex-fill" 
+        //                                              onclick="div class="btn btn-warning btn-action flex-fill" 
+        //                                              onclick="restartProcess('${getProcessKey(name)}')"
+        //                                              ${!status.running ? 'disabled' : ''}>
+        //                                          <i class="fas fa-redo me-1"></i> 재시작
+        //                                      </button>
+        //                                  </div>
+        //                              </div>
+        //                          </div>
+        //                      </div>
+        //                  `;
+        //                 
+        //                 container.insertAdjacentHTML('beforeend', cardHtml);
+        //             });
+        //             
+        //             
+        //         }
+        
+        // function getProcessKey(name) { // updateProcessCards가 주석 처리되어 더 이상 사용되지 않음
+        //     const keyMap = {
+        //         'Kosdaqpi_Bot': 'kosdaqpi_bot',
+        //         'XAA_Kr_Bot': 'xaa_kr_bot',
+        //         'KIS_KR_SplitTrader_System': 'kis_kr_split_trader',
+        //         'scheduler': 'scheduler',
+        //         'web_server': 'web_server'
+        //     };
+        //     return keyMap[name] || name.toLowerCase().replace(/\s+/g, '_');
+        // }
+        
+
+        
+
+        
+
+            
+
+            
+
+            
+
+            
+
+            
+
+        
+
+        
+
+        
+        function updatePortfolioInfo(portfolio, overview) {
+            const container = document.getElementById('portfolio-container');
+            
+            // 포트폴리오 데이터를 전역 변수로 저장 (차트에서 사용)
+            window.currentPortfolioData = portfolio;
+            
+            if (!portfolio) {
+                container.innerHTML = '<p class="text-muted">포트폴리오 정보를 불러올 수 없습니다.</p>';
+                return;
+            }
+            
+            const performance = portfolio.performance || {};
+            const bots = portfolio.bots || {};
+            
+            // 수익률 계산
+            const totalProfitRate = performance.total_profit_rate || 0;
+            const profitColor = totalProfitRate >= 0 ? 'danger' : 'primary';
+            const profitIcon = totalProfitRate >= 0 ? 'fa-arrow-up' : 'fa-arrow-down';
+            
+                         // 봇별 박스 생성
+             const botConfigs = {
+                 'Portfolio_Summary': { color: 'primary', icon: 'fa-coins', description: '포트폴리오 요약', isPortfolio: true },
+                 'Kosdaqpi_Bot': { color: 'info', icon: 'fa-chart-line', description: '코스닥 양방향 전략' },
+                 'MA_Strategy_KR_Bot_v3': { color: 'warning', icon: 'fa-chart-area', description: '이동평균자산배분전략_KR' },
+                 'MA_Kosdaqpi100_Bot_v1': { color: 'primary', icon: 'fa-chart-bar', description: '코스피100, 코스닥100 이동평균자산배분전략_KR' }
+             };
+             
+             // 2x2 그리드 레이아웃 시작
+             let portfolioHtml = `<div class="row portfolio-grid">`;
+             
+             // 모든 봇 처리 (포트폴리오 요약 포함)
+             Object.entries(botConfigs).forEach(([botName, botConfig], index) => {
+                 // 봇별 데이터 준비
+                 const botCfg = portfolio.bots && portfolio.bots[botName];
+                 const botHoldings = (botCfg && botCfg.holdings) ? botCfg.holdings : [];
+                 const botProfit = (overview && overview.bots && overview.bots[botName]) ? overview.bots[botName] : (portfolio.bot_profits && portfolio.bot_profits[botName]);
+                 const chartId = botName === 'Kosdaqpi_Bot' ? 'kosdaqpi-profit-chart' : (botName === 'MA_Strategy_KR_Bot_v3' ? 'ma-v3-profit-chart' : 'ma-v4-profit-chart');
+                 const collapseId = `holdings-${botName}`;
+                 
+                 // 모바일에서는 100%, PC에서는 50%로 설정
+                 portfolioHtml += `
+                     <div class="col-12 col-lg-6 mb-3">
+                         <div class="card border-0 bg-primary bg-opacity-10 h-100 bot-card">
+                             <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center p-3">
+                                 <div>
+                                     <h6 class="card-title fw-bold text-white mb-0">
+                                         <i class="fas ${botConfig.icon} me-2"></i>${botConfig.isPortfolio ? '포트폴리오 요약' : botName}
+                                     </h6>
+                                     ${!botConfig.isPortfolio ? `<small class="text-white-50">${botConfig.description}</small>` : ''}
+                                 </div>
+                                 <div class="d-flex gap-2">
+                                     ${!botConfig.isPortfolio ? `
+                                     <button type="button" class="btn btn-sm btn-outline-light" onclick="openBotLogModal('${botName}')" title="로그 보기">
+                                         <i class="fas fa-file-alt"></i>
+                                     </button>
+                                     <button type="button" class="btn btn-sm btn-icon-white" onclick="openBotSettings('${botName}')" title="설정 관리">
+                                         <i class="fas fa-cog" style="color:#ffffff"></i>
+                                     </button>
+                                     ` : `
+                                     <button type="button" class="btn btn-sm btn-icon-white" onclick="openPortfolioOptions()" title="설정 관리">
+                                         <i class="fas fa-cog" style="color:#ffffff"></i>
+                                     </button>
+                                     `}
+                                 </div>
+                             </div>
+                             <div class="card-body p-3">
+                             ${botConfig.isPortfolio ? `
+                                 <div class="mt-3">
+                                     <div class="row text-center">
+                                         <div class="col-6 col-md-4 mb-2">
+                                             <small class="text-muted">💰 초기 투자금</small>
+                                             <div class="fw-bold">${formatNumber((overview && overview.initial_investment) || portfolio.initial_investment || 0)}원</div>
+                                         </div>
+                                         <div class="col-6 col-md-4 mb-2">
+                                             <small class="text-muted">💰 총 평가금액</small>
+                                             <div class="fw-bold">${formatNumber((overview && overview.current_value) || performance.total_value || 0)}원</div>
+                                         </div>
+                                         <div class="col-6 col-md-4 mb-2">
+                                             <small class="text-muted">💰 총 수익금</small>
+                                             <div class="fw-bold text-${profitColor}">
+                                                 <i class="fas ${profitIcon} me-1"></i>
+                                                 ${formatNumber((overview && overview.total_profit) || performance.total_profit || 0)}원
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="row text-center mt-2">
+                                         <div class="col-6 col-md-4 mb-2">
+                                             <small class="text-muted">📈 수익률</small>
+                                             <div class="fw-bold text-${profitColor}">
+                                                 ${((overview && overview.total_profit_rate) || totalProfitRate || 0).toFixed(2)}%
+                                             </div>
+                                         </div>
+                                         <div class="col-6 col-md-4 mb-2">
+                                             <small class="text-muted">💵 배당금</small>
+                                             <div class="fw-bold text-info">${formatNumber((overview && overview.dividend_income) || portfolio.dividend_income || 0)}원</div>
+                                         </div>
+                                         <div class="col-6 col-md-4 mb-2">
+                                             <small class="text-muted">📅 투자 시작일</small>
+                                             <div class="fw-bold">${(overview && overview.investment_date) || portfolio.investment_date || '-'}</div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 ${overview ? buildOverviewStatsRow(overview) : ''}
+                                 
+                                 <!-- KOSPI 정보 섹션 추가 -->
+                                 <div class="mt-3" id="kospi-info-section">
+                                     <div class="row text-center">
+                                         <div class="col-12 mb-2">
+                                             <small class="text-muted">📊 KOSPI 지수 정보</small>
+                                         </div>
+                                     </div>
+                                     <div class="row text-center" id="kospi-data">
+                                         <div class="col-6 col-md-3 mb-2">
+                                             <small class="text-muted">현재 지수</small>
+                                             <div class="fw-bold text-primary" id="current-kospi">-</div>
+                                         </div>
+                                         <div class="col-6 col-md-3 mb-2">
+                                             <small class="text-muted">변동률</small>
+                                             <div class="fw-bold" id="kospi-change">-</div>
+                                         </div>
+                                         <div class="col-6 col-md-3 mb-2">
+                                             <small class="text-muted">최고점</small>
+                                             <div class="fw-bold text-success" id="max-kospi">-</div>
+                                         </div>
+                                         <div class="col-6 col-md-3 mb-2">
+                                             <small class="text-muted">최고점 날짜</small>
+                                             <div class="fw-bold text-info" id="max-date">-</div>
+                                         </div>
+                                     </div>
+                                     <div class="row text-center mt-2">
+                                         <div class="col-12">
+                                             <small class="text-muted">분석 상태: </small>
+                                             <span class="badge" id="kospi-status">-</span>
+                                         </div>
+                                     </div>
+                                     <div class="row text-center mt-2">
+                                         <div class="col-12">
+                                             <small class="text-muted">마지막 분석: </small>
+                                             <span class="text-info" id="last-analysis-time">-</span>
+                                         </div>
+                                     </div>
+                                 </div>
+                             ` : `
+                                 <div class="mt-3">
+                                     <div class="row text-center">
+                                         <div class="col-6 col-md-4 mb-2">
+                                             <small class="text-muted">💰 초기 분배금</small>
+                                             <div class="fw-bold">${formatNumber(portfolio.bots && portfolio.bots[botName] ? (portfolio.bots[botName].initial_allocation || 0) : 0)}원</div>
+                                         </div>
+                                         <div class="col-6 col-md-4 mb-2">
+                                             <small class="text-muted">💰 현재 분배금</small>
+                                             <div class="fw-bold">${formatNumber(portfolio.bots && portfolio.bots[botName] ? (portfolio.bots[botName].current_allocation || 0) : 0)}원</div>
+                                         </div>
+                                         <div class="col-6 col-md-4 mb-2">
+                                             <small class="text-muted">💰 총 보유가치</small>
+                                             <div class="fw-bold">${formatNumber(portfolio.bots && portfolio.bots[botName] ? (portfolio.bots[botName].total_holding_value || 0) : 0)}원</div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 ${buildBotPeriodRow(overview, botName)}
+                                 <div class="mt-3 chart-container"><canvas id="${botName}-chart"></canvas></div>
+                                 ${botHoldings.length > 0 ? `
+                                     <div class="d-flex justify-content-end gap-2 mt-2">
+                                         <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
+                                             <i class="fas fa-list me-1"></i> 보유종목 보기
+                                         </button>
+                                     </div>
+                                     <div class="collapse mt-2" id="${collapseId}">
+                                         <div class="table-responsive" style="overflow-x: auto;">
+                                             <table class="table table-sm table-hover holdings-table">
+                                                 <thead>
+                                                     <tr class="table-light">
+                                                         <th>종목</th>
+                                                         <th class="text-end">수량</th>
+                                                         <th class="text-end">평단</th>
+                                                         <th class="text-end">현재가</th>
+                                                         <th class="text-end">평가금액</th>
+                                                         <th class="text-end">손익</th>
+                                                         <th class="text-end">수익률</th>
+                                                     </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                     ${botHoldings.map(h => `
+                                                         <tr>
+                                                             <td>${h.stock_name || h.stock_code}</td>
+                                                             <td class="text-end">${formatNumber(h.quantity || 0)}</td>
+                                                             <td class="text-end">${formatInteger(h.purchase_price || 0)}</td>
+                                                             <td class="text-end">${formatInteger(h.current_price || 0)}</td>
+                                                             <td class="text-end">${formatNumber(h.current_value || 0)}</td>
+                                                             <td class="text-end ${((h.profit_loss||0)>=0)?'text-danger':'text-primary'}">${formatNumber(h.profit_loss || 0)}</td>
+                                                             <td class="text-end ${((h.profit_rate||0)>=0)?'text-danger':'text-primary'}">${(parseFloat(h.profit_rate||0)).toFixed(2)}%</td>
+                                                         </tr>
+                                                     `).join('')}
+                                                 </tbody>
+                                             </table>
+                                         </div>
+                                     </div>
+                                 ` : ''}
+                             `}
+                             </div>
+                         </div>
+                     </div>
+                 `;
+             });
+             
+             // 그리드 레이아웃 종료
+             portfolioHtml += `</div>`;
+            
+        function buildBotPeriodRow(overview, botName) {
+            if (!overview || !overview.bots || !overview.bots[botName] || !overview.bots[botName].periods) return '';
+            const p = overview.bots[botName].periods;
+            const iconForTitle = (t) => {
+                if (!t) return 'fa-calendar';
+                if (t.includes('일간')) return 'fa-calendar-day';
+                if (t.includes('월간')) return 'fa-calendar-days';
+                return 'fa-trophy';
+            };
+            const box = (title, obj) => {
+                const rate = (obj && obj.profit_rate) || 0;
+                const amt = (obj && obj.profit) || 0;
+                const r = Number(rate || 0);
+                const isUp = r >= 0;
+                const cls = isUp ? 'text-danger' : 'text-primary';
+                const icon = isUp ? 'fa-arrow-up' : 'fa-arrow-down';
+                const sign = r >= 0 ? '+' : '';
+                return `
+                    <div class="col-md-3 col-6 mt-2 mb-3">
+                        <div class="card h-100 border-0 period-box">
+                            <div class="card-body text-center py-0">
+                                <div class="small text-muted"><i class="fas ${iconForTitle(title)} me-1"></i>${title}</div>
+                                <div class="fw-bold ${cls}" style="font-size:0.9rem; line-height:1.0; white-space: nowrap;">
+                                    <i class="fas ${icon} me-1"></i>${formatNumber(amt)}원
+                                </div>
+                                <div class="${cls}" style="font-size:0.85rem; line-height:1.0; white-space: nowrap;">${sign}${r.toFixed(2)}%</div>
+                            </div>
+                        </div>
+                    </div>`;
+            };
+            return `
+                <div class="row mt-2 period-row">
+                    ${box('일간수익', p.daily)}
+                    ${box('월간수익', p.monthly)}
+                    ${box('연간수익', p.yearly)}
+                    ${box('판매수익', p.total)}
+                </div>`;
+        }
+
+        // === 포트폴리오 옵션 편집 ===
+        function formatDateForInput(value) {
+            try {
+                if (!value) return '';
+                if (typeof value === 'string') {
+                    // YYYY-MM-DD 또는 ISO 문자열일 경우 앞 10자리 사용
+                    return value.slice(0, 10);
+                }
+                // Date 객체 또는 숫자 타임스탬프 대응
+                const dt = value instanceof Date ? value : new Date(value);
+                if (isNaN(dt.getTime())) return '';
+                return new Date(dt.getTime() - dt.getTimezoneOffset() * 60000)
+                    .toISOString()
+                    .slice(0, 10);
+            } catch { return ''; }
+        }
+        let portfolioOverviewCache = null;
+        window.openPortfolioOptions = async function() {
+            // 모달은 먼저 보여주고, 데이터는 비동기로 채움
+            const modalEl = document.getElementById('portfolioOptionsModal');
+            const modal = new bootstrap.Modal(modalEl);
+            modal.show();
+            try {
+                const resp = await fetch('/api/portfolio_overview');
+                const data = await resp.json();
+                if (data && data.success) {
+                    portfolioOverviewCache = data.overview || {};
+                }
+                const cfgResp = await fetch('/api/portfolio_config');
+                const cfg = await cfgResp.json();
+
+                document.getElementById('opt_initial_investment').value = (cfg && cfg.initial_investment != null) ? cfg.initial_investment : (portfolioOverviewCache?.initial_investment ?? '');
+                document.getElementById('opt_initial_investment_old').value = (cfg && cfg.initial_investment_old != null) ? cfg.initial_investment_old : '';
+                document.getElementById('opt_dividend_income').value = (cfg && cfg.dividend_income != null) ? cfg.dividend_income : 0;
+                const elTotalDiv = document.getElementById('opt_total_dividend_income');
+                if (elTotalDiv) {
+                    elTotalDiv.value = (cfg && cfg.total_dividend_income != null) ? cfg.total_dividend_income : 0;
+                }
+                const investmentDate = (cfg && cfg.investment_date) || (portfolioOverviewCache && portfolioOverviewCache.investment_date) || '';
+                document.getElementById('opt_investment_date').value = formatDateForInput(investmentDate);
+            } catch (e) {
+                // 실패해도 모달은 열린 상태 유지
+                console.warn('옵션 데이터 로드 실패:', e);
+                showToast('옵션 데이터 로드 실패. 수동으로 입력하세요.', 'warning');
+            }
+        }
+
+        window.savePortfolioOptions = async function() {
+            try {
+                const payload = { portfolio: {
+                        initial_investment: toNumber(document.getElementById('opt_initial_investment').value),
+                        initial_investment_old: toNumberOrNull(document.getElementById('opt_initial_investment_old').value),
+                        dividend_income: toNumber(document.getElementById('opt_dividend_income').value),
+                        investment_date: (document.getElementById('opt_investment_date').value || '').trim()
+                    }};
+                const elTotalDiv2 = document.getElementById('opt_total_dividend_income');
+                if (elTotalDiv2) {
+                    payload.portfolio.total_dividend_income = toNumber(elTotalDiv2.value);
+                }
+
+                const res = await fetch('/api/portfolio_config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await res.json();
+
+                if (result.success) {
+                    showToast('포트폴리오 설정이 저장되었습니다.', 'success');
+                    bootstrap.Modal.getInstance(document.getElementById('portfolioOptionsModal')).hide();
+                    refreshPortfolioOverview();
+                } else {
+                    showToast(result.message || '저장에 실패했습니다.', 'danger');
+                }
+            } catch (e) {
+                showToast('저장 중 오류: ' + e.message, 'danger');
+            }
+        }
+
+        function toNumber(v) {
+            if (v === null || v === undefined || v === '') return 0;
+            const n = Number(v);
+            return isNaN(n) ? 0 : n;
+        }
+        function toNumberOrNull(v) {
+            if (v === null || v === undefined || v === '') return null;
+            const n = Number(v);
+            return isNaN(n) ? null : n;
+        }
+
+        async function refreshPortfolioOverview() {
+            try {
+                const res = await fetch('/api/portfolio');
+                const json = await res.json();
+                if (json.success) {
+                    const ov = await (await fetch('/api/portfolio_overview')).json();
+                    updatePortfolioInfo(json.portfolio, ov.overview);
+                }
+            } catch (e) {
+                // no-op
+            }
+        }
+            
+            container.innerHTML = portfolioHtml;
+            
+            // DOM이 업데이트된 후 차트를 로드하기 위해 약간의 지연 추가
+            setTimeout(() => {
+                // 보유 종목 차트는 보유 데이터 유무에 따라 내부에서 처리하므로 무조건 호출
+                loadKosdaqpiProfitChart();
+                loadMaV3ProfitChart();
+                loadMaV4ProfitChart();
+            }, 100);
+        }
+
+        function buildOverviewStatsRow(overview) {
+            const periods = overview.periods || {};
+            const daily = periods.daily || { profit: 0, profit_rate: 0 };
+            const monthly = periods.monthly || { profit: 0, profit_rate: 0 };
+            const yearly = periods.yearly || { profit: 0, profit_rate: 0 };
+            const total = periods.total || { profit: 0, profit_rate: 0 };
+
+            const iconForTitle = (t) => {
+                if (!t) return 'fa-calendar';
+                if (t.includes('일간')) return 'fa-calendar-day';
+                if (t.includes('월간')) return 'fa-calendar-days';
+                return 'fa-trophy';
+            };
+            const box = (title, amount, rate) => {
+                const r = Number(rate || 0);
+                const isUp = r >= 0;
+                const cls = isUp ? 'text-danger' : 'text-primary';
+                const icon = isUp ? 'fa-arrow-up' : 'fa-arrow-down';
+                const sign = r >= 0 ? '+' : '';
+                return `
+                    <div class="col-md-3 col-6 mt-2 mb-3">
+                        <div class="card h-100 border-0 period-box">
+                            <div class="card-body text-center py-0">
+                                <div class="mb-1"><i class="fas ${iconForTitle(title)} me-1"></i>${title}</div>
+                                <div class="fw-bold ${cls}" style="font-size:0.9rem; line-height:1.0; white-space: nowrap;">
+                                    <i class="fas ${icon} me-1"></i>${formatNumber(amount || 0)}원
+                                </div>
+                                <div class="${cls}" style="font-size:0.85rem; line-height:1.0; white-space: nowrap;">${sign}${r.toFixed(2)}%</div>
+                            </div>
+                        </div>
+                    </div>`;
+            };
+
+            return `
+                <div class="row mt-2 period-row">
+                    ${box('일간수익', daily.profit, daily.profit_rate)}
+                    ${box('월간수익', monthly.profit, monthly.profit_rate)}
+                    ${box('연간수익', yearly.profit, yearly.profit_rate)}
+                    ${box('판매수익', total.profit, total.profit_rate)}
+                </div>`;
+        }
+        
+        function formatNumber(num) {
+            return new Intl.NumberFormat('ko-KR').format(num);
+        }
+        function formatInteger(num) {
+            const n = Number(num);
+            if (!isFinite(n)) return '0';
+            return new Intl.NumberFormat('ko-KR', { maximumFractionDigits: 0 }).format(Math.round(n));
+        }
+        
+        function loadKosdaqpiProfitChart() {
+            // Kosdaqpi_Bot의 보유 주식 수익률 분포 차트 그리기
+            fetch('/api/bot_holdings')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.bot_holdings && data.bot_holdings.Kosdaqpi_Bot && data.bot_holdings.Kosdaqpi_Bot.holdings) {
+                        const holdings = data.bot_holdings.Kosdaqpi_Bot.holdings;
+                        createProfitDistributionChart('Kosdaqpi_Bot', holdings);
+                    }
+                })
+                .catch(error => {
+                    console.error('Kosdaqpi_Bot 보유 주식 정보 로드 실패:', error);
+                });
+        }
+        
+        function createProfitDistributionChart(botName, holdings) {
+            const chartId = `${botName}-chart`;
+            const ctx = document.getElementById(chartId);
+            if (!ctx) {
+                console.warn(`차트 캔버스 요소를 찾을 수 없음: ${chartId}`);
+                return;
+            }
+            
+            // 기존 차트가 있으면 제거
+            if (window.chartInstances && window.chartInstances[chartId]) {
+                window.chartInstances[chartId].destroy();
+            }
+            
+            // 차트 인스턴스 저장소가 없으면 초기화
+            if (!window.chartInstances) {
+                window.chartInstances = {};
+            }
+            
+            // 보유 주식이 없으면 메시지 표시
+            if (!holdings || holdings.length === 0) {
+                ctx.style.display = 'none';
+                const container = ctx.parentElement;
+                container.innerHTML = '<div class="text-center text-muted py-5"><small>보유 주식이 없습니다.</small></div>';
+                return;
+            }
+            
+            ctx.style.display = 'block';
+            
+            // 수익률 데이터 준비
+            const labels = holdings.map(holding => holding.stock_name || holding.stock_code);
+            const profitRates = holdings.map(holding => {
+                const profitRate = holding.profit_rate || 0;
+                return parseFloat(profitRate);
+            });
+            
+            // 색상 설정 (수익률에 따라)
+            const colors = profitRates.map(rate => {
+                return rate >= 0 ? 'rgba(255, 0, 0, 0.8)' : 'rgba(0, 123, 255, 0.8)';
+            });
+            
+            // 새 차트 인스턴스 생성 및 저장
+            window.chartInstances[chartId] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '수익률 (%)',
+                        data: profitRates,
+                        backgroundColor: colors,
+                        borderColor: colors.map(color => color.replace('0.8', '1')),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '수익률 분포',
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        },
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '수익률 (%)',
+                                font: {
+                                    size: 10
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0,0,0,0.1)'
+                            },
+                            ticks: {
+                                font: {
+                                    size: 10
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '종목',
+                                font: {
+                                    size: 10
+                                }
+                            },
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 0,
+                                font: {
+                                    size: 9
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function loadMaV3ProfitChart() {
+            // MA_Strategy_KR_Bot_v3의 보유 주식 수익률 분포 차트 그리기
+            const botName = 'MA_Strategy_KR_Bot_v3';
+            console.log(`${botName} 차트 로딩 시작`);
+            
+            // 먼저 포트폴리오 데이터에서 확인
+            if (window.currentPortfolioData && window.currentPortfolioData.bots && window.currentPortfolioData.bots[botName]) {
+                const portfolioHoldings = window.currentPortfolioData.bots[botName].holdings;
+                if (portfolioHoldings && portfolioHoldings.length > 0) {
+                    console.log(`포트폴리오에서 ${botName} 보유주식 발견:`, portfolioHoldings);
+                    createProfitDistributionChart(botName, portfolioHoldings);
+                    return;
+                }
+            }
+            
+            // API에서 데이터 가져오기
+            fetch('/api/bot_holdings')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(`${botName} API 응답:`, data);
+                    if (data.bot_holdings && data.bot_holdings[botName] && data.bot_holdings[botName].holdings) {
+                        const holdings = data.bot_holdings[botName].holdings;
+                        console.log(`${botName} 보유주식:`, holdings);
+                        if (holdings && holdings.length > 0) {
+                            createProfitDistributionChart(botName, holdings);
+                        } else {
+                            console.log(`${botName} 보유주식이 비어있음`);
+                            showEmptyHoldingsMessage(botName);
+                        }
+                    } else {
+                        console.log(`${botName} 데이터 구조 확인:`, data);
+                        showEmptyHoldingsMessage(botName);
+                    }
+                })
+                .catch(error => {
+                    console.error(`${botName} 보유 주식 정보 로드 실패:`, error);
+                    showEmptyHoldingsMessage(botName);
+                });
+        }
+        
+        function showEmptyHoldingsMessage(botName) {
+            const chartId = `${botName}-chart`;
+            const ctx = document.getElementById(chartId);
+            if (!ctx) {
+                console.warn(`차트 캔버스 요소를 찾을 수 없음: ${chartId}`);
+                return;
+            }
+            
+            // 기존 차트가 있으면 제거
+            if (window.chartInstances && window.chartInstances[chartId]) {
+                window.chartInstances[chartId].destroy();
+                delete window.chartInstances[chartId];
+            }
+            
+            ctx.style.display = 'none';
+            const container = ctx.parentElement;
+            container.innerHTML = '<div class="text-center text-muted py-5"><small>보유 주식이 없습니다.</small></div>';
+        }
+        
+        // createMaV3ProfitDistributionChart 함수는 더 이상 필요하지 않음 - createProfitDistributionChart로 통합
+
+        function loadMaV4ProfitChart() {
+            // MA_Kosdaqpi100_Bot_v1의 보유 주식 수익률 분포 차트 그리기
+            const botName = 'MA_Kosdaqpi100_Bot_v1';
+            console.log(`${botName} 차트 로딩 시작`);
+            
+            // 먼저 포트폴리오 데이터에서 확인
+            if (window.currentPortfolioData && window.currentPortfolioData.bots && window.currentPortfolioData.bots[botName]) {
+                const portfolioHoldings = window.currentPortfolioData.bots[botName].holdings;
+                if (portfolioHoldings && portfolioHoldings.length > 0) {
+                    console.log(`포트폴리오에서 ${botName} 보유주식 발견:`, portfolioHoldings);
+                    createProfitDistributionChart(botName, portfolioHoldings);
+                    return;
+                }
+            }
+            
+            // API에서 데이터 가져오기
+            fetch('/api/bot_holdings')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(`${botName} API 응답:`, data);
+                    if (data.bot_holdings && data.bot_holdings[botName] && data.bot_holdings[botName].holdings) {
+                        const holdings = data.bot_holdings[botName].holdings;
+                        console.log(`${botName} 보유주식:`, holdings);
+                        if (holdings && holdings.length > 0) {
+                            createProfitDistributionChart(botName, holdings);
+                        } else {
+                            console.log(`${botName} 보유주식이 비어있음`);
+                            showEmptyHoldingsMessage(botName);
+                        }
+                    } else {
+                        console.log(`${botName} 데이터 구조 확인:`, data);
+                        showEmptyHoldingsMessage(botName);
+                    }
+                })
+                .catch(error => {
+                    console.error(`${botName} 보유 주식 정보 로드 실패:`, error);
+                    showEmptyHoldingsMessage(botName);
+                });
+        }
+
+        // createMaV4ProfitDistributionChart 함수는 더 이상 필요하지 않음 - createProfitDistributionChart로 통합
+        
+        function openBotSettings(botName) {
+            // 봇별 설정 모달 열기
+            const modal = new bootstrap.Modal(document.getElementById('botSettingsModal'));
+            document.getElementById('botSettingsModalLabel').textContent = `${botName} 설정`;
+            
+            // 봇별 설정 로드
+            loadBotSettings(botName);
+            
+            modal.show();
+        }
+        
+        function loadBotSettings(botName) {
+            // 봇별 설정을 로드하는 함수
+            if (botName === 'MA_Kosdaqpi100_Bot_v1') {
+                // MA_Kosdaqpi100_Bot_v1 설정 로드
+                loadBotV4Settings();
+            } else if (botName === 'MA_Strategy_KR_Bot_v3') {
+                // MA_Strategy_KR_Bot_v3 설정 로드
+                loadBotV3Settings();
+            } else if (botName === 'Kosdaqpi_Bot') {
+                // Kosdaqpi_Bot 설정 로드
+                loadKosdaqpiBotSettings();
+            }
+        }
+        
+        function loadBotV3Settings() {
+            // MA_Strategy_KR_Bot_v3 설정 로드
+            fetch('/api/portfolio_config')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.bots && data.bots.MA_Strategy_KR_Bot_v3) {
+                        const botV3Config = data.bots.MA_Strategy_KR_Bot_v3;
+                        showBotV3Settings(botV3Config);
+                    } else {
+                        console.error('MA_Strategy_KR_Bot_v3 설정을 찾을 수 없습니다.');
+                        showBotV3Settings({});
+                    }
+                })
+                .catch(error => {
+                    console.error('봇 설정 로드 실패:', error);
+                    showBotV3Settings({});
+                });
+        }
+        
+        function loadKosdaqpiBotSettings() {
+            // Kosdaqpi_Bot 설정 로드
+            fetch('/api/portfolio_config')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.bots && data.bots.Kosdaqpi_Bot) {
+                        const kosdaqpiConfig = data.bots.Kosdaqpi_Bot;
+                        showKosdaqpiBotSettings(kosdaqpiConfig);
+                    } else {
+                        console.error('Kosdaqpi_Bot 설정을 찾을 수 없습니다.');
+                        showKosdaqpiBotSettings({});
+                    }
+                })
+                .catch(error => {
+                    console.error('봇 설정 로드 실패:', error);
+                    showKosdaqpiBotSettings({});
+                });
+        }
+        
+        function loadBotV4Settings() {
+            // MA_Kosdaqpi100_Bot_v1 설정 로드
+            fetch('/api/portfolio_config')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.bots && data.bots.MA_Kosdaqpi100_Bot_v1) {
+                        const botV4Config = data.bots.MA_Kosdaqpi100_Bot_v1;
+                        showBotV4Settings(botV4Config);
+                    } else {
+                        console.error('MA_Kosdaqpi100_Bot_v1 설정을 찾을 수 없습니다.');
+                        showBotV4Settings({});
+                    }
+                })
+                .catch(error => {
+                    console.error('봇 설정 로드 실패:', error);
+                    showBotV4Settings({});
+                });
+        }
+        
+        function showBotV3Settings(config) {
+            const modalBody = document.getElementById('botSettingsModalBody');
+            // invest_stock_list가 {stock_code, stock_name, ...} 형태인 것을
+            // generateStockListHtml에서 사용하는 {code: name} 형태로 변환
+            const v3DisplayStocks = (config.invest_stock_list || []).map(item => {
+                if (item && typeof item === 'object') {
+                    const code = item.stock_code ?? '';
+                    const name = item.stock_name ?? '';
+                    if (code) return { [code]: name || `종목${code}` };
+                }
+                // 이미 {code: name} 형태이거나 예외인 경우 최대한 유지
+                const firstKey = Object.keys(item || {})[0];
+                return firstKey ? { [firstKey]: item[firstKey] } : {};
+            }).filter(obj => Object.keys(obj).length > 0);
+            modalBody.innerHTML = `
+                <div class="mb-3">
+                    <label class="form-label">설명</label>
+                    <input type="text" class="form-control" value="${config.description || ''}" id="botV3Description">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">할당 비율 (%)</label>
+                    <input type="number" class="form-control" value="${(config.allocation_rate * 100) || 0}" id="botV3AllocationRate" min="0" max="100" step="1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">고정 비율 (%)</label>
+                    <input type="number" class="form-control" value="${(config.fix_rate * 100) || 0}" id="botV3FixRate" min="0" max="100" step="1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">동적 비율 (%)</label>
+                    <input type="number" class="form-control" value="${(config.dynamic_rate * 100) || 0}" id="botV3DynamicRate" min="0" max="100" step="1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">초기 배정 금액</label>
+                    <input type="number" class="form-control" value="${config.initial_allocation ?? 0}" id="botV3InitialAllocation" step="1" min="0">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">누적 실현손익</label>
+                    <input type="number" class="form-control" value="${config.cumulative_profit_if_sold ?? 0}" id="botV3CumulativeProfit" step="1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">투자 종목 목록</label>
+                    <div id="botV3StockList" class="border rounded p-2" style="max-height: 200px; overflow-y: auto;">
+                        ${generateStockListHtml(v3DisplayStocks)}
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary" onclick="saveBotV3Settings()">저장</button>
+                </div>
+            `;
+        }
+        
+        function showKosdaqpiBotSettings(config) {
+            const modalBody = document.getElementById('botSettingsModalBody');
+            modalBody.innerHTML = `
+                <div class="mb-3">
+                    <label class="form-label">설명</label>
+                    <input type="text" class="form-control" value="${config.description || ''}" id="kosdaqpiDescription">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">할당 비율 (%)</label>
+                    <input type="number" class="form-control" value="${(config.allocation_rate * 100) || 0}" id="kosdaqpiAllocationRate" min="0" max="100" step="1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">초기 배정 금액</label>
+                    <input type="number" class="form-control" value="${config.initial_allocation ?? 0}" id="kosdaqpiInitialAllocation" step="1" min="0">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">누적 실현손익</label>
+                    <input type="number" class="form-control" value="${config.cumulative_profit_if_sold ?? 0}" id="kosdaqpiCumulativeProfit" step="1">
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary" onclick="saveKosdaqpiBotSettings()">저장</button>
+                </div>
+            `;
+        }
+        
+        function showBotV4Settings(config) {
+            const modalBody = document.getElementById('botSettingsModalBody');
+            
+            // 기본값 설정
+            const defaultConfig = {
+                description: config.description || '코스피100, 코스닥100 이동평균자산배분전략_KR',
+                allocation_rate: config.allocation_rate || 0.33,
+                fix_rate: config.fix_rate || 0,
+                dynamic_rate: config.dynamic_rate || 0,
+                initial_allocation: config.initial_allocation ?? 0,
+                cumulative_profit_if_sold: config.cumulative_profit_if_sold ?? 0,
+                my_stock_list: config.my_stock_list || [],
+                invest_stock_list: config.invest_stock_list || [],
+                exclude_stock_list: config.exclude_stock_list || []
+            };
+            
+            modalBody.innerHTML = `
+                <div class="mb-3">
+                    <label class="form-label">설명</label>
+                    <input type="text" class="form-control" value="${defaultConfig.description}" id="botV4Description">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">할당 비율 (%)</label>
+                    <input type="number" class="form-control" value="${(defaultConfig.allocation_rate * 100)}" id="botV4AllocationRate" min="0" max="100" step="1">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">고정 비율 (%)</label>
+                            <input type="number" class="form-control" value="${(defaultConfig.fix_rate * 100)}" id="botV4FixRate" min="0" max="100" step="1">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">동적 비율 (%)</label>
+                            <input type="number" class="form-control" value="${(defaultConfig.dynamic_rate * 100)}" id="botV4DynamicRate" min="0" max="100" step="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">초기 배정 금액</label>
+                            <input type="number" class="form-control" value="${defaultConfig.initial_allocation}" id="botV4InitialAllocation" min="0" step="1">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">누적 실현손익</label>
+                            <input type="number" class="form-control" value="${defaultConfig.cumulative_profit_if_sold}" id="botV4CumulativeProfit" step="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">내 종목 목록</label>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" id="newMyStockCode" placeholder="종목 코드 (예: 005930)">
+                                <button class="btn btn-success" type="button" onclick="addMyStock()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <div id="myStockList" class="border rounded p-2" style="max-height: 150px; overflow-y: auto;">
+                                ${generateStockListHtml(defaultConfig.my_stock_list)}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">제외 종목 목록</label>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" id="newExcludeStockCode" placeholder="종목 코드 (예: 005930)">
+                                <button class="btn btn-danger" type="button" onclick="addExcludeStock()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <div id="exclude_stock_list" class="border rounded p-2" style="max-height: 150px; overflow-y: auto;">
+                                ${generateStockListHtml(defaultConfig.exclude_stock_list)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary" onclick="saveBotV4Settings()">저장</button>
+                </div>
+            `;
+        }
+        
+        function saveBotV3Settings() {
+            const description = document.getElementById('botV3Description').value;
+            const allocationRate = parseFloat(document.getElementById('botV3AllocationRate').value) / 100;
+            const fixRate = parseFloat(document.getElementById('botV3FixRate').value) / 100;
+            const dynamicRate = parseFloat(document.getElementById('botV3DynamicRate').value) / 100;
+            const initialAllocation = parseInt(document.getElementById('botV3InitialAllocation').value || '0', 10);
+            const cumulativeProfit = parseInt(document.getElementById('botV3CumulativeProfit').value || '0', 10);
+            
+            const config = {
+                description: description,
+                allocation_rate: allocationRate,
+                fix_rate: fixRate,
+                dynamic_rate: dynamicRate,
+                initial_allocation: initialAllocation,
+                cumulative_profit_if_sold: cumulativeProfit
+            };
+            
+            // 설정 저장
+            fetch('/api/portfolio_config', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    bot_name: 'MA_Strategy_KR_Bot_v3',
+                    config: config
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('설정이 저장되었습니다.');
+                    bootstrap.Modal.getInstance(document.getElementById('botSettingsModal')).hide();
+                } else {
+                    alert('설정 저장에 실패했습니다: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('설정 저장 실패:', error);
+                alert('설정 저장에 실패했습니다.');
+            });
+        }
+        
+        function saveKosdaqpiBotSettings() {
+            const description = document.getElementById('kosdaqpiDescription').value;
+            const allocationRate = parseFloat(document.getElementById('kosdaqpiAllocationRate').value) / 100;
+            const initialAllocation = parseInt(document.getElementById('kosdaqpiInitialAllocation').value || '0', 10);
+            const cumulativeProfit = parseInt(document.getElementById('kosdaqpiCumulativeProfit').value || '0', 10);
+            
+            const config = {
+                description: description,
+                allocation_rate: allocationRate,
+                initial_allocation: initialAllocation,
+                cumulative_profit_if_sold: cumulativeProfit
+            };
+            
+            // 설정 저장
+            fetch('/api/portfolio_config', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    bot_name: 'Kosdaqpi_Bot',
+                    config: config
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('설정이 저장되었습니다.');
+                    bootstrap.Modal.getInstance(document.getElementById('botSettingsModal')).hide();
+                } else {
+                    alert('설정 저장에 실패했습니다: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('설정 저장 실패:', error);
+                alert('설정 저장에 실패했습니다.');
+            });
+        }
+        
+        function saveBotV4Settings() {
+            const description = document.getElementById('botV4Description').value;
+            const allocationRate = parseFloat(document.getElementById('botV4AllocationRate').value) / 100;
+            const fixRate = parseFloat(document.getElementById('botV4FixRate').value) / 100;
+            const dynamicRate = parseFloat(document.getElementById('botV4DynamicRate').value) / 100;
+            const initialAllocation = parseInt(document.getElementById('botV4InitialAllocation').value || '0', 10);
+            const cumulativeProfit = parseInt(document.getElementById('botV4CumulativeProfit').value || '0', 10);
+            
+            // 현재 표시된 종목 목록들 가져오기
+            const myStockList = getCurrentStockList('myStockList');
+            const excludeStockList = getCurrentStockList('exclude_stock_list');
+            
+            const config = {
+                description: description,
+                allocation_rate: allocationRate,
+                fix_rate: fixRate,
+                dynamic_rate: dynamicRate,
+                initial_allocation: initialAllocation,
+                cumulative_profit_if_sold: cumulativeProfit,
+                my_stock_list: myStockList,
+                exclude_stock_list: excludeStockList
+            };
+            
+            // 설정 저장
+            fetch('/api/portfolio_config', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    bot_name: 'MA_Kosdaqpi100_Bot_v1',
+                    config: config
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('설정이 저장되었습니다.');
+                    bootstrap.Modal.getInstance(document.getElementById('botSettingsModal')).hide();
+                } else {
+                    alert('설정 저장에 실패했습니다: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('설정 저장 실패:', error);
+                alert('설정 저장에 실패했습니다.');
+            });
+        }
+        
+        async function refreshStatus() {
+            console.log('상태 갱신 시작:', new Date().toLocaleTimeString());
+            const refreshBtn = document.getElementById('refresh-btn');
+            refreshBtn.classList.add('loading');
+            
+            try {
+                // 1단계: 화면에 필요한 핵심 데이터만 먼저 로드 (상태, 포트폴리오, 오버뷰)
+                const [statusRes, portfolioRes, overviewRes] = await Promise.all([
+                    fetch('/api/status'),
+                    fetch('/api/portfolio'),
+                    fetch('/api/portfolio_overview')
+                ]);
+
+                const [statusData, portfolioJson, overviewJson] = await Promise.all([
+                    statusRes.json(),
+                    portfolioRes.json(),
+                    overviewRes.json()
+                ]);
+
+                currentStatus = statusData;
+                // updateProcessCards(statusData.status.processes); // processes-container가 삭제되어 주석 처리
+
+                // Python 프로세스 목록을 1단계에서 바로 로드
+                try {
+                    const pyRes = await fetch('/api/python_processes');
+                    const pyJson = await pyRes.json();
+                    if (pyJson.success) updatePythonProcessesList(pyJson.processes);
+                } catch (e) {
+                    console.warn('python process 목록 로드 실패:', e.message);
+                }
+
+                // 2단계: 부가 데이터는 비동기 후속 로드 후, 도착 시 UI만 부분 갱신
+                ;(async () => {
+                    try {
+                        // Python 프로세스 목록은 이미 로드했으므로 건너뜀
+                    } catch (e) {
+                        console.warn('부가 데이터 로드 실패:', e.message);
+                    }
+                })();
+
+                if (portfolioJson.success) {
+                    updatePortfolioInfo(portfolioJson.portfolio, overviewJson.success ? overviewJson.overview : null);
+                } else {
+                    console.log('포트폴리오 정보 가져오기 실패:', portfolioJson.message);
+                }
+
+                // 업비트 정보도 함께 로드
+                await refreshUpbitStatus();
+
+                // KOSPI 정보도 함께 로드
+                await refreshKospiInfo();
+
+            } catch (error) {
+                showToast('상태 업데이트 실패: ' + error.message, 'danger');
+            } finally {
+                refreshBtn.classList.remove('loading');
+            }
+        }
+        
+        // 업비트 상태 새로고침
+        async function refreshUpbitStatus() {
+            try {
+                const response = await fetch('/api/upbit_status');
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateUpbitInfo(data.upbit_data);
+                } else {
+                    console.log('업비트 정보 가져오기 실패:', data.message);
+                    showEmptyUpbitMessage();
+                }
+            } catch (error) {
+                console.error('업비트 정보 로드 실패:', error);
+                showEmptyUpbitMessage();
+            }
+        }
+        
+        // 업비트 정보 업데이트
+        function updateUpbitInfo(upbitData) {
+            const container = document.getElementById('upbit-container');
+            
+            if (!upbitData) {
+                showEmptyUpbitMessage();
+                return;
+            }
+            
+            console.log('업비트 데이터:', upbitData); // 디버깅용
+            
+            const portfolioSummary = upbitData.portfolio_summary || {};
+            const coinDetails = upbitData.coin_details || {};
+            const tradingHistory = upbitData.trading_history || {};
+            
+            // 전체 수익률 계산 (JSON 구조에 맞게 수정)
+            const totalProfitRate = upbitData.profit_rate || 0;
+            const profitColor = totalProfitRate >= 0 ? 'danger' : 'primary';
+            const profitIcon = totalProfitRate >= 0 ? 'fa-arrow-up' : 'fa-arrow-down';
+            
+            // 총 투자금액과 현재 가치 계산
+            const totalInvested = portfolioSummary.total_invested || 0;
+            const totalCurrentValue = portfolioSummary.total_current_value || 0;
+            const totalProfitLoss = portfolioSummary.total_profit_loss || 0;
+            
+            let upbitHtml = `
+                <div class="row portfolio-grid">
+                    <div class="col-12 col-lg-6 mb-3">
+                        <div class="card border-0 bg-primary bg-opacity-10 h-100 bot-card">
+                            <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold text-white mb-0">
+                                        <i class="fas fa-coins me-2"></i>포트폴리오 요약
+                                    </h6>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-sm btn-outline-light" onclick="refreshUpbitStatus()" title="새로고침">
+                                        <i class="fas fa-sync"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body p-3">
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">💰 초기 자본</small>
+                                            <div class="fw-bold">${formatNumber(upbitData.initial_capital || 0)}원</div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">💰 현재 자본</small>
+                                            <div class="fw-bold">${formatNumber(upbitData.current_capital || 0)}원</div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">💰 총 투자금액</small>
+                                            <div class="fw-bold">${formatNumber(totalInvested)}원</div>
+                                        </div>
+                                    </div>
+                                    <div class="row text-center mt-2">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">💰 총 평가금액</small>
+                                            <div class="fw-bold">${formatNumber(totalCurrentValue)}원</div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">💰 총 수익금</small>
+                                            <div class="fw-bold text-${profitColor}">
+                                                <i class="fas ${profitIcon} me-1"></i>
+                                                ${formatNumber(totalProfitLoss)}원
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">📈 수익률</small>
+                                            <div class="fw-bold text-${profitColor}">
+                                                ${totalProfitRate.toFixed(2)}%
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row text-center mt-2">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">📅 투자 시작일</small>
+                                            <div class="fw-bold">${upbitData.additional_info?.investment_start_date || '-'}</div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">⏱️ 투자 기간</small>
+                                            <div class="fw-bold">${upbitData.additional_info?.investment_period_days || 0}일</div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">🔄 마지막 리밸런싱</small>
+                                            <div class="fw-bold">${portfolioSummary.last_rebalance || '-'}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-3">
+                        <div class="card border-0 bg-primary bg-opacity-10 h-100 bot-card">
+                            <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold text-white mb-0">
+                                        <i class="fas fa-chart-bar me-2"></i>거래 통계
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="card-body p-3">
+                                <div class="mt-3">
+                                    <div class="row text-center">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">🔢 총 거래</small>
+                                            <div class="fw-bold">${tradingHistory.total_trades || 0}건</div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">🏆 승률</small>
+                                            <div class="fw-bold text-success">${(tradingHistory.win_rate || 0).toFixed(1)}%</div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">📈 최대 수익</small>
+                                            <div class="fw-bold text-success">${formatNumber(tradingHistory.largest_gain || 0)}원</div>
+                                        </div>
+                                    </div>
+                                    <div class="row text-center mt-2">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">📉 최대 손실</small>
+                                            <div class="fw-bold text-danger">${formatNumber(tradingHistory.largest_loss || 0)}원</div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">⚖️ 평균 수익</small>
+                                            <div class="fw-bold text-info">${formatNumber(tradingHistory.avg_profit_per_trade || 0)}원</div>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">🕒 마지막 업데이트</small>
+                                            <div class="fw-bold">${upbitData.last_updated || '-'}</div>
+                                        </div>
+                                    </div>
+                                    <div class="row text-center mt-2">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <small class="text-muted">📊 전략</small>
+                                            <div class="fw-bold">${upbitData.additional_info?.strategy || '-'}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // 코인별 상세 정보
+            if (Object.keys(coinDetails).length > 0) {
+                upbitHtml += `
+                    <div class="col-12 mb-3">
+                        <div class="card border-0 bg-primary bg-opacity-10 h-100 bot-card">
+                            <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold text-white mb-0">
+                                        <i class="fas fa-coins me-2"></i>코인별 상세 정보
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0 crypto-table">
+                                        <thead class="table-primary bg-opacity-25">
+                                            <tr>
+                                                <th class="text-center">코인</th>
+                                                <th class="text-center">현재가</th>
+                                                <th class="text-center">보유수량</th>
+                                                <th class="text-center">평가금액</th>
+                                                <th class="text-center">평균매수가</th>
+                                                <th class="text-center">손익</th>
+                                                <th class="text-center">수익률</th>
+                                                <th class="text-center">MDD</th>
+                                                <th class="text-center">상태</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            ${Object.entries(coinDetails).map(([ticker, detail]) => {
+                                                const profitColor = (detail.profit_rate || 0) >= 0 ? 'text-danger' : 'text-primary';
+                                                const profitIcon = (detail.profit_rate || 0) >= 0 ? 'fa-arrow-up' : 'fa-arrow-down';
+                                                const mddColor = (detail.mdd || 0) <= -10 ? 'text-danger' : (detail.mdd || 0) <= -5 ? 'text-warning' : 'text-success';
+                                                const statusColor = detail.status === '보유중' ? 'text-success' : 'text-warning';
+                                                
+                                                return `
+                                                    <tr>
+                                                        <td><strong>${ticker}</strong></td>
+                                                        <td class="text-end">${formatNumber(detail.current_price || 0)}원</td>
+                                                        <td class="text-end">${detail.quantity || 0}</td>
+                                                        <td class="text-end">${formatInteger(detail.total_value || 0)}원</td>
+                                                        <td class="text-end">${formatInteger(detail.avg_buy_price || 0)}원</td>
+                                                        <td class="text-end ${profitColor}">
+                                                            <i class="fas ${profitIcon} me-1"></i>
+                                                            ${formatInteger(detail.profit_loss || 0)}원
+                                                        </td>
+                                                        <td class="text-end ${profitColor}">
+                                                            ${(detail.profit_rate || 0).toFixed(2)}%
+                                                        </td>
+                                                        <td class="text-end ${mddColor}">
+                                                            ${(detail.mdd || 0).toFixed(2)}%
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <span class="badge bg-${detail.status === '보유중' ? 'success' : 'warning'}">${detail.status || '-'}</span>
+                                                        </td>
+                                                    </tr>
+                                                `;
+                                            }).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = upbitHtml;
+        }
+        
+        // 빈 업비트 메시지 표시
+        function showEmptyUpbitMessage() {
+            const container = document.getElementById('upbit-container');
+            container.innerHTML = `
+                <div class="row portfolio-grid">
+                    <div class="col-12 col-lg-6 mb-3">
+                        <div class="card border-0 bg-primary bg-opacity-10 h-100 bot-card">
+                            <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold text-white mb-0">
+                                        <i class="fas fa-coins me-2"></i>포트폴리오 요약
+                                    </h6>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-sm btn-outline-light" onclick="refreshUpbitStatus()" title="새로고침">
+                                        <i class="fas fa-sync"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body p-3">
+                                <div class="text-center text-muted py-5">
+                                    <i class="fas fa-exclamation-triangle fa-3x mb-3"></i>
+                                    <p class="mb-2">업비트 정보를 불러올 수 없습니다.</p>
+                                    <small class="text-muted">JSON 파일이 존재하지 않거나 형식이 올바르지 않습니다.</small>
+                                    <div class="mt-3">
+                                        <button class="btn btn-outline-primary btn-sm" onclick="refreshUpbitStatus()">
+                                            <i class="fas fa-sync me-1"></i>다시 시도
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // async function startProcess(processName) { // processes-container가 삭제되어 더 이상 사용되지 않음
+        //     try {
+        //         const response = await fetch(`/api/start/${processName}`);
+        //         const result = await response.json();
+        //         
+        //         if (result.success) {
+        //         showToast(result.message, 'success');
+        //         } else {
+        //         showToast(result.message, 'danger');
+        //         }
+        //         
+        //         // 상태 새로고침
+        //         setTimeout(refreshStatus, 1000);
+        //         
+        //         } catch (error) {
+        //         showToast('프로세스 시작 실패: ' + error.message, 'danger');
+        //         }
+        //     }
+        //     
+        //     async function stopProcess(processName) { // processes-container가 삭제되어 더 이상 사용되지 않음
+        //     try {
+        //         const response = await fetch(`/api/stop/${processName}`);
+        //         const result = await response.json();
+        //         
+        //         if (result.success) {
+        //         showToast(result.message, 'success');
+        //         } else {
+        //         showToast(result.message, 'danger');
+        //         }
+        //         
+        //         // 상태 새로고침
+        //         setTimeout(refreshStatus, 1000);
+        //         
+        //         } catch (error) {
+        //         showToast('프로세스 중지 실패: ' + error.message, 'danger');
+        //         }
+        //     }
+        //     
+        //     async function restartProcess(processName) { // processes-container가 삭제되어 더 이상 사용되지 않음
+        //     try {
+        //         showToast('프로세스 재시작 중...', 'info');
+        //         
+        //         // 먼저 중지
+        //         const stopResponse = await fetch(`/api/stop/${processName}`);
+        //         const result = await stopResponse.json();
+        //         
+        //         if (result.success) {
+        //         // 2초 대기 후 시작
+        //         setTimeout(async () => {
+        //             const startResponse = await fetch(`/api/start/${processName}`);
+        //             const startResult = await startResponse.json();
+        //             
+        //             if (startResult.success) {
+        //         showToast('프로세스 재시작 완료', 'success');
+        //         } else {
+        //         showToast('프로세스 시작 실패: ' + startResult.message, 'danger');
+        //         }
+        //         
+        //         // 상태 새로고침
+        //         setTimeout(refreshStatus, 1000);
+        //         }, 2000);
+        //         } else {
+        //         showToast('프로세스 중지 실패: ' + stopResult.message, 'danger');
+        //         }
+        //         
+        //         } catch (error) {
+        //         showToast('프로세스 재시작 실패: ' + error.message, 'danger');
+        //         }
+        //     }
+        
+        async function sendDailyReport() {
+            try {
+                const response = await fetch('/api/send_daily_report');
+                const result = await response.json();
+                
+                if (result.success) {
+                    showToast(result.message, 'success');
+                } else {
+                    showToast(result.message, 'danger');
+                }
+                
+            } catch (error) {
+                showToast('일일 보고서 전송 실패: ' + error.message, 'danger');
+            }
+        }
+        
+        async function sendMonthlyReport() {
+            try {
+                const response = await fetch('/api/send_monthly_report');
+                const result = await response.json();
+                
+                if (result.success) {
+                    showToast(result.message, 'success');
+                } else {
+                    showToast(result.message, 'danger');
+                }
+                
+            } catch (error) {
+                showToast('월간 보고서 전송 실패: ' + error.message, 'danger');
+            }
+        }
+        
+        async function getPythonProcesses() {
+            try {
+                const response = await fetch('/api/python_processes');
+                const result = await response.json();
+                
+                if (result.success) {
+                    updatePythonProcessesList(result.processes);
+                    showToast('Python 프로세스 목록을 가져왔습니다.', 'success');
+                } else {
+                    showToast(result.message, 'danger');
+                }
+                
+            } catch (error) {
+                showToast('Python 프로세스 목록 가져오기 실패: ' + error.message, 'danger');
+            }
+        }
+        
+        function updatePythonProcessesList(processes) {
+            const container = document.getElementById('python-processes-container');
+            
+            if (!processes || processes.length === 0) {
+                container.innerHTML = '<p class="text-muted">실행 중인 Python 프로세스가 없습니다.</p>';
+                return;
+            }
+            
+            let processesHtml = '';
+            
+            processes.forEach(process => {
+                const scriptName = process.cmd ? process.cmd.split('/').pop() : 'Unknown';
+                const memoryMB = parseFloat(process.memory).toFixed(1);
+                const cpuPercent = parseFloat(process.cpu).toFixed(1);
+                
+                processesHtml += `
+                    <div class="col-md-6 col-lg-4 mb-3">
+                        <div class="card h-100 process-card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-play-circle text-success me-2"></i>
+                                    ${scriptName}
+                                </h6>
+                                <span class="badge bg-success">실행 중</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <small class="text-muted">PID</small>
+                                        <div class="fw-bold">${process.pid}</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted">프로세스명</small>
+                                        <div class="fw-bold">${process.name}</div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <small class="text-muted">메모리</small>
+                                        <div class="fw-bold text-info">${memoryMB} MB</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted">CPU</small>
+                                        <div class="fw-bold text-warning">${cpuPercent}%</div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-12">
+                                        <small class="text-muted">실행 스크립트</small>
+                                        <div class="fw-bold text-break">${process.cmd || 'N/A'}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-sm btn-danger w-100" onclick="killPid(${process.pid})">
+                                    <i class="fas fa-times me-1"></i> 프로세스 종료
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = processesHtml;
+        }
+
+        async function killPid(pid) {
+            if (!confirm(`PID ${pid} 프로세스를 종료할까요?`)) return;
+            try {
+                const res = await fetch(`/api/kill/${pid}`, { method: 'POST' });
+                const json = await res.json();
+                if (json.success) {
+                    showToast(json.message, 'success');
+                    // 목록 새로고침
+                    setTimeout(() => { getPythonProcesses(); refreshStatus(); }, 500);
+                } else {
+                    showToast(json.message, 'danger');
+                }
+            } catch (e) {
+                showToast('프로세스 종료 실패: ' + e.message, 'danger');
+            }
+        }
+        
+        async function loadTradeLogs() {
+            try {
+                const response = await fetch('/api/trade_logs');
+                const result = await response.json();
+                
+                if (result.success) {
+                    updateTradeLogsList(result.logs);
+                    showToast(`매수/매도 로그 ${result.total_count}건을 가져왔습니다.`, 'success');
+                } else {
+                    showToast(result.message, 'danger');
+                }
+                
+            } catch (error) {
+                showToast('매수/매도 로그 가져오기 실패: ' + error.message, 'danger');
+            }
+        }
+        
+        function updateTradeLogsList(logs) {
+            const container = document.getElementById('trade-logs-container');
+            
+            if (!logs || logs.length === 0) {
+                container.innerHTML = '<p class="text-muted">매수/매도 로그가 없습니다.</p>';
+                return;
+            }
+            
+            let logsHtml = '<div class="table-responsive"><table class="table table-striped table-hover">';
+            logsHtml += '<thead class="table-dark"><tr><th>날짜</th><th>시간</th><th>구분</th><th>종목명</th><th>종목코드</th><th>라운드</th><th>가격정보</th><th>수익률</th><th>로그파일</th></tr></thead><tbody>';
+            
+            logs.forEach(log => {
+                let priceInfo = '';
+                let profitRate = '';
+                
+                if (log.action === '매수') {
+                    priceInfo = `매수금액: ${log.amount.toLocaleString()}원<br>돌파가격: ${log.break_price.toLocaleString()}원<br>시가: ${log.open_price.toLocaleString()}원`;
+                } else if (log.action === '매도') {
+                    priceInfo = `매수가: ${log.buy_price.toLocaleString()}원<br>매수금: ${log.buy_amount.toLocaleString()}원<br>매도가: ${log.sell_price.toLocaleString()}원<br>회수금: ${log.return_amount.toLocaleString()}원`;
+                    profitRate = `${log.profit_rate > 0 ? '+' : ''}${log.profit_rate.toFixed(2)}%`;
+                }
+                
+                const actionBadge = log.action === '매수' ? 'bg-primary' : 'bg-success';
+                const profitBadge = log.profit_rate > 0 ? 'bg-success' : log.profit_rate < 0 ? 'bg-danger' : 'bg-secondary';
+                
+                logsHtml += `
+                    <tr>
+                        <td><strong>${log.date}</strong></td>
+                        <td>${log.timestamp.split(' ')[1]}</td>
+                        <td><span class="badge ${actionBadge}">${log.action}</span></td>
+                        <td>${log.stock_name}</td>
+                        <td><code>${log.stock_code}</code></td>
+                        <td>${log.round}</td>
+                        <td>${priceInfo}</td>
+                        <td>${log.action === '매도' ? `<span class="badge ${profitBadge}">${profitRate}</span>` : '-'}</td>
+                        <td><small class="text-muted">${log.log_file}</small></td>
+                    </tr>
+                `;
+            });
+            
+            logsHtml += '</tbody></table></div>';
+            container.innerHTML = logsHtml;
+        }
+
+        // -------------------------
+        // Bot 로그 보기
+        // -------------------------
+        let botLogModalInstance = null;
+        function ensureBotLogModal() {
+            if (document.getElementById('botLogModal')) return;
+            const modalHtml = `
+            <div class="modal fade" id="botLogModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="botLogModalTitle">봇 로그</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <div>
+                        <select id="botLogLines" class="form-select form-select-sm" style="width:auto; display:inline-block;">
+                          <option value="200">최근 200줄</option>
+                          <option value="500" selected>최근 500줄</option>
+                          <option value="1000">최근 1000줄</option>
+                          <option value="2000">최근 2000줄</option>
+                        </select>
+                        <button id="botLogReload" class="btn btn-sm btn-outline-secondary ms-2"><i class="fas fa-sync"></i> 새로고침</button>
+                      </div>
+                    </div>
+                    <pre id="botLogContent" style="white-space: pre-wrap; word-break: break-word; background:#111; color:#eee; padding:12px; border-radius:8px; height:60vh; overflow:auto;"></pre>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            const modalEl = document.getElementById('botLogModal');
+            botLogModalInstance = new bootstrap.Modal(modalEl);
+        }
+
+        async function openBotLogModal(botName) {
+            ensureBotLogModal();
+            const title = document.getElementById('botLogModalTitle');
+            const contentEl = document.getElementById('botLogContent');
+            const linesSel = document.getElementById('botLogLines');
+            const reloadBtn = document.getElementById('botLogReload');
+
+            title.textContent = `${botName} 로그`;
+            contentEl.textContent = '불러오는 중...';
+
+            async function loadLog() {
+                const lines = linesSel.value || '500';
+                try {
+                    const res = await fetch(`/api/bot_log/${encodeURIComponent(botName)}?lines=${lines}`);
+                    const json = await res.json();
+                    if (json.success) {
+                        contentEl.textContent = json.log || '(로그가 비어 있습니다)';
+                    } else {
+                        contentEl.textContent = json.message || '로그를 불러오지 못했습니다';
+                    }
+                } catch (e) {
+                    contentEl.textContent = '로그 로드 실패: ' + e.message;
+                }
+            }
+
+            linesSel.onchange = loadLog;
+            reloadBtn.onclick = loadLog;
+            await loadLog();
+            botLogModalInstance.show();
+        }
+        
+
+        
+        function generateStockListHtml(stockList) {
+            if (!stockList || stockList.length === 0) {
+                return '<p class="text-muted">등록된 종목이 없습니다.</p>';
+            }
+            
+            let html = '<div class="list-group">';
+            stockList.forEach((stock, index) => {
+                const stockCode = Object.keys(stock)[0];
+                const stockName = stock[stockCode];
+                
+                html += `
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>${stockCode}</strong>
+                            <small class="text-muted ms-2">${stockName}</small>
+                        </div>
+                        <button class="btn btn-sm btn-danger" onclick="removeStock('${stockCode}', ${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            return html;
+        }
+        
+        function addMyStock() {
+            const stockCode = document.getElementById('newMyStockCode').value.trim();
+            if (!stockCode) {
+                alert('종목 코드를 입력해주세요.');
+                return;
+            }
+            
+            if (stockCode.length !== 6) {
+                alert('종목 코드는 6자리여야 합니다.');
+                return;
+            }
+            
+            const stockList = getCurrentStockList('myStockList');
+            const newStock = { [stockCode]: `종목${stockCode}` };
+            stockList.push(newStock);
+            
+            updateStockList('myStockList', stockList);
+            document.getElementById('newMyStockCode').value = '';
+        }
+        
+        function addExcludeStock() {
+            const stockCode = document.getElementById('newExcludeStockCode').value.trim();
+            if (!stockCode) {
+                alert('종목 코드를 입력해주세요.');
+                return;
+            }
+            
+            if (stockCode.length !== 6) {
+                alert('종목 코드는 6자리여야 합니다.');
+                return;
+            }
+            
+            const stockList = getCurrentStockList('exclude_stock_list');
+            const newStock = { [stockCode]: `종목${stockCode}` };
+            stockList.push(newStock);
+            
+            updateStockList('exclude_stock_list', stockList);
+            document.getElementById('newExcludeStockCode').value = '';
+        }
+        
+        function removeStock(stockCode, index) {
+            // 현재 활성화된 모달에서 종목 목록 찾기
+            const myStockList = getCurrentStockList('myStockList');
+            const excludeStockList = getCurrentStockList('exclude_stock_list');
+            
+            // myStockList에서 제거
+            const myIndex = myStockList.findIndex(stock => Object.keys(stock)[0] === stockCode);
+            if (myIndex !== -1) {
+                myStockList.splice(myIndex, 1);
+                updateStockList('myStockList', myStockList);
+                return;
+            }
+            
+            // excludeStockList에서 제거
+            const excludeIndex = excludeStockList.findIndex(stock => Object.keys(stock)[0] === stockCode);
+            if (excludeIndex !== -1) {
+                excludeStockList.splice(excludeIndex, 1);
+                updateStockList('exclude_stock_list', excludeStockList);
+                return;
+            }
+        }
+        
+        function getCurrentStockList(listId) {
+            const container = document.getElementById(listId);
+            if (!container) return [];
+            
+            const stockItems = container.querySelectorAll('.list-group-item');
+            const stockList = [];
+            
+            stockItems.forEach(item => {
+                const stockCode = item.querySelector('strong').textContent;
+                const stockName = item.textContent.split(' - ')[1] || `종목${stockCode}`;
+                stockList.push({ [stockCode]: stockName });
+            });
+            
+            return stockList;
+        }
+        
+        function updateStockList(listId, stockList) {
+            const container = document.getElementById(listId);
+            if (container) {
+                container.innerHTML = generateStockListHtml(stockList);
+            }
+        }
+
+        function showCreateTaskModal() {
+            // 폼 초기화
+            document.getElementById('createTaskForm').reset();
+            document.getElementById('scheduleTime').value = '09:00';
+            document.getElementById('scheduleType').value = 'daily';
+            document.getElementById('scriptPath').value = '';
+            
+            // Python 실행 파일 경로 동적 감지
+            fetch('/api/python_executable')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('executablePath').value = data.python_path;
+                    } else {
+                        // 기본값 설정
+                        document.getElementById('executablePath').value = 'C:/Users/kook-minipc/AppData/Local/Microsoft/WindowsApps/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/python.exe';
+                        console.warn('Python 경로 자동 감지 실패:', data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Python 경로 가져오기 실패:', error);
+                    // 기본값 설정
+                    document.getElementById('executablePath').value = 'C:/Users/kook-minipc/AppData/Local/Microsoft/WindowsApps/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/python.exe';
+                });
+            
+            // 스케줄 설정 초기화
+            toggleScheduleConfig();
+            
+            // 모달 표시
+            const modal = new bootstrap.Modal(document.getElementById('createTaskModal'));
+            modal.show();
+        }
+
+        function toggleScheduleConfig() {
+            const scheduleType = document.getElementById('scheduleType').value;
+            const configContainer = document.getElementById('scheduleConfigContainer');
+            const configContent = document.getElementById('scheduleConfigContent');
+            
+            if (scheduleType === 'daily') {
+                configContainer.style.display = 'none';
+            } else {
+                configContainer.style.display = 'block';
+                
+                let html = '';
+                if (scheduleType === 'weekly') {
+                    html = `
+                        <label for="weekday" class="form-label">요일</label>
+                        <select class="form-control" id="weekday">
+                            <option value="1">일요일</option>
+                            <option value="2">월요일</option>
+                            <option value="3">화요일</option>
+                            <option value="4">수요일</option>
+                            <option value="5">목요일</option>
+                            <option value="6">금요일</option>
+                            <option value="7">토요일</option>
+                        </select>
+                    `;
+                } else if (scheduleType === 'monthly') {
+                    html = `
+                        <label for="day" class="form-label">일</label>
+                        <select class="form-control" id="day">
+                            ${Array.from({length: 31}, (_, i) => i + 1).map(day => `<option value="${day}">${day}일</option>`).join('')}
+                        </select>
+                    `;
+                } else if (scheduleType === 'yearly') {
+                    html = `
+                        <label for="yearlyMonth" class="form-label">월</label>
+                        <select class="form-control" id="yearlyMonth">
+                            ${Array.from({length: 12}, (_, i) => i + 1).map(month => `<option value="${month}">${month}월</option>`).join('')}
+                        </select>
+                        <label for="yearlyDay" class="form-label mt-2">일</label>
+                        <select class="form-control" id="yearlyDay">
+                            ${Array.from({length: 31}, (_, i) => i + 1).map(day => `<option value="${day}">${day}일</option>`).join('')}
+                        </select>
+                    `;
+                } else if (scheduleType === 'cron') {
+                    html = `
+                        <label for="cronExpression" class="form-label">크론 표현식</label>
+                        <input type="text" class="form-control" id="cronExpression" placeholder="0 9 * * *" value="0 9 * * *">
+                        <small class="form-text text-muted">형식: 분 시 일 월 요일 (예: 0 9 * * * = 매일 오전 9시)</small>
+                    `;
+                }
+                configContent.innerHTML = html;
+            }
+        }
+
+        function toggleEditScheduleConfig() {
+            const scheduleType = document.getElementById('editScheduleType').value;
+            const configContainer = document.getElementById('editScheduleConfigContainer');
+            const configContent = document.getElementById('editScheduleConfigContent');
+            
+            if (scheduleType === 'daily') {
+                configContainer.style.display = 'none';
+            } else {
+                configContainer.style.display = 'block';
+                
+                let html = '';
+                if (scheduleType === 'weekly') {
+                    html = `
+                        <label for="editWeekday" class="form-label">요일</label>
+                        <select class="form-control" id="editWeekday">
+                            <option value="1">일요일</option>
+                            <option value="2">월요일</option>
+                            <option value="3">화요일</option>
+                            <option value="4">수요일</option>
+                            <option value="5">목요일</option>
+                            <option value="6">금요일</option>
+                            <option value="7">토요일</option>
+                        </select>
+                    `;
+                } else if (scheduleType === 'monthly') {
+                    html = `
+                        <label for="editDay" class="form-label">일</label>
+                        <select class="form-control" id="editDay">
+                            ${Array.from({length: 31}, (_, i) => i + 1).map(day => `<option value="${day}">${day}일</option>`).join('')}
+                        </select>
+                    `;
+                } else if (scheduleType === 'yearly') {
+                    html = `
+                        <label for="editYearlyMonth" class="form-label">월</label>
+                        <select class="form-control" id="editYearlyMonth">
+                            ${Array.from({length: 12}, (_, i) => i + 1).map(month => `<option value="${month}">${month}월</option>`).join('')}
+                        </select>
+                        <label for="editYearlyDay" class="form-label mt-2">일</label>
+                        <select class="form-control" id="editYearlyDay">
+                            ${Array.from({length: 31}, (_, i) => i + 1).map(day => `<option value="${day}">${day}일</option>`).join('')}
+                        </select>
+                    `;
+                } else if (scheduleType === 'cron') {
+                    html = `
+                        <label for="editCronExpression" class="form-label">크론 표현식</label>
+                        <input type="text" class="form-control" id="editCronExpression" placeholder="0 9 * * *" value="0 9 * * *">
+                        <small class="form-text text-muted">형식: 분 시 일 월 요일 (예: 0 9 * * * = 매일 오전 9시)</small>
+                    `;
+                }
+                configContent.innerHTML = html;
+            }
+        }
+
+
+
+        async function editWindowsTask(taskName) {
+            try {
+                const response = await fetch(`/api/windows_tasks/${encodeURIComponent(taskName)}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    const task = result.task;
+                    
+                    // 수정 폼에 데이터 설정
+                    document.getElementById('editTaskName').value = taskName;
+                    document.getElementById('editScheduleType').value = task.schedule_type || 'daily';
+                    
+                    // 기존 스케줄 시간 설정 (schedule_config에서 추출)
+                    let scheduleTime = '09:00'; // 기본값
+                    if (task.schedule_config) {
+                        if (task.schedule_config.schedule_time) {
+                            scheduleTime = task.schedule_config.schedule_time;
+                        } else if (task.schedule_config.time) {
+                            // ISO 형식에서 시간만 추출 (예: "2025-08-07T14:30:00" -> "14:30")
+                            const timeMatch = task.schedule_config.time.match(/T(\d{2}:\d{2})/);
+                            if (timeMatch) {
+                                scheduleTime = timeMatch[1];
+                            }
+                        }
+                    }
+                    document.getElementById('editScheduleTime').value = scheduleTime;
+                    
+                    document.getElementById('editScriptPath').value = task.script_path || '';
+                    document.getElementById('editTaskDescription').value = task.description || '';
+                    
+                    // Python 실행 파일 경로 설정 (기존 값이 있으면 사용, 없으면 동적 감지)
+                    if (task.executable_path) {
+                        document.getElementById('editExecutablePath').value = task.executable_path;
+                    } else {
+                        // Python 실행 파일 경로 동적 감지
+                        fetch('/api/python_executable')
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    document.getElementById('editExecutablePath').value = data.python_path;
+                                } else {
+                                    // 기본값 설정
+                                    document.getElementById('editExecutablePath').value = 'C:/Users/kook-minipc/AppData/Local/Microsoft/WindowsApps/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/python.exe';
+                                    console.warn('Python 경로 자동 감지 실패:', data.message);
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Python 경로 가져오기 실패:', error);
+                                // 기본값 설정
+                                document.getElementById('editExecutablePath').value = 'C:/Users/kook-minipc/AppData/Local/Microsoft/WindowsApps/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/python.exe';
+                            });
+                    }
+                    
+                    // 스케줄 설정 초기화
+                    toggleEditScheduleConfig();
+                    
+                    // 기존 설정값 복원
+                    if (task.schedule_config) {
+                        setTimeout(() => {
+                            if (task.schedule_type === 'weekly' && task.schedule_config.weekday) {
+                                const weekdaySelect = document.getElementById('editWeekday');
+                                if (weekdaySelect) weekdaySelect.value = task.schedule_config.weekday;
+                            } else if (task.schedule_type === 'monthly' && task.schedule_config.day) {
+                                const daySelect = document.getElementById('editDay');
+                                if (daySelect) daySelect.value = task.schedule_config.day;
+                            } else if (task.schedule_type === 'yearly') {
+                                if (task.schedule_config.month) {
+                                    const monthSelect = document.getElementById('editYearlyMonth');
+                                    if (monthSelect) monthSelect.value = task.schedule_config.month;
+                                }
+                                if (task.schedule_config.day) {
+                                    const daySelect = document.getElementById('editYearlyDay');
+                                    if (daySelect) daySelect.value = task.schedule_config.day;
+                                }
+                            } else if (task.schedule_type === 'cron' && task.schedule_config.cron_expression) {
+                                const cronInput = document.getElementById('editCronExpression');
+                                if (cronInput) cronInput.value = task.schedule_config.cron_expression;
+                            }
+                        }, 100);
+                    }
+                    
+                    // 모달 표시
+                    const modal = new bootstrap.Modal(document.getElementById('editTaskModal'));
+                    modal.show();
+                } else {
+                    showToast(result.message, 'danger');
+                }
+                
+            } catch (error) {
+                showToast('작업 정보 가져오기 실패: ' + error.message, 'danger');
+            }
+        }
+
+        async function updateWindowsTask() {
+            const taskName = document.getElementById('editTaskName').value;
+            const scheduleType = document.getElementById('editScheduleType').value;
+            const scheduleTime = document.getElementById('editScheduleTime').value;
+            const executablePath = document.getElementById('editExecutablePath').value.trim();
+            const scriptPath = document.getElementById('editScriptPath').value.trim();
+            const description = document.getElementById('editTaskDescription').value.trim();
+
+            if (!scheduleTime || !executablePath || !scriptPath) {
+                showToast('모든 필수 필드를 입력해주세요.', 'warning');
+                return;
+            }
+
+            // 서버로 전송할 데이터 구성
+            let requestData = {
+                executable_path: executablePath,
+                script_path: scriptPath,
+                schedule_type: scheduleType,
+                description: description
+            };
+            
+            // 스케줄 타입에 따른 데이터 추가
+            if (scheduleType === 'daily') {
+                requestData.schedule_time = scheduleTime;
+            } else if (scheduleType === 'weekly') {
+                const weekday = document.getElementById('editWeekday')?.value || 1;
+                requestData.schedule_time = scheduleTime;
+                requestData.weekday = parseInt(weekday);
+            } else if (scheduleType === 'monthly') {
+                const day = document.getElementById('editDay')?.value || 1;
+                requestData.schedule_time = scheduleTime;
+                requestData.day = parseInt(day);
+            } else if (scheduleType === 'yearly') {
+                const month = document.getElementById('editYearlyMonth')?.value || 1;
+                const day = document.getElementById('editYearlyDay')?.value || 1;
+                requestData.schedule_time = scheduleTime;
+                requestData.month = parseInt(month);
+                requestData.day = parseInt(day);
+            } else if (scheduleType === 'cron') {
+                const cronExpression = document.getElementById('editCronExpression')?.value || '0 9 * * *';
+                requestData.cron_expression = cronExpression;
+            }
+
+            try {
+                const response = await fetch(`/api/windows_tasks/${encodeURIComponent(taskName)}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestData)
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    showToast(result.message, 'success');
+                    bootstrap.Modal.getInstance(document.getElementById('editTaskModal')).hide();
+                    loadWindowsTasks(); // 목록 새로고침
+                } else {
+                    showToast(result.message, 'danger');
+                }
+                
+            } catch (error) {
+                showToast('작업 수정 실패: ' + error.message, 'danger');
+            }
+        }
+
+        async function deleteWindowsTask(taskName) {
+            if (!confirm(`⚠️ 스케줄러 작업을 삭제하시겠습니까?\n\n작업명: "${taskName}"\n\n삭제하면 다음이 제거됩니다:\n• Windows 스케줄러에서 작업 삭제\n• 사용자 작업 목록에서 제거\n\n이 작업은 되돌릴 수 없습니다.`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/windows_tasks/${encodeURIComponent(taskName)}`, {
+                    method: 'DELETE'
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    showToast(result.message, 'success');
+                    loadWindowsTasks(); // 목록 새로고침
+                } else {
+                    showToast(result.message, 'danger');
+                }
+                
+            } catch (error) {
+                showToast('작업 삭제 실패: ' + error.message, 'danger');
+            }
+        }
+
+        async function runWindowsTask(taskName) {
+            try {
+                const response = await fetch(`/api/windows_tasks/${encodeURIComponent(taskName)}/run`, {
+                    method: 'POST'
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    showToast(result.message, 'success');
+                } else {
+                    showToast(result.message, 'danger');
+                }
+                
+            } catch (error) {
+                showToast('작업 실행 실패: ' + error.message, 'danger');
+            }
+        }
+
+        async function toggleWindowsTask(taskName, enabled) {
+            try {
+                const response = await fetch(`/api/windows_tasks/${encodeURIComponent(taskName)}/enable`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        enabled: enabled
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    showToast(result.message, 'success');
+                    loadWindowsTasks(); // 목록 새로고침
+                } else {
+                    showToast(result.message, 'danger');
+                }
+                
+            } catch (error) {
+                showToast('작업 상태 변경 실패: ' + error.message, 'danger');
+            }
+        }
+        
+
+        
+        // 페이지 로드 시 초기 상태 로드
+        document.addEventListener('DOMContentLoaded', function() {
+            // 즉시 상태 갱신
+            refreshStatus();
+            
+            // Python 경로 감지 및 placeholder 업데이트
+            detectPythonPath();
+            
+            // 사용 가능한 스크립트 로드
+            //loadAvailableScripts();
+            // 자동 새로고침 비활성화 (사용자 요청)
+            
+            // 업비트 정보도 자동으로 로드
+            setTimeout(() => {
+                refreshUpbitStatus();
+            }, 1000);
+            
+            // KOSPI 정보도 자동으로 로드
+            setTimeout(() => {
+                refreshKospiInfo();
+            }, 1500);
+        });
+        
+        // KOSPI 정보 새로고침
+        async function refreshKospiInfo() {
+            try {
+                const response = await fetch('/api/kospi_check');
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateKospiInfo(data.kospi_data);
+                } else {
+                    console.log('KOSPI 정보 가져오기 실패:', data.message);
+                    showEmptyKospiMessage();
+                }
+            } catch (error) {
+                console.error('KOSPI 정보 로드 실패:', error);
+                showEmptyKospiMessage();
+            }
+        }
+        
+        // KOSPI 정보 업데이트
+        function updateKospiInfo(kospiData) {
+            if (!kospiData) {
+                showEmptyKospiMessage();
+                return;
+            }
+            
+            console.log('KOSPI 데이터:', kospiData);
+            
+            // 현재 KOSPI 지수
+            const currentKospi = document.getElementById('current-kospi');
+            if (currentKospi) {
+                currentKospi.textContent = kospiData.current_kospi?.toFixed(2) || '-';
+            }
+            
+            // 변동률
+            const kospiChange = document.getElementById('kospi-change');
+            if (kospiChange) {
+                const changePercent = kospiData.change_percentage || 0;
+                const changeColor = changePercent >= 0 ? 'text-danger' : 'text-primary';
+                const changeIcon = changePercent >= 0 ? 'fa-arrow-up' : 'fa-arrow-down';
+                const sign = changePercent >= 0 ? '+' : '';
+                
+                kospiChange.className = `fw-bold ${changeColor}`;
+                kospiChange.innerHTML = `<i class="fas ${changeIcon} me-1"></i>${sign}${changePercent.toFixed(2)}%`;
+            }
+            
+            // 최고점
+            const maxKospi = document.getElementById('max-kospi');
+            if (maxKospi) {
+                maxKospi.textContent = kospiData.max_kospi?.toFixed(2) || '-';
+            }
+            
+            // 최고점 날짜
+            const maxDate = document.getElementById('max-date');
+            if (maxDate) {
+                maxDate.textContent = kospiData.max_date || '-';
+            }
+            
+            // 분석 상태
+            const kospiStatus = document.getElementById('kospi-status');
+            if (kospiStatus) {
+                const status = kospiData.analysis_summary?.status || '알 수 없음';
+                const level = kospiData.analysis_summary?.level || '알 수 없음';
+                
+                let badgeClass = 'bg-secondary';
+                if (status === '상승') {
+                    badgeClass = 'bg-success';
+                } else if (status === '하락') {
+                    badgeClass = 'bg-danger';
+                } else if (status === '횡보') {
+                    badgeClass = 'bg-warning';
+                }
+                
+                kospiStatus.className = `badge ${badgeClass}`;
+                kospiStatus.textContent = `${status} (${level})`;
+            }
+            
+            // 마지막 분석 시간 표시
+            const lastAnalysis = document.getElementById('last-analysis-time');
+            if (lastAnalysis && kospiData.last_analysis_date && kospiData.last_analysis_time) {
+                lastAnalysis.textContent = `${kospiData.last_analysis_date} ${kospiData.last_analysis_time}`;
+            }
+        }
+        
+        // 빈 KOSPI 메시지 표시
+        function showEmptyKospiMessage() {
+            const currentKospi = document.getElementById('current-kospi');
+            const kospiChange = document.getElementById('kospi-change');
+            const maxKospi = document.getElementById('max-kospi');
+            const maxDate = document.getElementById('max-date');
+            const kospiStatus = document.getElementById('kospi-status');
+            
+            if (currentKospi) currentKospi.textContent = '데이터 없음';
+            if (kospiChange) {
+                kospiChange.className = 'fw-bold text-muted';
+                kospiChange.innerHTML = '데이터 없음';
+            }
+            if (maxKospi) maxKospi.textContent = '데이터 없음';
+            if (maxDate) maxDate.textContent = '데이터 없음';
+            if (kospiStatus) {
+                kospiStatus.className = 'badge bg-secondary';
+                kospiStatus.textContent = '데이터 없음';
+            }
+        }
+        
+        // Python 경로 감지 함수
+        function detectPythonPath() {
+            fetch('/api/python_executable')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // placeholder 업데이트
+                        const executablePathInput = document.getElementById('executablePath');
+                        const editExecutablePathInput = document.getElementById('editExecutablePath');
+                        
+                        if (executablePathInput) {
+                            executablePathInput.placeholder = `감지된 Python 경로: ${data.python_path}`;
+                        }
+                        if (editExecutablePathInput) {
+                            editExecutablePathInput.placeholder = `감지된 Python 경로: ${data.python_path}`;
+                        }
+                        
+                        console.log('Python 경로 감지 완료:', data.python_path);
+                    } else {
+                        console.warn('Python 경로 감지 실패:', data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Python 경로 감지 중 오류:', error);
+                });
+        }
+    </script>
+    
+    <!-- 봇 설정 모달 -->
+    <div class="modal fade" id="botSettingsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="botSettingsModalLabel">봇 설정</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="botSettingsModalBody">
+                    <!-- 봇별 설정 내용이 여기에 로드됩니다 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html> 

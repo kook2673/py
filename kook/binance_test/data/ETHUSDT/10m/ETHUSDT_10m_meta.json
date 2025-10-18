@@ -1,0 +1,17 @@
+{
+  "symbol": "ETHUSDT",
+  "interval": "10m",
+  "data_count": 501,
+  "start_date": "2025-07-14T14:50:00",
+  "end_date": "2025-07-18T02:10:00",
+  "last_updated": "2025-08-13T14:52:12.691582",
+  "columns": [
+    "timestamp",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "close_time"
+  ]
+}

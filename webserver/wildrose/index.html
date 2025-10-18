@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>wildrose</title>
+  </head>
+  <body>
+    <h3>wildrose 전용 페이지</h3>
+    <button id="run">명령 실행</button>
+    <pre id="log"></pre>
+    <script>
+      const username = 'wildrose';
+      const log = (m) => (document.getElementById('log').textContent += m + "\n");
+      document.getElementById('run').onclick = async () => {
+        const res = await fetch(`/${username}/api/command`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ command: 'do_something_else', payload: { x: 42 } }),
+        });
+        log(await res.text());
+      };
+    </script>
+  </body>
+  </html>
+
+

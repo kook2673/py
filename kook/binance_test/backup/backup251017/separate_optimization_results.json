@@ -1,0 +1,59 @@
+{
+  "optimization_period": "2022-2024년",
+  "test_period": "2025년 전체",
+  "long_optimal": {
+    "total_return": 96.55088733195335,
+    "final_capital": 19655.088733195334,
+    "total_trades": 125,
+    "win_rate": 71.2,
+    "max_drawdown": 25.93635075367854,
+    "params": {
+      "sma_short": 8,
+      "sma_long": 40,
+      "dcc_period": 25,
+      "volume_threshold": 0.5
+    }
+  },
+  "short_optimal": {
+    "total_return": 15.430180799034044,
+    "final_capital": 11543.018079903404,
+    "total_trades": 13,
+    "win_rate": 76.92307692307693,
+    "max_drawdown": 1.6310238274154782,
+    "params": {
+      "sma_short": 11,
+      "sma_long": 20,
+      "dcc_period": 15,
+      "volume_threshold": 2.5
+    }
+  },
+  "combined_test": {
+    "long_result": {
+      "total_return": 14.344970778302724,
+      "final_capital": 11434.497077830272,
+      "total_trades": 20,
+      "win_rate": 65.0,
+      "max_drawdown": 8.589743676215202
+    },
+    "short_result": {
+      "total_return": 3.8777251906726997,
+      "final_capital": 10387.77251906727,
+      "total_trades": 2,
+      "win_rate": 100.0,
+      "max_drawdown": 0.0
+    },
+    "long_params": {
+      "sma_short": 8,
+      "sma_long": 40,
+      "dcc_period": 25,
+      "volume_threshold": 0.5
+    },
+    "short_params": {
+      "sma_short": 11,
+      "sma_long": 20,
+      "dcc_period": 15,
+      "volume_threshold": 2.5
+    }
+  },
+  "last_updated": "2025-10-16 17:11:58"
+}

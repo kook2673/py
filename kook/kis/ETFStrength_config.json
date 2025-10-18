@@ -1,0 +1,34 @@
+{
+  "allocation_rate": 0.05,
+  "rebalance_period": "daily",
+  "rebalance_day": "MON",
+  "rebalance_after_time": "14:50",
+  "target_sides": {
+    "KOSPI": "both",
+    "KOSDAQ": "both"
+  },
+  "best_params": {
+    "KOSPI": {
+      "up_pct": 0.005,
+      "up_ctr": 0.5,
+      "up_vol": 1.0,
+      "down_pct": 0.01,
+      "down_ctr": 0.6,
+      "down_vol": 0.7,
+      "atr_mult": 2.5,
+      "entry_at_open": true,
+      "entry_same_day": true
+    },
+    "KOSDAQ": {
+      "up_pct": 0.005,
+      "up_ctr": 0.5,
+      "up_vol": 1.0,
+      "down_pct": 0.01,
+      "down_ctr": 0.7,
+      "down_vol": 0.8,
+      "atr_mult": 2.0,
+      "entry_at_open": true,
+      "entry_same_day": true
+    }
+  }
+}

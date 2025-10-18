@@ -1,0 +1,18 @@
+{
+    "allocation_rate": 0.10,
+    "max_candidates": 10,
+    "min_watch_pct": 0.20,
+    "entry_pct": 0.25,
+    "min_close_to_range": 0.0,
+    "intraday_trail_pct": 0.05,
+    "nextday_trail_pct": 0.07,
+    "max_parallel_positions": 10,
+    "buy_price_offset": 1.02,
+    "min_price": 1000,
+    "exclude_codes": [],
+    "max_per_sector": 2,
+    "sector_map": {},
+    "fluct_tr_id": "FHPST01700000",
+    "discovery_refresh_min": 5,
+    "discovery_method": "KIS_API"
+}

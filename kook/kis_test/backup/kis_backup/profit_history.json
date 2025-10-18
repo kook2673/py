@@ -1,0 +1,663 @@
+{
+    "daily": {
+        "2025-08-09": {
+            "total_value": 16358820.0,
+            "total_profit": 392208.0,
+            "daily_profit": 392208.0,
+            "daily_profit_rate": 2.456425946844578,
+            "timestamp": "2025-08-09 15:40:05"
+        },
+        "2025-08-11": {
+            "total_value": 16357393.0,
+            "total_profit": 390781.0,
+            "daily_profit": 390781.0,
+            "daily_profit_rate": 2.447488546724878,
+            "timestamp": "2025-08-11 17:41:15"
+        },
+        "2025-08-12": {
+            "total_value": 16273955.0,
+            "total_profit": 307343.0,
+            "daily_profit": -83438.0,
+            "daily_profit_rate": -0.5100935093996947,
+            "timestamp": "2025-08-12 15:40:05"
+        },
+        "2025-08-13": {
+            "total_value": 16462855.0,
+            "total_profit": 496243.0,
+            "daily_profit": 188900.0,
+            "daily_profit_rate": 1.1607504137746478,
+            "timestamp": "2025-08-13 16:04:52"
+        },
+        "2025-08-14": {
+            "total_value": 16464610.0,
+            "total_profit": 497998.0,
+            "daily_profit": 1755.0,
+            "daily_profit_rate": 0.010660362373355046,
+            "timestamp": "2025-08-14 15:40:53"
+        },
+        "2025-08-15": {
+            "total_value": 16464610.0,
+            "total_profit": 497998.0,
+            "daily_profit": 0.0,
+            "daily_profit_rate": 0.0,
+            "timestamp": "2025-08-15 15:40:34"
+        },
+        "2025-08-18": {
+            "total_value": 16308870.0,
+            "total_profit": 342258.0,
+            "daily_profit": 342258.0,
+            "daily_profit_rate": 2.1435856273077847,
+            "timestamp": "2025-08-18 15:40:08"
+        },
+        "2025-08-19": {
+            "total_value": 16195483.0,
+            "total_profit": 228871.0,
+            "daily_profit": -113387.0,
+            "daily_profit_rate": -0.6952474328386945,
+            "timestamp": "2025-08-19 15:40:58"
+        },
+        "2025-08-21": {
+            "total_value": 16227304.0,
+            "total_profit": 260692.0,
+            "daily_profit": 260692.0,
+            "daily_profit_rate": 1.6327321037174325,
+            "timestamp": "2025-08-21 15:40:30"
+        },
+        "2025-08-22": {
+            "total_value": 16312257.0,
+            "total_profit": 345645.0,
+            "daily_profit": 84953.0,
+            "daily_profit_rate": 0.5235188790448493,
+            "timestamp": "2025-08-22 15:41:00"
+        },
+        "2025-08-25": {
+            "total_value": 16549677.0,
+            "total_profit": 583065.0,
+            "daily_profit": 583065.0,
+            "daily_profit_rate": 3.6517765948092182,
+            "timestamp": "2025-08-25 15:40:15"
+        },
+        "2025-08-26": {
+            "total_value": 16563827.0,
+            "total_profit": 597215.0,
+            "daily_profit": 14150.0,
+            "daily_profit_rate": 0.08550015809976232,
+            "timestamp": "2025-08-26 15:40:17"
+        },
+        "2025-08-27": {
+            "total_value": 16663925.0,
+            "total_profit": 697313.0,
+            "daily_profit": 100098.0,
+            "daily_profit_rate": 0.6043168646955803,
+            "timestamp": "2025-08-27 15:40:08"
+        },
+        "2025-08-28": {
+            "total_value": 16669800.0,
+            "total_profit": 703188.0,
+            "daily_profit": 5875.0,
+            "daily_profit_rate": 0.03525579957903075,
+            "timestamp": "2025-08-28 15:40:48"
+        },
+        "2025-08-29": {
+            "total_value": 16690216.0,
+            "total_profit": 723604.0,
+            "daily_profit": 20416.0,
+            "daily_profit_rate": 0.12247297508068483,
+            "timestamp": "2025-08-29 16:03:49"
+        }
+    },
+    "weekly": {
+        "2025-W31": {
+            "start_value": 15966612.0,
+            "end_value": 16358820.0,
+            "profit": 392208.0,
+            "profit_rate": 2.456425946844578
+        },
+        "2025-W32": {
+            "start_value": 15966612.0,
+            "end_value": 16464610.0,
+            "profit": 497998.0,
+            "profit_rate": 3.1189960650387194
+        },
+        "2025-W33": {
+            "start_value": 15966612.0,
+            "end_value": 16312257.0,
+            "profit": 345645.0,
+            "profit_rate": 2.1647986435694686
+        },
+        "2025-W34": {
+            "start_value": 15966612.0,
+            "end_value": 16690216.0,
+            "profit": 723604.0,
+            "profit_rate": 4.531982113675713
+        }
+    },
+    "monthly": {
+        "2025-08": {
+            "start_value": 15966612.0,
+            "end_value": 16690216.0,
+            "profit": 723604.0,
+            "profit_rate": 4.531982113675713
+        }
+    },
+    "yearly": {
+        "2025": {
+            "start_value": 15966612.0,
+            "end_value": 16690216.0,
+            "profit": 723604.0,
+            "profit_rate": 4.531982113675713
+        }
+    },
+    "bot_daily": {
+        "2025-08-09": {
+            "Kosdaqpi_Bot": {
+                "total_value": 5315022.0,
+                "total_profit": 45840.0,
+                "profit_rate": 0.8699642563115109,
+                "daily_profit": 45840.0,
+                "daily_profit_rate": 0.8699642563115109,
+                "timestamp": "2025-08-09 15:40:05"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5329797.0,
+                "total_profit": 60615.0,
+                "profit_rate": 1.150368311438094,
+                "daily_profit": 60615.0,
+                "daily_profit_rate": 1.150368311438094,
+                "timestamp": "2025-08-09 15:40:05"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5295702.0,
+                "total_profit": 26520.0,
+                "profit_rate": 0.5033039283896438,
+                "daily_profit": 26520.0,
+                "daily_profit_rate": 0.5033039283896438,
+                "timestamp": "2025-08-09 15:40:05"
+            }
+        },
+        "2025-08-11": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": -5269182.0,
+                "daily_profit_rate": -100.0,
+                "timestamp": "2025-08-11 17:41:15"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 6204220.0,
+                "current_stock_value": 6204220.0,
+                "total_profit": 60590.0,
+                "profit_rate": 1.1498938544920254,
+                "daily_profit": 935038.0,
+                "daily_profit_rate": 17.745410957526232,
+                "timestamp": "2025-08-11 17:41:15"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5786650.0,
+                "current_stock_value": 5786650.0,
+                "total_profit": 263413.0,
+                "profit_rate": 4.999125101391449,
+                "daily_profit": 517468.0,
+                "daily_profit_rate": 9.820651478730474,
+                "timestamp": "2025-08-11 17:41:15"
+            }
+        },
+        "2025-08-12": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-12 15:40:05"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5603790.0,
+                "current_stock_value": 5603790.0,
+                "total_profit": 33417.0,
+                "profit_rate": 0.6341971106710681,
+                "daily_profit": -600430.0,
+                "daily_profit_rate": -9.677767712943771,
+                "timestamp": "2025-08-12 15:40:05"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5056150.0,
+                "current_stock_value": 5056150.0,
+                "total_profit": 159913.0,
+                "profit_rate": 3.0348733446671607,
+                "daily_profit": -730500.0,
+                "daily_profit_rate": -12.623884285381006,
+                "timestamp": "2025-08-12 15:40:05"
+            }
+        },
+        "2025-08-13": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-13 16:04:52"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5632165.0,
+                "current_stock_value": 5632165.0,
+                "total_profit": 61792.0,
+                "profit_rate": 1.172705744459007,
+                "daily_profit": 28375.0,
+                "daily_profit_rate": 0.5063537355968014,
+                "timestamp": "2025-08-13 16:04:52"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5373280.0,
+                "current_stock_value": 5373280.0,
+                "total_profit": 320443.0,
+                "profit_rate": 6.081456286763297,
+                "daily_profit": 317130.0,
+                "daily_profit_rate": 6.272163602741217,
+                "timestamp": "2025-08-13 16:04:52"
+            }
+        },
+        "2025-08-14": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-14 15:40:53"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5631640.0,
+                "current_stock_value": 5631640.0,
+                "total_profit": 61267.0,
+                "profit_rate": 1.162742148591565,
+                "daily_profit": -525.0,
+                "daily_profit_rate": -0.009321459864900974,
+                "timestamp": "2025-08-14 15:40:53"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5374600.0,
+                "current_stock_value": 5374600.0,
+                "total_profit": 321763.0,
+                "profit_rate": 6.106507613515722,
+                "daily_profit": 1320.0,
+                "daily_profit_rate": 0.02456600065509335,
+                "timestamp": "2025-08-14 15:40:53"
+            }
+        },
+        "2025-08-15": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-15 15:40:34"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5631640.0,
+                "current_stock_value": 5631640.0,
+                "total_profit": 61267.0,
+                "profit_rate": 1.162742148591565,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0.0,
+                "timestamp": "2025-08-15 15:40:34"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5251600.0,
+                "current_stock_value": 5251600.0,
+                "total_profit": 329763.0,
+                "profit_rate": 6.2583338362576955,
+                "daily_profit": -123000.0,
+                "daily_profit_rate": -2.2885424031555837,
+                "timestamp": "2025-08-15 15:40:34"
+            }
+        },
+        "2025-08-18": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": -5269182.0,
+                "daily_profit_rate": -100.0,
+                "timestamp": "2025-08-18 15:40:08"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5603075.0,
+                "current_stock_value": 5603075.0,
+                "total_profit": 32702.0,
+                "profit_rate": 0.6206276420135042,
+                "daily_profit": 333893.0,
+                "daily_profit_rate": 6.33671412374824,
+                "timestamp": "2025-08-18 15:40:08"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5276530.0,
+                "current_stock_value": 5276530.0,
+                "total_profit": 206193.0,
+                "profit_rate": 3.9131880432294803,
+                "daily_profit": 7348.0,
+                "daily_profit_rate": 0.13945238558850312,
+                "timestamp": "2025-08-18 15:40:08"
+            }
+        },
+        "2025-08-19": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-19 15:40:58"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5597095.0,
+                "current_stock_value": 5597095.0,
+                "total_profit": 26722.0,
+                "profit_rate": 0.5071375405138787,
+                "daily_profit": -5980.0,
+                "daily_profit_rate": -0.1067271096674594,
+                "timestamp": "2025-08-19 15:40:58"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5270400.0,
+                "current_stock_value": 5270400.0,
+                "total_profit": 106463.0,
+                "profit_rate": 2.0204843939723474,
+                "daily_profit": -6130.0,
+                "daily_profit_rate": -0.11617483459773752,
+                "timestamp": "2025-08-19 15:40:58"
+            }
+        },
+        "2025-08-21": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": -5269182.0,
+                "daily_profit_rate": -100.0,
+                "timestamp": "2025-08-21 15:40:30"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5454200.0,
+                "current_stock_value": 5454200.0,
+                "total_profit": 939.0,
+                "profit_rate": 0.017820602894339198,
+                "daily_profit": 185018.0,
+                "daily_profit_rate": 3.5113230099093182,
+                "timestamp": "2025-08-21 15:40:30"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5298820.0,
+                "current_stock_value": 5298820.0,
+                "total_profit": 134883.0,
+                "profit_rate": 2.5598470502632096,
+                "daily_profit": 29638.0,
+                "daily_profit_rate": 0.5624781987033282,
+                "timestamp": "2025-08-21 15:40:30"
+            }
+        },
+        "2025-08-22": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-22 15:41:00"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 4899335.0,
+                "current_stock_value": 4899335.0,
+                "total_profit": -18596.0,
+                "profit_rate": -0.3529200547637185,
+                "daily_profit": -554865.0,
+                "daily_profit_rate": -10.173169300722378,
+                "timestamp": "2025-08-22 15:41:00"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5366430.0,
+                "current_stock_value": 5366430.0,
+                "total_profit": 202493.0,
+                "profit_rate": 3.8429684152113177,
+                "daily_profit": 67610.0,
+                "daily_profit_rate": 1.27594445555803,
+                "timestamp": "2025-08-22 15:41:00"
+            }
+        },
+        "2025-08-25": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": -5269182.0,
+                "daily_profit_rate": -100.0,
+                "timestamp": "2025-08-25 15:40:15"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 4945585.0,
+                "current_stock_value": 4945585.0,
+                "total_profit": 27653.0,
+                "profit_rate": 0.5248063171854759,
+                "daily_profit": -323597.0,
+                "daily_profit_rate": -6.14131377507932,
+                "timestamp": "2025-08-25 15:40:15"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5439660.0,
+                "current_stock_value": 5439660.0,
+                "total_profit": 275723.0,
+                "profit_rate": 5.232747701635662,
+                "daily_profit": 170478.0,
+                "daily_profit_rate": 3.2353788500757803,
+                "timestamp": "2025-08-25 15:40:15"
+            }
+        },
+        "2025-08-26": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-26 15:40:17"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 4948905.0,
+                "current_stock_value": 4948905.0,
+                "total_profit": 30973.0,
+                "profit_rate": 0.587814199623395,
+                "daily_profit": 3320.0,
+                "daily_profit_rate": 0.06713058212526932,
+                "timestamp": "2025-08-26 15:40:17"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5419280.0,
+                "current_stock_value": 5419280.0,
+                "total_profit": 255343.0,
+                "profit_rate": 4.845970399200484,
+                "daily_profit": -20380.0,
+                "daily_profit_rate": -0.3746557689267344,
+                "timestamp": "2025-08-26 15:40:17"
+            }
+        },
+        "2025-08-27": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-27 15:40:08"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5549020.0,
+                "current_stock_value": 5549020.0,
+                "total_profit": 52973.0,
+                "profit_rate": 1.0053363121638235,
+                "daily_profit": 600115.0,
+                "daily_profit_rate": 12.126217819901575,
+                "timestamp": "2025-08-27 15:40:08"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5516580.0,
+                "current_stock_value": 5516580.0,
+                "total_profit": 352643.0,
+                "profit_rate": 6.692556833299741,
+                "daily_profit": 97300.0,
+                "daily_profit_rate": 1.795441460858269,
+                "timestamp": "2025-08-27 15:40:08"
+            }
+        },
+        "2025-08-28": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-28 15:40:48"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5542535.0,
+                "current_stock_value": 5542535.0,
+                "total_profit": 46488.0,
+                "profit_rate": 0.8822621803536108,
+                "daily_profit": -6485.0,
+                "daily_profit_rate": -0.11686748290689165,
+                "timestamp": "2025-08-28 15:40:48"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5523940.0,
+                "current_stock_value": 5523940.0,
+                "total_profit": 360003.0,
+                "profit_rate": 6.832236958222358,
+                "daily_profit": 7360.0,
+                "daily_profit_rate": 0.13341599324218992,
+                "timestamp": "2025-08-28 15:40:48"
+            }
+        },
+        "2025-08-29": {
+            "Kosdaqpi_Bot": {
+                "total_value": 0.0,
+                "current_stock_value": 0.0,
+                "total_profit": 67805.0,
+                "profit_rate": 1.2868221291274433,
+                "daily_profit": 0.0,
+                "daily_profit_rate": 0,
+                "timestamp": "2025-08-29 16:03:49"
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "total_value": 5683750.0,
+                "current_stock_value": 5683750.0,
+                "total_profit": 70578.0,
+                "profit_rate": 1.33944889358538,
+                "daily_profit": 141215.0,
+                "daily_profit_rate": 2.547841375832539,
+                "timestamp": "2025-08-29 16:03:49"
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "total_value": 5535940.0,
+                "current_stock_value": 5535940.0,
+                "total_profit": 372003.0,
+                "profit_rate": 7.059976292335318,
+                "daily_profit": 12000.0,
+                "daily_profit_rate": 0.21723624804034802,
+                "timestamp": "2025-08-29 16:03:49"
+            }
+        }
+    },
+    "monthly_by_year": {
+        "2025": {
+            "2025-08": {
+                "start_value": 15966612.0,
+                "end_value": 16690216.0,
+                "profit": 723604.0,
+                "profit_rate": 4.531982113675713
+            }
+        }
+    },
+    "bot_monthly": {
+        "2025-08": {
+            "Kosdaqpi_Bot": {
+                "start_value": 5269182.0,
+                "end_value": 0.0,
+                "profit": -5269182.0,
+                "profit_rate": -100.0
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "start_value": 5269182.0,
+                "end_value": 5683750.0,
+                "profit": 414568.0,
+                "profit_rate": 7.867786688711834
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "start_value": 5269182.0,
+                "end_value": 5535940.0,
+                "profit": 266758.0,
+                "profit_rate": 5.062607440775437
+            }
+        }
+    },
+    "bot_yearly": {
+        "2025": {
+            "Kosdaqpi_Bot": {
+                "start_value": 5269182.0,
+                "end_value": 0.0,
+                "profit": -5269182.0,
+                "profit_rate": -100.0
+            },
+            "MA_Strategy_KR_Bot_v3": {
+                "start_value": 5269182.0,
+                "end_value": 5683750.0,
+                "profit": 414568.0,
+                "profit_rate": 7.867786688711834
+            },
+            "MA_Kosdaqpi100_Bot_v1": {
+                "start_value": 5269182.0,
+                "end_value": 5535940.0,
+                "profit": 266758.0,
+                "profit_rate": 5.062607440775437
+            }
+        }
+    },
+    "bot_monthly_by_year": {
+        "2025": {
+            "2025-08": {
+                "Kosdaqpi_Bot": {
+                    "start_value": 5269182.0,
+                    "end_value": 0.0,
+                    "profit": -5269182.0,
+                    "profit_rate": -100.0
+                },
+                "MA_Strategy_KR_Bot_v3": {
+                    "start_value": 5269182.0,
+                    "end_value": 5683750.0,
+                    "profit": 414568.0,
+                    "profit_rate": 7.867786688711834
+                },
+                "MA_Kosdaqpi100_Bot_v1": {
+                    "start_value": 5269182.0,
+                    "end_value": 5535940.0,
+                    "profit": 266758.0,
+                    "profit_rate": 5.062607440775437
+                }
+            }
+        }
+    }
+}

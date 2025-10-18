@@ -1,0 +1,17 @@
+﻿iteration,train_start,train_end,test_start,test_end,best_strategy,best_params,oos_return_pct,oos_mdd_pct,oos_num_trades
+1,2025-01-01,2025-01-11,2025-01-11,2025-01-14,RsiMeanReversion,"{""rsi_window"": 14, ""oversold_threshold"": 25, ""overbought_threshold"": 75}",13.719092430878966,-32.606106849943686,72
+2,2025-01-04,2025-01-14,2025-01-14,2025-01-17,RsiMeanReversion,"{""rsi_window"": 14, ""oversold_threshold"": 25, ""overbought_threshold"": 75}",0.41366560033218036,-26.68355493477954,62
+3,2025-01-07,2025-01-17,2025-01-17,2025-01-20,RsiMeanReversion,"{""rsi_window"": 14, ""oversold_threshold"": 25, ""overbought_threshold"": 70}",16.543124799724886,-35.34090859839426,89
+4,2025-01-10,2025-01-20,2025-01-20,2025-01-23,RsiMeanReversion,"{""rsi_window"": 14, ""oversold_threshold"": 25, ""overbought_threshold"": 70}",58.538094480433124,-65.06598694836495,75
+5,2025-01-13,2025-01-23,2025-01-23,2025-01-26,RsiMeanReversion,"{""rsi_window"": 14, ""oversold_threshold"": 25, ""overbought_threshold"": 70}",-7.138537277565316,-42.94332168915298,72
+6,2025-01-16,2025-01-26,2025-01-26,2025-01-29,RsiMeanReversion,"{""rsi_window"": 21, ""oversold_threshold"": 25, ""overbought_threshold"": 75}",11.52210498641102,-48.095313391950555,33
+7,2025-01-19,2025-01-29,2025-01-29,2025-02-01,RsiMeanReversion,"{""rsi_window"": 14, ""oversold_threshold"": 25, ""overbought_threshold"": 70}",3.6608832661873425,-23.8680475686289,76
+8,2025-01-22,2025-02-01,2025-02-01,2025-02-04,RsiMeanReversion,"{""rsi_window"": 21, ""oversold_threshold"": 30, ""overbought_threshold"": 75}",92.25326262950955,-54.171431670604306,44
+9,2025-01-25,2025-02-04,2025-02-04,2025-02-07,RsiMeanReversion,"{""rsi_window"": 21, ""oversold_threshold"": 30, ""overbought_threshold"": 75}",41.233636309240104,-32.84476807800479,28
+10,2025-01-28,2025-02-07,2025-02-07,2025-02-10,RsiMeanReversion,"{""rsi_window"": 21, ""oversold_threshold"": 30, ""overbought_threshold"": 75}",43.12448386535355,-24.63911863182172,41
+11,2025-01-31,2025-02-10,2025-02-10,2025-02-13,RsiMeanReversion,"{""rsi_window"": 21, ""oversold_threshold"": 30, ""overbought_threshold"": 75}",119.48650007338126,-28.00763506154269,50
+12,2025-02-03,2025-02-13,2025-02-13,2025-02-16,RsiMeanReversion,"{""rsi_window"": 21, ""oversold_threshold"": 30, ""overbought_threshold"": 75}",-4.649998524127586,-23.499766275123346,28
+13,2025-02-06,2025-02-16,2025-02-16,2025-02-19,RsiMeanReversion,"{""rsi_window"": 21, ""oversold_threshold"": 30, ""overbought_threshold"": 75}",-25.634414322338007,-37.26674490233411,36
+14,2025-02-09,2025-02-19,2025-02-19,2025-02-22,RsiMeanReversion,"{""rsi_window"": 14, ""oversold_threshold"": 30, ""overbought_threshold"": 75}",-0.056168125182598505,-28.47651289311535,84
+15,2025-02-12,2025-02-22,2025-02-22,2025-02-25,RsiMeanReversion,"{""rsi_window"": 14, ""oversold_threshold"": 30, ""overbought_threshold"": 70}",6.416499647289142,-23.900294940032353,111
+16,2025-02-15,2025-02-25,2025-02-25,2025-02-28,RsiMeanReversion,"{""rsi_window"": 14, ""oversold_threshold"": 30, ""overbought_threshold"": 70}",59.37926588625287,-63.05450445606993,111

@@ -1,0 +1,26 @@
+
+myUpbit.py, myBithumb.py, myCoinone.py 공통 모듈은 아래 링크에서 :)
+https://drive.google.com/drive/folders/1ePyJfZYypleXFcers9K4QobtOerkjani
+
+myBinance.py는
+https://drive.google.com/drive/folders/1cTRATmFwHuKDz-hEa-DP4lBblzdxK0YM
+
+
+해당 봇 간략 설명 영상은 아래에서 :)
+https://youtu.be/Ta9VpsJiUpo
+
+
+메시지 연동은 여기서
+https://blog.naver.com/zacra/223622479916
+
+
+Crontab설정 예시
+0 17 1 * * python3 /var/autobot/MakeDoubleMa_Upbit.py
+0 18 2 * * python3 /var/autobot/MakeDoubleMa_Coinone.py
+0 19 3 * * python3 /var/autobot/MakeDoubleMa_Bithumb.py
+0 20 * * 0 python3 /var/autobot/MakeDoubleMa_4h_Upbit.py
+0 21 * * 0 python3 /var/autobot/MakeDoubleMa_4h_Coinone.py
+0 22 * * 0 python3 /var/autobot/MakeDoubleMa_4h_Bithumb.py
+0 */1 * * * python3 /var/autobot/Ma_Double_Upbit_1d4h_Bot.py 
+0 */1 * * * python3 /var/autobot/Ma_Double_Coinone_1d4h_Bot.py 
+0 */1 * * * python3 /var/autobot/Ma_Double_Bithumb_1d4h_Bot.py

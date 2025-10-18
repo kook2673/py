@@ -1,0 +1,644 @@
+{
+  "saved_date": "2025-08-28 12:32:48",
+  "description": "MA + 추세 전략 최적화 파라미터 (월별)",
+  "2024_01": {
+    "long_strategy": {
+      "ma1": 45,
+      "ma2": 74,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 80,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 45.30733981432244,
+        "mdd": 47.037425939830406,
+        "trade_count": 20,
+        "win_trades": 10
+      }
+    },
+    "short_strategy": {
+      "ma1": 25,
+      "ma2": 30,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 50,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": -37.62963360828566,
+        "mdd": 44.89252381275011,
+        "trade_count": 5,
+        "win_trades": 2
+      }
+    },
+    "optimization_info": {
+      "data_period": "2023-10-09 16:00 ~ 2024-01-31 20:00",
+      "lookback_candles": 500,
+      "total_candles": 686,
+      "optimization_date": "2025-08-28 17:56:06"
+    }
+  },
+  "2024_02": {
+    "long_strategy": {
+      "ma1": 45,
+      "ma2": 71,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 90,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 916.2983683879952,
+        "mdd": 64.61841442847788,
+        "trade_count": 21,
+        "win_trades": 13
+      }
+    },
+    "short_strategy": {
+      "ma1": 25,
+      "ma2": 65,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 90,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 23.406609010303672,
+        "mdd": 0,
+        "trade_count": 3,
+        "win_trades": 3
+      }
+    },
+    "optimization_info": {
+      "data_period": "2023-10-09 16:00 ~ 2024-02-29 20:00",
+      "lookback_candles": 500,
+      "total_candles": 674,
+      "optimization_date": "2025-08-28 16:54:23"
+    }
+  },
+  "2024_03": {
+    "long_strategy": {
+      "ma1": 35,
+      "ma2": 49,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 50,
+        "rsi_overbought": 80,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 298.24043358399757,
+        "mdd": 41.4756226640201,
+        "trade_count": 6,
+        "win_trades": 4
+      }
+    },
+    "short_strategy": {
+      "ma1": 25,
+      "ma2": 65,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 50,
+        "rsi_overbought": 80,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": -39.598935966654196,
+        "mdd": 40.89113803623097,
+        "trade_count": 2,
+        "win_trades": 1
+      }
+    },
+    "optimization_info": {
+      "data_period": "2023-10-09 16:00 ~ 2024-03-31 20:00",
+      "lookback_candles": 500,
+      "total_candles": 686,
+      "optimization_date": "2025-08-28 16:54:57"
+    }
+  },
+  "2024_04": {
+    "long_strategy": {
+      "ma1": 45,
+      "ma2": 71,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 80,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 11.951210850106763,
+        "mdd": 49.633337953509404,
+        "trade_count": 20,
+        "win_trades": 11
+      }
+    },
+    "short_strategy": {
+      "ma1": 45,
+      "ma2": 81,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 80,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 22.184685291149254,
+        "mdd": 27.378287101265663,
+        "trade_count": 6,
+        "win_trades": 3
+      }
+    },
+    "optimization_info": {
+      "data_period": "2023-10-09 16:00 ~ 2024-04-30 20:00",
+      "lookback_candles": 500,
+      "total_candles": 680,
+      "optimization_date": "2025-08-28 16:55:31"
+    }
+  },
+  "2024_05": {
+    "long_strategy": {
+      "ma1": 30,
+      "ma2": 56,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 80,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 295.2642822967739,
+        "mdd": 51.77583569579891,
+        "trade_count": 27,
+        "win_trades": 16
+      }
+    },
+    "short_strategy": {
+      "ma1": 25,
+      "ma2": 65,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 80,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 23.406609010303672,
+        "mdd": 0,
+        "trade_count": 3,
+        "win_trades": 3
+      }
+    },
+    "optimization_info": {
+      "data_period": "2023-10-09 16:00 ~ 2024-05-31 20:00",
+      "lookback_candles": 500,
+      "total_candles": 686,
+      "optimization_date": "2025-08-28 16:56:04"
+    }
+  },
+  "2024_06": {
+    "long_strategy": {
+      "ma1": 40,
+      "ma2": 73,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": -38.04654505529954,
+        "mdd": 41.4756226640201,
+        "trade_count": 4,
+        "win_trades": 1
+      }
+    },
+    "short_strategy": {
+      "ma1": 15,
+      "ma2": 30,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 50,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 0.10504529256628302,
+        "mdd": 38.14494482800608,
+        "trade_count": 4,
+        "win_trades": 2
+      }
+    },
+    "optimization_info": {
+      "data_period": "2023-10-09 16:00 ~ 2024-06-30 20:00",
+      "lookback_candles": 500,
+      "total_candles": 680,
+      "optimization_date": "2025-08-28 16:56:38"
+    }
+  },
+  "2024_07": {
+    "long_strategy": {
+      "ma1": 30,
+      "ma2": 55,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 80,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 356.4071273867402,
+        "mdd": 47.14706040980992,
+        "trade_count": 25,
+        "win_trades": 16
+      }
+    },
+    "short_strategy": {
+      "ma1": 25,
+      "ma2": 65,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 80,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 1.92486149176244,
+        "mdd": 17.407290979648945,
+        "trade_count": 5,
+        "win_trades": 3
+      }
+    },
+    "optimization_info": {
+      "data_period": "2023-10-09 16:00 ~ 2024-07-31 20:00",
+      "lookback_candles": 500,
+      "total_candles": 686,
+      "optimization_date": "2025-08-28 16:57:11"
+    }
+  },
+  "2024_08": {
+    "long_strategy": {
+      "ma1": 35,
+      "ma2": 71,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": -23.941169034131608,
+        "mdd": 41.4756226640201,
+        "trade_count": 2,
+        "win_trades": 1
+      }
+    },
+    "short_strategy": {
+      "ma1": 10,
+      "ma2": 23,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": -90.18500331712556,
+        "mdd": 90.18500331712556,
+        "trade_count": 3,
+        "win_trades": 0
+      }
+    },
+    "optimization_info": {
+      "data_period": "2023-10-09 16:00 ~ 2024-08-31 20:00",
+      "lookback_candles": 500,
+      "total_candles": 686,
+      "optimization_date": "2025-08-28 16:57:46"
+    }
+  },
+  "2025_01": {
+    "long_strategy": {
+      "ma1": 5,
+      "ma2": 11,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 95,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 150.69478307556696,
+        "mdd": 71.6551144974656,
+        "trade_count": 6,
+        "win_trades": 4
+      }
+    },
+    "short_strategy": {
+      "ma1": 25,
+      "ma2": 71,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 85,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 0.0,
+        "mdd": 0,
+        "trade_count": 0,
+        "win_trades": 0
+      }
+    },
+    "optimization_info": {
+      "data_period": "2024-10-09 16:00 ~ 2025-01-31 20:00",
+      "lookback_candles": 500,
+      "total_candles": 686,
+      "optimization_date": "2025-08-28 16:58:19"
+    }
+  },
+  "2025_02": {
+    "long_strategy": {
+      "ma1": 20,
+      "ma2": 39,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 45,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 716.2081407072337,
+        "mdd": 43.473269419667275,
+        "trade_count": 22,
+        "win_trades": 13
+      }
+    },
+    "short_strategy": {
+      "ma1": 15,
+      "ma2": 36,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 45,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": -36.96526826370985,
+        "mdd": 72.46377526569563,
+        "trade_count": 16,
+        "win_trades": 5
+      }
+    },
+    "optimization_info": {
+      "data_period": "2024-10-09 16:00 ~ 2025-02-28 20:00",
+      "lookback_candles": 500,
+      "total_candles": 668,
+      "optimization_date": "2025-08-28 16:58:53"
+    }
+  },
+  "2025_03": {
+    "long_strategy": {
+      "ma1": 15,
+      "ma2": 38,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 25,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 777.8428346024851,
+        "mdd": 55.00949140467083,
+        "trade_count": 26,
+        "win_trades": 16
+      }
+    },
+    "short_strategy": {
+      "ma1": 35,
+      "ma2": 48,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": -40.2070187787777,
+        "mdd": 67.96344295593741,
+        "trade_count": 18,
+        "win_trades": 7
+      }
+    },
+    "optimization_info": {
+      "data_period": "2024-10-09 16:00 ~ 2025-03-31 20:00",
+      "lookback_candles": 500,
+      "total_candles": 686,
+      "optimization_date": "2025-08-28 16:59:27"
+    }
+  },
+  "2025_04": {
+    "long_strategy": {
+      "ma1": 15,
+      "ma2": 38,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 90,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 930.4049773443047,
+        "mdd": 6.429087587406157,
+        "trade_count": 3,
+        "win_trades": 3
+      }
+    },
+    "short_strategy": {
+      "ma1": 15,
+      "ma2": 35,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 90,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 148.13889358882616,
+        "mdd": 0,
+        "trade_count": 2,
+        "win_trades": 2
+      }
+    },
+    "optimization_info": {
+      "data_period": "2024-10-09 16:00 ~ 2025-04-30 20:00",
+      "lookback_candles": 500,
+      "total_candles": 680,
+      "optimization_date": "2025-08-28 17:00:01"
+    }
+  },
+  "2025_05": {
+    "long_strategy": {
+      "ma1": 20,
+      "ma2": 38,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 45,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 595.3246717434043,
+        "mdd": 57.205688365558736,
+        "trade_count": 30,
+        "win_trades": 17
+      }
+    },
+    "short_strategy": {
+      "ma1": 35,
+      "ma2": 57,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 90,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 0.0,
+        "mdd": 0,
+        "trade_count": 0,
+        "win_trades": 0
+      }
+    },
+    "optimization_info": {
+      "data_period": "2024-10-09 16:00 ~ 2025-05-31 20:00",
+      "lookback_candles": 500,
+      "total_candles": 686,
+      "optimization_date": "2025-08-28 17:00:35"
+    }
+  },
+  "2025_06": {
+    "long_strategy": {
+      "ma1": 20,
+      "ma2": 38,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 95,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 432.3652437678242,
+        "mdd": 6.429087587406157,
+        "trade_count": 3,
+        "win_trades": 3
+      }
+    },
+    "short_strategy": {
+      "ma1": 15,
+      "ma2": 37,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 95,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 0.0,
+        "mdd": 0,
+        "trade_count": 0,
+        "win_trades": 0
+      }
+    },
+    "optimization_info": {
+      "data_period": "2024-10-09 16:00 ~ 2025-06-30 20:00",
+      "lookback_candles": 500,
+      "total_candles": 680,
+      "optimization_date": "2025-08-28 17:01:09"
+    }
+  },
+  "2025_07": {
+    "long_strategy": {
+      "ma1": 20,
+      "ma2": 48,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 45,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 1045.5996033857582,
+        "mdd": 45.35367319598177,
+        "trade_count": 34,
+        "win_trades": 19
+      }
+    },
+    "short_strategy": {
+      "ma1": 30,
+      "ma2": 86,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 50,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": -29.63661044514764,
+        "mdd": 39.0127333509051,
+        "trade_count": 7,
+        "win_trades": 1
+      }
+    },
+    "optimization_info": {
+      "data_period": "2024-10-09 16:00 ~ 2025-07-31 20:00",
+      "lookback_candles": 500,
+      "total_candles": 686,
+      "optimization_date": "2025-08-28 17:01:42"
+    }
+  },
+  "2025_08": {
+    "long_strategy": {
+      "ma1": 15,
+      "ma2": 38,
+      "trend_params": {
+        "trend_continuity_min": 2,
+        "rsi_oversold": 25,
+        "rsi_overbought": 70,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": 143.35195719526163,
+        "mdd": 74.01869972992155,
+        "trade_count": 27,
+        "win_trades": 15
+      }
+    },
+    "short_strategy": {
+      "ma1": 15,
+      "ma2": 35,
+      "trend_params": {
+        "trend_continuity_min": 4,
+        "rsi_oversold": 25,
+        "rsi_overbought": 75,
+        "momentum_period": 5
+      },
+      "performance": {
+        "total_return": -39.29954262530091,
+        "mdd": 39.95962944119011,
+        "trade_count": 2,
+        "win_trades": 0
+      }
+    },
+    "optimization_info": {
+      "data_period": "2024-10-09 16:00 ~ 2025-08-27 20:00",
+      "lookback_candles": 500,
+      "total_candles": 662,
+      "optimization_date": "2025-08-28 17:02:15"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+원래 여기에 포함될 계획은 아니지만
+클래스 수강을 해야 얻을 수 있는 공통 모듈 링크를 공유합니다.
+
+코인
+https://drive.google.com/drive/folders/1cTRATmFwHuKDz-hEa-DP4lBblzdxK0YM?usp=sharing
+
+
+주식
+https://drive.google.com/drive/folders/1mKGGR355vmBCxB7A3sOOSh8-gQs1CiMF?usp=sharing
+
+
+공통모듈이 있으면 바로 자동매매가 동작을 하긴 하는데 가이드는
+https://blog.naver.com/zacra/223086628069
+여기 나와 있으니 끝까지 정독해 주세요!
+
+
+판매페이지 등이나 활용 가이드에 안내했듯이
+제 클래스 수강은 필수입니다.
+
+
+왜냐면 아무 지식 없이 자동매매 봇을 돌릴 수 없으니까요.
+이 컨텐츠가 학습용이라는 것을 기억해 주세요 ^^
+
+API키 발급 방법, 주식의 경우 계좌 세팅 방법, 토큰 저장 시스템 만들기 등이
+제 클래스에 나와 있고 바쁜 분들을 위해 일부 강의만 들으면 되는데 이 가이드가
+아까 링크한
+https://blog.naver.com/zacra/223086628069
+여기에 나와 있으니
+
+100세 시대 클래스 수강을 꼭 완강하셔서 자동매매를 익히시기를 바래봅니다!
+그럼 모두 성투하세요!

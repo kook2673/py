@@ -1,0 +1,17 @@
+{
+  "symbol": "SOLUSDT",
+  "interval": "1d",
+  "data_count": 30,
+  "start_date": "2025-07-15T00:00:00",
+  "end_date": "2025-08-13T00:00:00",
+  "last_updated": "2025-08-13T14:52:13.995808",
+  "columns": [
+    "timestamp",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "close_time"
+  ]
+}

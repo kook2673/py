@@ -1,0 +1,31 @@
+{
+  "use_saved_params": false,
+  "optimize_params": true,
+  "leverage_settings": {
+    "use_leverage": true,
+    "leverage_ratio": 2.0
+  },
+  "strategy_settings": {
+    "use_volume_filter": true,
+    "volume_threshold_range": [
+      1.0,
+      1.5,
+      2.0
+    ]
+  },
+  "strategy_params": {
+    "long_sma_short": 5,
+    "long_sma_long": 20,
+    "short_sma_short": 13,
+    "short_sma_long": 35,
+    "dcc_period": 5,
+    "volume_threshold": 1.5
+  },
+  "optimization_results": {
+    "total_return": 10.058281508112705,
+    "win_rate": 48.51485148514851,
+    "max_drawdown": 2.911383425412198,
+    "total_trades": 101,
+    "last_updated": "2025-10-16 08:27:17"
+  }
+}
