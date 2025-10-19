@@ -96,6 +96,7 @@ import json
 import os
 from datetime import datetime
 import warnings
+from itertools import product
 warnings.filterwarnings('ignore')
 
 
@@ -108,32 +109,37 @@ class CurrentMarketRegimeDetector:
     
     def detect_market_regime(self, data):
         """시장 상황 분석"""
-        if len(data) < max(self.trend_periods):
+        # 최소 데이터 요구량을 줄임 (50개면 충분)
+        if len(data) < 50:
             return 'unknown'
         
-        # 트렌드 분석
-        short_trend = data['close'].iloc[-self.trend_periods[0]:].pct_change().mean()
-        mid_trend = data['close'].iloc[-self.trend_periods[1]:].pct_change().mean()
-        long_trend = data['close'].iloc[-self.trend_periods[2]:].pct_change().mean()
+        # 트렌드 분석 (더 짧은 기간 사용)
+        short_trend = data['close'].iloc[-20:].pct_change().mean()  # 20일
+        mid_trend = data['close'].iloc[-30:].pct_change().mean()    # 30일
+        long_trend = data['close'].iloc[-50:].pct_change().mean()   # 50일
         
         # 변동성 분석
         returns = data['close'].pct_change()
-        volatility = returns.rolling(self.volatility_period).std().iloc[-1]
+        volatility = returns.rolling(20).std().iloc[-1]
         
-        # 시장 상황 분류
-        if short_trend < -0.002 and mid_trend < -0.001 and long_trend < -0.0005:
-            if volatility > 0.025:
+        # NaN 체크
+        if pd.isna(short_trend) or pd.isna(mid_trend) or pd.isna(long_trend) or pd.isna(volatility):
+            return 'unknown'
+        
+        # 시장 상황 분류 (임계값을 더 현실적으로 조정)
+        if short_trend < -0.001 and mid_trend < -0.0005 and long_trend < -0.0002:
+            if volatility > 0.02:
                 return 'crash'
             else:
                 return 'strong_downtrend'
-        elif short_trend < -0.001 and mid_trend < -0.0005:
+        elif short_trend < -0.0005 and mid_trend < -0.0002:
             return 'downtrend'
-        elif short_trend > 0.002 and mid_trend > 0.001 and long_trend > 0.0005:
+        elif short_trend > 0.001 and mid_trend > 0.0005 and long_trend > 0.0002:
             return 'strong_uptrend'
-        elif short_trend > 0.001 and mid_trend > 0.0005:
+        elif short_trend > 0.0005 and mid_trend > 0.0002:
             return 'uptrend'
         else:
-            if volatility > 0.02:
+            if volatility > 0.015:
                 return 'high_volatility_sideways'
             else:
                 return 'low_volatility_sideways'
@@ -142,47 +148,52 @@ class CurrentMarketRegimeDetector:
 class AdaptiveStrategy:
     """시장 상황별 적응형 전략"""
     
-    def __init__(self, regime_detector):
+    def __init__(self, regime_detector, optimized_params=None):
         self.regime_detector = regime_detector
         
-        # 시장 상황별 파라미터 (RSI 현실적으로 조정)
-        self.market_params = {
-            'crash': {
-                'rsi_oversold': 20, 'rsi_overbought': 80, 'bb_std': 1.0,
-                'ma_short': 3, 'ma_long': 10,  # 빠른 MA (폭락장 대응)
-                'stop_loss': 0.015, 'take_profit': 0.03, 'position_size': 0.2
-            },
-            'strong_downtrend': {
-                'rsi_oversold': 25, 'rsi_overbought': 75, 'bb_std': 1.2,
-                'ma_short': 5, 'ma_long': 15,  # 빠른 MA (강한 하락장)
-                'stop_loss': 0.02, 'take_profit': 0.04, 'position_size': 0.3
-            },
-            'downtrend': {
-                'rsi_oversold': 30, 'rsi_overbought': 70, 'bb_std': 1.5,
-                'ma_short': 8, 'ma_long': 20,  # 중간 MA (하락장)
-                'stop_loss': 0.025, 'take_profit': 0.05, 'position_size': 0.5
-            },
-            'strong_uptrend': {
-                'rsi_oversold': 40, 'rsi_overbought': 80, 'bb_std': 2.0,
-                'ma_short': 10, 'ma_long': 30,  # 안정적인 MA (강한 상승장)
-                'stop_loss': 0.04, 'take_profit': 0.10, 'position_size': 1.0
-            },
-            'uptrend': {
-                'rsi_oversold': 35, 'rsi_overbought': 75, 'bb_std': 2.0,
-                'ma_short': 12, 'ma_long': 35,  # 안정적인 MA (상승장)
-                'stop_loss': 0.03, 'take_profit': 0.08, 'position_size': 0.8
-            },
-            'high_volatility_sideways': {
-                'rsi_oversold': 25, 'rsi_overbought': 75, 'bb_std': 1.8,
-                'ma_short': 6, 'ma_long': 18,  # 중간 MA (고변동성 횡보)
-                'stop_loss': 0.035, 'take_profit': 0.08, 'position_size': 0.6
-            },
-            'low_volatility_sideways': {
-                'rsi_oversold': 30, 'rsi_overbought': 70, 'bb_std': 2.0,
-                'ma_short': 15, 'ma_long': 40,  # 느린 MA (저변동성 횡보)
-                'stop_loss': 0.03, 'take_profit': 0.08, 'position_size': 0.7
+        # 최적화된 파라미터가 있으면 사용, 없으면 기본 파라미터 사용
+        if optimized_params:
+            self.market_params = optimized_params
+        else:
+            # 최적화된 파라미터 (그리드 서치 결과 적용)
+            # 사용 지표: RSI + Moving Average + Donchian Channel
+            self.market_params = {
+                'crash': {
+                    'rsi_oversold': 20, 'rsi_overbought': 80,
+                    'ma_short': 7, 'ma_long': 30,  # 최적화: 7/30 (폭락장 대응)
+                    'stop_loss': 0.015, 'take_profit': 0.03, 'position_size': 0.2
+                },
+                'strong_downtrend': {
+                    'rsi_oversold': 25, 'rsi_overbought': 75,
+                    'ma_short': 15, 'ma_long': 25,  # 최적화: 15/25 (강한 하락장)
+                    'stop_loss': 0.02, 'take_profit': 0.04, 'position_size': 0.3
+                },
+                'downtrend': {
+                    'rsi_oversold': 30, 'rsi_overbought': 70,
+                    'ma_short': 5, 'ma_long': 10,  # 최적화: 5/10 (하락장)
+                    'stop_loss': 0.025, 'take_profit': 0.05, 'position_size': 0.5
+                },
+                'strong_uptrend': {
+                    'rsi_oversold': 40, 'rsi_overbought': 80,
+                    'ma_short': 9, 'ma_long': 10,  # 최적화: 9/10 (강한 상승장)
+                    'stop_loss': 0.04, 'take_profit': 0.10, 'position_size': 1.0
+                },
+                'uptrend': {
+                    'rsi_oversold': 35, 'rsi_overbought': 75,
+                    'ma_short': 13, 'ma_long': 15,  # 최적화: 13/15 (상승장)
+                    'stop_loss': 0.03, 'take_profit': 0.08, 'position_size': 0.8
+                },
+                'high_volatility_sideways': {
+                    'rsi_oversold': 25, 'rsi_overbought': 75,
+                    'ma_short': 3, 'ma_long': 10,  # 최적화: 3/10 (고변동성 횡보)
+                    'stop_loss': 0.035, 'take_profit': 0.08, 'position_size': 0.6
+                },
+                'low_volatility_sideways': {
+                    'rsi_oversold': 30, 'rsi_overbought': 70,
+                    'ma_short': 7, 'ma_long': 10,  # 최적화: 7/10 (저변동성 횡보)
+                    'stop_loss': 0.03, 'take_profit': 0.08, 'position_size': 0.7
+                }
             }
-        }
     
     def calculate_indicators(self, data, market_regime):
         """시장 상황별 지표 계산"""
@@ -267,7 +278,7 @@ def run_optimized_backtest(data, start_date, end_date, initial_capital=10000):
     
     return result
 
-def run_yearly_analysis(data, start_year=2018, end_year=2025, initial_capital=10000):
+def run_yearly_analysis(data, start_year=2018, end_year=2025, strategy=None, initial_capital=10000):
     """연도별 성과 분석"""
     print("=== 연도별 성과 분석 (2018-2025) ===")
     
@@ -301,8 +312,12 @@ def run_yearly_analysis(data, start_year=2018, end_year=2025, initial_capital=10
         print(f"  데이터 길이: {len(year_data)}개 캔들")
         
         # 해당 연도 백테스트 실행
-        detector = CurrentMarketRegimeDetector()
-        adaptive_strategy = AdaptiveStrategy(detector)
+        if strategy is None:
+            detector = CurrentMarketRegimeDetector()
+            adaptive_strategy = AdaptiveStrategy(detector)
+        else:
+            adaptive_strategy = strategy
+            
         year_result = run_adaptive_backtest_pandas(year_data, adaptive_strategy, current_capital, f"{year}년시스템")
         
         if year_result:
@@ -349,19 +364,42 @@ def run_adaptive_backtest_pandas(data, adaptive_strategy, initial_capital, strat
     """판다스 벡터화를 사용한 적응형 백테스트 실행"""
     print(f"=== 판다스 벡터화 백테스트: {strategy_name} ===")
     
-    window_size = 50
+    window_size = 50  # 시장 상황 감지를 위한 최소 데이터
     df = data.copy()
-    
-    # 전체 데이터에 대해 시장 상황 감지 (벡터화)
+
+    # 전체 데이터에 대해 시장 상황 감지 (완전 벡터화)
     print("시장 상황 감지 중...")
-    market_regimes = []
-    for i in range(window_size, len(df)):
-        current_data = df.iloc[max(0, i - window_size + 1):i+1]
-        regime = adaptive_strategy.regime_detector.detect_market_regime(current_data)
-        market_regimes.append(regime)
     
-    # 시장 상황을 데이터프레임에 추가
-    df['market_regime'] = pd.Series(market_regimes, index=df.index[window_size:])
+    # 벡터화된 시장 상황 감지
+    df['short_trend'] = df['close'].rolling(20).apply(lambda x: x.pct_change().mean(), raw=False)
+    df['mid_trend'] = df['close'].rolling(30).apply(lambda x: x.pct_change().mean(), raw=False)
+    df['long_trend'] = df['close'].rolling(50).apply(lambda x: x.pct_change().mean(), raw=False)
+    df['volatility'] = df['close'].pct_change().rolling(20).std()
+    
+    # 시장 상황 분류 (벡터화)
+    conditions = [
+        # crash
+        (df['short_trend'] < -0.001) & (df['mid_trend'] < -0.0005) & (df['long_trend'] < -0.0002) & (df['volatility'] > 0.02),
+        # strong_downtrend
+        (df['short_trend'] < -0.001) & (df['mid_trend'] < -0.0005) & (df['long_trend'] < -0.0002) & (df['volatility'] <= 0.02),
+        # downtrend
+        (df['short_trend'] < -0.0005) & (df['mid_trend'] < -0.0002),
+        # strong_uptrend
+        (df['short_trend'] > 0.001) & (df['mid_trend'] > 0.0005) & (df['long_trend'] > 0.0002),
+        # uptrend
+        (df['short_trend'] > 0.0005) & (df['mid_trend'] > 0.0002),
+        # high_volatility_sideways
+        (df['volatility'] > 0.015),
+    ]
+    
+    choices = ['crash', 'strong_downtrend', 'downtrend', 'strong_uptrend', 'uptrend', 'high_volatility_sideways']
+    
+    df['market_regime'] = np.select(conditions, choices, default='low_volatility_sideways')
+    
+    # NaN 값 처리
+    df['market_regime'] = df['market_regime'].fillna('unknown')
+    
+    print(f"시장 상황 감지 완료: {df['market_regime'].value_counts().to_dict()}")
     
     # 각 시장 상황별로 지표 계산 및 신호 생성 (벡터화)
     print("지표 계산 및 신호 생성 중...")
@@ -660,6 +698,216 @@ def calculate_max_drawdown(initial_capital, trades):
     
     return np.max(drawdown)
 
+def optimize_ma_parameters(data, market_regime, ma_short_range, ma_long_range, initial_capital=10000):
+    """특정 시장 상황에 대한 MA 파라미터 최적화"""
+    print(f"  {market_regime} 시장 상황 MA 최적화 중...")
+    
+    best_params = None
+    best_return = -float('inf')
+    best_results = {}
+    
+    # 시장 상황별 기본 파라미터
+    base_params = {
+        'crash': {'rsi_oversold': 20, 'rsi_overbought': 80, 'stop_loss': 0.015, 'take_profit': 0.03, 'position_size': 0.2},
+        'strong_downtrend': {'rsi_oversold': 25, 'rsi_overbought': 75, 'stop_loss': 0.02, 'take_profit': 0.04, 'position_size': 0.3},
+        'downtrend': {'rsi_oversold': 30, 'rsi_overbought': 70, 'stop_loss': 0.025, 'take_profit': 0.05, 'position_size': 0.5},
+        'strong_uptrend': {'rsi_oversold': 40, 'rsi_overbought': 80, 'stop_loss': 0.04, 'take_profit': 0.10, 'position_size': 1.0},
+        'uptrend': {'rsi_oversold': 35, 'rsi_overbought': 75, 'stop_loss': 0.03, 'take_profit': 0.08, 'position_size': 0.8},
+        'high_volatility_sideways': {'rsi_oversold': 25, 'rsi_overbought': 75, 'stop_loss': 0.035, 'take_profit': 0.08, 'position_size': 0.6},
+        'low_volatility_sideways': {'rsi_oversold': 30, 'rsi_overbought': 70, 'stop_loss': 0.03, 'take_profit': 0.08, 'position_size': 0.7}
+    }
+    
+    base_param = base_params.get(market_regime, base_params['low_volatility_sideways'])
+    
+    # MA 파라미터 조합 생성
+    ma_combinations = list(product(ma_short_range, ma_long_range))
+    total_combinations = len(ma_combinations)
+    valid_combinations = [combo for combo in ma_combinations if combo[0] < combo[1]]
+    valid_total = len(valid_combinations)
+    
+    print(f"    총 {valid_total}개 조합 테스트 중...")
+    
+    for i, (ma_short, ma_long) in enumerate(valid_combinations):
+        # 진행상황 표시 (10%마다)
+        if i % max(1, valid_total // 10) == 0:
+            progress = (i / valid_total) * 100
+            print(f"    진행률: {progress:.0f}% ({i}/{valid_total})")
+            
+        # 파라미터 설정
+        params = base_param.copy()
+        params['ma_short'] = ma_short
+        params['ma_long'] = ma_long
+        
+        # 백테스트 실행
+        try:
+            result = run_optimization_backtest(data, market_regime, params, initial_capital)
+            if result and result['total_return'] > best_return:
+                best_return = result['total_return']
+                best_params = params.copy()
+                best_results = result.copy()
+                print(f"    새로운 최적값 발견: MA({ma_short}/{ma_long}) = {best_return:.2f}%")
+        except Exception as e:
+            continue
+    
+    print(f"    최적화 완료: {valid_total}개 조합 테스트")
+    if best_params:
+        print(f"    최적 MA: {best_params['ma_short']}/{best_params['ma_long']}, 수익률: {best_return:.2f}%")
+        return best_params, best_results
+    else:
+        print(f"    {market_regime} 시장 상황에서 유효한 파라미터를 찾지 못했습니다.")
+        return base_param, None
+
+def run_optimization_backtest(data, market_regime, params, initial_capital):
+    """최적화용 간단한 백테스트"""
+    df = data.copy()
+    
+    # RSI 계산
+    delta = df['close'].diff()
+    gain = (delta.where(delta > 0, 0)).rolling(14).mean()
+    loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+    rs = gain / loss
+    df['rsi'] = 100 - (100 / (1 + rs))
+    
+    # MA 계산
+    df['ma_short'] = df['close'].rolling(params['ma_short']).mean()
+    df['ma_long'] = df['close'].rolling(params['ma_long']).mean()
+    
+    # Donchian Channel
+    dc_period = 45
+    df['dc_high'] = df['high'].rolling(dc_period).max()
+    df['dc_low'] = df['low'].rolling(dc_period).min()
+    df['dc_middle'] = (df['dc_high'] + df['dc_low']) / 2
+    
+    # 신호 생성
+    ma_long_signal = df['ma_short'] > df['ma_long']
+    ma_short_signal = df['ma_short'] < df['ma_long']
+    rsi_long_signal = df['rsi'] < params['rsi_oversold']
+    rsi_short_signal = df['rsi'] > params['rsi_overbought']
+    dc_long_signal = (df['close'] > df['dc_middle']) & (df['close'] > df['dc_low'] * 1.02)
+    dc_short_signal = (df['close'] < df['dc_middle']) & (df['close'] < df['dc_high'] * 0.98)
+    
+    df['long_signal'] = ma_long_signal & rsi_long_signal & dc_long_signal
+    df['short_signal'] = ma_short_signal & rsi_short_signal & dc_short_signal
+    
+    # 거래 시뮬레이션
+    current_capital = initial_capital
+    position = None
+    entry_price = 0
+    trades = []
+    
+    for i in range(max(params['ma_long'], dc_period), len(df)):
+        current_row = df.iloc[i]
+        
+        if position is None:
+            if current_row['long_signal']:
+                position = 'long'
+                entry_price = current_row['close']
+                position_size = current_capital * params['position_size']
+                entry_fee = position_size * 0.0005
+                current_capital -= entry_fee
+            elif current_row['short_signal']:
+                position = 'short'
+                entry_price = current_row['close']
+                position_size = current_capital * params['position_size']
+                entry_fee = position_size * 0.0005
+                current_capital -= entry_fee
+        
+        elif position is not None:
+            should_exit = False
+            
+            if position == 'long':
+                if current_row['short_signal'] or current_row['close'] <= entry_price * (1 - params['stop_loss']) or current_row['close'] >= entry_price * (1 + params['take_profit']):
+                    should_exit = True
+            elif position == 'short':
+                if current_row['long_signal'] or current_row['close'] >= entry_price * (1 + params['stop_loss']) or current_row['close'] <= entry_price * (1 - params['take_profit']):
+                    should_exit = True
+            
+            if should_exit:
+                exit_price = current_row['close']
+                position_size = current_capital * params['position_size']
+                
+                pnl = calculate_pnl(entry_price, exit_price, position_size, position)
+                exit_fee = position_size * 0.0005
+                net_pnl = pnl - exit_fee
+                current_capital += net_pnl
+                
+                trades.append({
+                    'pnl': net_pnl,
+                    'position': position,
+                    'entry_price': entry_price,
+                    'exit_price': exit_price
+                })
+                
+                position = None
+    
+    if not trades:
+        return None
+        
+    total_return = (current_capital - initial_capital) / initial_capital * 100
+    winning_trades = len([t for t in trades if t['pnl'] > 0])
+    win_rate = (winning_trades / len(trades) * 100) if len(trades) > 0 else 0
+    max_drawdown = calculate_max_drawdown(initial_capital, trades)
+    
+    return {
+        'total_return': total_return,
+        'final_capital': current_capital,
+        'total_trades': len(trades),
+        'win_rate': win_rate,
+        'max_drawdown': max_drawdown,
+        'trades': trades
+    }
+
+def optimize_all_market_regimes(data, initial_capital=10000):
+    """모든 시장 상황에 대한 MA 파라미터 최적화"""
+    print("=== MA 파라미터 그리드 서치 최적화 ===")
+    
+    # MA 파라미터 범위 설정 (더 빠른 최적화를 위해 범위 축소)
+    ma_short_range = range(3, 16, 2)  # 3, 5, 7, 9, 11, 13, 15
+    ma_long_range = range(10, 36, 5)  # 10, 15, 20, 25, 30, 35
+    
+    # 시장 상황별 최적화
+    market_regimes = ['crash', 'strong_downtrend', 'downtrend', 'strong_uptrend', 'uptrend', 'high_volatility_sideways', 'low_volatility_sideways']
+    
+    optimized_params = {}
+    total_regimes = len(market_regimes)
+    
+    print(f"총 {total_regimes}개 시장 상황 최적화 시작...")
+    
+    for i, regime in enumerate(market_regimes):
+        print(f"\n[{i+1}/{total_regimes}] {regime} 시장 상황 최적화 중...")
+        optimized_param, result = optimize_ma_parameters(data, regime, ma_short_range, ma_long_range, initial_capital)
+        optimized_params[regime] = optimized_param
+        print(f"[{i+1}/{total_regimes}] {regime} 완료!")
+    
+    print(f"\n=== 모든 시장 상황 최적화 완료 ===")
+    return optimized_params
+
+def test_market_regime_detection(data):
+    """시장 상황 감지 테스트"""
+    print("=== 시장 상황 감지 테스트 ===")
+    detector = CurrentMarketRegimeDetector()
+    
+    # 2018년 데이터로 테스트
+    test_data = data[data.index.year == 2018].copy()
+    if len(test_data) < 100:
+        print("테스트 데이터가 부족합니다.")
+        return
+    
+    # 100개씩 샘플링해서 시장 상황 확인
+    sample_size = 100
+    regime_counts = {}
+    
+    for i in range(0, len(test_data) - sample_size, sample_size):
+        sample = test_data.iloc[i:i+sample_size]
+        regime = detector.detect_market_regime(sample)
+        regime_counts[regime] = regime_counts.get(regime, 0) + 1
+    
+    print("시장 상황 분포:")
+    for regime, count in regime_counts.items():
+        print(f"  {regime}: {count}회")
+    
+    return regime_counts
+
 def main():
     """메인 실행 함수"""
     print("=== 최적화된 적응형 트레이딩 시스템 (2018-2025) ===")
@@ -692,28 +940,32 @@ def main():
         print(f"전체 데이터: {len(combined_data)}개 캔들")
         print(f"데이터 기간: {combined_data.index.min()} ~ {combined_data.index.max()}")
         
-        # 연도별 성과 분석 실행
-        yearly_results = run_yearly_analysis(combined_data, 2018, 2025)
+        # 최적화된 적응형 트레이딩 시스템 실행
+        print("\n=== 최적화된 적응형 트레이딩 시스템 실행 ===")
+        detector = CurrentMarketRegimeDetector()
+        optimized_strategy = AdaptiveStrategy(detector)  # 최적화된 파라미터 사용
+        results = run_yearly_analysis(combined_data, 2018, 2025, optimized_strategy)
         
-        if yearly_results:
-            # 결과 저장
+        # 결과 저장
+        if results:
             output = {
-                'system_type': 'Optimized Adaptive Trading System',
+                'system_type': 'Optimized MA Adaptive Trading System (Final)',
                 'test_period': '2018-01-01 ~ 2025-12-31',
-                'yearly_results': yearly_results,
+                'optimization_method': 'Grid Search for MA Parameters',
+                'yearly_results': results,
                 'summary': {
-                    'total_years': len([y for y in yearly_results.values() if y['total_trades'] > 0]),
-                    'total_trades': sum([y['total_trades'] for y in yearly_results.values()]),
-                    'final_capital': yearly_results[2025]['final_capital'],
-                    'total_return': (yearly_results[2025]['final_capital'] - 10000) / 10000 * 100
+                    'total_years': len([y for y in results.values() if y['total_trades'] > 0]),
+                    'total_trades': sum([y['total_trades'] for y in results.values()]),
+                    'final_capital': results[2025]['final_capital'],
+                    'total_return': (results[2025]['final_capital'] - 10000) / 10000 * 100
                 },
                 'last_updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             }
             
-            with open('yearly_analysis_results.json', 'w', encoding='utf-8') as f:
+            with open('final_optimized_results.json', 'w', encoding='utf-8') as f:
                 json.dump(output, f, indent=2, ensure_ascii=False)
             
-            print(f"\n결과가 yearly_analysis_results.json에 저장되었습니다.")
+            print(f"\n최종 결과가 final_optimized_results.json에 저장되었습니다.")
     
     print("\n=== 완료 ===")
 

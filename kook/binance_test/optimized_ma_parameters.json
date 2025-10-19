@@ -1,0 +1,65 @@
+{
+  "crash": {
+    "rsi_oversold": 20,
+    "rsi_overbought": 80,
+    "stop_loss": 0.015,
+    "take_profit": 0.03,
+    "position_size": 0.2,
+    "ma_short": 7,
+    "ma_long": 30
+  },
+  "strong_downtrend": {
+    "rsi_oversold": 25,
+    "rsi_overbought": 75,
+    "stop_loss": 0.02,
+    "take_profit": 0.04,
+    "position_size": 0.3,
+    "ma_short": 15,
+    "ma_long": 25
+  },
+  "downtrend": {
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "stop_loss": 0.025,
+    "take_profit": 0.05,
+    "position_size": 0.5,
+    "ma_short": 5,
+    "ma_long": 10
+  },
+  "strong_uptrend": {
+    "rsi_oversold": 40,
+    "rsi_overbought": 80,
+    "stop_loss": 0.04,
+    "take_profit": 0.1,
+    "position_size": 1.0,
+    "ma_short": 9,
+    "ma_long": 10
+  },
+  "uptrend": {
+    "rsi_oversold": 35,
+    "rsi_overbought": 75,
+    "stop_loss": 0.03,
+    "take_profit": 0.08,
+    "position_size": 0.8,
+    "ma_short": 13,
+    "ma_long": 15
+  },
+  "high_volatility_sideways": {
+    "rsi_oversold": 25,
+    "rsi_overbought": 75,
+    "stop_loss": 0.035,
+    "take_profit": 0.08,
+    "position_size": 0.6,
+    "ma_short": 3,
+    "ma_long": 10
+  },
+  "low_volatility_sideways": {
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "stop_loss": 0.03,
+    "take_profit": 0.08,
+    "position_size": 0.7,
+    "ma_short": 7,
+    "ma_long": 10
+  }
+}
