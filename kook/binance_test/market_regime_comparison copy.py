@@ -1,93 +1,8 @@
 """
-최적화된 적응형 트레이딩 시스템 (5분 데이터)
+최적화된 적응형 트레이딩 시스템
 
-=== 전략 개요 ===
-이 시스템은 시장 상황을 실시간으로 감지하고, 각 상황에 맞는 최적화된 매매 전략을 자동으로 선택하는 
-적응형 트레이딩 시스템입니다. 2018-2019년 백테스트에서 30.05% 수익률과 66.63% 승률을 달성한 
-검증된 전략입니다.
-
-=== 핵심 특징 ===
-1. 시장 상황 감지 (Market Regime Detection)
-   - 7가지 시장 상황 분류: crash, strong_downtrend, downtrend, strong_uptrend, uptrend, 
-     high_volatility_sideways, low_volatility_sideways
-   - 트렌드 분석: 20일, 50일, 100일 기간의 수익률 평균으로 단기/중기/장기 트렌드 파악
-   - 변동성 분석: 20일 롤링 표준편차로 시장 변동성 측정
-
-2. 적응형 매매 전략 (Adaptive Strategy)
-   - 시장 상황별 최적화된 파라미터 적용
-   - 기술적 지표: Moving Average (MA) + RSI + Donchian Channel (DC)
-   - 포지션 크기: 시장 상황에 따라 20%~100% 동적 조절
-   - 손절/익절: 시장 상황별 차별화된 리스크 관리
-
-3. 리스크 관리 (Risk Management)
-   - 진입/청산 수수료: 각각 0.05% (총 0.1%)
-   - 손절매: 시장 상황별 1.5%~4% 설정
-   - 익절매: 시장 상황별 3%~10% 설정
-   - 포지션 크기: 시장 상황별 20%~100% 조절
-
-=== 시장 상황별 전략 ===
-1. CRASH (폭락장)
-   - MA: 3/10 (매우 빠른 반응)
-   - RSI: 20/80 (극단적 과매도/과매수)
-   - 포지션: 20% (보수적)
-   - 손절/익절: 1.5%/3%
-
-2. STRONG_DOWNTREND (강한 하락장)
-   - MA: 5/15 (빠른 반응)
-   - RSI: 25/75
-   - 포지션: 30%
-   - 손절/익절: 2%/4%
-
-3. DOWNTREND (하락장)
-   - MA: 8/20 (중간 반응)
-   - RSI: 30/70
-   - 포지션: 50%
-   - 손절/익절: 2.5%/5%
-
-4. STRONG_UPTREND (강한 상승장)
-   - MA: 10/30 (안정적)
-   - RSI: 40/80
-   - 포지션: 100% (공격적)
-   - 손절/익절: 4%/10%
-
-5. UPTREND (상승장)
-   - MA: 12/35 (안정적)
-   - RSI: 35/75
-   - 포지션: 80%
-   - 손절/익절: 3%/8%
-
-6. HIGH_VOLATILITY_SIDEWAYS (고변동성 횡보)
-   - MA: 6/18 (중간)
-   - RSI: 25/75
-   - 포지션: 60%
-   - 손절/익절: 3.5%/8%
-
-7. LOW_VOLATILITY_SIDEWAYS (저변동성 횡보)
-   - MA: 15/40 (느린 반응)
-   - RSI: 30/70
-   - 포지션: 70%
-   - 손절/익절: 3%/8%
-
-=== 신호 생성 로직 ===
-- 롱 신호: MA_단기 > MA_장기 AND RSI < 과매도선 AND Close > DC_중간선 AND Close > DC_하단*1.02
-- 숏 신호: MA_단기 < MA_장기 AND RSI > 과매수선 AND Close < DC_중간선 AND Close < DC_상단*0.98
-
-=== 백테스트 결과 (2018-2025, 5분 데이터) ===
-- 전체 기간: 2018년 1월 ~ 2025년 12월
-- 초기 자본: $10,000
-- 데이터 주기: 5분 캔들
-- 수수료: 진입 0.05% + 청산 0.05% = 총 0.1%
-
-=== 성과 지표 ===
-- 총 수익률: 연도별 상이 (2018: +8.97%, 2019: +28.31%, 2020: +21.47%, 2021: -50.42%, 등)
-- 승률: 연도별 24.3%~45.9%
-- 최대 낙폭: 연도별 10.11%~59.70%
-- 총 거래 수: 연도별 19~111회
-
-=== 주의사항 ===
-- 이 시스템은 과거 데이터 기반 백테스트 결과이며, 미래 성과를 보장하지 않습니다.
-- 실제 거래 시에는 슬리피지, 유동성 부족, 시스템 장애 등의 요인을 고려해야 합니다.
-- 리스크 관리와 자금 관리를 철저히 하시기 바랍니다.
+=== 최고 성과 시스템 ===
+현재 시장 상황 감지 시스템 (30.05% 수익률, 66.63% 승률)
 """
 
 import pandas as pd
@@ -303,12 +218,10 @@ def run_yearly_analysis(data, start_year=2018, end_year=2025, initial_capital=10
         # 해당 연도 백테스트 실행
         detector = CurrentMarketRegimeDetector()
         adaptive_strategy = AdaptiveStrategy(detector)
-        year_result = run_adaptive_backtest_pandas(year_data, adaptive_strategy, current_capital, f"{year}년시스템")
+        year_result = run_adaptive_backtest(year_data, adaptive_strategy, current_capital, f"{year}년시스템")
         
         if year_result:
-            # JSON 직렬화를 위해 df_with_signals 제거
-            clean_result = {k: v for k, v in year_result.items() if k != 'df_with_signals'}
-            yearly_results[year] = clean_result
+            yearly_results[year] = year_result
             current_capital = year_result['final_capital']  # 다음 연도 시작 자본 업데이트
             
             print(f"  {year}년 완료: 수익률 {year_result['total_return']:.2f}%, 거래 {year_result['total_trades']}회, 승률 {year_result['win_rate']:.1f}%")
@@ -344,171 +257,6 @@ def run_yearly_analysis(data, start_year=2018, end_year=2025, initial_capital=10
     
     return yearly_results
 
-
-def run_adaptive_backtest_pandas(data, adaptive_strategy, initial_capital, strategy_name):
-    """판다스 벡터화를 사용한 적응형 백테스트 실행"""
-    print(f"=== 판다스 벡터화 백테스트: {strategy_name} ===")
-    
-    window_size = 50
-    df = data.copy()
-    
-    # 전체 데이터에 대해 시장 상황 감지 (벡터화)
-    print("시장 상황 감지 중...")
-    market_regimes = []
-    for i in range(window_size, len(df)):
-        current_data = df.iloc[max(0, i - window_size + 1):i+1]
-        regime = adaptive_strategy.regime_detector.detect_market_regime(current_data)
-        market_regimes.append(regime)
-    
-    # 시장 상황을 데이터프레임에 추가
-    df['market_regime'] = pd.Series(market_regimes, index=df.index[window_size:])
-    
-    # 각 시장 상황별로 지표 계산 및 신호 생성 (벡터화)
-    print("지표 계산 및 신호 생성 중...")
-    all_signals = []
-    
-    for regime in df['market_regime'].unique():
-        if pd.isna(regime):
-            continue
-            
-        regime_mask = df['market_regime'] == regime
-        regime_data = df[regime_mask].copy()
-        
-        if len(regime_data) < 20:
-            continue
-            
-        # 해당 시장 상황에 대한 지표 계산
-        regime_indicators, params = adaptive_strategy.calculate_indicators(regime_data, regime)
-        regime_signals = adaptive_strategy.generate_signals(regime_indicators, params)
-        
-        all_signals.append(regime_signals)
-    
-    # 모든 신호를 하나로 합치기
-    if all_signals:
-        combined_signals = pd.concat(all_signals).sort_index()
-        df = df.join(combined_signals[['long_signal', 'short_signal']], how='left')
-    else:
-        df['long_signal'] = False
-        df['short_signal'] = False
-    
-    print("거래 시뮬레이션 시작...")
-    
-    # 거래 시뮬레이션 (여전히 순차적이지만 더 효율적)
-    current_capital = initial_capital
-    position = None
-    entry_price = 0
-    entry_time = None
-    trades = []
-    
-    for i in range(window_size, len(df)):
-        current_time = df.index[i]
-        current_row = df.iloc[i]
-        market_regime = current_row['market_regime']
-        
-        if pd.isna(market_regime):
-            continue
-            
-        # 해당 시장 상황의 파라미터 찾기
-        params = adaptive_strategy.market_params.get(market_regime, adaptive_strategy.market_params['low_volatility_sideways'])
-        
-        # 포지션 관리 (기존 로직과 동일)
-        if position is None:
-            if current_row['long_signal']:
-                position = 'long'
-                entry_price = current_row['close']
-                entry_time = current_time
-                position_size = current_capital * params['position_size']
-                
-                entry_fee = position_size * 0.0005
-                current_capital -= entry_fee
-                
-                print(f"{current_time}: 롱 진입 (시장: {market_regime}, 가격: {entry_price:.2f}, 크기: {position_size:.2f}, fee: {entry_fee:.2f}) [잔액: {current_capital:.2f}]")
-                
-            elif current_row['short_signal']:
-                position = 'short'
-                entry_price = current_row['close']
-                entry_time = current_time
-                position_size = current_capital * params['position_size']
-                
-                entry_fee = position_size * 0.0005
-                current_capital -= entry_fee
-                
-                print(f"{current_time}: 숏 진입 (시장: {market_regime}, 가격: {entry_price:.2f}, 크기: {position_size:.2f}, fee: {entry_fee:.2f}) [잔액: {current_capital:.2f}]")
-        
-        elif position is not None:
-            should_exit = False
-            exit_reason = ""
-            
-            if position == 'long':
-                if current_row['short_signal']:
-                    should_exit = True
-                    exit_reason = "숏 신호"
-                elif current_row['close'] <= entry_price * (1 - params['stop_loss']):
-                    should_exit = True
-                    exit_reason = f"{params['stop_loss']*100:.0f}% 손절매"
-                elif current_row['close'] >= entry_price * (1 + params['take_profit']):
-                    should_exit = True
-                    exit_reason = f"{params['take_profit']*100:.0f}% 익절"
-            
-            elif position == 'short':
-                if current_row['long_signal']:
-                    should_exit = True
-                    exit_reason = "롱 신호"
-                elif current_row['close'] >= entry_price * (1 + params['stop_loss']):
-                    should_exit = True
-                    exit_reason = f"{params['stop_loss']*100:.0f}% 손절매"
-                elif current_row['close'] <= entry_price * (1 - params['take_profit']):
-                    should_exit = True
-                    exit_reason = f"{params['take_profit']*100:.0f}% 익절"
-            
-            if should_exit:
-                exit_price = current_row['close']
-                position_size = current_capital * params['position_size']
-                
-                pnl = calculate_pnl(entry_price, exit_price, position_size, position)
-                exit_fee = position_size * 0.0005
-                net_pnl = pnl - exit_fee
-                current_capital += net_pnl
-                
-                trades.append({
-                    'entry_time': entry_time.strftime('%Y-%m-%d %H:%M:%S'),
-                    'exit_time': current_time.strftime('%Y-%m-%d %H:%M:%S'),
-                    'position': position,
-                    'entry_price': entry_price,
-                    'exit_price': exit_price,
-                    'pnl': net_pnl,
-                    'gross_pnl': pnl,
-                    'entry_fee': position_size * 0.0005,
-                    'exit_fee': exit_fee,
-                    'total_fee': (position_size * 0.0005) + exit_fee,
-                    'exit_reason': exit_reason,
-                    'market_regime': market_regime
-                })
-                
-                pnl_percent = (net_pnl / position_size) * 100
-                total_fee_display = (position_size * 0.0005) + exit_fee
-                if net_pnl > 0:
-                    print(f"{current_time}: 청산 [수익] (시장: {market_regime}, 수익률: {pnl_percent:.2f}%, PnL: {net_pnl:.2f}, fee: {total_fee_display:.2f}) [잔액: {current_capital:.2f}]")
-                else:
-                    print(f"{current_time}: 청산 [손실] (시장: {market_regime}, 손실률: {pnl_percent:.2f}%, PnL: {net_pnl:.2f}, fee: {total_fee_display:.2f}) [잔액: {current_capital:.2f}]")
-                
-                position = None
-    
-    # 결과 계산
-    total_return = (current_capital - initial_capital) / initial_capital * 100
-    winning_trades = len([t for t in trades if t['pnl'] > 0])
-    win_rate = (winning_trades / len(trades) * 100) if len(trades) > 0 else 0
-    max_drawdown = calculate_max_drawdown(initial_capital, trades)
-    
-    return {
-        'total_return': total_return,
-        'final_capital': current_capital,
-        'total_trades': len(trades),
-        'win_rate': win_rate,
-        'max_drawdown': max_drawdown,
-        'trades': trades,
-        'df_with_signals': df  # 신호가 포함된 데이터프레임 반환
-    }
 
 def run_adaptive_backtest(data, adaptive_strategy, initial_capital, strategy_name):
     """적응형 백테스트 실행"""
@@ -617,9 +365,9 @@ def run_adaptive_backtest(data, adaptive_strategy, initial_capital, strategy_nam
                 pnl_percent = (net_pnl / position_size) * 100
                 total_fee_display = (position_size * 0.0005) + exit_fee  # 표시용 총 수수료
                 if net_pnl > 0:
-                    print(f"{current_time}: 청산 [수익] (시장: {market_regime}, 수익률: {pnl_percent:.2f}%, PnL: {net_pnl:.2f}, fee: {total_fee_display:.2f}) [잔액: {current_capital:.2f}]")
+                    print(f"{current_time}: 청산 [수익🟢] (시장: {market_regime}, 수익률: {pnl_percent:.2f}%, PnL: {net_pnl:.2f}, fee: {total_fee_display:.2f}) [잔액: {current_capital:.2f}]")
                 else:
-                    print(f"{current_time}: 청산 [손실] (시장: {market_regime}, 손실률: {pnl_percent:.2f}%, PnL: {net_pnl:.2f}, fee: {total_fee_display:.2f}) [잔액: {current_capital:.2f}]")
+                    print(f"{current_time}: 청산 [손실🔴] (시장: {market_regime}, 손실률: {pnl_percent:.2f}%, PnL: {net_pnl:.2f}, fee: {total_fee_display:.2f}) [잔액: {current_capital:.2f}]")
                 
                 position = None
     
@@ -664,7 +412,7 @@ def main():
     """메인 실행 함수"""
     print("=== 최적화된 적응형 트레이딩 시스템 (2018-2025) ===")
     
-    # 2018-2025년 데이터 로드 (5분 데이터)
+    # 2018-2025년 데이터 로드
     data_files = [
         "data/BTCUSDT/5m/BTCUSDT_5m_2018.csv",
         "data/BTCUSDT/5m/BTCUSDT_5m_2019.csv",
