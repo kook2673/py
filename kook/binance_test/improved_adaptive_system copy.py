@@ -22,7 +22,7 @@ class ImprovedRiskManager:
     
     def __init__(self):
         self.max_daily_loss = 0.02  # 일일 최대 손실 2%
-        self.max_position_size = 0.1  # 최대 포지션 크기 10%
+        self.max_position_size = 0.8  # 최대 포지션 크기 80%
         self.consecutive_loss_limit = 3  # 연속 손실 제한
         self.cooldown_period = 12  # 쿨다운 기간 (1시간)
         self.daily_trade_limit = 20  # 일일 거래 제한
@@ -531,7 +531,12 @@ class ImprovedAdaptiveTradingSystem:
                         current_capital, volatility, market_regime
                     )
                     
-                    print(f"{current_time}: 롱 진입 (전략: {selected_strategy}, 가격: {entry_price:.2f}, 크기: {position_size:.2f})")
+                    # 진입 수수료 계산
+                    entry_fee = position_size * 0.0005  # 0.05%
+                    current_capital -= entry_fee
+                    
+                    btc_amount = position_size / entry_price
+                    print(f"{current_time}: 롱 진입 (전략: {selected_strategy}, 가격: {entry_price:.2f}, 금액: {position_size:.2f}달러, 수량: {btc_amount:.6f}BTC, fee: {entry_fee:.2f}달러)")
                     
                 elif current_row['short_signal']:
                     position = 'short'
@@ -543,7 +548,12 @@ class ImprovedAdaptiveTradingSystem:
                         current_capital, volatility, market_regime
                     )
                     
-                    print(f"{current_time}: 숏 진입 (전략: {selected_strategy}, 가격: {entry_price:.2f}, 크기: {position_size:.2f})")
+                    # 진입 수수료 계산
+                    entry_fee = position_size * 0.0005  # 0.05%
+                    current_capital -= entry_fee
+                    
+                    btc_amount = position_size / entry_price
+                    print(f"{current_time}: 숏 진입 (전략: {selected_strategy}, 가격: {entry_price:.2f}, 금액: {position_size:.2f}달러, 수량: {btc_amount:.6f}BTC, fee: {entry_fee:.2f}달러)")
             
             elif position is not None:
                 # 청산 신호
@@ -581,13 +591,12 @@ class ImprovedAdaptiveTradingSystem:
                 if should_exit:
                     # 거래 실행
                     exit_price = current_row['close']
-                    pnl = self._calculate_pnl(entry_price, exit_price, current_capital, position)
+                    pnl = self._calculate_pnl(entry_price, exit_price, position_size, position)
                     current_capital += pnl
                     
-                    # 수수료 계산
-                    fee_rate = 0.0005
-                    total_fee = (entry_price + exit_price) * fee_rate
-                    current_capital -= total_fee
+                    # 청산 수수료 계산
+                    exit_fee = position_size * 0.0005  # 0.05%
+                    current_capital -= exit_fee
                     
                     trades.append({
                         'entry_time': entry_time.strftime('%Y-%m-%d %H:%M:%S'),
@@ -598,17 +607,22 @@ class ImprovedAdaptiveTradingSystem:
                         'pnl': pnl,
                         'strategy': selected_strategy,
                         'exit_reason': exit_reason,
-                        'total_fee': total_fee
+                        'entry_fee': entry_fee,
+                        'exit_fee': exit_fee,
+                        'total_fee': entry_fee + exit_fee
                     })
                     
                     # 리스크 관리자 업데이트
                     self.risk_manager.update_trade_result(pnl, current_time)
                     
                     # PnL에 따른 색상 표시
+                    total_fee = entry_fee + exit_fee
+                    pnl_percent = (pnl / position_size) * 100
+                    btc_amount = position_size / entry_price
                     if pnl > 0:
-                        print(f"{current_time}: {position} 청산 [수익🟢] ({exit_reason}, PnL: {pnl:.2f}, 수수료: {total_fee:.2f}, 자본: {current_capital:.2f})")
+                        print(f"{current_time}: {position} 청산 [수익🟢] (진입가: {entry_price:.2f}달러, 청산가: {exit_price:.2f}달러, 수량: {btc_amount:.6f}BTC, 수익률: {pnl_percent:.2f}%, PnL: {pnl:.2f}달러, fee: {total_fee:.2f}달러, 자본: {current_capital:.2f}달러)")
                     else:
-                        print(f"{current_time}: {position} 청산 [손실🔴] ({exit_reason}, PnL: {pnl:.2f}, 수수료: {total_fee:.2f}, 자본: {current_capital:.2f})")
+                        print(f"{current_time}: {position} 청산 [손실🔴] (진입가: {entry_price:.2f}달러, 청산가: {exit_price:.2f}달러, 수량: {btc_amount:.6f}BTC, 손실률: {pnl_percent:.2f}%, PnL: {pnl:.2f}달러, fee: {total_fee:.2f}달러, 자본: {current_capital:.2f}달러)")
                     
                     position = None
         
@@ -683,7 +697,7 @@ def main():
         system.data = pd.concat(all_data, ignore_index=False).sort_index()
         print(f"전체 데이터: {len(system.data)}개 캔들")
         
-        # 개선된 시스템 테스트 (2018년 2-3월)
+        # 개선된 시스템 테스트 (2018년)
         result = system.run_improved_backtest('2018-01-01', '2018-12-31')
         
         if result:
@@ -710,7 +724,7 @@ def main():
             # 결과 저장
             output = {
                 'system_type': 'Improved Adaptive Trading System',
-                'test_period': '2018-02-01 ~ 2018-03-31',
+                'test_period': '2018-01-01 ~ 2018-12-31',
                 'improvements': [
                     '동적 포지션 사이징',
                     '연속 손실 방지 메커니즘',
