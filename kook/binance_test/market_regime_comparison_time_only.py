@@ -214,43 +214,43 @@ class AdaptiveStrategy:
                     'rsi_oversold': 20, 'rsi_overbought': 80,
                     'ma_short': 7, 'ma_long': 30,  # 최적화: 7/30 (폭락장 대응)
                     'stop_loss': 0.015, 'take_profit': 0.02, 'position_size': 0.2, 'trailing_stop': True, 'trailing_stop_pct': 0.02,
-                    'max_hold_hours': 2  # 폭락장에서는 빠른 회전
+                    'max_hold_hours': 4  # 폭락장에서는 빠른 회전
                 },
                 'strong_downtrend': {
                     'rsi_oversold': 25, 'rsi_overbought': 75,
                     'ma_short': 15, 'ma_long': 25,  # 최적화: 15/25 (강한 하락장)
                     'stop_loss': 0.02, 'take_profit': 0.02, 'position_size': 0.3, 'trailing_stop': True, 'trailing_stop_pct': 0.025,
-                    'max_hold_hours': 2  # 강한 하락장에서는 중간 회전
+                    'max_hold_hours': 6  # 강한 하락장에서는 중간 회전
                 },
                 'downtrend': {
                     'rsi_oversold': 30, 'rsi_overbought': 70,
                     'ma_short': 5, 'ma_long': 10,  # 최적화: 5/10 (하락장)
                     'stop_loss': 0.025, 'take_profit': 0.02, 'position_size': 0.5, 'trailing_stop': True, 'trailing_stop_pct': 0.03,
-                    'max_hold_hours': 2  # 하락장에서는 중간 회전
+                    'max_hold_hours': 8  # 하락장에서는 중간 회전
                 },
                 'strong_uptrend': {
                     'rsi_oversold': 40, 'rsi_overbought': 80,
                     'ma_short': 9, 'ma_long': 10,  # 최적화: 9/10 (강한 상승장)
                     'stop_loss': 0.04, 'take_profit': 0.02, 'position_size': 1.0, 'trailing_stop': True, 'trailing_stop_pct': 0.05,
-                    'max_hold_hours': 2  # 강한 상승장에서는 오래 보유
+                    'max_hold_hours': 12  # 강한 상승장에서는 오래 보유
                 },
                 'uptrend': {
                     'rsi_oversold': 35, 'rsi_overbought': 75,
                     'ma_short': 13, 'ma_long': 15,  # 최적화: 13/15 (상승장)
                     'stop_loss': 0.03, 'take_profit': 0.02, 'position_size': 0.8, 'trailing_stop': True, 'trailing_stop_pct': 0.04,
-                    'max_hold_hours': 2  # 상승장에서는 중간-장기 보유
+                    'max_hold_hours': 10  # 상승장에서는 중간-장기 보유
                 },
                 'high_volatility_sideways': {
                     'rsi_oversold': 25, 'rsi_overbought': 75,
                     'ma_short': 3, 'ma_long': 10,  # 최적화: 3/10 (고변동성 횡보)
                     'stop_loss': 0.035, 'take_profit': 0.02, 'position_size': 0.6, 'trailing_stop': True, 'trailing_stop_pct': 0.04,
-                    'max_hold_hours': 2  # 고변동성에서는 빠른 회전
+                    'max_hold_hours': 6  # 고변동성에서는 빠른 회전
                 },
                 'low_volatility_sideways': {
                     'rsi_oversold': 30, 'rsi_overbought': 70,
                     'ma_short': 7, 'ma_long': 10,  # 최적화: 7/10 (저변동성 횡보)
                     'stop_loss': 0.03, 'take_profit': 0.02, 'position_size': 0.7, 'trailing_stop': True, 'trailing_stop_pct': 0.035,
-                    'max_hold_hours': 2  # 저변동성에서는 중간 회전
+                    'max_hold_hours': 8  # 저변동성에서는 중간 회전
                 }
             }
     
