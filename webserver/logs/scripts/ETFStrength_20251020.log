@@ -1,0 +1,20 @@
+2025-10-20 14:55:20,510 - INFO - 날짜 2025-10-20 : 장이 열려있습니다.
+2025-10-20 14:55:20,519 - INFO - 총 평가금액: 17,121,617원, 전략2 할당: 856,081원 (5.0%)
+2025-10-20 14:55:21,141 - INFO - [ETFStrength] 포지션 동기화: 변경사항 없음
+2025-10-20 14:55:21,368 - INFO - 대상 없음(target_sides 설정 확인). 종료합니다.
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+datetime.datetime(2025, 10, 20, 14, 55, 20, 498410, tzinfo=<DstTzInfo 'Asia/Seoul' KST+9:00:00 STD>)
+Time is OK... but one more checked!!!
+Market is Open (Already Checked)!!!!
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+✅ [성공] 메시지 전송 완료: 📊 [코스피닥2배롱숏전략]
+상세 수익 현황 (2025-10-20 14:55:21)
+====...
+
+==== [2025-10-20 14:55:18] Run: ETFStrength.py ====
+CWD: C:\work\GitHub\py\webserver
+Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+
+==== Exit code: 0 ====
+==== End of run ===

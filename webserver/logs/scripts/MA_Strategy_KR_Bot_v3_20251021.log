@@ -1,0 +1,138 @@
+datetime.datetime(2025, 10, 21, 14, 50, 55, 857696, tzinfo=<DstTzInfo 'Asia/Seoul' KST+9:00:00 STD>)
+Time is OK... but one more checked!!!
+Error Code : 500 | {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+'builtin_function_or_method' object is not subscriptable
+EXCEPTION  'NoneType' object has no attribute 'iloc'
+=== MarketStatus API Call Debug ===
+URL: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price
+headers: {'Content-Type': 'application/json', 'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b2tlbiIsImF1ZCI6ImU5YTVlNjU1LWFkOWUtNDRkOC1iYmMyLWYyOGJlNzkyNDAxOCIsInByZHRfY2QiOiIiLCJpc3MiOiJ1bm9ndyIsImV4cCI6MTc2MTAyNTg0NCwiaWF0IjoxNzYwOTM5NDQ0LCJqdGkiOiJQU2NKVDdxWXdacEI1Y25HM2VzbU1DazN3QndQanBnM0xQQjEifQ.HkSt4CgsCA4FJGXNXV2TFixONmnDdhu-j6cf0tzSS7zOtOWd8w_SdBslPiAOoF4WOoGUMrTDPzAd4TkiOu3NNA', 'appKey': 'PScJT7qYwZpB5cnG3esmMCk3wBwPjpg3LPB1', 'appSecret': 'V38aLbUVEWXDKTBQPi4dYiN1v2HKJRs8j2CvRKa5hul0Ed4DLa1ZfzOlVMqUaq18hLwP6x1iYzw9ggcbF/SWY0p1ZoDnjNAq0bK2K2DhL7WM6BqKoT1omX/flLlTvoh/5/9x+AF1mCOpug9dayW+JpwongGq2JXAjRg/yR86LerGnVxSTps=', 'tr_id': 'FHKST01010200'}
+params: {'FID_COND_MRKT_DIV_CODE': 'J', 'FID_INPUT_ISCD': '069500'}
+Response status: 500
+Response text: {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+HTTP Error: 500
+Response text: {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+=== MarketStatus Debug Info ===
+market type: <class 'str'>
+market value: HTTP_500
+market repr: 'HTTP_500'
+'HTTP_500'
+=== End MarketStatus Debug Info ===
+ERROR: market is not a dict or missing 'Status' key. market: HTTP_500
+'20251021'
+Error Code : 500 | {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+=== MarketStatus API Call Debug ===
+URL: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price
+headers: {'Content-Type': 'application/json', 'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b2tlbiIsImF1ZCI6ImU5YTVlNjU1LWFkOWUtNDRkOC1iYmMyLWYyOGJlNzkyNDAxOCIsInByZHRfY2QiOiIiLCJpc3MiOiJ1bm9ndyIsImV4cCI6MTc2MTAyNTg0NCwiaWF0IjoxNzYwOTM5NDQ0LCJqdGkiOiJQU2NKVDdxWXdacEI1Y25HM2VzbU1DazN3QndQanBnM0xQQjEifQ.HkSt4CgsCA4FJGXNXV2TFixONmnDdhu-j6cf0tzSS7zOtOWd8w_SdBslPiAOoF4WOoGUMrTDPzAd4TkiOu3NNA', 'appKey': 'PScJT7qYwZpB5cnG3esmMCk3wBwPjpg3LPB1', 'appSecret': 'V38aLbUVEWXDKTBQPi4dYiN1v2HKJRs8j2CvRKa5hul0Ed4DLa1ZfzOlVMqUaq18hLwP6x1iYzw9ggcbF/SWY0p1ZoDnjNAq0bK2K2DhL7WM6BqKoT1omX/flLlTvoh/5/9x+AF1mCOpug9dayW+JpwongGq2JXAjRg/yR86LerGnVxSTps=', 'tr_id': 'FHKST01010200'}
+params: {'FID_COND_MRKT_DIV_CODE': 'J', 'FID_INPUT_ISCD': '069500'}
+Response status: 500
+Response text: {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+HTTP Error: 500
+Response text: {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+'20251021'
+Error Code : 500 | {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+Market is Close!!
+Error Code : 500 | {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+토큰이 만료되었습니다. 토큰을 재발급합니다.
+TOKEN :  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b2tlbiIsImF1ZCI6IjBlNzFhMjJiLTNmOWQtNDFhOS04M2Y2LWExMDcwODg1NWI2NyIsInByZHRfY2QiOiIiLCJpc3MiOiJ1bm9ndyIsImV4cCI6MTc2MTExMjI1NywiaWF0IjoxNzYxMDI1ODU3LCJqdGkiOiJQU2NKVDdxWXdacEI1Y25HM2VzbU1DazN3QndQanBnM0xQQjEifQ.DKTTPIM8wV2jeAPAirddpfaUYK9zr0GfCyXrWDtK9OdZm9ZDzg9betyuLGnb5NTszM2tdPF7UTEB5UliBX5lKw
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+
+----Second try----
+web.DataReader 마지막 날짜: 2025-10-21
+web.DataReader 데이터를 잘 가져옴
+--- 108
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 338
+✅ [성공] 메시지 전송 완료: MA_Strategy_KR_Bot_v3 시작...
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+✅ [성공] 메시지 전송 완료: 📊 이동평균자산배분전략_KR
+상세 수익 현황 (2025-10-21 14:51:28)
+===...
+
+==== [2025-10-21 14:50:41] Run: MA_Strategy_KR_Bot_v3.py ====
+CWD: C:\work\GitHub\py\webserver
+Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+
+==== Exit code: 0 ====
+==== End of run ===

@@ -1,0 +1,41 @@
+2025-10-21 14:55:33,968 - INFO - 날짜 2025-10-21 : 장이 열려있습니다.
+2025-10-21 14:55:33,982 - INFO - 총 평가금액: 17,173,962원, 전략2 할당: 858,698원 (5.0%)
+2025-10-21 14:55:34,613 - INFO - [ETFStrength] 포지션 동기화: 변경사항 없음
+2025-10-21 14:55:34,879 - INFO - 대상 없음(target_sides 설정 확인). 종료합니다.
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+datetime.datetime(2025, 10, 21, 14, 55, 32, 889282, tzinfo=<DstTzInfo 'Asia/Seoul' KST+9:00:00 STD>)
+Time is OK... but one more checked!!!
+한투 데이터 마지막 날짜: 2025-10-21
+----First try----
+FDR 마지막 날짜: 2025-10-21
+FDR 데이터를 잘 가져옴
+--- 8
+=== MarketStatus API Call Debug ===
+URL: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price
+headers: {'Content-Type': 'application/json', 'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b2tlbiIsImF1ZCI6IjBlNzFhMjJiLTNmOWQtNDFhOS04M2Y2LWExMDcwODg1NWI2NyIsInByZHRfY2QiOiIiLCJpc3MiOiJ1bm9ndyIsImV4cCI6MTc2MTExMjI1NywiaWF0IjoxNzYxMDI1ODU3LCJqdGkiOiJQU2NKVDdxWXdacEI1Y25HM2VzbU1DazN3QndQanBnM0xQQjEifQ.DKTTPIM8wV2jeAPAirddpfaUYK9zr0GfCyXrWDtK9OdZm9ZDzg9betyuLGnb5NTszM2tdPF7UTEB5UliBX5lKw', 'appKey': 'PScJT7qYwZpB5cnG3esmMCk3wBwPjpg3LPB1', 'appSecret': 'V38aLbUVEWXDKTBQPi4dYiN1v2HKJRs8j2CvRKa5hul0Ed4DLa1ZfzOlVMqUaq18hLwP6x1iYzw9ggcbF/SWY0p1ZoDnjNAq0bK2K2DhL7WM6BqKoT1omX/flLlTvoh/5/9x+AF1mCOpug9dayW+JpwongGq2JXAjRg/yR86LerGnVxSTps=', 'tr_id': 'FHKST01010200'}
+params: {'FID_COND_MRKT_DIV_CODE': 'J', 'FID_INPUT_ISCD': '069500'}
+Response status: 200
+Response text: {"output1":{"aspr_acpt_hour":"145531","askp1":"53725","askp2":"53730","askp3":"53735","askp4":"53740","askp5":"53745","askp6":"53750","askp7":"53755","askp8":"53760","askp9":"53765","askp10":"53770","bidp1":"53715","bidp2":"53710","bidp3":"53705","bidp4":"53700","bidp5":"53695","bidp6":"53690","bidp7":"53685","bidp8":"53680","bidp9":"53675","bidp10":"53670","askp_rsqn1":"10347","askp_rsqn2":"22934","askp_rsqn3":"33738","askp_rsqn4":"35443","askp_rsqn5":"23204","askp_rsqn6":"3017","askp_rsqn7":"11081","askp_rsqn8":"12917","askp_rsqn9":"10693","askp_rsqn10":"65","bidp_rsqn1":"34660","bidp_rsqn2":"30330","bidp_rsqn3":"54403","bidp_rsqn4":"45362","bidp_rsqn5":"14857","bidp_rsqn6":"17369","bidp_rsqn7":"15281","bidp_rsqn8":"13195","bidp_rsqn9":"10306","bidp_rsqn10":"1795","askp_rsqn_icdc1":"-100","askp_rsqn_icdc2":"0","askp_rsqn_icdc3":"0","askp_rsqn_icdc4":"0","askp_rsqn_icdc5":"0","askp_rsqn_icdc6":"0","askp_rsqn_icdc7":"0","askp_rsqn_icdc8":"0","askp_rsqn_icdc9":"0","askp_rsqn_icdc10":"0","bidp_rsqn_icdc1":"3000","bidp_rsqn_icdc2":"0","bidp_rsqn_icdc3":"0","bidp_rsqn_icdc4":"-3000","bidp_rsqn_icdc5":"0","bidp_rsqn_icdc6":"0","bidp_rsqn_icdc7":"-100","bidp_rsqn_icdc8":"0","bidp_rsqn_icdc9":"0","bidp_rsqn_icdc10":"0","total_askp_rsqn":"163439","total_bidp_rsqn":"237558","total_askp_rsqn_icdc":"-100","total_bidp_rsqn_icdc":"-100","ovtm_total_askp_icdc":"0","ovtm_total_bidp_icdc":"0","ovtm_total_askp_rsqn":"0","ovtm_total_bidp_rsqn":"0","ntby_aspr_rsqn":"74119","new_mkop_cls_code":"20"},"output2":{"antc_mkop_cls_code":"112","stck_prpr":"53725","stck_oprc":"54185","stck_hgpr":"54950","stck_lwpr":"53665","stck_sdpr":"53700","antc_cnpr":"54185","antc_cntg_vrss_sign":"2","antc_cntg_vrss":"485","antc_cntg_prdy_ctrt":"0.90","antc_vol":"72500","stck_shrn_iscd":"069500","vi_cls_code":"N"},"rt_cd":"0","msg_cd":"MCA00000","msg1":"정상처리 되었습니다."}
+Response JSON: {'output1': {'aspr_acpt_hour': '145531', 'askp1': '53725', 'askp2': '53730', 'askp3': '53735', 'askp4': '53740', 'askp5': '53745', 'askp6': '53750', 'askp7': '53755', 'askp8': '53760', 'askp9': '53765', 'askp10': '53770', 'bidp1': '53715', 'bidp2': '53710', 'bidp3': '53705', 'bidp4': '53700', 'bidp5': '53695', 'bidp6': '53690', 'bidp7': '53685', 'bidp8': '53680', 'bidp9': '53675', 'bidp10': '53670', 'askp_rsqn1': '10347', 'askp_rsqn2': '22934', 'askp_rsqn3': '33738', 'askp_rsqn4': '35443', 'askp_rsqn5': '23204', 'askp_rsqn6': '3017', 'askp_rsqn7': '11081', 'askp_rsqn8': '12917', 'askp_rsqn9': '10693', 'askp_rsqn10': '65', 'bidp_rsqn1': '34660', 'bidp_rsqn2': '30330', 'bidp_rsqn3': '54403', 'bidp_rsqn4': '45362', 'bidp_rsqn5': '14857', 'bidp_rsqn6': '17369', 'bidp_rsqn7': '15281', 'bidp_rsqn8': '13195', 'bidp_rsqn9': '10306', 'bidp_rsqn10': '1795', 'askp_rsqn_icdc1': '-100', 'askp_rsqn_icdc2': '0', 'askp_rsqn_icdc3': '0', 'askp_rsqn_icdc4': '0', 'askp_rsqn_icdc5': '0', 'askp_rsqn_icdc6': '0', 'askp_rsqn_icdc7': '0', 'askp_rsqn_icdc8': '0', 'askp_rsqn_icdc9': '0', 'askp_rsqn_icdc10': '0', 'bidp_rsqn_icdc1': '3000', 'bidp_rsqn_icdc2': '0', 'bidp_rsqn_icdc3': '0', 'bidp_rsqn_icdc4': '-3000', 'bidp_rsqn_icdc5': '0', 'bidp_rsqn_icdc6': '0', 'bidp_rsqn_icdc7': '-100', 'bidp_rsqn_icdc8': '0', 'bidp_rsqn_icdc9': '0', 'bidp_rsqn_icdc10': '0', 'total_askp_rsqn': '163439', 'total_bidp_rsqn': '237558', 'total_askp_rsqn_icdc': '-100', 'total_bidp_rsqn_icdc': '-100', 'ovtm_total_askp_icdc': '0', 'ovtm_total_bidp_icdc': '0', 'ovtm_total_askp_rsqn': '0', 'ovtm_total_bidp_rsqn': '0', 'ntby_aspr_rsqn': '74119', 'new_mkop_cls_code': '20'}, 'output2': {'antc_mkop_cls_code': '112', 'stck_prpr': '53725', 'stck_oprc': '54185', 'stck_hgpr': '54950', 'stck_lwpr': '53665', 'stck_sdpr': '53700', 'antc_cnpr': '54185', 'antc_cntg_vrss_sign': '2', 'antc_cntg_vrss': '485', 'antc_cntg_prdy_ctrt': '0.90', 'antc_vol': '72500', 'stck_shrn_iscd': '069500', 'vi_cls_code': 'N'}, 'rt_cd': '0', 'msg_cd': 'MCA00000', 'msg1': '정상처리 되었습니다.'}
+output1: {'aspr_acpt_hour': '145531', 'askp1': '53725', 'askp2': '53730', 'askp3': '53735', 'askp4': '53740', 'askp5': '53745', 'askp6': '53750', 'askp7': '53755', 'askp8': '53760', 'askp9': '53765', 'askp10': '53770', 'bidp1': '53715', 'bidp2': '53710', 'bidp3': '53705', 'bidp4': '53700', 'bidp5': '53695', 'bidp6': '53690', 'bidp7': '53685', 'bidp8': '53680', 'bidp9': '53675', 'bidp10': '53670', 'askp_rsqn1': '10347', 'askp_rsqn2': '22934', 'askp_rsqn3': '33738', 'askp_rsqn4': '35443', 'askp_rsqn5': '23204', 'askp_rsqn6': '3017', 'askp_rsqn7': '11081', 'askp_rsqn8': '12917', 'askp_rsqn9': '10693', 'askp_rsqn10': '65', 'bidp_rsqn1': '34660', 'bidp_rsqn2': '30330', 'bidp_rsqn3': '54403', 'bidp_rsqn4': '45362', 'bidp_rsqn5': '14857', 'bidp_rsqn6': '17369', 'bidp_rsqn7': '15281', 'bidp_rsqn8': '13195', 'bidp_rsqn9': '10306', 'bidp_rsqn10': '1795', 'askp_rsqn_icdc1': '-100', 'askp_rsqn_icdc2': '0', 'askp_rsqn_icdc3': '0', 'askp_rsqn_icdc4': '0', 'askp_rsqn_icdc5': '0', 'askp_rsqn_icdc6': '0', 'askp_rsqn_icdc7': '0', 'askp_rsqn_icdc8': '0', 'askp_rsqn_icdc9': '0', 'askp_rsqn_icdc10': '0', 'bidp_rsqn_icdc1': '3000', 'bidp_rsqn_icdc2': '0', 'bidp_rsqn_icdc3': '0', 'bidp_rsqn_icdc4': '-3000', 'bidp_rsqn_icdc5': '0', 'bidp_rsqn_icdc6': '0', 'bidp_rsqn_icdc7': '-100', 'bidp_rsqn_icdc8': '0', 'bidp_rsqn_icdc9': '0', 'bidp_rsqn_icdc10': '0', 'total_askp_rsqn': '163439', 'total_bidp_rsqn': '237558', 'total_askp_rsqn_icdc': '-100', 'total_bidp_rsqn_icdc': '-100', 'ovtm_total_askp_icdc': '0', 'ovtm_total_bidp_icdc': '0', 'ovtm_total_askp_rsqn': '0', 'ovtm_total_bidp_rsqn': '0', 'ntby_aspr_rsqn': '74119', 'new_mkop_cls_code': '20'}
+Returning result: {'Status': '2'}
+=== MarketStatus Debug Info ===
+market type: <class 'dict'>
+market value: {'Status': '2'}
+market repr: {'Status': '2'}
+{'Status': '2'}
+=== End MarketStatus Debug Info ===
+'20251021'
+Market is Open!!!!
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+✅ [성공] 메시지 전송 완료: 📊 [코스피닥2배롱숏전략]
+상세 수익 현황 (2025-10-21 14:55:34)
+====...
+
+==== [2025-10-21 14:55:30] Run: ETFStrength.py ====
+CWD: C:\work\GitHub\py\webserver
+Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+
+==== Exit code: 0 ====
+==== End of run ===

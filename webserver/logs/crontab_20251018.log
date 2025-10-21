@@ -1,0 +1,59 @@
+2025-10-18 13:13:09,349 - ERROR - 상태 파일 로드 중 오류: Expecting property name enclosed in double quotes: line 67 column 1 (char 1553)
+2025-10-18 13:13:09,349 - ERROR - 상태 파일 로드 중 오류: Expecting property name enclosed in double quotes: line 67 column 1 (char 1553)
+2025-10-18 13:13:09,351 - INFO - 크론탭 스케줄러 시작
+2025-10-18 13:13:09,351 - INFO - 총 9개의 크론 스케줄 로드됨:
+2025-10-18 13:13:09,351 - INFO -   - 50 14 * * * : 한투:매일 오후 14:50 MA 전략 봇 실행
+2025-10-18 13:13:09,351 - INFO -   - 55 14 * * 1-5 : KIS: 평일 14:55 ETFStrength 실행
+2025-10-18 13:13:09,353 - INFO -   - 0 15 * * 1-5 : KIS: 평일 15:00 KOSPIDrawdown 실행
+2025-10-18 13:13:09,353 - INFO -   - 5 15 * * 1-5 : KIS: 평일 15:05 Momentum 리밸런싱 실행
+2025-10-18 13:13:09,353 - INFO - 스케줄 설정 완료
+2025-10-18 14:50:09,431 - INFO - 크론 표현식 50 14 * * *에 맞는 작업 실행(scheduled): 한투:매일 오후 14:50 MA 전략 봇 실행
+2025-10-18 14:50:09,431 - INFO - 작업 실행: MA 전략 KR 봇 실행 (python_script)
+2025-10-18 14:50:09,437 - INFO - Python 스크립트 직접 실행: ../kook/kis/MA_Strategy_KR_Bot_v3.py
+2025-10-18 14:50:20,669 - INFO - Python 스크립트 실행 성공: ../kook/kis/MA_Strategy_KR_Bot_v3.py | 메모리(MB) before=30, after=31, delta=1
+2025-10-18 14:50:20,672 - INFO - 작업 완료: MA 전략 KR 봇 실행
+2025-10-19 14:50:21,800 - INFO - 크론 표현식 50 14 * * *에 맞는 작업 실행(scheduled): 한투:매일 오후 14:50 MA 전략 봇 실행
+2025-10-19 14:50:21,800 - INFO - 작업 실행: MA 전략 KR 봇 실행 (python_script)
+2025-10-19 14:50:21,800 - INFO - Python 스크립트 직접 실행: ../kook/kis/MA_Strategy_KR_Bot_v3.py
+2025-10-19 14:50:33,265 - INFO - Python 스크립트 실행 성공: ../kook/kis/MA_Strategy_KR_Bot_v3.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-19 14:50:33,269 - INFO - 작업 완료: MA 전략 KR 봇 실행
+2025-10-20 14:50:32,287 - INFO - 크론 표현식 50 14 * * *에 맞는 작업 실행(scheduled): 한투:매일 오후 14:50 MA 전략 봇 실행
+2025-10-20 14:50:32,287 - INFO - 작업 실행: MA 전략 KR 봇 실행 (python_script)
+2025-10-20 14:50:32,287 - INFO - Python 스크립트 직접 실행: ../kook/kis/MA_Strategy_KR_Bot_v3.py
+2025-10-20 14:51:18,057 - INFO - Python 스크립트 실행 성공: ../kook/kis/MA_Strategy_KR_Bot_v3.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-20 14:51:18,059 - INFO - 작업 완료: MA 전략 KR 봇 실행
+2025-10-20 14:55:18,063 - INFO - 크론 표현식 55 14 * * 1-5에 맞는 작업 실행(scheduled): KIS: 평일 14:55 ETFStrength 실행
+2025-10-20 14:55:18,063 - INFO - 작업 실행: ETF 강도 기반 롱/숏 라이브 (python_script)
+2025-10-20 14:55:18,067 - INFO - Python 스크립트 직접 실행: ../kook/kis/ETFStrength.py
+2025-10-20 14:55:22,668 - INFO - Python 스크립트 실행 성공: ../kook/kis/ETFStrength.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-20 14:55:22,671 - INFO - 작업 완료: ETF 강도 기반 롱/숏 라이브
+2025-10-20 15:00:22,677 - INFO - 크론 표현식 0 15 * * 1-5에 맞는 작업 실행(scheduled): KIS: 평일 15:00 KOSPIDrawdown 실행
+2025-10-20 15:00:22,677 - INFO - 작업 실행: KOSPI 드로우다운 피라미딩 라이브 (python_script)
+2025-10-20 15:00:22,677 - INFO - Python 스크립트 직접 실행: ../kook/kis/KOSPIDrawdown.py
+2025-10-20 15:00:39,181 - INFO - Python 스크립트 실행 성공: ../kook/kis/KOSPIDrawdown.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-20 15:00:39,186 - INFO - 작업 완료: KOSPI 드로우다운 피라미딩 라이브
+2025-10-20 15:05:39,192 - INFO - 크론 표현식 5 15 * * 1-5에 맞는 작업 실행(scheduled): KIS: 평일 15:05 Momentum 리밸런싱 실행
+2025-10-20 15:05:39,192 - INFO - 작업 실행: Momentum Top30 라이브 리밸런싱 (python_script)
+2025-10-20 15:05:39,193 - INFO - Python 스크립트 직접 실행: ../kook/kis/Momentum.py
+2025-10-20 15:05:42,922 - INFO - Python 스크립트 실행 성공: ../kook/kis/Momentum.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-20 15:05:42,926 - INFO - 작업 완료: Momentum Top30 라이브 리밸런싱
+2025-10-21 14:50:41,361 - INFO - 크론 표현식 50 14 * * *에 맞는 작업 실행(scheduled): 한투:매일 오후 14:50 MA 전략 봇 실행
+2025-10-21 14:50:41,361 - INFO - 작업 실행: MA 전략 KR 봇 실행 (python_script)
+2025-10-21 14:50:41,366 - INFO - Python 스크립트 직접 실행: ../kook/kis/MA_Strategy_KR_Bot_v3.py
+2025-10-21 14:51:30,435 - INFO - Python 스크립트 실행 성공: ../kook/kis/MA_Strategy_KR_Bot_v3.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-21 14:51:30,437 - INFO - 작업 완료: MA 전략 KR 봇 실행
+2025-10-21 14:55:30,442 - INFO - 크론 표현식 55 14 * * 1-5에 맞는 작업 실행(scheduled): KIS: 평일 14:55 ETFStrength 실행
+2025-10-21 14:55:30,442 - INFO - 작업 실행: ETF 강도 기반 롱/숏 라이브 (python_script)
+2025-10-21 14:55:30,442 - INFO - Python 스크립트 직접 실행: ../kook/kis/ETFStrength.py
+2025-10-21 14:55:36,157 - INFO - Python 스크립트 실행 성공: ../kook/kis/ETFStrength.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-21 14:55:36,158 - INFO - 작업 완료: ETF 강도 기반 롱/숏 라이브
+2025-10-21 15:00:36,164 - INFO - 크론 표현식 0 15 * * 1-5에 맞는 작업 실행(scheduled): KIS: 평일 15:00 KOSPIDrawdown 실행
+2025-10-21 15:00:36,164 - INFO - 작업 실행: KOSPI 드로우다운 피라미딩 라이브 (python_script)
+2025-10-21 15:00:36,164 - INFO - Python 스크립트 직접 실행: ../kook/kis/KOSPIDrawdown.py
+2025-10-21 15:00:54,274 - INFO - Python 스크립트 실행 성공: ../kook/kis/KOSPIDrawdown.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-21 15:00:54,277 - INFO - 작업 완료: KOSPI 드로우다운 피라미딩 라이브
+2025-10-21 15:05:54,282 - INFO - 크론 표현식 5 15 * * 1-5에 맞는 작업 실행(scheduled): KIS: 평일 15:05 Momentum 리밸런싱 실행
+2025-10-21 15:05:54,282 - INFO - 작업 실행: Momentum Top30 라이브 리밸런싱 (python_script)
+2025-10-21 15:05:54,282 - INFO - Python 스크립트 직접 실행: ../kook/kis/Momentum.py
+2025-10-21 15:05:57,927 - INFO - Python 스크립트 실행 성공: ../kook/kis/Momentum.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-21 15:05:57,929 - INFO - 작업 완료: Momentum Top30 라이브 리밸런싱

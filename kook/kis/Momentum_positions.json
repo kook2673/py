@@ -1,127 +1,60 @@
 {
   "positions": {
-    "000720": {
-      "qty": 4,
-      "avg": 62300.0,
-      "name": "현대건설",
-      "status": "보유중",
-      "buy_date": "2025-10-15",
-      "stop_loss_price": 56070.0
+    "096770": {
+      "qty": 2,
+      "avg": 125000.0,
+      "name": "SK이노베이션",
+      "status": "구매중",
+      "buy_date": "2025-10-21",
+      "stop_loss_price": 112500.0
+    },
+    "348370": {
+      "qty": 3,
+      "avg": 86200.0,
+      "name": "엔켐",
+      "status": "구매중",
+      "buy_date": "2025-10-21",
+      "stop_loss_price": 77580.0
+    },
+    "326030": {
+      "qty": 3,
+      "avg": 106900.0,
+      "name": "SK바이오팜",
+      "status": "구매중",
+      "buy_date": "2025-10-21",
+      "stop_loss_price": 96210.0
     },
     "352820": {
       "qty": 1,
-      "avg": 278000.0,
+      "avg": 280500.0,
       "name": "하이브",
-      "status": "보유중",
-      "buy_date": "2025-10-15",
-      "stop_loss_price": 250200.0
+      "status": "구매중",
+      "buy_date": "2025-10-21",
+      "stop_loss_price": 252450.0
     },
-    "178320": {
-      "qty": 12,
-      "avg": 22800.0,
-      "name": "서진시스템",
-      "status": "보유중",
-      "buy_date": "2025-10-15",
-      "stop_loss_price": 20520.0
+    "052400": {
+      "qty": 6,
+      "avg": 50900.0,
+      "name": "코나아이",
+      "status": "구매중",
+      "buy_date": "2025-10-21",
+      "stop_loss_price": 45810.0
     },
     "272210": {
-      "qty": 5,
-      "avg": 53500.0,
+      "qty": 6,
+      "avg": 53800.0,
       "name": "한화시스템",
-      "status": "보유중",
-      "buy_date": "2025-10-15",
-      "stop_loss_price": 48150.0
-    },
-    "068760": {
-      "qty": 5,
-      "avg": 53900.0,
-      "name": "셀트리온제약",
       "status": "구매중",
-      "buy_date": "2025-10-15",
-      "stop_loss_price": 48510.0
+      "buy_date": "2025-10-21",
+      "stop_loss_price": 48420.0
     },
-    "009830": {
-      "qty": 11,
-      "avg": 29190.909090909092,
-      "name": "한화솔루션",
+    "044490": {
+      "qty": 10,
+      "avg": 32450.0,
+      "name": "태웅",
       "status": "구매중",
-      "buy_date": "2025-10-16",
-      "stop_loss_price": 26640.0
-    },
-    "161390": {
-      "qty": 8,
-      "avg": 41350.0,
-      "name": "한국타이어앤테크놀로지",
-      "status": "구매중",
-      "buy_date": "2025-10-16",
-      "stop_loss_price": 37215.0
-    },
-    "005490": {
-      "qty": 1,
-      "avg": 285000.0,
-      "name": "POSCO홀딩스",
-      "status": "구매중",
-      "buy_date": "2025-10-16",
-      "stop_loss_price": 256500.0
-    },
-    "047050": {
-      "qty": 6,
-      "avg": 51400.0,
-      "name": "포스코인터내셔널",
-      "status": "구매중",
-      "buy_date": "2025-10-16",
-      "stop_loss_price": 46260.0
-    },
-    "000880": {
-      "qty": 4,
-      "avg": 83000.0,
-      "name": "한화",
-      "status": "구매중",
-      "buy_date": "2025-10-16",
-      "stop_loss_price": 74700.0
-<<<<<<< HEAD
-    },
-    "086520": {
-      "qty": 4,
-      "avg": 72800.0,
-      "name": "에코프로",
-      "status": "구매중",
-      "buy_date": "2025-10-17",
-      "stop_loss_price": 65520.0
-    },
-    "137400": {
-      "qty": 8,
-      "avg": 41100.0,
-      "name": "피엔티",
-      "status": "구매중",
-      "buy_date": "2025-10-17",
-      "stop_loss_price": 36990.0
-    },
-    "348370": {
-      "qty": 4,
-      "avg": 84900.0,
-      "name": "엔켐",
-      "status": "구매중",
-      "buy_date": "2025-10-17",
-      "stop_loss_price": 76410.0
-    },
-    "263750": {
-      "qty": 9,
-      "avg": 35500.0,
-      "name": "펄어비스",
-      "status": "구매중",
-      "buy_date": "2025-10-17",
-      "stop_loss_price": 31950.0
-    },
-    "029780": {
-      "qty": 6,
-      "avg": 49500.0,
-      "name": "삼성카드",
-      "status": "구매중",
-      "buy_date": "2025-10-17",
-      "stop_loss_price": 44550.0
-=======
->>>>>>> 7a74d711a129b361033666fcfb59141d40d4daa6
+      "buy_date": "2025-10-21",
+      "stop_loss_price": 29205.0
     }
   }
 }

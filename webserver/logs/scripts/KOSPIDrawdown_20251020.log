@@ -1,0 +1,21 @@
+2025-10-20 15:00:25,278 - INFO - 날짜 2025-10-20 : 장이 열려있습니다.
+2025-10-20 15:00:25,290 - INFO - 총 평가금액: 17,121,567원, 전략3 할당: 1,712,157원 (10.0%)
+2025-10-20 15:00:37,542 - INFO - KOSPI 1Y High=3,807.67 (2025-10-20), Current=3,807.67 (+0.00%)
+2025-10-20 15:00:38,932 - INFO - 메모리 정리 완료: 560개 객체 수집, 현재 사용량: 163.24 MB
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+datetime.datetime(2025, 10, 20, 15, 0, 25, 278141, tzinfo=<DstTzInfo 'Asia/Seoul' KST+9:00:00 STD>)
+Time is OK... but one more checked!!!
+Market is Open (Already Checked)!!!!
+datetime.datetime(2025, 10, 20, 15, 0, 37, 546454, tzinfo=<DstTzInfo 'Asia/Seoul' KST+9:00:00 STD>)
+Time is OK... but one more checked!!!
+Market is Open (Already Checked)!!!!
+✅ [성공] 메시지 전송 완료: 📊 [KOSPI하락시2배롱전략]
+상세 수익 현황 (2025-10-20 15:00:37)
+=...
+
+==== [2025-10-20 15:00:22] Run: KOSPIDrawdown.py ====
+CWD: C:\work\GitHub\py\webserver
+Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+
+==== Exit code: 0 ====
+==== End of run ===

@@ -30,22 +30,13 @@
     "slippage_bps": 0.0,
     "monthly_update_day": 1,
     "initial_allocation": 10153198.799999999,
-<<<<<<< HEAD
-    "current_allocation": 5102333.7,
-    "realized_profit": -24700.0,
-=======
-    "current_allocation": 5102194.8,
+    "current_allocation": 5154781.8,
     "realized_profit": 500.0,
->>>>>>> 7a74d711a129b361033666fcfb59141d40d4daa6
     "test_type": "crossing",
     "use_market_filter": true,
     "initial_portfolio_mode": false,
     "initial_threshold_reduction": 0.15,
     "initial_asset_1": 17007316.0,
     "initial_asset_2": 17007316.0,
-<<<<<<< HEAD
-    "current_total_asset": 17007779.0
-=======
-    "current_total_asset": 17007316.0
->>>>>>> 7a74d711a129b361033666fcfb59141d40d4daa6
+    "current_total_asset": 17182606.0
 }

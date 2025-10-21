@@ -1,0 +1,14 @@
+2025-10-20 15:05:41,572 - INFO - 날짜 2025-10-20 : 장이 열려있습니다.
+2025-10-20 15:05:41,592 - ERROR - C:\work\GitHub\py\kook\kis\Momentum_config.json 로딩 실패: Expecting property name enclosed in double quotes: line 33 column 1 (char 840)
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+datetime.datetime(2025, 10, 20, 15, 5, 41, 572812, tzinfo=<DstTzInfo 'Asia/Seoul' KST+9:00:00 STD>)
+Time is OK... but one more checked!!!
+Market is Open (Already Checked)!!!!
+✅ [성공] 메시지 전송 완료: [주식Top30] 설정 로딩 실패. 프로그램 종료...
+
+==== [2025-10-20 15:05:39] Run: Momentum.py ====
+CWD: C:\work\GitHub\py\webserver
+Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+
+==== Exit code: 1 ====
+==== End of run ===
