@@ -2,13 +2,13 @@
   "schedules": [
     {
       "cron": "* * * * *",
-      "description": "바이낸스:1분마다 ml_bot 봇 실행",
-      "enabled": false,
+      "description": "바이낸스:1분마다 trend_dc_bot 봇 실행",
+      "enabled": true,
       "tasks": [
         {
           "type": "python_script",
-          "script": "../kook/binance/ml_bot.py",
-          "description": "바이낸스 ml_bot 봇 실행",
+          "script": "../kook/binance/trend_dc_bot.py",
+          "description": "바이낸스 trend_dc_bot 봇 실행",
           "enabled": true
         }
       ]
