@@ -322,6 +322,12 @@ info_file_path = os.path.join(os.path.dirname(__file__), "trend_dc_bot.json")
 balance = binanceX.fetch_balance(params={"type": "future"})
 time.sleep(0.1)
 
+# 바이낸스 API 포지션 정보 상세 로그
+logger.info(f"🔍 바이낸스 API 포지션 정보 (BTCUSDT):")
+for posi in balance['info']['positions']:
+    if posi['symbol'] == 'BTCUSDT':
+        logger.info(f"  {posi['positionSide']}: 수량={posi['positionAmt']}, 진입가={posi.get('entryPrice', 'N/A')}, 마크가={posi.get('markPrice', 'N/A')}, notional={posi.get('notional', 'N/A')}, 미실현손익={posi.get('unrealizedProfit', 'N/A')}")
+
 # JSON 파일 존재 여부 확인
 json_exists = os.path.exists(info_file_path)
 
@@ -447,42 +453,76 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     entryPrice_s = 0
     for posi in balance['info']['positions']:
         if posi['symbol'] == Target_Coin_Symbol and posi['positionSide'] == 'SHORT':
-            logger.info(f"📊 숏 포지션: {posi}")
+            logger.info(f"📊 숏 포지션 원본 데이터: {posi}")
             amt_s = float(posi['positionAmt'])
             entryPrice_s = float(posi.get('entryPrice', 0))
             
-            # entryPrice가 0이면 notional과 unrealizedProfit으로 계산
-            if entryPrice_s == 0 and abs(amt_s) > 0:
+            # entryPrice가 0이거나 없으면 여러 방법으로 계산 시도
+            if (entryPrice_s == 0 or entryPrice_s is None) and abs(amt_s) > 0:
                 notional = float(posi.get('notional', 0))
                 unrealized_profit = float(posi.get('unrealizedProfit', 0))
+                mark_price = float(posi.get('markPrice', 0))
+                
+                logger.info(f"📊 숏 포지션 계산 시도: notional={notional:.2f}, unrealized={unrealized_profit:.2f}, markPrice={mark_price:.2f}, amt={abs(amt_s):.6f}")
+                
+                # 방법 1: notional과 unrealizedProfit 사용
                 if notional > 0:
-                    # 진입가격 = (현재 포지션 가치 - 미실현 손익) / 포지션 수량
                     entryPrice_s = (notional - unrealized_profit) / abs(amt_s)
-                    logger.info(f"📊 숏 진입가 계산: notional={notional:.2f}, unrealized={unrealized_profit:.2f}, amt={abs(amt_s):.6f}")
+                    logger.info(f"📊 숏 진입가 계산 (방법1): {entryPrice_s:.2f}")
+                
+                # 방법 2: markPrice와 unrealizedProfit 사용
+                elif mark_price > 0:
+                    # 숏 포지션: 가격 상승 시 손실, 하락 시 수익
+                    # unrealized_profit = (entryPrice - markPrice) * amount
+                    # entryPrice = unrealized_profit / amount + markPrice
+                    entryPrice_s = unrealized_profit / abs(amt_s) + mark_price
+                    logger.info(f"📊 숏 진입가 계산 (방법2): {entryPrice_s:.2f}")
+                
+                # 방법 3: 현재가 사용 (최후의 수단)
+                else:
+                    entryPrice_s = coin_price
+                    logger.warning(f"📊 숏 진입가 계산 (방법3-현재가): {entryPrice_s:.2f}")
             
             if abs(amt_s) > 0:
-                logger.info(f"📊 숏 포지션: {amt_s}, 진입가: {entryPrice_s:.2f}")
+                logger.info(f"📊 숏 포지션 최종: 수량={amt_s:.6f}, 진입가={entryPrice_s:.2f}")
             break
 
     # 롱잔고
     entryPrice_l = 0
     for posi in balance['info']['positions']:
         if posi['symbol'] == Target_Coin_Symbol and posi['positionSide'] == 'LONG':
-            logger.info(f"📊 롱 포지션: {posi}")
+            logger.info(f"📊 롱 포지션 원본 데이터: {posi}")
             amt_l = float(posi['positionAmt'])
             entryPrice_l = float(posi.get('entryPrice', 0))
             
-            # entryPrice가 0이면 notional과 unrealizedProfit으로 계산
-            if entryPrice_l == 0 and abs(amt_l) > 0:
+            # entryPrice가 0이거나 없으면 여러 방법으로 계산 시도
+            if (entryPrice_l == 0 or entryPrice_l is None) and abs(amt_l) > 0:
                 notional = float(posi.get('notional', 0))
                 unrealized_profit = float(posi.get('unrealizedProfit', 0))
+                mark_price = float(posi.get('markPrice', 0))
+                
+                logger.info(f"📊 롱 포지션 계산 시도: notional={notional:.2f}, unrealized={unrealized_profit:.2f}, markPrice={mark_price:.2f}, amt={abs(amt_l):.6f}")
+                
+                # 방법 1: notional과 unrealizedProfit 사용
                 if notional > 0:
-                    # 진입가격 = (현재 포지션 가치 - 미실현 손익) / 포지션 수량
                     entryPrice_l = (notional - unrealized_profit) / abs(amt_l)
-                    logger.info(f"📊 롱 진입가 계산: notional={notional:.2f}, unrealized={unrealized_profit:.2f}, amt={abs(amt_l):.6f}")
+                    logger.info(f"📊 롱 진입가 계산 (방법1): {entryPrice_l:.2f}")
+                
+                # 방법 2: markPrice와 unrealizedProfit 사용
+                elif mark_price > 0:
+                    # 롱 포지션: 가격 하락 시 손실, 상승 시 수익
+                    # unrealized_profit = (markPrice - entryPrice) * amount
+                    # entryPrice = markPrice - unrealized_profit / amount
+                    entryPrice_l = mark_price - unrealized_profit / abs(amt_l)
+                    logger.info(f"📊 롱 진입가 계산 (방법2): {entryPrice_l:.2f}")
+                
+                # 방법 3: 현재가 사용 (최후의 수단)
+                else:
+                    entryPrice_l = coin_price
+                    logger.warning(f"📊 롱 진입가 계산 (방법3-현재가): {entryPrice_l:.2f}")
             
             if abs(amt_l) > 0:
-                logger.info(f"📊 롱 포지션: {amt_l}, 진입가: {entryPrice_l:.2f}")
+                logger.info(f"📊 롱 포지션 최종: 수량={amt_l:.6f}, 진입가={entryPrice_l:.2f}")
             break
 
     logger.info(f"entryPrice_s : {entryPrice_s}")
