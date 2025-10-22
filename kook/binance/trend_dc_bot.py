@@ -426,23 +426,6 @@ def initialize_bot_data():
         if key not in dic:
             dic[key] = default_value
     
-    # 기존 JSON 구조에서 새로운 코인별 구조로 마이그레이션
-    if "long_position" in dic and "short_position" in dic and "positions" not in dic:
-        logger.info("🔄 기존 JSON 구조를 코인별 구조로 마이그레이션 중...")
-        
-        # 기존 포지션 정보를 BTCUSDT로 이동
-        dic["positions"] = {
-            "BTCUSDT": {
-                "long_position": dic["long_position"],
-                "short_position": dic["short_position"]
-            }
-        }
-        
-        # 기존 포지션 정보 제거
-        del dic["long_position"]
-        del dic["short_position"]
-        
-        logger.info("✅ 마이그레이션 완료: 기존 포지션을 BTCUSDT로 이동")
     
     return dic
 
@@ -489,7 +472,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     # 백테스트와 동일한 청산 파라미터
     charge = 0.0005  # 수수료율 0.05% (백테스트와 동일)
     investment_ratio = 0.5  # 투자 비율
-    divide = 100  # 분할 수 (1%)
+    divide = 50  # 분할 수 (1%)
     
     # 레버리지 설정
     try:
