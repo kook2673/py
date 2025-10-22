@@ -17049,3 +17049,90 @@ Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareF
 
 ==== Exit code: 0 ====
 ==== End of run ===
+2025-10-22 15:32:50,452 - INFO - ================================================================================
+2025-10-22 15:32:50,452 - INFO - Trend DC Bot - 바이낸스 양방향 전략 (시작)
+2025-10-22 15:32:50,452 - INFO - ================================================================================
+2025-10-22 15:32:50,464 - INFO - 서버 시간과 동기화를 시도합니다...
+2025-10-22 15:32:50,556 - INFO - 서버 시간 동기화 완료: 오프셋 -1119ms
+2025-10-22 15:32:50,556 - INFO - 
+-- START ------------------------------------------------------------------------------------------
+
+2025-10-22 15:32:50,584 - INFO - 메모리 정리 완료: 0개 객체 수집, 현재 사용량: 119.71 MB
+2025-10-22 15:32:52,506 - INFO - 🔍 바이낸스 API 포지션 정보 (BTCUSDT):
+2025-10-22 15:32:52,506 - INFO -   SHORT: 수량=-0.001, 진입가=N/A, 마크가=N/A, notional=-108.20540000, 미실현손익=1.04520000
+2025-10-22 15:32:52,506 - INFO - 🔍 fetch_positions 함수 테스트:
+2025-10-22 15:32:52,634 - INFO - 📊 fetch_positions 결과: [{'info': {'symbol': 'BTCUSDT', 'positionSide': 'SHORT', 'positionAmt': '-0.001', 'entryPrice': '109250.6', 'breakEvenPrice': '109195.9747', 'markPrice': '108205.40000000', 'unRealizedProfit': '1.04520000', 'liquidationPrice': '145037.59591633', 'isolatedMargin': '37.41234630', 'notional': '-108.20540000', 'marginAsset': 'USDT', 'isolatedWallet': '36.36714630', 'initialMargin': '36.06846739', 'maintMargin': '0.43282160', 'positionInitialMargin': '36.06846739', 'openOrderInitialMargin': '0', 'adl': '2', 'bidNotional': '0', 'askNotional': '0', 'updateTime': '1761091200128'}, 'id': None, 'symbol': 'BTC/USDT:USDT', 'contracts': 0.001, 'contractSize': 1.0, 'unrealizedPnl': 1.0452, 'leverage': None, 'liquidationPrice': 145037.59591633, 'collateral': 37.4123463, 'notional': 108.2054, 'markPrice': 108205.4, 'entryPrice': 109250.6, 'timestamp': 1761091200128, 'initialMargin': 36.06846739, 'initialMarginPercentage': 0.33333334, 'maintenanceMargin': 0.4328216, 'maintenanceMarginPercentage': 0.004, 'marginRatio': 0.0116, 'datetime': '2025-10-22T00:00:00.128Z', 'marginMode': 'isolated', 'marginType': 'isolated', 'side': 'short', 'hedged': True, 'percentage': 2.89, 'stopLossPrice': None, 'takeProfitPrice': None}]
+2025-10-22 15:32:52,636 - INFO - balance['USDT'] : {'free': 803.63713932, 'used': 36.06846739, 'total': 841.04948562}
+2025-10-22 15:32:52,636 - INFO - 포지션 정보는 바이낸스 API에서 직접 가져옵니다
+2025-10-22 15:32:52,636 - INFO - 고정 파라미터 사용: MA_SHORT=20, MA_LONG=50
+2025-10-22 15:32:52,636 - INFO - ###################################################################################################
+2025-10-22 15:32:52,713 - INFO - 메모리 정리 완료: 0개 객체 수집, 현재 사용량: 233.71 MB
+2025-10-22 15:32:52,810 - INFO - {'symbol': 'BTCUSDT', 'leverage': '3', 'maxNotionalValue': '800000000'}
+2025-10-22 15:32:52,860 - INFO - 📊 fetch_positions 전체 결과: [{'info': {'symbol': 'BTCUSDT', 'positionSide': 'SHORT', 'positionAmt': '-0.001', 'entryPrice': '109250.6', 'breakEvenPrice': '109195.9747', 'markPrice': '108205.40000000', 'unRealizedProfit': '1.04520000', 'liquidationPrice': '145037.59591633', 'isolatedMargin': '37.41234630', 'notional': '-108.20540000', 'marginAsset': 'USDT', 'isolatedWallet': '36.36714630', 'initialMargin': '36.06846739', 'maintMargin': '0.43282160', 'positionInitialMargin': '36.06846739', 'openOrderInitialMargin': '0', 'adl': '2', 'bidNotional': '0', 'askNotional': '0', 'updateTime': '1761091200128'}, 'id': None, 'symbol': 'BTC/USDT:USDT', 'contracts': 0.001, 'contractSize': 1.0, 'unrealizedPnl': 1.0452, 'leverage': None, 'liquidationPrice': 145037.59591633, 'collateral': 37.4123463, 'notional': 108.2054, 'markPrice': 108205.4, 'entryPrice': 109250.6, 'timestamp': 1761091200128, 'initialMargin': 36.06846739, 'initialMarginPercentage': 0.33333334, 'maintenanceMargin': 0.4328216, 'maintenanceMarginPercentage': 0.004, 'marginRatio': 0.0116, 'datetime': '2025-10-22T00:00:00.128Z', 'marginMode': 'isolated', 'marginType': 'isolated', 'side': 'short', 'hedged': True, 'percentage': 2.89, 'stopLossPrice': None, 'takeProfitPrice': None}]
+2025-10-22 15:32:52,860 - INFO - entryPrice_s : 0
+2025-10-22 15:32:52,860 - INFO - entryPrice_l : 0
+2025-10-22 15:32:53,283 - INFO - 📊 현재 신호: 롱=False, 숏=False, RSI=44.0, 추세모드=sideways
+2025-10-22 15:32:53,283 - INFO - one_percent_amount : 0.00012
+2025-10-22 15:32:53,328 - INFO - first_amount : 0.001
+2025-10-22 15:32:53,328 - INFO - 📊 현재 포지션 없음 (지갑 비어있음)
+2025-10-22 15:32:53,328 - INFO - 🔄 JSON 숏 포지션 초기화 (API에서 포지션 없음)
+2025-10-22 15:32:53,328 - INFO - 
+-- END --------------------------------------------------------------------------------------------
+
+2025-10-22 15:32:53,402 - INFO - 메모리 정리 완료: 0개 객체 수집, 현재 사용량: 230.11 MB
+2025-10-22 15:32:53,481 - INFO - 메모리 정리 완료: 33개 객체 수집, 현재 사용량: 230.11 MB
+2025-10-22 15:32:53,551 - INFO - === Trend DC Bot 종료 (최종 메모리: 230.11 MB) ===
+min_cost:  100.0
+min_amount:  0.001
+min_price:  556.8
+coin_price:  108205.5
+
+==== [2025-10-22 15:32:48] Run: trend_dc_bot.py ====
+CWD: C:\work\GitHub\py\webserver
+Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+
+==== Exit code: 0 ====
+==== End of run ===
+2025-10-22 15:33:55,327 - INFO - ================================================================================
+2025-10-22 15:33:55,327 - INFO - Trend DC Bot - 바이낸스 양방향 전략 (시작)
+2025-10-22 15:33:55,327 - INFO - ================================================================================
+2025-10-22 15:33:55,341 - INFO - 서버 시간과 동기화를 시도합니다...
+2025-10-22 15:33:55,426 - INFO - 서버 시간 동기화 완료: 오프셋 -1117ms
+2025-10-22 15:33:55,426 - INFO - 
+-- START ------------------------------------------------------------------------------------------
+
+2025-10-22 15:33:55,454 - INFO - 메모리 정리 완료: 0개 객체 수집, 현재 사용량: 119.66 MB
+2025-10-22 15:33:57,539 - INFO - 🔍 바이낸스 API 포지션 정보 (BTCUSDT):
+2025-10-22 15:33:57,539 - INFO -   SHORT: 수량=-0.001, 진입가=N/A, 마크가=N/A, notional=-108.21410000, 미실현손익=1.03650000
+2025-10-22 15:33:57,539 - INFO - 🔍 fetch_positions 함수 테스트:
+2025-10-22 15:33:57,665 - INFO - 📊 fetch_positions 결과: [{'info': {'symbol': 'BTCUSDT', 'positionSide': 'SHORT', 'positionAmt': '-0.001', 'entryPrice': '109250.6', 'breakEvenPrice': '109195.9747', 'markPrice': '108214.10000000', 'unRealizedProfit': '1.03650000', 'liquidationPrice': '145037.59591633', 'isolatedMargin': '37.40364630', 'notional': '-108.21410000', 'marginAsset': 'USDT', 'isolatedWallet': '36.36714630', 'initialMargin': '36.07136739', 'maintMargin': '0.43285640', 'positionInitialMargin': '36.07136739', 'openOrderInitialMargin': '0', 'adl': '2', 'bidNotional': '0', 'askNotional': '0', 'updateTime': '1761091200128'}, 'id': None, 'symbol': 'BTC/USDT:USDT', 'contracts': 0.001, 'contractSize': 1.0, 'unrealizedPnl': 1.0365, 'leverage': None, 'liquidationPrice': 145037.59591633, 'collateral': 37.4036463, 'notional': 108.2141, 'markPrice': 108214.1, 'entryPrice': 109250.6, 'timestamp': 1761091200128, 'initialMargin': 36.07136739, 'initialMarginPercentage': 0.33333334, 'maintenanceMargin': 0.4328564, 'maintenanceMarginPercentage': 0.004, 'marginRatio': 0.0116, 'datetime': '2025-10-22T00:00:00.128Z', 'marginMode': 'isolated', 'marginType': 'isolated', 'side': 'short', 'hedged': True, 'percentage': 2.87, 'stopLossPrice': None, 'takeProfitPrice': None}]
+2025-10-22 15:33:57,667 - INFO - balance['USDT'] : {'free': 803.63713932, 'used': 36.07136739, 'total': 841.04078562}
+2025-10-22 15:33:57,667 - INFO - 포지션 정보는 바이낸스 API에서 직접 가져옵니다
+2025-10-22 15:33:57,667 - INFO - 고정 파라미터 사용: MA_SHORT=20, MA_LONG=50
+2025-10-22 15:33:57,667 - INFO - ###################################################################################################
+2025-10-22 15:33:57,742 - INFO - 메모리 정리 완료: 0개 객체 수집, 현재 사용량: 233.71 MB
+2025-10-22 15:33:57,839 - INFO - {'symbol': 'BTCUSDT', 'leverage': '3', 'maxNotionalValue': '800000000'}
+2025-10-22 15:33:57,888 - INFO - 📊 fetch_positions 전체 결과: [{'info': {'symbol': 'BTCUSDT', 'positionSide': 'SHORT', 'positionAmt': '-0.001', 'entryPrice': '109250.6', 'breakEvenPrice': '109195.9747', 'markPrice': '108214.10000000', 'unRealizedProfit': '1.03650000', 'liquidationPrice': '145037.59591633', 'isolatedMargin': '37.40364630', 'notional': '-108.21410000', 'marginAsset': 'USDT', 'isolatedWallet': '36.36714630', 'initialMargin': '36.07136739', 'maintMargin': '0.43285640', 'positionInitialMargin': '36.07136739', 'openOrderInitialMargin': '0', 'adl': '2', 'bidNotional': '0', 'askNotional': '0', 'updateTime': '1761091200128'}, 'id': None, 'symbol': 'BTC/USDT:USDT', 'contracts': 0.001, 'contractSize': 1.0, 'unrealizedPnl': 1.0365, 'leverage': None, 'liquidationPrice': 145037.59591633, 'collateral': 37.4036463, 'notional': 108.2141, 'markPrice': 108214.1, 'entryPrice': 109250.6, 'timestamp': 1761091200128, 'initialMargin': 36.07136739, 'initialMarginPercentage': 0.33333334, 'maintenanceMargin': 0.4328564, 'maintenanceMarginPercentage': 0.004, 'marginRatio': 0.0116, 'datetime': '2025-10-22T00:00:00.128Z', 'marginMode': 'isolated', 'marginType': 'isolated', 'side': 'short', 'hedged': True, 'percentage': 2.87, 'stopLossPrice': None, 'takeProfitPrice': None}]
+2025-10-22 15:33:57,888 - INFO - entryPrice_s : 0
+2025-10-22 15:33:57,888 - INFO - entryPrice_l : 0
+2025-10-22 15:33:58,316 - INFO - 📊 현재 신호: 롱=False, 숏=False, RSI=43.9, 추세모드=sideways
+2025-10-22 15:33:58,316 - INFO - one_percent_amount : 0.00012
+2025-10-22 15:33:58,365 - INFO - first_amount : 0.001
+2025-10-22 15:33:58,365 - INFO - 📊 현재 포지션 없음 (지갑 비어있음)
+2025-10-22 15:33:58,367 - INFO - 
+-- END --------------------------------------------------------------------------------------------
+
+2025-10-22 15:33:58,439 - INFO - 메모리 정리 완료: 0개 객체 수집, 현재 사용량: 230.13 MB
+2025-10-22 15:33:58,515 - INFO - 메모리 정리 완료: 33개 객체 수집, 현재 사용량: 230.14 MB
+2025-10-22 15:33:58,583 - INFO - === Trend DC Bot 종료 (최종 메모리: 230.14 MB) ===
+min_cost:  100.0
+min_amount:  0.001
+min_price:  556.8
+coin_price:  108200.2
+
+==== [2025-10-22 15:33:53] Run: trend_dc_bot.py ====
+CWD: C:\work\GitHub\py\webserver
+Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+
+==== Exit code: 0 ====
+==== End of run ===
