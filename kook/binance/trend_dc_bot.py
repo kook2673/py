@@ -12,13 +12,13 @@
 1. 추세 감지: 이동평균선 교차 + RSI + 볼린저 밴드 + 돈키안 채널
 2. 추세 추종 모드: 강한 추세일 때 단방향 매매
 3. 양방향 모드: 추세가 약하거나 횡보일 때 양방향 매매
-4. 리스크 관리: 손절/익절 + 트레일링스탑
+4. 리스크 관리: 손절 + 동적 트레일링스탑
 
 === 기술적 지표 상세 ===
 
 1. 이동평균선 (Moving Average)
-   - SMA Short: 단기 이동평균선 (최적화됨)
-   - SMA Long: 장기 이동평균선 (최적화됨)
+   - SMA Short: 20 (단기 이동평균선)
+   - SMA Long: 50 (장기 이동평균선)
    - 역할: 추세 방향 판단
    - 신호: 단기선이 장기선을 상향돌파 → 롱 신호, 하향돌파 → 숏 신호
 
@@ -38,7 +38,6 @@
    - 역할: 과매수/과매도 구간 판단
    - 롱 조건: RSI > 30 (과매도 아님)
    - 숏 조건: RSI < 70 (과매수 아님)
-   - 청산 조건: 롱 RSI > 80, 숏 RSI < 20
 
 4. 볼린저 밴드 (Bollinger Bands)
    - 기간: 20, 표준편차: 2
@@ -72,19 +71,25 @@
    - 볼린저 밴드 조건
 
 2. 청산 조건 (하나라도 만족하면):
-   - 반대 신호 발생
-   - RSI 극값 도달 (80/20)
+   - 손절: -2% 손실 시
+   - 동적 트레일링스탑: 수익률에 따라 조정
+     * 0.5% 수익: 트레일링스탑 0.5%
+     * 1.0% 수익: 트레일링스탑 0.3%
+     * 1.5% 수익: 트레일링스탑 0.2%
+     * 2.0% 수익: 트레일링스탑 0.1%
+     * 2.5% 수익: 트레일링스탑 0.05%
+     * 3.0% 수익: 트레일링스탑 0.01%
 
 3. 동시 진입 방지:
    - 롱/숏 신호 동시 발생 시 충돌 처리
    - 우선순위에 따른 신호 선택
 
-=== 파라미터 최적화 ===
-- MA Short: 3, 6, 9, 12, 15 (5개)
-- MA Long: 20, 30, 40, 50 (4개)  
+=== 파라미터 설정 ===
+- MA Short: 20 (고정)
+- MA Long: 50 (고정)
 - DCC Period: 25 (고정)
-- 총 조합: 5 × 4 × 1 = 20개
-- 6개월마다 자동 재최적화
+- RSI Period: 14 (고정)
+- RSI 과매수: 70, RSI 과매도: 30
 
 === 백테스트 검증 결과 ===
 - 2018년: 13,541.24% 수익률
@@ -100,8 +105,9 @@
 - 데이터: 15분봉 실시간 데이터
 - 신호 생성: 이동평균 + 돈키안 채널 + RSI + 볼린저 밴드
 - 포지션 관리: 단일 포지션 유지 (롱 또는 숏)
-- 레버리지: 5배 (선물 거래 기준)
+- 레버리지: 3배 (선물 거래 기준)
 - 수수료: 진입/청산 시 각각 0.05% 적용
+- 리스크 관리: 손절(-2%) + 동적 트레일링스탑
 """
 
 import sys, os
@@ -348,31 +354,20 @@ for posi in balance['info']['positions']:
 # fetch_positions 함수는 메인 루프에서 호출됩니다
 
 
-# JSON 파일 존재 여부 확인
-json_exists = os.path.exists(info_file_path)
-
-try:
-    if json_exists:
-        with open(info_file_path, 'r') as json_file:
-            dic = json.load(json_file)
-        
-    # 기본값 설정
-    if "yesterday" not in dic:
-        dic["yesterday"] = 0
-    if "today" not in dic:
-        dic["today"] = 0
-    if "start_money" not in dic:
-        dic["start_money"] = float(balance['USDT']['total'])
-    if "my_money" not in dic:
-        dic["my_money"] = float(balance['USDT']['total'])
-    if "long_position" not in dic:
-        dic["long_position"] = {"entry_price": 0, "amount": 0}
-    if "short_position" not in dic:
-        dic["short_position"] = {"entry_price": 0, "amount": 0}
+# JSON 파일 로드 및 초기화
+def initialize_bot_data():
+    """봇 데이터 초기화 (JSON 로드 + 기본값 설정)"""
+    current_balance = float(balance['USDT']['total'])
     
-    # 기본 파라미터 설정
-    if "params" not in dic:
-        dic["params"] = {
+    # 기본 데이터 구조
+    default_data = {
+        "yesterday": 0,
+        "today": 0,
+        "start_money": current_balance,
+        "my_money": current_balance,
+        "long_position": {"entry_price": 0, "amount": 0},
+        "short_position": {"entry_price": 0, "amount": 0},
+        "params": {
             'ma_short': ma_short,
             'ma_long': ma_long,
             'dcc_period': dc_period,
@@ -383,40 +378,28 @@ try:
             'take_profit': take_profit,
             'trailing_stop': trailing_stop
         }
+    }
     
-    # 포지션에 trailing_stop_price 필드 추가 (기존 포지션 호환성)
-    if "trailing_stop_price" not in dic["long_position"]:
-        dic["long_position"]["trailing_stop_price"] = None
-    if "trailing_stop_price" not in dic["short_position"]:
-        dic["short_position"]["trailing_stop_price"] = None
-        
-except Exception as e:
-    logger.info("Exception by First")
-    dic["yesterday"] = 0
-    dic["today"] = 0
-    dic["start_money"] = float(balance['USDT']['total'])
-    dic["my_money"] = float(balance['USDT']['total'])
-    dic["long_position"] = {
-        "entry_price": 0,
-        "amount": 0,
-        "trailing_stop_price": None
-    }
-    dic["short_position"] = {
-        "entry_price": 0,
-        "amount": 0,
-        "trailing_stop_price": None
-    }
-    dic["params"] = {
-        'ma_short': ma_short,
-        'ma_long': ma_long,
-        'dcc_period': dc_period,
-        'rsi_period': rsi_period,
-        'rsi_overbought': rsi_overbought,
-        'rsi_oversold': rsi_oversold,
-        'stop_loss': stop_loss,
-        'take_profit': take_profit,
-        'trailing_stop': trailing_stop
-    }
+    # JSON 파일 로드 시도
+    try:
+        if os.path.exists(info_file_path):
+            with open(info_file_path, 'r') as json_file:
+                dic = json.load(json_file)
+        else:
+            dic = {}
+    except Exception as e:
+        logger.info(f"JSON 파일 로드 실패: {e}")
+        dic = {}
+    
+    # 기본값으로 병합 (기존 값이 있으면 유지, 없으면 기본값 사용)
+    for key, default_value in default_data.items():
+        if key not in dic:
+            dic[key] = default_value
+    
+    return dic
+
+# 봇 데이터 초기화
+dic = initialize_bot_data()
 
 logger.info(f"balance['USDT'] : {balance['USDT']}")
 
@@ -579,17 +562,6 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         msg += "\n총 수익금 : "+str(round(dic["my_money"]-dic["start_money"], 2))+" 달러"
         per = (dic["my_money"]-dic["start_money"])/dic["start_money"]*100
         msg += "\n총 수익률 : "+str(round(per, 2))+"%"
-        msg += "\n==========================="
-        params = dic.get("params", {})
-        msg += f"\n📊 현재 파라미터: MA_SHORT={optimal_ma_short}, MA_LONG={optimal_ma_long}, DCC={dc_period}"
-        msg += f"\n📊 RSI 파라미터: 과매수={params.get('rsi_overbought', rsi_overbought)}, 과매도={params.get('rsi_oversold', rsi_oversold)}"
-        msg += f"\n📊 리스크 관리: 손절={params.get('stop_loss', stop_loss)*100:.1f}%, 익절={params.get('take_profit', take_profit)*100:.1f}%, 트레일링={params.get('trailing_stop', trailing_stop)*100:.1f}%"
-        
-        # 백테스트 검증 결과 추가
-        msg += f"\n📈 백테스트 검증 결과:"
-        msg += f"\n 2018년: 13,541.24% | 2019년: 648.78% | 2020년: 259.80%"
-        msg += f"\n 2021년: 2,559.47% | 2022년: 418.31% | 2023년: 82.98%"
-        msg += f"\n 2024년: 110.31% | 2025년: 49.47% (현재까지)"
         msg += "\n==========================="
         # 포지션 정보 표시
         has_position = abs(amt_s) > 0 or abs(amt_l) > 0
