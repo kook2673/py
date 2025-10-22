@@ -357,6 +357,12 @@ try:
             'take_profit': take_profit,
             'trailing_stop': trailing_stop
         }
+    
+    # 포지션에 trailing_stop_price 필드 추가 (기존 포지션 호환성)
+    if "trailing_stop_price" not in dic["long_position"]:
+        dic["long_position"]["trailing_stop_price"] = None
+    if "trailing_stop_price" not in dic["short_position"]:
+        dic["short_position"]["trailing_stop_price"] = None
         
 except Exception as e:
     logger.info("Exception by First")
@@ -366,11 +372,13 @@ except Exception as e:
     dic["my_money"] = float(balance['USDT']['total'])
     dic["long_position"] = {
         "entry_price": 0,
-        "amount": 0
+        "amount": 0,
+        "trailing_stop_price": None
     }
     dic["short_position"] = {
         "entry_price": 0,
-        "amount": 0
+        "amount": 0,
+        "trailing_stop_price": None
     }
     dic["params"] = {
         'ma_short': ma_short,
@@ -592,7 +600,8 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         # 포지션 정보 초기화
         dic["short_position"] = {
             "entry_price": 0,
-            "amount": 0
+            "amount": 0,
+            "trailing_stop_price": None
         }
         
         pnl_display = f"({pnl_pct*100:.2f}%)" if coin_price > 0 else "(추정 1%)"
@@ -623,7 +632,8 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         # 포지션 정보 초기화
         dic["long_position"] = {
             "entry_price": 0,
-            "amount": 0
+            "amount": 0,
+            "trailing_stop_price": None
         }
         
         pnl_display = f"({pnl_pct*100:.2f}%)" if coin_price > 0 else "(추정 1%)"
@@ -644,7 +654,8 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         # 포지션 정보 저장
         dic["short_position"] = {
             "entry_price": entry_price,
-            "amount": first_amount
+            "amount": first_amount,
+            "trailing_stop_price": None
         }
         
         msg = f"🔻 숏 진입 | 가격: {entry_price:.2f}, 수량: {first_amount:.3f}"
@@ -659,7 +670,8 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         # 포지션 정보 저장
         dic["long_position"] = {
             "entry_price": entry_price,
-            "amount": first_amount
+            "amount": first_amount,
+            "trailing_stop_price": None
         }
         
         msg = f"🔺 롱 진입 | 가격: {entry_price:.2f}, 수량: {first_amount:.3f}"
@@ -690,12 +702,15 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         # 3. 트레일링스탑 (백테스트와 동일)
         elif pnl_pct > dic.get("params", {}).get("trailing_stop", trailing_stop):
             # 트레일링스탑 가격 업데이트
-            if "trailing_stop_price" not in dic["short_position"] or dic["short_position"]["trailing_stop_price"] is None:
+            if dic["short_position"]["trailing_stop_price"] is None:
                 dic["short_position"]["trailing_stop_price"] = coin_price * (1 + dic.get("params", {}).get("trailing_stop", trailing_stop))
+                logger.info(f"🔧 숏 트레일링스탑 초기 설정: {dic['short_position']['trailing_stop_price']:.2f}")
             else:
                 new_trailing = coin_price * (1 + dic.get("params", {}).get("trailing_stop", trailing_stop))
                 if new_trailing < dic["short_position"]["trailing_stop_price"]:
+                    old_trailing = dic["short_position"]["trailing_stop_price"]
                     dic["short_position"]["trailing_stop_price"] = new_trailing
+                    logger.info(f"🔧 숏 트레일링스탑 업데이트: {old_trailing:.2f} → {new_trailing:.2f}")
             
             # 트레일링스탑 체크
             if coin_price >= dic["short_position"]["trailing_stop_price"]:
@@ -711,7 +726,8 @@ for Target_Coin_Ticker in Coin_Ticker_List:
             dic["today"] += profit
             dic["short_position"] = {
                 "entry_price": 0,
-                "amount": 0
+                "amount": 0,
+                "trailing_stop_price": None
             }
             
             msg = f"✅ 숏 청산 ({close_reason}) | 진입: {entryPrice_s:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
@@ -740,12 +756,15 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         # 3. 트레일링스탑 (백테스트와 동일)
         elif pnl_pct > dic.get("params", {}).get("trailing_stop", trailing_stop):
             # 트레일링스탑 가격 업데이트
-            if "trailing_stop_price" not in dic["long_position"] or dic["long_position"]["trailing_stop_price"] is None:
+            if dic["long_position"]["trailing_stop_price"] is None:
                 dic["long_position"]["trailing_stop_price"] = coin_price * (1 - dic.get("params", {}).get("trailing_stop", trailing_stop))
+                logger.info(f"🔧 롱 트레일링스탑 초기 설정: {dic['long_position']['trailing_stop_price']:.2f}")
             else:
                 new_trailing = coin_price * (1 - dic.get("params", {}).get("trailing_stop", trailing_stop))
                 if new_trailing > dic["long_position"]["trailing_stop_price"]:
+                    old_trailing = dic["long_position"]["trailing_stop_price"]
                     dic["long_position"]["trailing_stop_price"] = new_trailing
+                    logger.info(f"🔧 롱 트레일링스탑 업데이트: {old_trailing:.2f} → {new_trailing:.2f}")
             
             # 트레일링스탑 체크
             if coin_price <= dic["long_position"]["trailing_stop_price"]:
@@ -761,7 +780,8 @@ for Target_Coin_Ticker in Coin_Ticker_List:
             dic["today"] += profit
             dic["long_position"] = {
                 "entry_price": 0,
-                "amount": 0
+                "amount": 0,
+                "trailing_stop_price": None
             }
             
             msg = f"✅ 롱 청산 ({close_reason}) | 진입: {entryPrice_l:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"

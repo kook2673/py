@@ -5,11 +5,13 @@
     "my_money": 841.21488562,
     "long_position": {
         "entry_price": 0,
-        "amount": 0
+        "amount": 0,
+        "trailing_stop_price": null
     },
     "short_position": {
         "entry_price": 109250.6,
-        "amount": 0.001
+        "amount": 0.001,
+        "trailing_stop_price": null
     },
     "params": {
         "ma_short": 20,
