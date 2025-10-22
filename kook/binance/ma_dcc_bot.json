@@ -1,0 +1,25 @@
+{
+    "yesterday": 0,
+    "today": 0,
+    "start_money": 840.61395884,
+    "my_money": 840.61395884,
+    "long_position": {
+        "entry_price": 0,
+        "amount": 0
+    },
+    "short_position": {
+        "entry_price": 109250.6,
+        "amount": 0.001
+    },
+    "params": {
+        "ma_short": 3,
+        "ma_long": 20,
+        "dcc_period": 25,
+        "rsi_period": 14,
+        "rsi_overbought": 70,
+        "rsi_oversold": 30,
+        "rsi_extreme_high": 80,
+        "rsi_extreme_low": 20
+    },
+    "optimization_date": "2025-10-16T19:22:14.712302"
+}
