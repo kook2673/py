@@ -129,7 +129,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 logs_dir = os.path.join(script_dir, "..", "logs")
 os.makedirs(logs_dir, exist_ok=True)
 
-log_file = os.path.join(logs_dir, f"ml_bot_{dt.datetime.now().strftime('%Y%m%d')}.log")
+log_file = os.path.join(logs_dir, f"trend_dc_bot_{dt.datetime.now().strftime('%Y%m%d')}.log")
 logging.basicConfig(
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -316,7 +316,7 @@ logger.info("\n-- START --------------------------------------------------------
 initial_memory = cleanup_memory()
 
 dic = dict()
-info_file_path = os.path.join(os.path.dirname(__file__), "ma_dcc_bot.json")
+info_file_path = os.path.join(os.path.dirname(__file__), "trend_dc_bot.json")
 
 #잔고 데이타 가져오기 
 balance = binanceX.fetch_balance(params={"type": "future"})
