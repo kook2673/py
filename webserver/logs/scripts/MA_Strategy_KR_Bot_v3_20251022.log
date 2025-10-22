@@ -1,0 +1,81 @@
+datetime.datetime(2025, 10, 22, 14, 50, 43, 245247, tzinfo=<DstTzInfo 'Asia/Seoul' KST+9:00:00 STD>)
+Time is OK... but one more checked!!!
+한투 데이터 마지막 날짜: 2025-10-22
+----First try----
+FDR 마지막 날짜: 2025-10-22
+FDR 데이터를 잘 가져옴
+--- 9
+=== MarketStatus API Call Debug ===
+URL: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price
+headers: {'Content-Type': 'application/json', 'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b2tlbiIsImF1ZCI6IjBlNzFhMjJiLTNmOWQtNDFhOS04M2Y2LWExMDcwODg1NWI2NyIsInByZHRfY2QiOiIiLCJpc3MiOiJ1bm9ndyIsImV4cCI6MTc2MTExMjI1NywiaWF0IjoxNzYxMDI1ODU3LCJqdGkiOiJQU2NKVDdxWXdacEI1Y25HM2VzbU1DazN3QndQanBnM0xQQjEifQ.DKTTPIM8wV2jeAPAirddpfaUYK9zr0GfCyXrWDtK9OdZm9ZDzg9betyuLGnb5NTszM2tdPF7UTEB5UliBX5lKw', 'appKey': 'PScJT7qYwZpB5cnG3esmMCk3wBwPjpg3LPB1', 'appSecret': 'V38aLbUVEWXDKTBQPi4dYiN1v2HKJRs8j2CvRKa5hul0Ed4DLa1ZfzOlVMqUaq18hLwP6x1iYzw9ggcbF/SWY0p1ZoDnjNAq0bK2K2DhL7WM6BqKoT1omX/flLlTvoh/5/9x+AF1mCOpug9dayW+JpwongGq2JXAjRg/yR86LerGnVxSTps=', 'tr_id': 'FHKST01010200'}
+params: {'FID_COND_MRKT_DIV_CODE': 'J', 'FID_INPUT_ISCD': '069500'}
+Response status: 200
+Response text: {"output1":{"aspr_acpt_hour":"145044","askp1":"54255","askp2":"54260","askp3":"54265","askp4":"54270","askp5":"54275","askp6":"54280","askp7":"54285","askp8":"54290","askp9":"54295","askp10":"54300","bidp1":"54250","bidp2":"54245","bidp3":"54240","bidp4":"54235","bidp5":"54230","bidp6":"54225","bidp7":"54220","bidp8":"54215","bidp9":"54210","bidp10":"54205","askp_rsqn1":"6573","askp_rsqn2":"13403","askp_rsqn3":"5980","askp_rsqn4":"14719","askp_rsqn5":"7243","askp_rsqn6":"4459","askp_rsqn7":"10172","askp_rsqn8":"17193","askp_rsqn9":"12145","askp_rsqn10":"12654","bidp_rsqn1":"10056","bidp_rsqn2":"12892","bidp_rsqn3":"11695","bidp_rsqn4":"20995","bidp_rsqn5":"23563","bidp_rsqn6":"17770","bidp_rsqn7":"10618","bidp_rsqn8":"10056","bidp_rsqn9":"10174","bidp_rsqn10":"10386","askp_rsqn_icdc1":"0","askp_rsqn_icdc2":"0","askp_rsqn_icdc3":"0","askp_rsqn_icdc4":"0","askp_rsqn_icdc5":"0","askp_rsqn_icdc6":"0","askp_rsqn_icdc7":"0","askp_rsqn_icdc8":"0","askp_rsqn_icdc9":"0","askp_rsqn_icdc10":"0","bidp_rsqn_icdc1":"0","bidp_rsqn_icdc2":"8347","bidp_rsqn_icdc3":"0","bidp_rsqn_icdc4":"0","bidp_rsqn_icdc5":"0","bidp_rsqn_icdc6":"-6100","bidp_rsqn_icdc7":"0","bidp_rsqn_icdc8":"0","bidp_rsqn_icdc9":"0","bidp_rsqn_icdc10":"0","total_askp_rsqn":"104541","total_bidp_rsqn":"138205","total_askp_rsqn_icdc":"0","total_bidp_rsqn_icdc":"2247","ovtm_total_askp_icdc":"0","ovtm_total_bidp_icdc":"0","ovtm_total_askp_rsqn":"0","ovtm_total_bidp_rsqn":"0","ntby_aspr_rsqn":"33664","new_mkop_cls_code":"20"},"output2":{"antc_mkop_cls_code":"112","stck_prpr":"54255","stck_oprc":"53645","stck_hgpr":"54280","stck_lwpr":"53135","stck_sdpr":"53815","antc_cnpr":"53640","antc_cntg_vrss_sign":"5","antc_cntg_vrss":"-175","antc_cntg_prdy_ctrt":"-0.33","antc_vol":"62376","stck_shrn_iscd":"069500","vi_cls_code":"N"},"rt_cd":"0","msg_cd":"MCA00000","msg1":"정상처리 되었습니다."}
+Response JSON: {'output1': {'aspr_acpt_hour': '145044', 'askp1': '54255', 'askp2': '54260', 'askp3': '54265', 'askp4': '54270', 'askp5': '54275', 'askp6': '54280', 'askp7': '54285', 'askp8': '54290', 'askp9': '54295', 'askp10': '54300', 'bidp1': '54250', 'bidp2': '54245', 'bidp3': '54240', 'bidp4': '54235', 'bidp5': '54230', 'bidp6': '54225', 'bidp7': '54220', 'bidp8': '54215', 'bidp9': '54210', 'bidp10': '54205', 'askp_rsqn1': '6573', 'askp_rsqn2': '13403', 'askp_rsqn3': '5980', 'askp_rsqn4': '14719', 'askp_rsqn5': '7243', 'askp_rsqn6': '4459', 'askp_rsqn7': '10172', 'askp_rsqn8': '17193', 'askp_rsqn9': '12145', 'askp_rsqn10': '12654', 'bidp_rsqn1': '10056', 'bidp_rsqn2': '12892', 'bidp_rsqn3': '11695', 'bidp_rsqn4': '20995', 'bidp_rsqn5': '23563', 'bidp_rsqn6': '17770', 'bidp_rsqn7': '10618', 'bidp_rsqn8': '10056', 'bidp_rsqn9': '10174', 'bidp_rsqn10': '10386', 'askp_rsqn_icdc1': '0', 'askp_rsqn_icdc2': '0', 'askp_rsqn_icdc3': '0', 'askp_rsqn_icdc4': '0', 'askp_rsqn_icdc5': '0', 'askp_rsqn_icdc6': '0', 'askp_rsqn_icdc7': '0', 'askp_rsqn_icdc8': '0', 'askp_rsqn_icdc9': '0', 'askp_rsqn_icdc10': '0', 'bidp_rsqn_icdc1': '0', 'bidp_rsqn_icdc2': '8347', 'bidp_rsqn_icdc3': '0', 'bidp_rsqn_icdc4': '0', 'bidp_rsqn_icdc5': '0', 'bidp_rsqn_icdc6': '-6100', 'bidp_rsqn_icdc7': '0', 'bidp_rsqn_icdc8': '0', 'bidp_rsqn_icdc9': '0', 'bidp_rsqn_icdc10': '0', 'total_askp_rsqn': '104541', 'total_bidp_rsqn': '138205', 'total_askp_rsqn_icdc': '0', 'total_bidp_rsqn_icdc': '2247', 'ovtm_total_askp_icdc': '0', 'ovtm_total_bidp_icdc': '0', 'ovtm_total_askp_rsqn': '0', 'ovtm_total_bidp_rsqn': '0', 'ntby_aspr_rsqn': '33664', 'new_mkop_cls_code': '20'}, 'output2': {'antc_mkop_cls_code': '112', 'stck_prpr': '54255', 'stck_oprc': '53645', 'stck_hgpr': '54280', 'stck_lwpr': '53135', 'stck_sdpr': '53815', 'antc_cnpr': '53640', 'antc_cntg_vrss_sign': '5', 'antc_cntg_vrss': '-175', 'antc_cntg_prdy_ctrt': '-0.33', 'antc_vol': '62376', 'stck_shrn_iscd': '069500', 'vi_cls_code': 'N'}, 'rt_cd': '0', 'msg_cd': 'MCA00000', 'msg1': '정상처리 되었습니다.'}
+output1: {'aspr_acpt_hour': '145044', 'askp1': '54255', 'askp2': '54260', 'askp3': '54265', 'askp4': '54270', 'askp5': '54275', 'askp6': '54280', 'askp7': '54285', 'askp8': '54290', 'askp9': '54295', 'askp10': '54300', 'bidp1': '54250', 'bidp2': '54245', 'bidp3': '54240', 'bidp4': '54235', 'bidp5': '54230', 'bidp6': '54225', 'bidp7': '54220', 'bidp8': '54215', 'bidp9': '54210', 'bidp10': '54205', 'askp_rsqn1': '6573', 'askp_rsqn2': '13403', 'askp_rsqn3': '5980', 'askp_rsqn4': '14719', 'askp_rsqn5': '7243', 'askp_rsqn6': '4459', 'askp_rsqn7': '10172', 'askp_rsqn8': '17193', 'askp_rsqn9': '12145', 'askp_rsqn10': '12654', 'bidp_rsqn1': '10056', 'bidp_rsqn2': '12892', 'bidp_rsqn3': '11695', 'bidp_rsqn4': '20995', 'bidp_rsqn5': '23563', 'bidp_rsqn6': '17770', 'bidp_rsqn7': '10618', 'bidp_rsqn8': '10056', 'bidp_rsqn9': '10174', 'bidp_rsqn10': '10386', 'askp_rsqn_icdc1': '0', 'askp_rsqn_icdc2': '0', 'askp_rsqn_icdc3': '0', 'askp_rsqn_icdc4': '0', 'askp_rsqn_icdc5': '0', 'askp_rsqn_icdc6': '0', 'askp_rsqn_icdc7': '0', 'askp_rsqn_icdc8': '0', 'askp_rsqn_icdc9': '0', 'askp_rsqn_icdc10': '0', 'bidp_rsqn_icdc1': '0', 'bidp_rsqn_icdc2': '8347', 'bidp_rsqn_icdc3': '0', 'bidp_rsqn_icdc4': '0', 'bidp_rsqn_icdc5': '0', 'bidp_rsqn_icdc6': '-6100', 'bidp_rsqn_icdc7': '0', 'bidp_rsqn_icdc8': '0', 'bidp_rsqn_icdc9': '0', 'bidp_rsqn_icdc10': '0', 'total_askp_rsqn': '104541', 'total_bidp_rsqn': '138205', 'total_askp_rsqn_icdc': '0', 'total_bidp_rsqn_icdc': '2247', 'ovtm_total_askp_icdc': '0', 'ovtm_total_bidp_icdc': '0', 'ovtm_total_askp_rsqn': '0', 'ovtm_total_bidp_rsqn': '0', 'ntby_aspr_rsqn': '33664', 'new_mkop_cls_code': '20'}
+Returning result: {'Status': '2'}
+=== MarketStatus Debug Info ===
+market type: <class 'dict'>
+market value: {'Status': '2'}
+market repr: {'Status': '2'}
+{'Status': '2'}
+=== End MarketStatus Debug Info ===
+'20251022'
+Market is Open!!!!
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+한투 데이터 마지막 날짜: 2025-10-22
+----First try----
+
+----Second try----
+web.DataReader 마지막 날짜: 2025-10-22
+web.DataReader 데이터를 잘 가져옴
+--- 109
+한투 데이터 마지막 날짜: 2025-10-22
+----First try----
+FDR 마지막 날짜: 2025-10-22
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-22
+----First try----
+FDR 마지막 날짜: 2025-10-22
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-22
+----First try----
+FDR 마지막 날짜: 2025-10-22
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-22
+----First try----
+FDR 마지막 날짜: 2025-10-22
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-22
+----First try----
+FDR 마지막 날짜: 2025-10-22
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-22
+----First try----
+FDR 마지막 날짜: 2025-10-22
+FDR 데이터를 잘 가져옴
+--- 338
+한투 데이터 마지막 날짜: 2025-10-22
+----First try----
+FDR 마지막 날짜: 2025-10-22
+FDR 데이터를 잘 가져옴
+--- 338
+Error Code : 500 | {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+'builtin_function_or_method' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\work\GitHub\py\webserver\..\kook\kis\MA_Strategy_KR_Bot_v3.py", line 243, in <module>
+    df['prevClose'] = df['close'].shift(1)
+                      ~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+==== [2025-10-22 14:50:32] Run: MA_Strategy_KR_Bot_v3.py ====
+CWD: C:\work\GitHub\py\webserver
+Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+
+==== Exit code: 1 ====
+==== End of run ===

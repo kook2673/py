@@ -55,6 +55,14 @@
       "status": "구매중",
       "buy_date": "2025-10-21",
       "stop_loss_price": 29205.0
+    },
+    "950160": {
+      "qty": 7,
+      "avg": 44550.0,
+      "name": "코오롱티슈진",
+      "status": "구매중",
+      "buy_date": "2025-10-22",
+      "stop_loss_price": 40095.0
     }
   }
 }
