@@ -93,7 +93,7 @@
 - 2021년: 2,559.47% 수익률
 - 2022년: 418.31% 수익률
 - 2023년: 82.98% 수익률
-- 2024년: 110.31% 수익률
+- 2024년: 155.75% 수익률
 - 2025년: 49.47% 수익률 (현재까지)
 
 === 실시간 거래 방식 ===
@@ -260,6 +260,23 @@ def generate_signals(df: pd.DataFrame, params=None) -> pd.DataFrame:
     df.loc[sideways_conditions & short_conditions, 'short_signal'] = True
     
     return df
+
+def get_dynamic_trailing_stop(pnl_pct):
+    """수익률에 따른 동적 트레일링스탑 비율 계산"""
+    if pnl_pct >= 0.03:      # 3.0% 이상
+        return 0.0001
+    elif pnl_pct >= 0.025:   # 2.5% 이상
+        return 0.0005
+    elif pnl_pct >= 0.02:    # 2.0% 이상
+        return 0.001
+    elif pnl_pct >= 0.015:   # 1.5% 이상
+        return 0.002
+    elif pnl_pct >= 0.01:    # 1.0% 이상
+        return 0.003
+    elif pnl_pct >= 0.005:   # 0.5% 이상
+        return 0.005
+    else:
+        return None  # 트레일링스탑 비활성화
 
 def viewlist(msg, amt_s=0, amt_l=0, entryPrice_s=0, entryPrice_l=0):
     # 숏 포지션 정보
@@ -826,28 +843,30 @@ for Target_Coin_Ticker in Coin_Ticker_List:
             should_close = True
             close_reason = f"손절 ({dic.get('params', {}).get('stop_loss', stop_loss)*100:.1f}%)"
         
-        # 2. 익절 (백테스트와 동일)
-        elif pnl_pct >= dic.get("params", {}).get("take_profit", take_profit):
-            should_close = True
-            close_reason = f"익절 ({dic.get('params', {}).get('take_profit', take_profit)*100:.1f}%)"
+        # 익절 제거 (트레일링스탑만 사용)
         
-        # 3. 트레일링스탑 (백테스트와 동일)
-        elif pnl_pct > dic.get("params", {}).get("trailing_stop", trailing_stop):
-            # 트레일링스탑 가격 업데이트
-            if dic["short_position"]["trailing_stop_price"] is None:
-                dic["short_position"]["trailing_stop_price"] = coin_price * (1 + dic.get("params", {}).get("trailing_stop", trailing_stop))
-                logger.info(f"🔧 숏 트레일링스탑 초기 설정: {dic['short_position']['trailing_stop_price']:.2f}")
-            else:
-                new_trailing = coin_price * (1 + dic.get("params", {}).get("trailing_stop", trailing_stop))
-                if new_trailing < dic["short_position"]["trailing_stop_price"]:
-                    old_trailing = dic["short_position"]["trailing_stop_price"]
-                    dic["short_position"]["trailing_stop_price"] = new_trailing
-                    logger.info(f"🔧 숏 트레일링스탑 업데이트: {old_trailing:.2f} → {new_trailing:.2f}")
+        # 3. 동적 트레일링스탑
+        else:
+            # 현재 수익률에 따른 트레일링스탑 비율 계산
+            trailing_stop_ratio = get_dynamic_trailing_stop(pnl_pct)
             
-            # 트레일링스탑 체크
-            if coin_price >= dic["short_position"]["trailing_stop_price"]:
-                should_close = True
-                close_reason = f"트레일링스탑 ({dic.get('params', {}).get('trailing_stop', trailing_stop)*100:.1f}%)"
+            if trailing_stop_ratio is not None:  # 트레일링스탑 활성화 조건 만족
+                if dic["short_position"]["trailing_stop_price"] is None:
+                    # 트레일링스탑 초기 설정
+                    dic["short_position"]["trailing_stop_price"] = coin_price * (1 + trailing_stop_ratio)
+                    logger.info(f"🔧 숏 트레일링스탑 활성화 - 수익률: {pnl_pct*100:.2f}%, 비율: {trailing_stop_ratio*100:.3f}%, 가격: {dic['short_position']['trailing_stop_price']:.2f}")
+                else:
+                    # 트레일링스탑 업데이트 (더 유리한 방향으로만)
+                    new_trailing = coin_price * (1 + trailing_stop_ratio)
+                    if new_trailing < dic["short_position"]["trailing_stop_price"]:
+                        old_trailing = dic["short_position"]["trailing_stop_price"]
+                        dic["short_position"]["trailing_stop_price"] = new_trailing
+                        logger.info(f"🔧 숏 트레일링스탑 업데이트 - {old_trailing:.2f} → {new_trailing:.2f} (비율: {trailing_stop_ratio*100:.3f}%)")
+                
+                # 트레일링스탑 체크
+                if coin_price >= dic["short_position"]["trailing_stop_price"]:
+                    should_close = True
+                    close_reason = f"트레일링스탑 ({trailing_stop_ratio*100:.3f}%)"
         
         # 청산 실행
         if should_close:
@@ -880,28 +899,30 @@ for Target_Coin_Ticker in Coin_Ticker_List:
             should_close = True
             close_reason = f"손절 ({dic.get('params', {}).get('stop_loss', stop_loss)*100:.1f}%)"
         
-        # 2. 익절 (백테스트와 동일)
-        elif pnl_pct >= dic.get("params", {}).get("take_profit", take_profit):
-            should_close = True
-            close_reason = f"익절 ({dic.get('params', {}).get('take_profit', take_profit)*100:.1f}%)"
+        # 익절 제거 (트레일링스탑만 사용)
         
-        # 3. 트레일링스탑 (백테스트와 동일)
-        elif pnl_pct > dic.get("params", {}).get("trailing_stop", trailing_stop):
-            # 트레일링스탑 가격 업데이트
-            if dic["long_position"]["trailing_stop_price"] is None:
-                dic["long_position"]["trailing_stop_price"] = coin_price * (1 - dic.get("params", {}).get("trailing_stop", trailing_stop))
-                logger.info(f"🔧 롱 트레일링스탑 초기 설정: {dic['long_position']['trailing_stop_price']:.2f}")
-            else:
-                new_trailing = coin_price * (1 - dic.get("params", {}).get("trailing_stop", trailing_stop))
-                if new_trailing > dic["long_position"]["trailing_stop_price"]:
-                    old_trailing = dic["long_position"]["trailing_stop_price"]
-                    dic["long_position"]["trailing_stop_price"] = new_trailing
-                    logger.info(f"🔧 롱 트레일링스탑 업데이트: {old_trailing:.2f} → {new_trailing:.2f}")
+        # 3. 동적 트레일링스탑
+        else:
+            # 현재 수익률에 따른 트레일링스탑 비율 계산
+            trailing_stop_ratio = get_dynamic_trailing_stop(pnl_pct)
             
-            # 트레일링스탑 체크
-            if coin_price <= dic["long_position"]["trailing_stop_price"]:
-                should_close = True
-                close_reason = f"트레일링스탑 ({dic.get('params', {}).get('trailing_stop', trailing_stop)*100:.1f}%)"
+            if trailing_stop_ratio is not None:  # 트레일링스탑 활성화 조건 만족
+                if dic["long_position"]["trailing_stop_price"] is None:
+                    # 트레일링스탑 초기 설정
+                    dic["long_position"]["trailing_stop_price"] = coin_price * (1 - trailing_stop_ratio)
+                    logger.info(f"🔧 롱 트레일링스탑 활성화 - 수익률: {pnl_pct*100:.2f}%, 비율: {trailing_stop_ratio*100:.3f}%, 가격: {dic['long_position']['trailing_stop_price']:.2f}")
+                else:
+                    # 트레일링스탑 업데이트 (더 유리한 방향으로만)
+                    new_trailing = coin_price * (1 - trailing_stop_ratio)
+                    if new_trailing > dic["long_position"]["trailing_stop_price"]:
+                        old_trailing = dic["long_position"]["trailing_stop_price"]
+                        dic["long_position"]["trailing_stop_price"] = new_trailing
+                        logger.info(f"🔧 롱 트레일링스탑 업데이트 - {old_trailing:.2f} → {new_trailing:.2f} (비율: {trailing_stop_ratio*100:.3f}%)")
+                
+                # 트레일링스탑 체크
+                if coin_price <= dic["long_position"]["trailing_stop_price"]:
+                    should_close = True
+                    close_reason = f"트레일링스탑 ({trailing_stop_ratio*100:.3f}%)"
         
         # 청산 실행
         if should_close:

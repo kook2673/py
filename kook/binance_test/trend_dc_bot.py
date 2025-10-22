@@ -308,8 +308,25 @@ class BTCTrendFollowingBotOptimized:
         log_file.write(log_msg + "\n")
         return True
     
+    def _get_dynamic_trailing_stop(self, pnl_pct):
+        """수익률에 따른 동적 트레일링스탑 비율 계산"""
+        if pnl_pct >= 0.03:  # 5.0% 이상
+            return 0.0001
+        elif pnl_pct >= 0.025:  # 4.0% 이상
+            return 0.0005
+        elif pnl_pct >= 0.02:  # 3.0% 이상
+            return 0.001
+        elif pnl_pct >= 0.015:  # 2.0% 이상
+            return 0.002
+        elif pnl_pct >= 0.01:  # 1.0% 이상
+            return 0.003
+        elif pnl_pct >= 0.005:  # 0.5% 이상
+            return 0.005
+        else:
+            return None  # 트레일링스탑 비활성화
+    
     def _check_exit_conditions(self, position_type, price, timestamp, positions, trades, log_file):
-        """청산 조건 체크"""
+        """청산 조건 체크 (동적 트레일링스탑 적용)"""
         position = positions[position_type]
         if not position:
             return False
@@ -329,28 +346,45 @@ class BTCTrendFollowingBotOptimized:
         if pnl_pct <= -self.params['stop_loss']:
             exit_reason = f"손절 ({self.params['stop_loss']*100:.1f}%)"
         
-        # 익절
-        elif pnl_pct >= self.params['take_profit']:
-            exit_reason = f"익절 ({self.params['take_profit']*100:.1f}%)"
+        # 익절 제거 (트레일링스탑만 사용)
         
-        # 트레일링스탑
-        elif pnl_pct > self.params['trailing_stop']:
-            if position['trailing_stop_price'] is None:
-                position['trailing_stop_price'] = price * (1 - self.params['trailing_stop']) if position_type == 'long' else price * (1 + self.params['trailing_stop'])
-            else:
-                if position_type == 'long':
-                    new_trailing = price * (1 - self.params['trailing_stop'])
-                    if new_trailing > position['trailing_stop_price']:
-                        position['trailing_stop_price'] = new_trailing
-                else:
-                    new_trailing = price * (1 + self.params['trailing_stop'])
-                    if new_trailing < position['trailing_stop_price']:
-                        position['trailing_stop_price'] = new_trailing
+        # 동적 트레일링스탑
+        else:
+            # 현재 수익률에 따른 트레일링스탑 비율 계산
+            trailing_stop_ratio = self._get_dynamic_trailing_stop(pnl_pct)
             
-            if position_type == 'long' and price <= position['trailing_stop_price']:
-                exit_reason = f"트레일링스탑 ({self.params['trailing_stop']*100:.1f}%)"
-            elif position_type == 'short' and price >= position['trailing_stop_price']:
-                exit_reason = f"트레일링스탑 ({self.params['trailing_stop']*100:.1f}%)"
+            if trailing_stop_ratio is not None:  # 트레일링스탑 활성화 조건 만족
+                if position['trailing_stop_price'] is None:
+                    # 트레일링스탑 초기 설정
+                    if position_type == 'long':
+                        position['trailing_stop_price'] = price * (1 - trailing_stop_ratio)
+                    else:  # short
+                        position['trailing_stop_price'] = price * (1 + trailing_stop_ratio)
+                    
+                    log_msg = f"[{timestamp}] 트레일링스탑 활성화 - 수익률: {pnl_pct*100:.2f}%, 비율: {trailing_stop_ratio*100:.3f}%, 가격: {position['trailing_stop_price']:.2f}"
+                    log_file.write(log_msg + "\n")
+                else:
+                    # 트레일링스탑 업데이트 (더 유리한 방향으로만)
+                    if position_type == 'long':
+                        new_trailing = price * (1 - trailing_stop_ratio)
+                        if new_trailing > position['trailing_stop_price']:
+                            old_trailing = position['trailing_stop_price']
+                            position['trailing_stop_price'] = new_trailing
+                            log_msg = f"[{timestamp}] 롱 트레일링스탑 업데이트 - {old_trailing:.2f} → {new_trailing:.2f} (비율: {trailing_stop_ratio*100:.3f}%)"
+                            log_file.write(log_msg + "\n")
+                    else:  # short
+                        new_trailing = price * (1 + trailing_stop_ratio)
+                        if new_trailing < position['trailing_stop_price']:
+                            old_trailing = position['trailing_stop_price']
+                            position['trailing_stop_price'] = new_trailing
+                            log_msg = f"[{timestamp}] 숏 트레일링스탑 업데이트 - {old_trailing:.2f} → {new_trailing:.2f} (비율: {trailing_stop_ratio*100:.3f}%)"
+                            log_file.write(log_msg + "\n")
+                
+                # 트레일링스탑 체크
+                if position_type == 'long' and price <= position['trailing_stop_price']:
+                    exit_reason = f"트레일링스탑 ({trailing_stop_ratio*100:.3f}%)"
+                elif position_type == 'short' and price >= position['trailing_stop_price']:
+                    exit_reason = f"트레일링스탑 ({trailing_stop_ratio*100:.3f}%)"
         
         if exit_reason:
             self._close_position(position_type, price, timestamp, exit_reason, position, trades, log_file)
