@@ -1,0 +1,144 @@
+2025-10-23 06:46:18,287 - INFO - 크론탭 스케줄러 시작
+2025-10-23 06:46:18,287 - INFO - 크론탭 스케줄러 시작
+2025-10-23 06:46:18,289 - INFO - 총 9개의 크론 스케줄 로드됨:
+2025-10-23 06:46:18,289 - INFO -   - * * * * * : 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:46:18,289 - INFO -   - 50 14 * * * : 한투:매일 오후 14:50 MA 전략 봇 실행
+2025-10-23 06:46:18,289 - INFO -   - 55 14 * * 1-5 : KIS: 평일 14:55 ETFStrength 실행
+2025-10-23 06:46:18,289 - INFO -   - 0 15 * * 1-5 : KIS: 평일 15:00 KOSPIDrawdown 실행
+2025-10-23 06:46:18,289 - INFO -   - 5 15 * * 1-5 : KIS: 평일 15:05 Momentum 리밸런싱 실행
+2025-10-23 06:46:18,289 - INFO - 스케줄 설정 완료
+2025-10-23 06:47:18,292 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:47:18,292 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:47:18,298 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:47:29,982 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=29, after=31, delta=2
+2025-10-23 06:47:29,984 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:48:29,988 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:48:29,988 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:48:29,988 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:48:35,069 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:48:35,071 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:49:35,074 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:49:35,074 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:49:35,074 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:49:39,941 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:49:39,943 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:50:39,945 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:50:39,945 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:50:39,945 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:50:44,962 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:50:44,965 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:51:44,968 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:51:44,968 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:51:44,968 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:51:49,735 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:51:49,738 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:52:49,741 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:52:49,741 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:52:49,741 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:52:54,577 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:52:54,581 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:53:54,583 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:53:54,583 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:53:54,583 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:53:59,469 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:53:59,471 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:54:59,474 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:54:59,474 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:54:59,474 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:55:04,300 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:55:04,303 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:56:04,307 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:56:04,307 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:56:04,307 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:56:09,768 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:56:09,770 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:57:09,773 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:57:09,773 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:57:09,773 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:57:24,384 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:57:24,387 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:58:24,390 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:58:24,390 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:58:24,390 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:58:29,171 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:58:29,175 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 06:59:29,176 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 06:59:29,176 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 06:59:29,176 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 06:59:33,883 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 06:59:33,887 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:00:33,888 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:00:33,888 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:00:33,888 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:00:38,732 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:00:38,736 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:01:38,738 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:01:38,738 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:01:38,738 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:01:43,452 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:01:43,453 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:02:43,456 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:02:43,456 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:02:43,456 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:02:48,201 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:02:48,203 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:03:48,206 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:03:48,206 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:03:48,206 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:03:53,015 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:03:53,016 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:04:53,019 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:04:53,019 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:04:53,019 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:04:57,814 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:04:57,818 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:05:57,820 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:05:57,820 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:05:57,820 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:06:02,526 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:06:02,530 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:07:02,532 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:07:02,532 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:07:02,533 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:07:07,594 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:07:07,598 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:08:07,600 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:08:07,600 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:08:07,600 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:08:12,829 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:08:12,833 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:09:12,836 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:09:12,836 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:09:12,836 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:09:17,714 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:09:17,716 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:10:17,718 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:10:17,718 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:10:17,718 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:10:22,696 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:10:22,699 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:11:22,701 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:11:22,701 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:11:22,701 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:11:27,592 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:11:27,597 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:12:27,601 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:12:27,601 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:12:27,601 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:12:32,632 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:12:32,636 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:13:32,639 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:13:32,639 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:13:32,639 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:13:37,650 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:13:37,655 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:14:37,657 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:14:37,657 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:14:37,658 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:14:43,101 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:14:43,107 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행
+2025-10-23 07:15:43,109 - INFO - 크론 표현식 * * * * *에 맞는 작업 실행(scheduled): 바이낸스:1분마다 trend_dc_bot 봇 실행
+2025-10-23 07:15:43,110 - INFO - 작업 실행: 바이낸스 trend_dc_bot 봇 실행 (python_script)
+2025-10-23 07:15:43,110 - INFO - Python 스크립트 직접 실행: ../kook/binance/trend_dc_bot.py
+2025-10-23 07:15:51,194 - INFO - Python 스크립트 실행 성공: ../kook/binance/trend_dc_bot.py | 메모리(MB) before=31, after=31, delta=0
+2025-10-23 07:15:51,196 - INFO - 작업 완료: 바이낸스 trend_dc_bot 봇 실행

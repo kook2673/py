@@ -363,8 +363,8 @@ except Exception as e:
     sys.exit(1)
 
 #나의 코인
-#Coin_Ticker_List = ['BTC/USDT', 'ETH/USDT', 'XRP/USDT', 'SOL/USDT', 'DOGE/USDT']
-Coin_Ticker_List = ['BTC/USDT']
+Coin_Ticker_List = ['BTC/USDT', 'ETH/USDT', 'XRP/USDT', 'SOL/USDT', 'DOGE/USDT']
+#Coin_Ticker_List = ['BTC/USDT']
 logger.info("\n-- START ------------------------------------------------------------------------------------------\n")
 
 # 초기 메모리 정리
@@ -473,7 +473,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     # 백테스트와 동일한 청산 파라미터
     charge = 0.0005  # 수수료율 0.05% (백테스트와 동일)
     investment_ratio = 0.5  # 투자 비율
-    divide = 50  # 분할 수 (1%)
+    divide = 10  # 분할 수 (1%)
     
     # 레버리지 설정
     try:
@@ -874,7 +874,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     logger.info(f"🔧 {Target_Coin_Symbol} 숏 트레일링스탑 업데이트 - {old_trailing:.2f} → {new_trailing:.2f} (비율: {trailing_stop_ratio*100:.3f}%)")
             
             # 트레일링스탑 체크
-            if coin_price >= json_short["trailing_stop_price"]:
+            if json_short["trailing_stop_price"] is not None and coin_price >= json_short["trailing_stop_price"]:
                 should_close = True
                 close_reason = f"트레일링스탑 ({json_short['trailing_stop_price']:.2f})"
         
@@ -928,7 +928,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     logger.info(f"🔧 {Target_Coin_Symbol} 롱 트레일링스탑 업데이트 - {old_trailing:.2f} → {new_trailing:.2f} (비율: {trailing_stop_ratio*100:.3f}%)")
             
             # 트레일링스탑 체크
-            if coin_price <= json_long["trailing_stop_price"]:
+            if json_long["trailing_stop_price"] is not None and coin_price <= json_long["trailing_stop_price"]:
                 should_close = True
                 close_reason = f"트레일링스탑 ({json_long['trailing_stop_price']:.2f})"
         
