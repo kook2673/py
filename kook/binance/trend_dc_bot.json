@@ -9,9 +9,9 @@
         "trailing_stop_price": null
     },
     "short_position": {
-        "entry_price": 0,
-        "amount": 0,
-        "trailing_stop_price": null
+        "entry_price": 109250.6,
+        "amount": 0.001,
+        "trailing_stop_price": 108762.10499999998
     },
     "params": {
         "ma_short": 20,

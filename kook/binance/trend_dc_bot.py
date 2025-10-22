@@ -328,18 +328,7 @@ for posi in balance['info']['positions']:
     if posi['symbol'] == 'BTCUSDT':
         logger.info(f"  {posi['positionSide']}: 수량={posi['positionAmt']}, 진입가={posi.get('entryPrice', 'N/A')}, 마크가={posi.get('markPrice', 'N/A')}, notional={posi.get('notional', 'N/A')}, 미실현손익={posi.get('unrealizedProfit', 'N/A')}")
 
-# fetch_positions 함수 테스트
-logger.info(f"🔍 fetch_positions 함수 테스트:")
-try:
-    positions = binanceX.fetch_positions(['BTC/USDT'])
-    logger.info(f"📊 fetch_positions 결과: {positions}")
-    
-    for pos in positions:
-        if pos['symbol'] == 'BTC/USDT':
-            logger.info(f"  {pos['side']}: 수량={pos['contracts']}, 진입가={pos.get('entryPrice', 'N/A')}, 마크가={pos.get('markPrice', 'N/A')}, 미실현손익={pos.get('unrealizedPnl', 'N/A')}")
-            
-except Exception as e:
-    logger.error(f"❌ fetch_positions 오류: {e}")
+# fetch_positions 함수는 메인 루프에서 호출됩니다
 
 
 # JSON 파일 존재 여부 확인
@@ -474,18 +463,29 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         logger.info(f"📊 fetch_positions 전체 결과: {positions}")
         
         for pos in positions:
-            if pos['symbol'] == Target_Coin_Ticker:
+            logger.info(f"🔍 포지션 체크: symbol='{pos['symbol']}', Target_Coin_Ticker='{Target_Coin_Ticker}'")
+            
+            # 심볼 매칭 (BTC/USDT와 BTC/USDT:USDT 모두 처리)
+            symbol_match = (pos['symbol'] == Target_Coin_Ticker or 
+                           pos['symbol'] == Target_Coin_Ticker + ':USDT' or
+                           pos['symbol'].replace(':USDT', '') == Target_Coin_Ticker)
+            
+            if symbol_match:
+                logger.info(f"🔍 포지션 처리 중: side='{pos['side']}', contracts={pos['contracts']}, entryPrice={pos.get('entryPrice', 'N/A')}")
+                
                 if pos['side'] == 'short':
-                    amt_s = float(pos['contracts'])
+                    amt_s = abs(float(pos['contracts']))  # 숏은 절댓값 사용
                     entryPrice_s = float(pos.get('entryPrice', 0))
-                    if abs(amt_s) > 0:
-                        logger.info(f"📊 숏 포지션: 수량={amt_s:.6f}, 진입가={entryPrice_s:.2f}")
+                    logger.info(f"📊 숏 포지션 설정: 수량={amt_s:.6f}, 진입가={entryPrice_s:.2f}")
                         
                 elif pos['side'] == 'long':
                     amt_l = float(pos['contracts'])
                     entryPrice_l = float(pos.get('entryPrice', 0))
-                    if abs(amt_l) > 0:
-                        logger.info(f"📊 롱 포지션: 수량={amt_l:.6f}, 진입가={entryPrice_l:.2f}")
+                    logger.info(f"📊 롱 포지션 설정: 수량={amt_l:.6f}, 진입가={entryPrice_l:.2f}")
+                else:
+                    logger.warning(f"⚠️ 알 수 없는 포지션 사이드: '{pos['side']}'")
+            else:
+                logger.info(f"🔍 심볼 불일치: '{pos['symbol']}' != '{Target_Coin_Ticker}'")
                         
     except Exception as e:
         logger.error(f"❌ fetch_positions 실패: {e}")
