@@ -8,8 +8,8 @@
         "amount": 0
     },
     "short_position": {
-        "entry_price": 0,
-        "amount": 0
+        "entry_price": 109250.6,
+        "amount": 0.001
     },
     "params": {
         "ma_short": 3,
