@@ -276,7 +276,7 @@ def viewlist(msg, amt_s=0, amt_l=0, entryPrice_s=0, entryPrice_l=0):
 
 # ========================= 메인 로직 시작 =========================
 logger.info("=" * 80)
-logger.info("MA DCC Bot - 바이낸스 양방향 전략 (시작)")
+logger.info("Trend DC Bot - 바이낸스 양방향 전략 (시작)")
 logger.info("=" * 80)
 
 #암복호화 클래스 객체를 미리 생성한 키를 받아 생성한다.
@@ -327,6 +327,20 @@ logger.info(f"🔍 바이낸스 API 포지션 정보 (BTCUSDT):")
 for posi in balance['info']['positions']:
     if posi['symbol'] == 'BTCUSDT':
         logger.info(f"  {posi['positionSide']}: 수량={posi['positionAmt']}, 진입가={posi.get('entryPrice', 'N/A')}, 마크가={posi.get('markPrice', 'N/A')}, notional={posi.get('notional', 'N/A')}, 미실현손익={posi.get('unrealizedProfit', 'N/A')}")
+
+# fetch_positions 함수 테스트
+logger.info(f"🔍 fetch_positions 함수 테스트:")
+try:
+    positions = binanceX.fetch_positions(['BTC/USDT'])
+    logger.info(f"📊 fetch_positions 결과: {positions}")
+    
+    for pos in positions:
+        if pos['symbol'] == 'BTC/USDT':
+            logger.info(f"  {pos['side']}: 수량={pos['contracts']}, 진입가={pos.get('entryPrice', 'N/A')}, 마크가={pos.get('markPrice', 'N/A')}, 미실현손익={pos.get('unrealizedPnl', 'N/A')}")
+            
+except Exception as e:
+    logger.error(f"❌ fetch_positions 오류: {e}")
+
 
 # JSON 파일 존재 여부 확인
 json_exists = os.path.exists(info_file_path)
@@ -449,105 +463,38 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         except Exception as e:
             logger.error(f"error: {e}")
 
-    # 숏잔고 - JSON 우선, API 보조
+    # 포지션 정보는 fetch_positions에서만 가져오기
     entryPrice_s = 0
     amt_s = 0
-    
-    # 1. JSON에서 포지션 정보 우선 확인
-    json_short_entry = dic.get("short_position", {}).get("entry_price", 0)
-    json_short_amount = dic.get("short_position", {}).get("amount", 0)
-    
-    if json_short_entry > 0 and json_short_amount > 0:
-        entryPrice_s = json_short_entry
-        amt_s = json_short_amount
-        logger.info(f"📊 JSON에서 숏 포지션 로드: 진입가={entryPrice_s:.2f}, 수량={amt_s:.6f}")
-    else:
-        # 2. API에서 포지션 정보 확인
-        for posi in balance['info']['positions']:
-            if posi['symbol'] == Target_Coin_Symbol and posi['positionSide'] == 'SHORT':
-                logger.info(f"📊 숏 포지션 원본 데이터: {posi}")
-                amt_s = float(posi['positionAmt'])
-                entryPrice_s = float(posi.get('entryPrice', 0))
-                
-                # entryPrice가 0이거나 없으면 여러 방법으로 계산 시도
-                if (entryPrice_s == 0 or entryPrice_s is None) and abs(amt_s) > 0:
-                    notional = float(posi.get('notional', 0))
-                    unrealized_profit = float(posi.get('unrealizedProfit', 0))
-                    mark_price = float(posi.get('markPrice', 0))
-                    
-                    logger.info(f"📊 숏 포지션 계산 시도: notional={notional:.2f}, unrealized={unrealized_profit:.2f}, markPrice={mark_price:.2f}, amt={abs(amt_s):.6f}")
-                    
-                    # 방법 1: notional과 unrealizedProfit 사용
-                    if notional > 0:
-                        entryPrice_s = (notional - unrealized_profit) / abs(amt_s)
-                        logger.info(f"📊 숏 진입가 계산 (방법1): {entryPrice_s:.2f}")
-                    
-                    # 방법 2: markPrice와 unrealizedProfit 사용
-                    elif mark_price > 0:
-                        # 숏 포지션: 가격 상승 시 손실, 하락 시 수익
-                        # unrealized_profit = (entryPrice - markPrice) * amount
-                        # entryPrice = unrealized_profit / amount + markPrice
-                        entryPrice_s = unrealized_profit / abs(amt_s) + mark_price
-                        logger.info(f"📊 숏 진입가 계산 (방법2): {entryPrice_s:.2f}")
-                    
-                    # 방법 3: 현재가 사용 (최후의 수단)
-                    else:
-                        entryPrice_s = coin_price
-                        logger.warning(f"📊 숏 진입가 계산 (방법3-현재가): {entryPrice_s:.2f}")
-                
-                if abs(amt_s) > 0:
-                    logger.info(f"📊 API에서 숏 포지션 로드: 수량={amt_s:.6f}, 진입가={entryPrice_s:.2f}")
-                break
-
-    # 롱잔고 - JSON 우선, API 보조
     entryPrice_l = 0
     amt_l = 0
     
-    # 1. JSON에서 포지션 정보 우선 확인
-    json_long_entry = dic.get("long_position", {}).get("entry_price", 0)
-    json_long_amount = dic.get("long_position", {}).get("amount", 0)
-    
-    if json_long_entry > 0 and json_long_amount > 0:
-        entryPrice_l = json_long_entry
-        amt_l = json_long_amount
-        logger.info(f"📊 JSON에서 롱 포지션 로드: 진입가={entryPrice_l:.2f}, 수량={amt_l:.6f}")
-    else:
-        # 2. API에서 포지션 정보 확인
-        for posi in balance['info']['positions']:
-            if posi['symbol'] == Target_Coin_Symbol and posi['positionSide'] == 'LONG':
-                logger.info(f"📊 롱 포지션 원본 데이터: {posi}")
-                amt_l = float(posi['positionAmt'])
-                entryPrice_l = float(posi.get('entryPrice', 0))
-                
-                # entryPrice가 0이거나 없으면 여러 방법으로 계산 시도
-                if (entryPrice_l == 0 or entryPrice_l is None) and abs(amt_l) > 0:
-                    notional = float(posi.get('notional', 0))
-                    unrealized_profit = float(posi.get('unrealizedProfit', 0))
-                    mark_price = float(posi.get('markPrice', 0))
-                    
-                    logger.info(f"📊 롱 포지션 계산 시도: notional={notional:.2f}, unrealized={unrealized_profit:.2f}, markPrice={mark_price:.2f}, amt={abs(amt_l):.6f}")
-                    
-                    # 방법 1: notional과 unrealizedProfit 사용
-                    if notional > 0:
-                        entryPrice_l = (notional - unrealized_profit) / abs(amt_l)
-                        logger.info(f"📊 롱 진입가 계산 (방법1): {entryPrice_l:.2f}")
-                    
-                    # 방법 2: markPrice와 unrealizedProfit 사용
-                    elif mark_price > 0:
-                        # 롱 포지션: 가격 하락 시 손실, 상승 시 수익
-                        # unrealized_profit = (markPrice - entryPrice) * amount
-                        # entryPrice = markPrice - unrealized_profit / amount
-                        entryPrice_l = mark_price - unrealized_profit / abs(amt_l)
-                        logger.info(f"📊 롱 진입가 계산 (방법2): {entryPrice_l:.2f}")
-                    
-                    # 방법 3: 현재가 사용 (최후의 수단)
-                    else:
-                        entryPrice_l = coin_price
-                        logger.warning(f"📊 롱 진입가 계산 (방법3-현재가): {entryPrice_l:.2f}")
-                
-                if abs(amt_l) > 0:
-                    logger.info(f"📊 API에서 롱 포지션 로드: 수량={amt_l:.6f}, 진입가={entryPrice_l:.2f}")
-                break
+    try:
+        positions = binanceX.fetch_positions([Target_Coin_Ticker])
+        logger.info(f"📊 fetch_positions 전체 결과: {positions}")
+        
+        for pos in positions:
+            if pos['symbol'] == Target_Coin_Ticker:
+                if pos['side'] == 'short':
+                    amt_s = float(pos['contracts'])
+                    entryPrice_s = float(pos.get('entryPrice', 0))
+                    if abs(amt_s) > 0:
+                        logger.info(f"📊 숏 포지션: 수량={amt_s:.6f}, 진입가={entryPrice_s:.2f}")
+                        
+                elif pos['side'] == 'long':
+                    amt_l = float(pos['contracts'])
+                    entryPrice_l = float(pos.get('entryPrice', 0))
+                    if abs(amt_l) > 0:
+                        logger.info(f"📊 롱 포지션: 수량={amt_l:.6f}, 진입가={entryPrice_l:.2f}")
+                        
+    except Exception as e:
+        logger.error(f"❌ fetch_positions 실패: {e}")
+        telegram_sender.SendMessage(f"❌ fetch_positions 실패: {e}")
+        # API 실패 시 기본값 유지
+        amt_s = 0
+        amt_l = 0
+        entryPrice_s = 0
+        entryPrice_l = 0        
 
     logger.info(f"entryPrice_s : {entryPrice_s}")
     logger.info(f"entryPrice_l : {entryPrice_l}")
@@ -604,7 +551,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     # 아침 8시 보고
     if today.hour == 8 and today.minute == 0:
         msg = "\n==========================="
-        msg += "\n         MA DCC Bot (양방향 전략)"
+        msg += "\n         Trend DC Bot ()"
         msg += "\n==========================="
         msg += "\n         "+str(today.month)+"월 "+str(today.day)+"일 수익 결산보고"
         msg += "\n==========================="
@@ -642,24 +589,123 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     has_short = abs(amt_s) > 0
     has_long = abs(amt_l) > 0
     
-    # ==================== 포지션 소실 감지 및 청산 처리 ====================
-    # JSON에는 포지션이 있지만 실제로는 포지션이 없는 경우 (수동 청산 등)
+    # 포지션 상태 로깅
+    if has_short or has_long:
+        logger.info(f"📊 현재 포지션 상태: 숏={has_short}, 롱={has_long}")
+        if has_short:
+            logger.info(f"  숏 포지션: 수량={amt_s:.6f}, 진입가={entryPrice_s:.2f}")
+        if has_long:
+            logger.info(f"  롱 포지션: 수량={amt_l:.6f}, 진입가={entryPrice_l:.2f}")
+    else:
+        logger.info("📊 현재 포지션 없음 (지갑 비어있음)")
     
-    # 숏 포지션 소실 감지
-    if not has_short and dic.get("short_position", {}).get("entry_price", 0) > 0:
+    # ==================== 수동 포지션 추가 감지 및 처리 ====================
+    # JSON에는 포지션이 없지만 실제 API에서는 포지션이 있는 경우 (수동 추가 등)
+    
+    # 숏 포지션 수동 추가 감지
+    json_has_short = dic.get("short_position", {}).get("entry_price", 0) > 0 and dic.get("short_position", {}).get("amount", 0) > 0
+    api_has_short = abs(amt_s) > 0
+    
+    if not json_has_short and api_has_short:
+        # 수동으로 숏 포지션이 추가된 것으로 감지
+        msg = f"🔍 숏 포지션 수동 추가 감지"
+        msg += f"\n📊 진입가: {entryPrice_s:.2f}$"
+        msg += f"\n📊 수량: {amt_s:.3f}"
+        msg += f"\n📊 현재가: {coin_price:.2f}$"
+        
+        # 수익률 계산
+        if coin_price > 0 and entryPrice_s > 0:
+            pnl_pct = (entryPrice_s - coin_price) / entryPrice_s
+            msg += f"\n📊 수익률: {pnl_pct*100:.2f}%"
+        
+        msg += f"\n⚠️ 봇이 자동으로 진입하지 않은 수동 포지션입니다."
+        
+        telegram_sender.SendMessage(msg)
+        logger.info(f"🔍 숏 포지션 수동 추가 감지: 진입가={entryPrice_s:.2f}, 수량={amt_s:.3f}")
+    
+    # 롱 포지션 수동 추가 감지
+    json_has_long = dic.get("long_position", {}).get("entry_price", 0) > 0 and dic.get("long_position", {}).get("amount", 0) > 0
+    api_has_long = abs(amt_l) > 0
+    
+    if not json_has_long and api_has_long:
+        # 수동으로 롱 포지션이 추가된 것으로 감지
+        msg = f"🔍 롱 포지션 수동 추가 감지"
+        msg += f"\n📊 진입가: {entryPrice_l:.2f}$"
+        msg += f"\n📊 수량: {amt_l:.3f}"
+        msg += f"\n📊 현재가: {coin_price:.2f}$"
+        
+        # 수익률 계산
+        if coin_price > 0 and entryPrice_l > 0:
+            pnl_pct = (coin_price - entryPrice_l) / entryPrice_l
+            msg += f"\n📊 수익률: {pnl_pct*100:.2f}%"
+        
+        msg += f"\n⚠️ 봇이 자동으로 진입하지 않은 수동 포지션입니다."
+        
+        telegram_sender.SendMessage(msg)
+        logger.info(f"🔍 롱 포지션 수동 추가 감지: 진입가={entryPrice_l:.2f}, 수량={amt_l:.3f}")
+    
+    # ==================== JSON과 API 상태 동기화 ====================
+    # API에서 포지션이 확인되면 JSON도 업데이트
+    if has_short:
+        # API에서 숏 포지션이 있으면 JSON 업데이트
+        if dic.get("short_position", {}).get("entry_price", 0) != entryPrice_s or dic.get("short_position", {}).get("amount", 0) != amt_s:
+            dic["short_position"] = {
+                "entry_price": entryPrice_s,
+                "amount": amt_s,
+                "trailing_stop_price": None
+            }
+            logger.info(f"🔄 JSON 숏 포지션 동기화: 진입가={entryPrice_s:.2f}, 수량={amt_s:.6f}")
+    else:
+        # API에서 숏 포지션이 없으면 JSON도 초기화
+        if dic.get("short_position", {}).get("entry_price", 0) > 0:
+            dic["short_position"] = {
+                "entry_price": 0,
+                "amount": 0,
+                "trailing_stop_price": None
+            }
+            logger.info("🔄 JSON 숏 포지션 초기화 (API에서 포지션 없음)")
+    
+    if has_long:
+        # API에서 롱 포지션이 있으면 JSON 업데이트
+        if dic.get("long_position", {}).get("entry_price", 0) != entryPrice_l or dic.get("long_position", {}).get("amount", 0) != amt_l:
+            dic["long_position"] = {
+                "entry_price": entryPrice_l,
+                "amount": amt_l,
+                "trailing_stop_price": None
+            }
+            logger.info(f"🔄 JSON 롱 포지션 동기화: 진입가={entryPrice_l:.2f}, 수량={amt_l:.6f}")
+    else:
+        # API에서 롱 포지션이 없으면 JSON도 초기화
+        if dic.get("long_position", {}).get("entry_price", 0) > 0:
+            dic["long_position"] = {
+                "entry_price": 0,
+                "amount": 0,
+                "trailing_stop_price": None
+            }
+            logger.info("🔄 JSON 롱 포지션 초기화 (API에서 포지션 없음)")
+    
+    # ==================== 수동 청산 감지 및 처리 ====================
+    # JSON에는 포지션이 있지만 실제 API에서는 포지션이 없는 경우 (수동 청산 등)
+    
+    # 숏 포지션 수동 청산 감지
+    json_has_short = dic.get("short_position", {}).get("entry_price", 0) > 0 and dic.get("short_position", {}).get("amount", 0) > 0
+    api_has_short = abs(amt_s) > 0
+    
+    if json_has_short and not api_has_short:
         old_entry_price = dic["short_position"]["entry_price"]
         old_amount = dic["short_position"]["amount"]
         
-        # 수동 청산으로 간주하고 손실 처리
-        # 현재가 기준으로 실제 손실 계산
+        # 수동 청산으로 간주하고 손익 계산
         if coin_price > 0:
-            # 숏 포지션: 가격 상승 시 손실
+            # 숏 포지션: 가격 상승 시 손실, 하락 시 수익
             pnl_pct = (old_entry_price - coin_price) / old_entry_price
-            estimated_loss = old_amount * old_entry_price * pnl_pct
+            estimated_pnl = old_amount * old_entry_price * pnl_pct
         else:
-            # 현재가를 알 수 없는 경우 보수적으로 1% 손실로 가정
-            estimated_loss = old_amount * old_entry_price * 0.01
-        dic["today"] -= estimated_loss
+            # 현재가를 알 수 없는 경우 보수적으로 0으로 처리
+            pnl_pct = 0
+            estimated_pnl = 0
+            
+        dic["today"] += estimated_pnl
         
         # 포지션 정보 초기화
         dic["short_position"] = {
@@ -668,30 +714,43 @@ for Target_Coin_Ticker in Coin_Ticker_List:
             "trailing_stop_price": None
         }
         
-        pnl_display = f"({pnl_pct*100:.2f}%)" if coin_price > 0 else "(추정 1%)"
-        msg = f"⚠️ 숏 포지션 소실 감지 (수동 청산 추정) | 진입가: {old_entry_price:.2f}, 현재가: {coin_price:.2f}, 수량: {old_amount:.3f}, 손실: {estimated_loss:.2f}$ {pnl_display}"
+        pnl_display = f"({pnl_pct*100:.2f}%)" if coin_price > 0 else "(추정 0%)"
+        profit_loss = "수익" if estimated_pnl > 0 else "손실"
+        profit_loss_emoji = "💰" if estimated_pnl > 0 else "📉"
+        
+        msg = f"🚨 {profit_loss_emoji} 숏 포지션 수동 청산 감지"
+        msg += f"\n📊 진입가: {old_entry_price:.2f}$"
+        msg += f"\n📊 현재가: {coin_price:.2f}$"
+        msg += f"\n📊 수량: {old_amount:.3f}"
+        msg += f"\n📊 {profit_loss}: {abs(estimated_pnl):.2f}$ {pnl_display}"
+        msg += f"\n⚠️ 봇이 자동으로 처리하지 않은 수동 청산입니다."
+        
         telegram_sender.SendMessage(msg)
-        logger.warning(msg)
+        logger.warning(f"🚨 숏 포지션 수동 청산 감지: {profit_loss} {abs(estimated_pnl):.2f}$ {pnl_display}")
         
         # 즉시 JSON 저장
         with open(info_file_path, 'w') as outfile:
             json.dump(dic, outfile, indent=4, ensure_ascii=False)
     
-    # 롱 포지션 소실 감지
-    if not has_long and dic.get("long_position", {}).get("entry_price", 0) > 0:
+    # 롱 포지션 수동 청산 감지
+    json_has_long = dic.get("long_position", {}).get("entry_price", 0) > 0 and dic.get("long_position", {}).get("amount", 0) > 0
+    api_has_long = abs(amt_l) > 0
+    
+    if json_has_long and not api_has_long:
         old_entry_price = dic["long_position"]["entry_price"]
         old_amount = dic["long_position"]["amount"]
         
-        # 수동 청산으로 간주하고 손실 처리
-        # 현재가 기준으로 실제 손실 계산
+        # 수동 청산으로 간주하고 손익 계산
         if coin_price > 0:
-            # 롱 포지션: 가격 하락 시 손실
+            # 롱 포지션: 가격 상승 시 수익, 하락 시 손실
             pnl_pct = (coin_price - old_entry_price) / old_entry_price
-            estimated_loss = old_amount * old_entry_price * pnl_pct
+            estimated_pnl = old_amount * old_entry_price * pnl_pct
         else:
-            # 현재가를 알 수 없는 경우 보수적으로 1% 손실로 가정
-            estimated_loss = old_amount * old_entry_price * 0.01
-        dic["today"] -= estimated_loss
+            # 현재가를 알 수 없는 경우 보수적으로 0으로 처리
+            pnl_pct = 0
+            estimated_pnl = 0
+            
+        dic["today"] += estimated_pnl
         
         # 포지션 정보 초기화
         dic["long_position"] = {
@@ -700,10 +759,19 @@ for Target_Coin_Ticker in Coin_Ticker_List:
             "trailing_stop_price": None
         }
         
-        pnl_display = f"({pnl_pct*100:.2f}%)" if coin_price > 0 else "(추정 1%)"
-        msg = f"⚠️ 롱 포지션 소실 감지 (수동 청산 추정) | 진입가: {old_entry_price:.2f}, 현재가: {coin_price:.2f}, 수량: {old_amount:.3f}, 손실: {estimated_loss:.2f}$ {pnl_display}"
+        pnl_display = f"({pnl_pct*100:.2f}%)" if coin_price > 0 else "(추정 0%)"
+        profit_loss = "수익" if estimated_pnl > 0 else "손실"
+        profit_loss_emoji = "💰" if estimated_pnl > 0 else "📉"
+        
+        msg = f"🚨 {profit_loss_emoji} 롱 포지션 수동 청산 감지"
+        msg += f"\n📊 진입가: {old_entry_price:.2f}$"
+        msg += f"\n📊 현재가: {coin_price:.2f}$"
+        msg += f"\n📊 수량: {old_amount:.3f}"
+        msg += f"\n📊 {profit_loss}: {abs(estimated_pnl):.2f}$ {pnl_display}"
+        msg += f"\n⚠️ 봇이 자동으로 처리하지 않은 수동 청산입니다."
+        
         telegram_sender.SendMessage(msg)
-        logger.warning(msg)
+        logger.warning(f"🚨 롱 포지션 수동 청산 감지: {profit_loss} {abs(estimated_pnl):.2f}$ {pnl_display}")
         
         # 즉시 JSON 저장
         with open(info_file_path, 'w') as outfile:
@@ -874,8 +942,4 @@ except:
 
 gc.collect()
 
-logger.info(f"=== MA DCC Bot 종료 (최종 메모리: {final_memory:.2f} MB) ===")
-
-
-
-
+logger.info(f"=== Trend DC Bot 종료 (최종 메모리: {final_memory:.2f} MB) ===")
