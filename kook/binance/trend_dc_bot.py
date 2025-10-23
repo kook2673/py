@@ -854,6 +854,9 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     msg = f"🔄 {Target_Coin_Symbol} 숏 트레일링스탑 초기화 | 진입: {coin_price:.2f}, 현재: {coin_price:.2f} | 숏 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
                     #telegram_sender.SendMessage(msg)
+                    # 즉시 JSON 파일 저장
+                    with open(info_file_path, 'w') as outfile:
+                        json.dump(dic, outfile, indent=4, ensure_ascii=False)
                     # 실제 청산하지 않고 다음 루프로
                 else:
                     # 숏 구매 요건이 없으면 실제 청산
@@ -938,6 +941,9 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 진입: {coin_price:.2f}, 현재: {coin_price:.2f} | 롱 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
                     #telegram_sender.SendMessage(msg)
+                    # 즉시 JSON 파일 저장
+                    with open(info_file_path, 'w') as outfile:
+                        json.dump(dic, outfile, indent=4, ensure_ascii=False)
                     # 실제 청산하지 않고 다음 루프로
                 else:
                     # 롱 구매 요건이 없으면 실제 청산
