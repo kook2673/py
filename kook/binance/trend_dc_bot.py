@@ -291,19 +291,20 @@ def get_coin_positions(dic, coin_symbol):
     
     if coin_symbol not in dic["positions"]:
         dic["positions"][coin_symbol] = {
-            "long_position": {"entry_price": 0, "amount": 0, "trailing_stop_price": None},
-            "short_position": {"entry_price": 0, "amount": 0, "trailing_stop_price": None}
+            "long_position": {"entry_price": 0, "amount": 0, "trailing_stop_price": None, "entry_price_offset": 0},
+            "short_position": {"entry_price": 0, "amount": 0, "trailing_stop_price": None, "entry_price_offset": 0}
         }
     
     return dic["positions"][coin_symbol]
 
-def update_coin_position(dic, coin_symbol, position_type, entry_price, amount, trailing_stop_price=None):
+def update_coin_position(dic, coin_symbol, position_type, entry_price, amount, trailing_stop_price=None, entry_price_offset=0):
     """특정 코인의 포지션 정보 업데이트"""
     positions = get_coin_positions(dic, coin_symbol)
     positions[position_type] = {
         "entry_price": entry_price,
         "amount": amount,
-        "trailing_stop_price": trailing_stop_price
+        "trailing_stop_price": trailing_stop_price,
+        "entry_price_offset": entry_price_offset
     }
 
 def clear_coin_position(dic, coin_symbol, position_type):
@@ -312,19 +313,22 @@ def clear_coin_position(dic, coin_symbol, position_type):
     positions[position_type] = {
         "entry_price": 0,
         "amount": 0,
-        "trailing_stop_price": None
+        "trailing_stop_price": None,
+        "entry_price_offset": 0
     }
 
-def viewlist(msg, amt_s=0, amt_l=0, entryPrice_s=0, entryPrice_l=0):
+def viewlist(msg, amt_s=0, amt_l=0, entryPrice_s=0, entryPrice_l=0, offset_s=0, offset_l=0):
     # 숏 포지션 정보
     if abs(amt_s) > 0 and entryPrice_s > 0:
-        revenue_rate_s = (entryPrice_s - coin_price) / entryPrice_s * 100.0
-        msg += f"\n[숏] 진입가: {entryPrice_s:.2f}, 수량: {abs(amt_s):.3f}, 수익률: {revenue_rate_s:.2f}%"
+        adjusted_entry_s = entryPrice_s + offset_s
+        revenue_rate_s = (adjusted_entry_s - coin_price) / adjusted_entry_s * 100.0
+        msg += f"\n[숏] 진입가: {entryPrice_s:.2f} (보정: {adjusted_entry_s:.2f}), 수량: {abs(amt_s):.3f}, 수익률: {revenue_rate_s:.2f}%"
     
     # 롱 포지션 정보
     if abs(amt_l) > 0 and entryPrice_l > 0:
-        revenue_rate_l = (coin_price - entryPrice_l) / entryPrice_l * 100.0
-        msg += f"\n[롱] 진입가: {entryPrice_l:.2f}, 수량: {amt_l:.3f}, 수익률: {revenue_rate_l:.2f}%"
+        adjusted_entry_l = entryPrice_l + offset_l
+        revenue_rate_l = (coin_price - adjusted_entry_l) / adjusted_entry_l * 100.0
+        msg += f"\n[롱] 진입가: {entryPrice_l:.2f} (보정: {adjusted_entry_l:.2f}), 수량: {amt_l:.3f}, 수익률: {revenue_rate_l:.2f}%"
     
     telegram_sender.SendMessage(msg)
 
@@ -426,6 +430,13 @@ def initialize_bot_data():
     for key, default_value in default_data.items():
         if key not in dic:
             dic[key] = default_value
+    
+    # 기존 포지션에 entry_price_offset 필드 추가 (마이그레이션)
+    if "positions" in dic:
+        for coin_symbol, positions in dic["positions"].items():
+            for position_type in ["long_position", "short_position"]:
+                if position_type in positions and "entry_price_offset" not in positions[position_type]:
+                    positions[position_type]["entry_price_offset"] = 0
     
     
     return dic
@@ -623,7 +634,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         msg += f"\n⚠️ 봇이 자동으로 진입하지 않은 수동 포지션입니다."
         
         # 수동 추가된 포지션에 트레일링스탑 설정 (0.5% 수익 후 활성화)
-        update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, None)
+        update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, None, 0)
         msg += f"\n🔧 트레일링스탑: 0.5% 수익 후 활성화"
         
         telegram_sender.SendMessage(msg)
@@ -648,7 +659,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         msg += f"\n⚠️ 봇이 자동으로 진입하지 않은 수동 포지션입니다."
         
         # 수동 추가된 포지션에 트레일링스탑 설정 (0.5% 수익 후 활성화)
-        update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, None)
+        update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, None, 0)
         msg += f"\n🔧 트레일링스탑: 0.5% 수익 후 활성화"
         
         telegram_sender.SendMessage(msg)
@@ -657,16 +668,13 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     # ==================== JSON과 API 상태 동기화 ====================
     # API에서 포지션이 확인되면 JSON도 업데이트
     if has_short:
-        # API에서 숏 포지션이 있으면 JSON 업데이트 (trailing_stop_price 보존)
-        # 단, JSON의 진입가가 API 진입가보다 낮으면 트레일링스탑 초기화로 갱신된 것이므로 덮어쓰지 않음
-        json_entry_price = json_short.get("entry_price", 0)
-        if (json_entry_price != entryPrice_s or json_short.get("amount", 0) != amt_s) and json_entry_price >= entryPrice_s:
-            # 기존 trailing_stop_price 보존
+        # API에서 숏 포지션이 있으면 JSON 업데이트 (trailing_stop_price와 entry_price_offset 보존)
+        if json_short.get("entry_price", 0) != entryPrice_s or json_short.get("amount", 0) != amt_s:
+            # 기존 trailing_stop_price와 entry_price_offset 보존
             existing_trailing = json_short.get("trailing_stop_price")
-            update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, existing_trailing)
-            logger.info(f"🔄 {Target_Coin_Symbol} JSON 숏 포지션 동기화: 진입가={entryPrice_s:.2f}, 수량={amt_s:.6f}, 트레일링스탑={existing_trailing}")
-        elif json_entry_price < entryPrice_s:
-            logger.info(f"🔄 {Target_Coin_Symbol} JSON 진입가({json_entry_price:.2f})가 API 진입가({entryPrice_s:.2f})보다 낮음 - 트레일링스탑 초기화로 갱신된 것으로 판단하여 동기화 건너뜀")
+            existing_offset = json_short.get("entry_price_offset", 0)
+            update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, existing_trailing, existing_offset)
+            logger.info(f"🔄 {Target_Coin_Symbol} JSON 숏 포지션 동기화: 진입가={entryPrice_s:.2f}, 수량={amt_s:.6f}, 트레일링스탑={existing_trailing}, 보정값={existing_offset}")
     else:
         # API에서 숏 포지션이 없으면 JSON도 초기화
         if json_short.get("entry_price", 0) > 0:
@@ -674,16 +682,13 @@ for Target_Coin_Ticker in Coin_Ticker_List:
             logger.info(f"🔄 {Target_Coin_Symbol} JSON 숏 포지션 초기화 (API에서 포지션 없음)")
     
     if has_long:
-        # API에서 롱 포지션이 있으면 JSON 업데이트 (trailing_stop_price 보존)
-        # 단, JSON의 진입가가 API 진입가보다 높으면 트레일링스탑 초기화로 갱신된 것이므로 덮어쓰지 않음
-        json_entry_price = json_long.get("entry_price", 0)
-        if (json_entry_price != entryPrice_l or json_long.get("amount", 0) != amt_l) and json_entry_price <= entryPrice_l:
-            # 기존 trailing_stop_price 보존
+        # API에서 롱 포지션이 있으면 JSON 업데이트 (trailing_stop_price와 entry_price_offset 보존)
+        if json_long.get("entry_price", 0) != entryPrice_l or json_long.get("amount", 0) != amt_l:
+            # 기존 trailing_stop_price와 entry_price_offset 보존
             existing_trailing = json_long.get("trailing_stop_price")
-            update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, existing_trailing)
-            logger.info(f"🔄 {Target_Coin_Symbol} JSON 롱 포지션 동기화: 진입가={entryPrice_l:.2f}, 수량={amt_l:.6f}, 트레일링스탑={existing_trailing}")
-        elif json_entry_price > entryPrice_l:
-            logger.info(f"🔄 {Target_Coin_Symbol} JSON 진입가({json_entry_price:.2f})가 API 진입가({entryPrice_l:.2f})보다 높음 - 트레일링스탑 초기화로 갱신된 것으로 판단하여 동기화 건너뜀")
+            existing_offset = json_long.get("entry_price_offset", 0)
+            update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, existing_trailing, existing_offset)
+            logger.info(f"🔄 {Target_Coin_Symbol} JSON 롱 포지션 동기화: 진입가={entryPrice_l:.2f}, 수량={amt_l:.6f}, 트레일링스탑={existing_trailing}, 보정값={existing_offset}")
     else:
         # API에서 롱 포지션이 없으면 JSON도 초기화
         if json_long.get("entry_price", 0) > 0:
@@ -703,9 +708,11 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         
         # 수동 청산으로 간주하고 손익 계산
         if coin_price > 0:
+            # 보정된 진입가 사용
+            old_adjusted_entry_price = old_entry_price + json_short.get("entry_price_offset", 0)
             # 숏 포지션: 가격 상승 시 손실, 하락 시 수익
-            pnl_pct = (old_entry_price - coin_price) / old_entry_price
-            estimated_pnl = old_amount * old_entry_price * pnl_pct
+            pnl_pct = (old_adjusted_entry_price - coin_price) / old_adjusted_entry_price
+            estimated_pnl = old_amount * old_adjusted_entry_price * pnl_pct
         else:
             # 현재가를 알 수 없는 경우 보수적으로 0으로 처리
             pnl_pct = 0
@@ -744,9 +751,11 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         
         # 수동 청산으로 간주하고 손익 계산
         if coin_price > 0:
+            # 보정된 진입가 사용
+            old_adjusted_entry_price = old_entry_price + json_long.get("entry_price_offset", 0)
             # 롱 포지션: 가격 상승 시 수익, 하락 시 손실
-            pnl_pct = (coin_price - old_entry_price) / old_entry_price
-            estimated_pnl = old_amount * old_entry_price * pnl_pct
+            pnl_pct = (coin_price - old_adjusted_entry_price) / old_adjusted_entry_price
+            estimated_pnl = old_amount * old_adjusted_entry_price * pnl_pct
         else:
             # 현재가를 알 수 없는 경우 보수적으로 0으로 처리
             pnl_pct = 0
@@ -782,7 +791,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         entry_price = float(data['average'])
         
         # 포지션 정보 저장 (코인별) - 트레일링스탑은 0.5% 수익 후 활성화
-        update_coin_position(dic, Target_Coin_Symbol, "short_position", entry_price, first_amount, None)
+        update_coin_position(dic, Target_Coin_Symbol, "short_position", entry_price, first_amount, None, 0)
         
         msg = f"🔻 {Target_Coin_Symbol} 숏 진입 | 가격: {entry_price:.2f}, 수량: {first_amount:.3f} | 트레일링스탑: 0.5% 수익 후 활성화"
         telegram_sender.SendMessage(msg)
@@ -794,7 +803,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         entry_price = float(data['average'])
         
         # 포지션 정보 저장 (코인별) - 트레일링스탑은 0.5% 수익 후 활성화
-        update_coin_position(dic, Target_Coin_Symbol, "long_position", entry_price, first_amount, None)
+        update_coin_position(dic, Target_Coin_Symbol, "long_position", entry_price, first_amount, None, 0)
         
         msg = f"🔺 {Target_Coin_Symbol} 롱 진입 | 가격: {entry_price:.2f}, 수량: {first_amount:.3f} | 트레일링스탑: 0.5% 수익 후 활성화"
         telegram_sender.SendMessage(msg)
@@ -804,8 +813,10 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     
     # 숏 포지션 체크 및 청산 (백테스트와 동일한 로직)
     if has_short and entryPrice_s > 0:
-        pnl_pct = (entryPrice_s - coin_price) / entryPrice_s
-        logger.info(f"🔍 숏 PnL 체크: 진입가 {entryPrice_s:.2f}, 현재가 {coin_price:.2f}, 수익률 {pnl_pct*100:.2f}%")
+        # 보정된 진입가 사용 (트레일링스탑 초기화 시 적용된 보정값)
+        adjusted_entry_price = entryPrice_s + json_short.get("entry_price_offset", 0)
+        pnl_pct = (adjusted_entry_price - coin_price) / adjusted_entry_price
+        logger.info(f"🔍 숏 PnL 체크: 원래진입가 {entryPrice_s:.2f}, 보정진입가 {adjusted_entry_price:.2f}, 현재가 {coin_price:.2f}, 수익률 {pnl_pct*100:.2f}%")
         
         # 청산 조건: 백테스트와 동일 (손절/익절/트레일링스탑)
         should_close = False
@@ -829,7 +840,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                 if json_short["trailing_stop_price"] is None:
                     # 초기 트레일링스탑 설정 (현재가 기준)
                     initial_trailing = coin_price * (1 + trailing_stop_ratio)
-                    update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, initial_trailing)
+                    update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, initial_trailing, json_short.get("entry_price_offset", 0))
                     logger.info(f"🔧 {Target_Coin_Symbol} 숏 트레일링스탑 초기 설정: {initial_trailing:.2f} (수익률: {pnl_pct*100:.2f}%)")
                 
                 # 동적 트레일링스탑 업데이트 (더 유리한 방향으로만)
@@ -837,7 +848,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     new_trailing = coin_price * (1 + trailing_stop_ratio)
                     if new_trailing < json_short["trailing_stop_price"]:
                         old_trailing = json_short["trailing_stop_price"]
-                        update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, new_trailing)
+                        update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, new_trailing, json_short.get("entry_price_offset", 0))
                         logger.info(f"🔧 {Target_Coin_Symbol} 숏 트레일링스탑 업데이트 - {old_trailing:.2f} → {new_trailing:.2f} (비율: {trailing_stop_ratio*100:.3f}%)")
                 
                 # 트레일링스탑 체크
@@ -858,8 +869,11 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                 
                 if has_short_signal:
                     # 숏 구매 요건이 있으면 트레일링스탑만 초기화하고 포지션 유지
-                    update_coin_position(dic, Target_Coin_Symbol, "short_position", coin_price, amt_s, None)
-                    msg = f"🔄 {Target_Coin_Symbol} 숏 트레일링스탑 초기화 | 진입: {coin_price:.2f}, 현재: {coin_price:.2f} | 숏 구매 요건 유지로 포지션 유지"
+                    # 진입가는 그대로 두고, 보정값만 업데이트
+                    current_offset = json_short.get("entry_price_offset", 0)
+                    new_offset = coin_price - entryPrice_s  # 현재가 - 원래진입가
+                    update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, None, new_offset)
+                    msg = f"🔄 {Target_Coin_Symbol} 숏 트레일링스탑 초기화 | 기존진입: {entryPrice_s:.2f} → 보정진입: {entryPrice_s + new_offset:.2f} | 숏 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
                     #telegram_sender.SendMessage(msg)
                     # 즉시 JSON 파일 저장
@@ -870,7 +884,9 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     # 숏 구매 요건이 없으면 실제 청산
                     data = binanceX.create_order(Target_Coin_Ticker, 'market', 'buy', round(abs(amt_s), 3), None, {'positionSide': 'SHORT'})
                     close_price = float(data['average'])
-                    profit = (entryPrice_s - close_price) * abs(amt_s) - (close_price * abs(amt_s) * charge * 2)
+                    # 보정된 진입가로 손익 계산
+                    adjusted_entry_price = entryPrice_s + json_short.get("entry_price_offset", 0)
+                    profit = (adjusted_entry_price - close_price) * abs(amt_s) - (close_price * abs(amt_s) * charge * 2)
                     
                     dic["today"] += profit
                     clear_coin_position(dic, Target_Coin_Symbol, "short_position")
@@ -880,7 +896,9 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                 # 손절 등 다른 이유로 청산한 경우 실제 청산
                 data = binanceX.create_order(Target_Coin_Ticker, 'market', 'buy', round(abs(amt_s), 3), None, {'positionSide': 'SHORT'})
                 close_price = float(data['average'])
-                profit = (entryPrice_s - close_price) * abs(amt_s) - (close_price * abs(amt_s) * charge * 2)
+                # 보정된 진입가로 손익 계산
+                adjusted_entry_price = entryPrice_s + json_short.get("entry_price_offset", 0)
+                profit = (adjusted_entry_price - close_price) * abs(amt_s) - (close_price * abs(amt_s) * charge * 2)
                 
                 dic["today"] += profit
                 clear_coin_position(dic, Target_Coin_Symbol, "short_position")
@@ -891,8 +909,10 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     
     # 롱 포지션 체크 및 청산 (백테스트와 동일한 로직)
     if has_long and entryPrice_l > 0:
-        pnl_pct = (coin_price - entryPrice_l) / entryPrice_l
-        logger.info(f"🔍 롱 PnL 체크: 진입가 {entryPrice_l:.2f}, 현재가 {coin_price:.2f}, 수익률 {pnl_pct*100:.2f}%")
+        # 보정된 진입가 사용 (트레일링스탑 초기화 시 적용된 보정값)
+        adjusted_entry_price = entryPrice_l + json_long.get("entry_price_offset", 0)
+        pnl_pct = (coin_price - adjusted_entry_price) / adjusted_entry_price
+        logger.info(f"🔍 롱 PnL 체크: 원래진입가 {entryPrice_l:.2f}, 보정진입가 {adjusted_entry_price:.2f}, 현재가 {coin_price:.2f}, 수익률 {pnl_pct*100:.2f}%")
         
         # 청산 조건: 백테스트와 동일 (손절/익절/트레일링스탑)
         should_close = False
@@ -916,7 +936,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                 if json_long["trailing_stop_price"] is None:
                     # 초기 트레일링스탑 설정 (현재가 기준)
                     initial_trailing = coin_price * (1 - trailing_stop_ratio)
-                    update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, initial_trailing)
+                    update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, initial_trailing, json_long.get("entry_price_offset", 0))
                     logger.info(f"🔧 {Target_Coin_Symbol} 롱 트레일링스탑 초기 설정: {initial_trailing:.2f} (수익률: {pnl_pct*100:.2f}%)")
                 
                 # 동적 트레일링스탑 업데이트 (더 유리한 방향으로만)
@@ -924,7 +944,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     new_trailing = coin_price * (1 - trailing_stop_ratio)
                     if new_trailing > json_long["trailing_stop_price"]:
                         old_trailing = json_long["trailing_stop_price"]
-                        update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, new_trailing)
+                        update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, new_trailing, json_long.get("entry_price_offset", 0))
                         logger.info(f"🔧 {Target_Coin_Symbol} 롱 트레일링스탑 업데이트 - {old_trailing:.2f} → {new_trailing:.2f} (비율: {trailing_stop_ratio*100:.3f}%)")
                 
                 # 트레일링스탑 체크
@@ -945,9 +965,11 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                 
                 if has_long_signal:
                     # 롱 구매 요건이 있으면 트레일링스탑만 초기화하고 포지션 유지
-                    # 현재가로 진입가를 갱신하여 새로운 진입가로 설정
-                    update_coin_position(dic, Target_Coin_Symbol, "long_position", coin_price, amt_l, None)
-                    msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 기존진입: {entryPrice_l:.2f} → 새진입: {coin_price:.2f} | 롱 구매 요건 유지로 포지션 유지"
+                    # 진입가는 그대로 두고, 보정값만 업데이트
+                    current_offset = json_long.get("entry_price_offset", 0)
+                    new_offset = coin_price - entryPrice_l  # 현재가 - 원래진입가
+                    update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, None, new_offset)
+                    msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 기존진입: {entryPrice_l:.2f} → 보정진입: {entryPrice_l + new_offset:.2f} | 롱 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
                     #telegram_sender.SendMessage(msg)
                     # 즉시 JSON 파일 저장
@@ -958,7 +980,9 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     # 롱 구매 요건이 없으면 실제 청산
                     data = binanceX.create_order(Target_Coin_Ticker, 'market', 'sell', round(abs(amt_l), 3), None, {'positionSide': 'LONG'})
                     close_price = float(data['average'])
-                    profit = (close_price - entryPrice_l) * abs(amt_l) - (close_price * abs(amt_l) * charge * 2)
+                    # 보정된 진입가로 손익 계산
+                    adjusted_entry_price = entryPrice_l + json_long.get("entry_price_offset", 0)
+                    profit = (close_price - adjusted_entry_price) * abs(amt_l) - (close_price * abs(amt_l) * charge * 2)
                     
                     dic["today"] += profit
                     clear_coin_position(dic, Target_Coin_Symbol, "long_position")
@@ -968,7 +992,9 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                 # 손절 등 다른 이유로 청산한 경우 실제 청산
                 data = binanceX.create_order(Target_Coin_Ticker, 'market', 'sell', round(abs(amt_l), 3), None, {'positionSide': 'LONG'})
                 close_price = float(data['average'])
-                profit = (close_price - entryPrice_l) * abs(amt_l) - (close_price * abs(amt_l) * charge * 2)
+                # 보정된 진입가로 손익 계산
+                adjusted_entry_price = entryPrice_l + json_long.get("entry_price_offset", 0)
+                profit = (close_price - adjusted_entry_price) * abs(amt_l) - (close_price * abs(amt_l) * charge * 2)
                 
                 dic["today"] += profit
                 clear_coin_position(dic, Target_Coin_Symbol, "long_position")
@@ -1015,9 +1041,13 @@ if today.hour == 8 and today.minute == 0:
             total_positions += 1
             msg += f"\n{coin_symbol}: "
             if coin_short.get("amount", 0) > 0:
-                msg += f"숏 {coin_short['amount']:.3f} "
+                offset_s = coin_short.get("entry_price_offset", 0)
+                adjusted_entry_s = coin_short.get("entry_price", 0) + offset_s
+                msg += f"숏 {coin_short['amount']:.3f} (진입: {coin_short['entry_price']:.2f}→{adjusted_entry_s:.2f}) "
             if coin_long.get("amount", 0) > 0:
-                msg += f"롱 {coin_long['amount']:.3f}"
+                offset_l = coin_long.get("entry_price_offset", 0)
+                adjusted_entry_l = coin_long.get("entry_price", 0) + offset_l
+                msg += f"롱 {coin_long['amount']:.3f} (진입: {coin_long['entry_price']:.2f}→{adjusted_entry_l:.2f})"
     
     if total_positions == 0:
         msg += "\n포지션 없음"
