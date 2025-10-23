@@ -855,6 +855,9 @@ def main():
     # 구매중 포지션 상태 업데이트 (구매중 → 보유중)
     update_pending_to_held_positions(ledger)
     
+    # 상태 변경사항을 JSON 파일에 즉시 저장
+    save_positions(ledger)
+    
     # 구매중 포지션 정리 (다음날 삭제)
     check_and_cleanup_pending_positions(ledger, current_date)
     

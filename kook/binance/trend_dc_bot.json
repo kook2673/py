@@ -1,6 +1,6 @@
 {
     "yesterday": -1.3419387000000143,
-    "today": -10.587136900000008,
+    "today": -8.907172900000006,
     "start_money": 841.21488562,
     "my_money": 839.87294692,
     "long_position": {
@@ -39,9 +39,9 @@
         },
         "ETHUSDT": {
             "long_position": {
-                "entry_price": 3781.87,
-                "amount": 0.033,
-                "trailing_stop_price": 3808.70949
+                "entry_price": 3815.54,
+                "amount": 0.032,
+                "trailing_stop_price": null
             },
             "short_position": {
                 "entry_price": 0,
@@ -65,7 +65,7 @@
             "long_position": {
                 "entry_price": 180.42,
                 "amount": 0.69,
-                "trailing_stop_price": 178.61579999999998
+                "trailing_stop_price": 180.96065000000002
             },
             "short_position": {
                 "entry_price": 0,
@@ -75,9 +75,9 @@
         },
         "DOGEUSDT": {
             "long_position": {
-                "entry_price": 0.18908,
-                "amount": 660.0,
-                "trailing_stop_price": 0.18983604999999998
+                "entry_price": 0.19042,
+                "amount": 655.0,
+                "trailing_stop_price": null
             },
             "short_position": {
                 "entry_price": 0,
