@@ -1,6 +1,6 @@
 {
     "yesterday": -1.3419387000000143,
-    "today": -3.485310699999991,
+    "today": -10.587136900000008,
     "start_money": 841.21488562,
     "my_money": 839.87294692,
     "long_position": {
@@ -32,57 +32,57 @@
                 "trailing_stop_price": null
             },
             "short_position": {
-                "entry_price": 106662.7,
-                "amount": 0.001,
-                "trailing_stop_price": 107729.327
+                "entry_price": 0,
+                "amount": 0,
+                "trailing_stop_price": null
             }
         },
         "ETHUSDT": {
             "long_position": {
+                "entry_price": 3781.87,
+                "amount": 0.033,
+                "trailing_stop_price": 3808.70949
+            },
+            "short_position": {
                 "entry_price": 0,
                 "amount": 0,
                 "trailing_stop_price": null
-            },
-            "short_position": {
-                "entry_price": 3751.58,
-                "amount": 0.033,
-                "trailing_stop_price": 3789.0958
             }
         },
         "XRPUSDT": {
             "long_position": {
+                "entry_price": 2.3704,
+                "amount": 52.6,
+                "trailing_stop_price": 2.346696
+            },
+            "short_position": {
                 "entry_price": 0,
                 "amount": 0,
                 "trailing_stop_price": null
-            },
-            "short_position": {
-                "entry_price": 2.3462,
-                "amount": 53.4,
-                "trailing_stop_price": 2.369662
             }
         },
         "SOLUSDT": {
             "long_position": {
+                "entry_price": 180.42,
+                "amount": 0.69,
+                "trailing_stop_price": 178.61579999999998
+            },
+            "short_position": {
                 "entry_price": 0,
                 "amount": 0,
                 "trailing_stop_price": null
-            },
-            "short_position": {
-                "entry_price": 178.72,
-                "amount": 0.7,
-                "trailing_stop_price": 180.5072
             }
         },
         "DOGEUSDT": {
             "long_position": {
+                "entry_price": 0.18908,
+                "amount": 660.0,
+                "trailing_stop_price": 0.18983604999999998
+            },
+            "short_position": {
                 "entry_price": 0,
                 "amount": 0,
                 "trailing_stop_price": null
-            },
-            "short_position": {
-                "entry_price": 0.18788,
-                "amount": 667.0,
-                "trailing_stop_price": 0.1897588
             }
         }
     }
