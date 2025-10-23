@@ -30,7 +30,7 @@
     "slippage_bps": 0.0,
     "monthly_update_day": 1,
     "initial_allocation": 10153198.799999999,
-    "current_allocation": 5199156.0,
+    "current_allocation": 5184435.3,
     "realized_profit": 500.0,
     "test_type": "crossing",
     "use_market_filter": true,
@@ -38,5 +38,5 @@
     "initial_threshold_reduction": 0.15,
     "initial_asset_1": 17007316.0,
     "initial_asset_2": 17007316.0,
-    "current_total_asset": 17330520.0
+    "current_total_asset": 17281451.0
 }

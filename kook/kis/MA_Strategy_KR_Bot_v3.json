@@ -4,14 +4,14 @@
     "description": "이동평균자산배분전략_KR",
     "auto_equal_distribution": true,
     "initial_allocation": 5269182,
-    "current_allocation": 5344644.0,
-    "total_holding_value": 3173911.0,
-    "cash_balance": 2170733.0,
+    "current_allocation": 5354298.0,
+    "total_holding_value": 3166451.0,
+    "cash_balance": 2187847.0,
     "total_sold_profit": 0,
     "daily_sold_profit": 0,
     "monthly_sold_profit": 0,
     "yearly_sold_profit": 0,
-    "last_daily_reset": "2025-10-21",
+    "last_daily_reset": "2025-10-23",
     "last_monthly_reset": "2025-10",
     "last_yearly_reset": "2025",
     "holdings": [
@@ -19,111 +19,101 @@
             "stock_code": "0048K0",
             "stock_name": "KODEX 차이나휴머노이드로봇",
             "purchase_price": 11121.4286,
-            "current_price": 10875.0,
+            "current_price": 10745.0,
             "quantity": 14,
-            "profit_rate": -2.21,
-            "current_value": 152250.0,
-            "profit_loss": -3450.0
+            "profit_rate": -3.38,
+            "current_value": 150430.0,
+            "profit_loss": -5270.0
         },
         {
             "stock_code": "069500",
             "stock_name": "KODEX 200",
             "purchase_price": 50838.3333,
-            "current_price": 53680.0,
+            "current_price": 53885.0,
             "quantity": 3,
-            "profit_rate": 5.58,
-            "current_value": 161040.0,
-            "profit_loss": 8525.0
+            "profit_rate": 5.99,
+            "current_value": 161655.0,
+            "profit_loss": 9140.0
         },
         {
             "stock_code": "132030",
             "stock_name": "KODEX 골드선물(H)",
-            "purchase_price": 24472.8571,
-            "current_price": 25280.0,
-            "quantity": 7,
-            "profit_rate": 3.29,
-            "current_value": 176960.0,
-            "profit_loss": 5650.0
-        },
-        {
-            "stock_code": "144600",
-            "stock_name": "KODEX 은선물(H)",
-            "purchase_price": 8825.0,
-            "current_price": 8700.0,
-            "quantity": 21,
-            "profit_rate": -1.41,
-            "current_value": 182700.0,
-            "profit_loss": -2625.0
+            "purchase_price": 24251.4286,
+            "current_price": 23960.0,
+            "quantity": 14,
+            "profit_rate": -1.2,
+            "current_value": 335440.0,
+            "profit_loss": -4080.0
         },
         {
             "stock_code": "148070",
             "stock_name": "KIWOOM 국고채10년",
             "purchase_price": 117080.0,
-            "current_price": 116850.0,
+            "current_price": 116775.0,
             "quantity": 2,
-            "profit_rate": -0.19,
-            "current_value": 233700.0,
-            "profit_loss": -460.0
+            "profit_rate": -0.26,
+            "current_value": 233550.0,
+            "profit_loss": -610.0
         },
         {
             "stock_code": "192090",
             "stock_name": "TIGER 차이나CSI300",
             "purchase_price": 12125.0,
-            "current_price": 12285.0,
+            "current_price": 12295.0,
             "quantity": 15,
-            "profit_rate": 1.31,
-            "current_value": 184275.0,
-            "profit_loss": 2400.0
+            "profit_rate": 1.4,
+            "current_value": 184425.0,
+            "profit_loss": 2550.0
         },
         {
             "stock_code": "266160",
             "stock_name": "RISE 고배당",
             "purchase_price": 18185.0,
-            "current_price": 18955.0,
+            "current_price": 18895.0,
             "quantity": 10,
-            "profit_rate": 4.23,
-            "current_value": 189550.0,
-            "profit_loss": 7700.0
+            "profit_rate": 3.9,
+            "current_value": 188950.0,
+            "profit_loss": 7100.0
         },
         {
             "stock_code": "305080",
             "stock_name": "TIGER 미국채10년선물",
             "purchase_price": 13081.7857,
-            "current_price": 13130.0,
+            "current_price": 13275.0,
             "quantity": 14,
-            "profit_rate": 0.36,
-            "current_value": 183820.0,
-            "profit_loss": 675.0
+            "profit_rate": 1.47,
+            "current_value": 185850.0,
+            "profit_loss": 2705.0
         },
         {
             "stock_code": "305720",
             "stock_name": "KODEX 2차전지산업",
             "purchase_price": 12495.0,
-            "current_price": 14720.0,
+            "current_price": 15190.0,
             "quantity": 15,
-            "profit_rate": 17.8,
-            "current_value": 220800.0,
-            "profit_loss": 33375.0
+            "profit_rate": 21.56,
+            "current_value": 227850.0,
+            "profit_loss": 40425.0
         },
         {
             "stock_code": "329200",
             "stock_name": "TIGER 리츠부동산인프라",
             "purchase_price": 4365.0,
-            "current_price": 4362.0,
+            "current_price": 4372.0,
             "quantity": 43,
-            "profit_rate": -0.06,
-            "current_value": 187566.0,
-            "profit_loss": -129.0
+            "profit_rate": 0.16,
+            "current_value": 187996.0,
+            "profit_loss": 301.0
         },
         {
             "stock_code": "371460",
             "stock_name": "TIGER 차이나전기차SOLACTIVE",
             "purchase_price": 12555.0,
-            "current_price": 12695.0,
+            "current_price": 12680.0,
             "quantity": 14,
-            "profit_rate": 1.11,
-            "current_value": 177730.0,
-            "profit_loss": 1960.0
+            "profit_rate": 0.99,
+            "current_value": 177520.0,
+            "profit_loss": 1750.0
         },
         {
             "stock_code": "396500",
@@ -139,51 +129,51 @@
             "stock_code": "411420",
             "stock_name": "KODEX 미국나스닥AI테크액티브",
             "purchase_price": 20406.6667,
-            "current_price": 20245.0,
+            "current_price": 19780.0,
             "quantity": 9,
-            "profit_rate": -0.79,
-            "current_value": 182205.0,
-            "profit_loss": -1455.0
+            "profit_rate": -3.07,
+            "current_value": 178020.0,
+            "profit_loss": -5640.0
         },
         {
             "stock_code": "445150",
             "stock_name": "KODEX 친환경조선해운액티브",
             "purchase_price": 30145.0,
-            "current_price": 31480.0,
+            "current_price": 32410.0,
             "quantity": 6,
-            "profit_rate": 4.42,
-            "current_value": 188880.0,
-            "profit_loss": 8010.0
+            "profit_rate": 7.51,
+            "current_value": 194460.0,
+            "profit_loss": 13590.0
         },
         {
             "stock_code": "448300",
             "stock_name": "TIGER 미국나스닥100(H)",
             "purchase_price": 19600.0,
-            "current_price": 19960.0,
+            "current_price": 19800.0,
             "quantity": 9,
-            "profit_rate": 1.83,
-            "current_value": 179640.0,
-            "profit_loss": 3240.0
+            "profit_rate": 1.02,
+            "current_value": 178200.0,
+            "profit_loss": 1800.0
         },
         {
             "stock_code": "463250",
             "stock_name": "TIGER K방산&우주",
             "purchase_price": 30388.3333,
-            "current_price": 30110.0,
+            "current_price": 31795.0,
             "quantity": 6,
-            "profit_rate": -0.91,
-            "current_value": 180660.0,
-            "profit_loss": -1669.0
+            "profit_rate": 4.62,
+            "current_value": 190770.0,
+            "profit_loss": 8440.0
         },
         {
             "stock_code": "466940",
             "stock_name": "TIGER 은행고배당플러스TOP10",
             "purchase_price": 19670.0,
-            "current_price": 20035.0,
+            "current_price": 19955.0,
             "quantity": 10,
-            "profit_rate": 1.85,
-            "current_value": 200350.0,
-            "profit_loss": 3650.0
+            "profit_rate": 1.44,
+            "current_value": 199550.0,
+            "profit_loss": 2850.0
         }
     ],
     "invest_stock_list": [

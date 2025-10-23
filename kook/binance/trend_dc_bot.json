@@ -1,6 +1,6 @@
 {
     "yesterday": -1.3419387000000143,
-    "today": -8.907172900000006,
+    "today": -1.508880970000007,
     "start_money": 841.21488562,
     "my_money": 839.87294692,
     "long_position": {
@@ -27,8 +27,8 @@
     "positions": {
         "BTCUSDT": {
             "long_position": {
-                "entry_price": 0,
-                "amount": 0,
+                "entry_price": 109815.8,
+                "amount": 0.001,
                 "trailing_stop_price": null
             },
             "short_position": {
@@ -39,9 +39,9 @@
         },
         "ETHUSDT": {
             "long_position": {
-                "entry_price": 3815.54,
+                "entry_price": 3877.86,
                 "amount": 0.032,
-                "trailing_stop_price": null
+                "trailing_stop_price": 3880.37065
             },
             "short_position": {
                 "entry_price": 0,
@@ -51,9 +51,9 @@
         },
         "XRPUSDT": {
             "long_position": {
-                "entry_price": 2.3704,
-                "amount": 52.6,
-                "trailing_stop_price": 2.346696
+                "entry_price": 2.4091,
+                "amount": 52.4,
+                "trailing_stop_price": null
             },
             "short_position": {
                 "entry_price": 0,
@@ -63,9 +63,9 @@
         },
         "SOLUSDT": {
             "long_position": {
-                "entry_price": 180.42,
-                "amount": 0.69,
-                "trailing_stop_price": 180.96065000000002
+                "entry_price": 187.7,
+                "amount": 0.68,
+                "trailing_stop_price": null
             },
             "short_position": {
                 "entry_price": 0,
@@ -75,8 +75,8 @@
         },
         "DOGEUSDT": {
             "long_position": {
-                "entry_price": 0.19042,
-                "amount": 655.0,
+                "entry_price": 0.19413,
+                "amount": 650.0,
                 "trailing_stop_price": null
             },
             "short_position": {

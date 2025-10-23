@@ -1,0 +1,24 @@
+2025-10-23 15:00:59,252 - INFO - 날짜 2025-10-23 : 장이 열려있습니다.
+2025-10-23 15:00:59,262 - INFO - 총 평가금액: 17,284,329원, 전략3 할당: 1,728,433원 (10.0%)
+2025-10-23 15:01:05,766 - INFO - KOSPI 1Y High=3,883.68 (2025-10-22), Current=3,844.97 (-1.00%)
+2025-10-23 15:01:06,941 - INFO - 메모리 정리 완료: 560개 객체 수집, 현재 사용량: 163.39 MB
+Error Code : 500 | {"rt_cd":"1","msg1":"기간이 만료된 token 입니다.","msg_cd":"EGW00123"}
+토큰이 만료되었습니다. 토큰을 재발급합니다.
+TOKEN :  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b2tlbiIsImF1ZCI6ImRiNzkxMTM2LWIwZWUtNDc3My04ZDFjLTg5ZGY1MDZhYWJlYyIsInByZHRfY2QiOiIiLCJpc3MiOiJ1bm9ndyIsImV4cCI6MTc2MTI4NTY1NywiaWF0IjoxNzYxMTk5MjU3LCJqdGkiOiJQU2NKVDdxWXdacEI1Y25HM2VzbU1DazN3QndQanBnM0xQQjEifQ.T82FXa-MFXTp1dHXbWIPH1CijwA2QNOBE2wP2YxzoqLnCl-ZXCuyDU2CNuHFAdq8z5z5XeO93M81EgGRDlQY0Q
+---> CTX_AREA_FK100:  43150882^01^N^N^01^01^N^
+datetime.datetime(2025, 10, 23, 15, 0, 59, 252470, tzinfo=<DstTzInfo 'Asia/Seoul' KST+9:00:00 STD>)
+Time is OK... but one more checked!!!
+Market is Open (Already Checked)!!!!
+datetime.datetime(2025, 10, 23, 15, 1, 5, 766558, tzinfo=<DstTzInfo 'Asia/Seoul' KST+9:00:00 STD>)
+Time is OK... but one more checked!!!
+Market is Open (Already Checked)!!!!
+✅ [성공] 메시지 전송 완료: 📊 [KOSPI하락시2배롱전략]
+상세 수익 현황 (2025-10-23 15:01:05)
+=...
+
+==== [2025-10-23 15:00:55] Run: KOSPIDrawdown.py ====
+CWD: C:\work\GitHub\py\webserver
+Python: C:\Users\kook-minipc\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+
+==== Exit code: 0 ====
+==== End of run ===
