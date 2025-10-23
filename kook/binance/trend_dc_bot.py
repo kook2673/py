@@ -658,11 +658,15 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     # API에서 포지션이 확인되면 JSON도 업데이트
     if has_short:
         # API에서 숏 포지션이 있으면 JSON 업데이트 (trailing_stop_price 보존)
-        if json_short.get("entry_price", 0) != entryPrice_s or json_short.get("amount", 0) != amt_s:
+        # 단, JSON의 진입가가 API 진입가보다 낮으면 트레일링스탑 초기화로 갱신된 것이므로 덮어쓰지 않음
+        json_entry_price = json_short.get("entry_price", 0)
+        if (json_entry_price != entryPrice_s or json_short.get("amount", 0) != amt_s) and json_entry_price >= entryPrice_s:
             # 기존 trailing_stop_price 보존
             existing_trailing = json_short.get("trailing_stop_price")
             update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, existing_trailing)
             logger.info(f"🔄 {Target_Coin_Symbol} JSON 숏 포지션 동기화: 진입가={entryPrice_s:.2f}, 수량={amt_s:.6f}, 트레일링스탑={existing_trailing}")
+        elif json_entry_price < entryPrice_s:
+            logger.info(f"🔄 {Target_Coin_Symbol} JSON 진입가({json_entry_price:.2f})가 API 진입가({entryPrice_s:.2f})보다 낮음 - 트레일링스탑 초기화로 갱신된 것으로 판단하여 동기화 건너뜀")
     else:
         # API에서 숏 포지션이 없으면 JSON도 초기화
         if json_short.get("entry_price", 0) > 0:
@@ -671,11 +675,15 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     
     if has_long:
         # API에서 롱 포지션이 있으면 JSON 업데이트 (trailing_stop_price 보존)
-        if json_long.get("entry_price", 0) != entryPrice_l or json_long.get("amount", 0) != amt_l:
+        # 단, JSON의 진입가가 API 진입가보다 높으면 트레일링스탑 초기화로 갱신된 것이므로 덮어쓰지 않음
+        json_entry_price = json_long.get("entry_price", 0)
+        if (json_entry_price != entryPrice_l or json_long.get("amount", 0) != amt_l) and json_entry_price <= entryPrice_l:
             # 기존 trailing_stop_price 보존
             existing_trailing = json_long.get("trailing_stop_price")
             update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, existing_trailing)
             logger.info(f"🔄 {Target_Coin_Symbol} JSON 롱 포지션 동기화: 진입가={entryPrice_l:.2f}, 수량={amt_l:.6f}, 트레일링스탑={existing_trailing}")
+        elif json_entry_price > entryPrice_l:
+            logger.info(f"🔄 {Target_Coin_Symbol} JSON 진입가({json_entry_price:.2f})가 API 진입가({entryPrice_l:.2f})보다 높음 - 트레일링스탑 초기화로 갱신된 것으로 판단하여 동기화 건너뜀")
     else:
         # API에서 롱 포지션이 없으면 JSON도 초기화
         if json_long.get("entry_price", 0) > 0:
@@ -937,8 +945,9 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                 
                 if has_long_signal:
                     # 롱 구매 요건이 있으면 트레일링스탑만 초기화하고 포지션 유지
+                    # 현재가로 진입가를 갱신하여 새로운 진입가로 설정
                     update_coin_position(dic, Target_Coin_Symbol, "long_position", coin_price, amt_l, None)
-                    msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 진입: {coin_price:.2f}, 현재: {coin_price:.2f} | 롱 구매 요건 유지로 포지션 유지"
+                    msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 기존진입: {entryPrice_l:.2f} → 새진입: {coin_price:.2f} | 롱 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
                     #telegram_sender.SendMessage(msg)
                     # 즉시 JSON 파일 저장
