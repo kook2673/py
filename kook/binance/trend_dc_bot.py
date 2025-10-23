@@ -842,20 +842,36 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         
         # 청산 실행
         if should_close:
-            data = binanceX.create_order(Target_Coin_Ticker, 'market', 'buy', round(abs(amt_s), 3), None, {'positionSide': 'SHORT'})
-            close_price = float(data['average'])
-            profit = (entryPrice_s - close_price) * abs(amt_s) - (close_price * abs(amt_s) * charge * 2)
-            
-            dic["today"] += profit
-            
-            # 트레일링스탑으로 청산한 경우 포지션 유지, 트레일링스탑만 초기화
+            # 트레일링스탑으로 청산하는 경우, 숏 구매 요건 확인
             if "트레일링스탑" in close_reason:
-                # 포지션 정보는 유지하고 트레일링스탑만 초기화
-                update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, None)
-                msg = f"✅ {Target_Coin_Symbol} 숏 청산 ({close_reason}) | 진입: {entryPrice_s:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
-                msg += f"\n🔄 포지션 유지, 트레일링스탑 초기화"
+                # 현재 숏 구매 요건 확인
+                current_row = df_with_signals.iloc[-1] if len(df_with_signals) > 0 else None
+                has_short_signal = current_row is not None and current_row.get('short_signal', False)
+                
+                if has_short_signal:
+                    # 숏 구매 요건이 있으면 트레일링스탑만 초기화하고 포지션 유지
+                    update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, None)
+                    msg = f"🔄 {Target_Coin_Symbol} 숏 트레일링스탑 초기화 | 진입: {entryPrice_s:.2f}, 현재: {coin_price:.2f} | 숏 구매 요건 유지로 포지션 유지"
+                    logger.info(msg)
+                    telegram_sender.SendMessage(msg)
+                    # 실제 청산하지 않고 다음 루프로
+                else:
+                    # 숏 구매 요건이 없으면 실제 청산
+                    data = binanceX.create_order(Target_Coin_Ticker, 'market', 'buy', round(abs(amt_s), 3), None, {'positionSide': 'SHORT'})
+                    close_price = float(data['average'])
+                    profit = (entryPrice_s - close_price) * abs(amt_s) - (close_price * abs(amt_s) * charge * 2)
+                    
+                    dic["today"] += profit
+                    clear_coin_position(dic, Target_Coin_Symbol, "short_position")
+                    msg = f"✅ {Target_Coin_Symbol} 숏 청산 ({close_reason}) | 진입: {entryPrice_s:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
+                    msg += f"\n📉 숏 구매 요건 없음으로 완전 청산"
             else:
-                # 손절 등 다른 이유로 청산한 경우 포지션 완전 초기화
+                # 손절 등 다른 이유로 청산한 경우 실제 청산
+                data = binanceX.create_order(Target_Coin_Ticker, 'market', 'buy', round(abs(amt_s), 3), None, {'positionSide': 'SHORT'})
+                close_price = float(data['average'])
+                profit = (entryPrice_s - close_price) * abs(amt_s) - (close_price * abs(amt_s) * charge * 2)
+                
+                dic["today"] += profit
                 clear_coin_position(dic, Target_Coin_Symbol, "short_position")
                 msg = f"✅ {Target_Coin_Symbol} 숏 청산 ({close_reason}) | 진입: {entryPrice_s:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
             
@@ -910,20 +926,36 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         
         # 청산 실행
         if should_close:
-            data = binanceX.create_order(Target_Coin_Ticker, 'market', 'sell', round(abs(amt_l), 3), None, {'positionSide': 'LONG'})
-            close_price = float(data['average'])
-            profit = (close_price - entryPrice_l) * abs(amt_l) - (close_price * abs(amt_l) * charge * 2)
-            
-            dic["today"] += profit
-            
-            # 트레일링스탑으로 청산한 경우 포지션 유지, 트레일링스탑만 초기화
+            # 트레일링스탑으로 청산하는 경우, 롱 구매 요건 확인
             if "트레일링스탑" in close_reason:
-                # 포지션 정보는 유지하고 트레일링스탑만 초기화
-                update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, None)
-                msg = f"✅ {Target_Coin_Symbol} 롱 청산 ({close_reason}) | 진입: {entryPrice_l:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
-                msg += f"\n🔄 포지션 유지, 트레일링스탑 초기화"
+                # 현재 롱 구매 요건 확인
+                current_row = df_with_signals.iloc[-1] if len(df_with_signals) > 0 else None
+                has_long_signal = current_row is not None and current_row.get('long_signal', False)
+                
+                if has_long_signal:
+                    # 롱 구매 요건이 있으면 트레일링스탑만 초기화하고 포지션 유지
+                    update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, None)
+                    msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 진입: {entryPrice_l:.2f}, 현재: {coin_price:.2f} | 롱 구매 요건 유지로 포지션 유지"
+                    logger.info(msg)
+                    telegram_sender.SendMessage(msg)
+                    # 실제 청산하지 않고 다음 루프로
+                else:
+                    # 롱 구매 요건이 없으면 실제 청산
+                    data = binanceX.create_order(Target_Coin_Ticker, 'market', 'sell', round(abs(amt_l), 3), None, {'positionSide': 'LONG'})
+                    close_price = float(data['average'])
+                    profit = (close_price - entryPrice_l) * abs(amt_l) - (close_price * abs(amt_l) * charge * 2)
+                    
+                    dic["today"] += profit
+                    clear_coin_position(dic, Target_Coin_Symbol, "long_position")
+                    msg = f"✅ {Target_Coin_Symbol} 롱 청산 ({close_reason}) | 진입: {entryPrice_l:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
+                    msg += f"\n📈 롱 구매 요건 없음으로 완전 청산"
             else:
-                # 손절 등 다른 이유로 청산한 경우 포지션 완전 초기화
+                # 손절 등 다른 이유로 청산한 경우 실제 청산
+                data = binanceX.create_order(Target_Coin_Ticker, 'market', 'sell', round(abs(amt_l), 3), None, {'positionSide': 'LONG'})
+                close_price = float(data['average'])
+                profit = (close_price - entryPrice_l) * abs(amt_l) - (close_price * abs(amt_l) * charge * 2)
+                
+                dic["today"] += profit
                 clear_coin_position(dic, Target_Coin_Symbol, "long_position")
                 msg = f"✅ {Target_Coin_Symbol} 롱 청산 ({close_reason}) | 진입: {entryPrice_l:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
             

@@ -370,20 +370,6 @@
             "last_ma_updated": "2025-10-15 12:12:19"
         },
         {
-            "stock_code": "144600",
-            "stock_name": "KODEX 은선물(H)",
-            "small_ma": 15,
-            "big_ma": 31,
-            "fix_rate": 0.5,
-            "dynamic_rate": 0.5,
-            "revenue_rate": 58.7655350469209,
-            "mdd": 0,
-            "try_cnt": 11,
-            "success_cnt": 6,
-            "fail_cnt": 5,
-            "last_ma_updated": "2025-10-15 12:12:20"
-        },
-        {
             "stock_code": "466940",
             "stock_name": "TIGER 은행고배당플러스TOP10",
             "small_ma": 12,
