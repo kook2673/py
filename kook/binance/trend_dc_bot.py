@@ -853,7 +853,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     update_coin_position(dic, Target_Coin_Symbol, "short_position", coin_price, amt_s, None)
                     msg = f"🔄 {Target_Coin_Symbol} 숏 트레일링스탑 초기화 | 진입: {coin_price:.2f}, 현재: {coin_price:.2f} | 숏 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
-                    telegram_sender.SendMessage(msg)
+                    #telegram_sender.SendMessage(msg)
                     # 실제 청산하지 않고 다음 루프로
                 else:
                     # 숏 구매 요건이 없으면 실제 청산
@@ -937,7 +937,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     update_coin_position(dic, Target_Coin_Symbol, "long_position", coin_price, amt_l, None)
                     msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 진입: {coin_price:.2f}, 현재: {coin_price:.2f} | 롱 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
-                    telegram_sender.SendMessage(msg)
+                    #telegram_sender.SendMessage(msg)
                     # 실제 청산하지 않고 다음 루프로
                 else:
                     # 롱 구매 요건이 없으면 실제 청산
