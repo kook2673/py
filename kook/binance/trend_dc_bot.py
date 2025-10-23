@@ -847,9 +847,18 @@ for Target_Coin_Ticker in Coin_Ticker_List:
             profit = (entryPrice_s - close_price) * abs(amt_s) - (close_price * abs(amt_s) * charge * 2)
             
             dic["today"] += profit
-            clear_coin_position(dic, Target_Coin_Symbol, "short_position")
             
-            msg = f"✅ {Target_Coin_Symbol} 숏 청산 ({close_reason}) | 진입: {entryPrice_s:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
+            # 트레일링스탑으로 청산한 경우 포지션 유지, 트레일링스탑만 초기화
+            if "트레일링스탑" in close_reason:
+                # 포지션 정보는 유지하고 트레일링스탑만 초기화
+                update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, None)
+                msg = f"✅ {Target_Coin_Symbol} 숏 청산 ({close_reason}) | 진입: {entryPrice_s:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
+                msg += f"\n🔄 포지션 유지, 트레일링스탑 초기화"
+            else:
+                # 손절 등 다른 이유로 청산한 경우 포지션 완전 초기화
+                clear_coin_position(dic, Target_Coin_Symbol, "short_position")
+                msg = f"✅ {Target_Coin_Symbol} 숏 청산 ({close_reason}) | 진입: {entryPrice_s:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
+            
             telegram_sender.SendMessage(msg)
             logger.info(msg)
     
@@ -906,9 +915,18 @@ for Target_Coin_Ticker in Coin_Ticker_List:
             profit = (close_price - entryPrice_l) * abs(amt_l) - (close_price * abs(amt_l) * charge * 2)
             
             dic["today"] += profit
-            clear_coin_position(dic, Target_Coin_Symbol, "long_position")
             
-            msg = f"✅ {Target_Coin_Symbol} 롱 청산 ({close_reason}) | 진입: {entryPrice_l:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
+            # 트레일링스탑으로 청산한 경우 포지션 유지, 트레일링스탑만 초기화
+            if "트레일링스탑" in close_reason:
+                # 포지션 정보는 유지하고 트레일링스탑만 초기화
+                update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, None)
+                msg = f"✅ {Target_Coin_Symbol} 롱 청산 ({close_reason}) | 진입: {entryPrice_l:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
+                msg += f"\n🔄 포지션 유지, 트레일링스탑 초기화"
+            else:
+                # 손절 등 다른 이유로 청산한 경우 포지션 완전 초기화
+                clear_coin_position(dic, Target_Coin_Symbol, "long_position")
+                msg = f"✅ {Target_Coin_Symbol} 롱 청산 ({close_reason}) | 진입: {entryPrice_l:.2f} → 청산: {close_price:.2f} | 수익: {profit:.2f}$ ({pnl_pct*100:.2f}%)"
+            
             telegram_sender.SendMessage(msg)
             logger.info(msg)
 
