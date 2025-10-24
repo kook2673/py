@@ -1,10 +1,10 @@
 """
-비트코인 추세 추종 + 양방향 매매 봇 (판다스 최적화 버전)
+솔라나 추세 추종 + 양방향 매매 봇 (판다스 최적화 버전)
 
 === 전략 개요 ===
 - 추세 추종에 편승하면 단방향 매매 (롱 또는 숏)
 - 추세 이탈하면 양방향 매매로 전환
-- 2024년 비트코인 1분 데이터 사용
+- 2025년 솔라나 1분 데이터 사용
 - 구매/판매 수수료 각 0.05% 적용
 - 판다스 벡터화 연산으로 최적화
 
@@ -23,8 +23,8 @@ from datetime import datetime, timedelta
 import warnings
 warnings.filterwarnings('ignore')
 
-class BTCTrendFollowingBotOptimized:
-    """비트코인 추세 추종 + 양방향 매매 봇 (판다스 최적화)"""
+class SOLTrendFollowingBotOptimized:
+    """솔라나 추세 추종 + 양방향 매매 봇 (판다스 최적화)"""
     
     def __init__(self, initial_capital=10000):
         self.initial_capital = initial_capital
@@ -51,22 +51,22 @@ class BTCTrendFollowingBotOptimized:
             'trailing_stop': 0.005,
         }
     
-    def load_btc_data(self, year=2024):
-        """비트코인 데이터 로드 (지정된 연도)"""
-        data_dir = f"data/BTCUSDT/1m"
+    def load_sol_data(self, year=2025):
+        """솔라나 데이터 로드 (지정된 연도)"""
+        data_dir = f"data/SOLUSDT/1m"
         if not os.path.exists(data_dir):
             print(f"데이터 디렉토리가 없습니다: {data_dir}")
             return None
         
         # 지정된 연도 데이터 파일 찾기
-        file_name = f"BTCUSDT_1m_{year}.csv"
+        file_name = f"SOLUSDT_1m_{year}.csv"
         file_path = os.path.join(data_dir, file_name)
         
         if not os.path.exists(file_path):
             print(f"{year}년 데이터 파일이 없습니다: {file_path}")
             return None
         
-        print(f"비트코인 {year}년 데이터 로드 중...")
+        print(f"솔라나 {year}년 데이터 로드 중...")
         
         try:
             # 파일 읽기
@@ -82,7 +82,7 @@ class BTCTrendFollowingBotOptimized:
             # 중복 제거 및 정렬
             data = data.drop_duplicates().sort_index()
             
-            print(f"비트코인 {year}년 데이터 로드 완료: {len(data):,}개 캔들")
+            print(f"솔라나 {year}년 데이터 로드 완료: {len(data):,}개 캔들")
             print(f"전체 기간: {data.index[0]} ~ {data.index[-1]}")
             
             return data
@@ -175,9 +175,9 @@ class BTCTrendFollowingBotOptimized:
         print("백테스팅 시작...")
         
         # 로그 파일 설정
-        log_filename = f"trading_log_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.txt"
+        log_filename = f"sol_trading_log_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.txt"
         log_file = open(log_filename, 'w', encoding='utf-8')
-        log_file.write("=== 비트코인 추세 추종 + 양방향 매매 봇 거래 로그 ===\n")
+        log_file.write("=== 솔라나 추세 추종 + 양방향 매매 봇 거래 로그 ===\n")
         log_file.write(f"시작 시간: {pd.Timestamp.now()}\n")
         log_file.write(f"초기 자본: ${self.initial_capital:,.2f}\n")
         log_file.write("=" * 80 + "\n\n")
@@ -336,20 +336,20 @@ class BTCTrendFollowingBotOptimized:
             'remaining_capital': current_capital - fee
         }
         
-        log_msg = f"[{timestamp}] BTC {position_type.upper()} 진입 - 가격: {price:.2f}, 수수료: {fee:.2f}, 자본: ${current_capital - fee:.2f}"
+        log_msg = f"[{timestamp}] SOL {position_type.upper()} 진입 - 가격: {price:.2f}, 수수료: {fee:.2f}, 자본: ${current_capital - fee:.2f}"
         print(log_msg)
         log_file.write(log_msg + "\n")
         return True
     
     def _get_dynamic_trailing_stop(self, pnl_pct):
         """수익률에 따른 동적 트레일링스탑 비율 계산"""
-        if pnl_pct >= 0.03:  # 5.0% 이상
+        if pnl_pct >= 0.03:  # 3.0% 이상
             return 0.0001
-        elif pnl_pct >= 0.025:  # 4.0% 이상
+        elif pnl_pct >= 0.025:  # 2.5% 이상
             return 0.0005
-        elif pnl_pct >= 0.02:  # 3.0% 이상
+        elif pnl_pct >= 0.02:  # 2.0% 이상
             return 0.001
-        elif pnl_pct >= 0.015:  # 2.0% 이상
+        elif pnl_pct >= 0.015:  # 1.5% 이상
             return 0.002
         elif pnl_pct >= 0.01:  # 1.0% 이상
             return 0.003
@@ -461,7 +461,7 @@ class BTCTrendFollowingBotOptimized:
         }
         trades.append(trade)
         
-        log_msg = f"[{timestamp}] BTC {position_type.upper()} 청산 - 가격: {price:.2f}, PnL: {net_pnl:.2f} ({pnl_pct:.2f}%), 이유: {reason}, 자본: ${new_capital:.2f}"
+        log_msg = f"[{timestamp}] SOL {position_type.upper()} 청산 - 가격: {price:.2f}, PnL: {net_pnl:.2f} ({pnl_pct:.2f}%), 이유: {reason}, 자본: ${new_capital:.2f}"
         print(log_msg)
         log_file.write(log_msg + "\n")
     
@@ -472,14 +472,23 @@ class BTCTrendFollowingBotOptimized:
             return
         
         total_return = (self.current_capital - self.initial_capital) / self.initial_capital * 100
-        total_trades = len(self.trades)
-        winning_trades = len([t for t in self.trades if t['pnl'] > 0])
+        
+        # 청산된 거래만 계산 (진입 거래 제외)
+        completed_trades = [t for t in self.trades if t['exit_time'] is not None]
+        total_trades = len(completed_trades)
+        winning_trades = len([t for t in completed_trades if t['pnl'] > 0])
         win_rate = winning_trades / total_trades * 100 if total_trades > 0 else 0
         
-        # 최대 낙폭 계산
+        # 최대 낙폭 계산 (청산된 거래만 포함, 자본이 0 이하가 되면 중단)
         capital_series = [self.initial_capital]
         for trade in self.trades:
-            capital_series.append(capital_series[-1] + trade['pnl'])
+            # 진입 거래는 제외 (exit_time이 None인 거래)
+            if trade['exit_time'] is not None:
+                new_capital = capital_series[-1] + trade['pnl']
+                # 자본이 0 이하가 되면 더 이상 거래하지 않음
+                if new_capital <= 0:
+                    break
+                capital_series.append(new_capital)
         
         peak = capital_series[0]
         max_dd = 0
@@ -490,12 +499,16 @@ class BTCTrendFollowingBotOptimized:
             if dd > max_dd:
                 max_dd = dd
         
-        # 총 수수료
-        total_fees = sum(t['entry_fee'] + t['exit_fee'] for t in self.trades)
+        # 총 수수료 (청산된 거래만)
+        total_fees = sum(t['entry_fee'] + t['exit_fee'] for t in completed_trades)
         
         # 평균 보유 시간
         durations = []
         for trade in self.trades:
+            # 진입 거래는 제외 (exit_time이 None)
+            if trade['exit_time'] is None:
+                continue
+                
             if isinstance(trade['entry_time'], int):
                 entry_time = pd.to_datetime(trade['entry_time'], unit='s')
             else:
@@ -510,7 +523,7 @@ class BTCTrendFollowingBotOptimized:
         avg_duration = np.mean(durations) if durations else 0
         
         year_text = f" ({year}년)" if year else ""
-        print(f"\n비트코인 추세 추종 + 양방향 매매 봇 성과{year_text}")
+        print(f"\n솔라나 추세 추종 + 양방향 매매 봇 성과{year_text}")
         print("=" * 60)
         print(f"초기 자본: ${self.initial_capital:,.2f}")
         print(f"최종 자본: ${self.current_capital:,.2f}")
@@ -554,17 +567,17 @@ class BTCTrendFollowingBotOptimized:
             
             print(f"{year}년: 거래 {len(trades)}회, PnL ${total_pnl:.2f}, 승률 {win_rate:.1f}%")
 
-def test_single_year(year):
-    """단일 연도 테스트"""
-    print(f"=== {year}년 비트코인 추세 추종 + 양방향 매매 봇 테스트 ===")
+def test_sol_2025():
+    """솔라나 2025년 테스트"""
+    print("=== 솔라나 2025년 추세 추종 + 양방향 매매 봇 테스트 ===")
     
     # 봇 초기화
-    bot = BTCTrendFollowingBotOptimized(initial_capital=10000)
+    bot = SOLTrendFollowingBotOptimized(initial_capital=10000)
     
     # 데이터 로드
-    data = bot.load_btc_data(year)
+    data = bot.load_sol_data(2025)
     if data is None:
-        print(f"{year}년 데이터 로드 실패")
+        print("2025년 솔라나 데이터 로드 실패")
         return None
     
     # 기술적 지표 계산
@@ -579,116 +592,31 @@ def test_single_year(year):
     trades = bot.backtest_vectorized(data_with_signals)
     
     # 성과 출력
-    bot.print_performance(year)
+    bot.print_performance(2025)
     
     # 결과 저장
     results = {
-        'year': year,
+        'coin': 'SOLUSDT',
+        'year': 2025,
         'initial_capital': bot.initial_capital,
         'final_capital': bot.current_capital,
+        'total_return': (bot.current_capital - bot.initial_capital) / bot.initial_capital * 100,
         'total_trades': len(trades),
+        'winning_trades': len([t for t in trades if t['pnl'] > 0]),
+        'win_rate': len([t for t in trades if t['pnl'] > 0]) / len(trades) * 100 if trades else 0,
         'trades': trades
     }
     
-    filename = f'btc_trend_following_results_{year}.json'
+    filename = f'sol_trend_following_results_2025.json'
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2, default=str)
     
     print(f"\n결과가 '{filename}'에 저장되었습니다.")
     return results
 
-def test_multiple_years(start_year, end_year):
-    """여러 연도 테스트"""
-    print(f"=== {start_year}-{end_year}년 비트코인 추세 추종 + 양방향 매매 봇 테스트 ===")
-    
-    all_results = {}
-    total_initial_capital = 10000
-    current_capital = total_initial_capital
-    
-    for year in range(start_year, end_year + 1):
-        print(f"\n{'='*80}")
-        print(f"{year}년 테스트 시작")
-        print(f"{'='*80}")
-        
-        # 봇 초기화 (이전 연도 결과를 다음 연도 초기 자본으로 사용)
-        bot = BTCTrendFollowingBotOptimized(initial_capital=current_capital)
-        
-        # 데이터 로드
-        data = bot.load_btc_data(year)
-        if data is None:
-            print(f"{year}년 데이터 로드 실패 - 건너뜀")
-            continue
-        
-        # 기술적 지표 계산
-        print("기술적 지표 계산 중...")
-        data_with_indicators = bot.calculate_indicators(data)
-        
-        # 신호 생성
-        print("신호 생성 중...")
-        data_with_signals = bot.get_signals_vectorized(data_with_indicators)
-        
-        # 백테스팅 실행
-        trades = bot.backtest_vectorized(data_with_signals)
-        
-        # 성과 출력
-        bot.print_performance(year)
-        
-        # 결과 저장
-        year_return = (bot.current_capital - bot.initial_capital) / bot.initial_capital * 100
-        all_results[year] = {
-            'initial_capital': bot.initial_capital,
-            'final_capital': bot.current_capital,
-            'return_pct': year_return,
-            'total_trades': len(trades),
-            'trades': trades
-        }
-        
-        # 다음 연도를 위한 자본 업데이트
-        current_capital = bot.current_capital
-        
-        print(f"{year}년 수익률: {year_return:.2f}%")
-        print(f"누적 자본: ${current_capital:.2f}")
-    
-    # 전체 성과 요약
-    total_return = (current_capital - total_initial_capital) / total_initial_capital * 100
-    print(f"\n{'='*80}")
-    print(f"전체 기간 성과 요약 ({start_year}-{end_year})")
-    print(f"{'='*80}")
-    print(f"초기 자본: ${total_initial_capital:,.2f}")
-    print(f"최종 자본: ${current_capital:,.2f}")
-    print(f"총 수익률: {total_return:.2f}%")
-    print(f"연평균 수익률: {(current_capital/total_initial_capital)**(1/(end_year-start_year+1))-1:.2f}%")
-    
-    # 연도별 성과 요약
-    print(f"\n연도별 성과:")
-    for year, result in all_results.items():
-        print(f"{year}년: {result['return_pct']:.2f}% (거래 {result['total_trades']}회)")
-    
-    # 결과 저장
-    filename = f'btc_trend_following_results_{start_year}_{end_year}.json'
-    with open(filename, 'w', encoding='utf-8') as f:
-        json.dump(all_results, f, ensure_ascii=False, indent=2, default=str)
-    
-    print(f"\n결과가 '{filename}'에 저장되었습니다.")
-    return all_results
-
 def main():
     """메인 실행 함수"""
-    import sys
-    
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "multi":
-            # 여러 연도 테스트
-            start_year = int(sys.argv[2]) if len(sys.argv) > 2 else 2018
-            end_year = int(sys.argv[3]) if len(sys.argv) > 3 else 2024
-            test_multiple_years(start_year, end_year)
-        else:
-            # 단일 연도 테스트
-            year = int(sys.argv[1])
-            test_single_year(year)
-    else:
-        # 기본: 2024년 테스트
-        test_single_year(2024)
+    test_sol_2025()
 
 if __name__ == "__main__":
     main()

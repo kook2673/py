@@ -31,13 +31,13 @@ class MultiCoinBacktest:
         # 데이터 디렉토리
         self.data_dir = "data"
         
-        # 시간프레임 설정 (1분봉이 없으면 1시간봉 사용)
+        # 시간프레임 설정 (모든 코인을 1분봉으로 설정)
         self.timeframes = {
-            'BTCUSDT': '1m',  # BTC는 1분봉 있음
-            'ETHUSDT': '1h',  # ETH는 1시간봉만 있음
-            'DOGEUSDT': '1h', # DOGE는 1시간봉만 있음
-            'SOLUSDT': '1h',  # SOL은 1시간봉만 있음
-            'XRPUSDT': '1h'   # XRP는 1시간봉만 있음
+            'BTCUSDT': '1m',  # BTC는 1분봉
+            'ETHUSDT': '1m',  # ETH도 1분봉
+            'DOGEUSDT': '1m', # DOGE도 1분봉
+            'SOLUSDT': '1m',  # SOL도 1분봉
+            'XRPUSDT': '1m'   # XRP도 1분봉
         }
         
     def load_coin_data(self, coin, year):
@@ -135,6 +135,10 @@ class MultiCoinBacktest:
         # 평균 보유 시간
         durations = []
         for trade in trades:
+            # 진입 거래는 제외 (exit_time이 None)
+            if trade['exit_time'] is None:
+                continue
+                
             if isinstance(trade['entry_time'], int):
                 entry_time = pd.to_datetime(trade['entry_time'], unit='s')
             else:

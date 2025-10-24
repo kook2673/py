@@ -784,9 +784,10 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         with open(info_file_path, 'w') as outfile:
             json.dump(dic, outfile, indent=4, ensure_ascii=False)
     
-    # ==================== 진입 로직 (백테스트와 동일) ====================
-    # 숏 진입: 숏 신호 + 숏 포지션 없을 때 (백테스트와 동일)
-    if not has_short and current_row is not None and current_row.get('short_signal', False):
+    # ==================== 진입 로직 (백테스트와 동일 - 단일 포지션 전략) ====================
+    # 단일 포지션 전략: 롱/숏 포지션이 모두 없을 때만 진입 가능
+    # 숏 진입: 숏 신호 + 모든 포지션 없을 때 (백테스트와 동일)
+    if not has_short and not has_long and current_row is not None and current_row.get('short_signal', False):
         data = binanceX.create_order(Target_Coin_Ticker, 'market', 'sell', first_amount, None, {'positionSide': 'SHORT'})
         entry_price = float(data['average'])
         
@@ -797,8 +798,8 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         telegram_sender.SendMessage(msg)
         logger.info(msg)
     
-    # 롱 진입: 롱 신호 + 롱 포지션 없을 때 (백테스트와 동일)
-    if not has_long and current_row is not None and current_row.get('long_signal', False):
+    # 롱 진입: 롱 신호 + 모든 포지션 없을 때 (백테스트와 동일)
+    if not has_long and not has_short and current_row is not None and current_row.get('long_signal', False):
         data = binanceX.create_order(Target_Coin_Ticker, 'market', 'buy', first_amount, None, {'positionSide': 'LONG'})
         entry_price = float(data['average'])
         
@@ -869,11 +870,12 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                 
                 if has_short_signal:
                     # 숏 구매 요건이 있으면 트레일링스탑만 초기화하고 포지션 유지
-                    # 진입가는 그대로 두고, 보정값만 업데이트
+                    # 진입가는 그대로 두고, 보정값을 0.6% 수익 구간으로 설정
                     current_offset = json_short.get("entry_price_offset", 0)
-                    new_offset = coin_price - entryPrice_s  # 현재가 - 원래진입가
+                    # 0.6% 수익 구간으로 보정값 설정 (현재가 기준으로 0.6% 수익이 되는 진입가)
+                    new_offset = coin_price * 0.006 - entryPrice_s  # 0.6% 수익 구간
                     update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, None, new_offset)
-                    msg = f"🔄 {Target_Coin_Symbol} 숏 트레일링스탑 초기화 | 기존진입: {entryPrice_s:.2f} → 보정진입: {entryPrice_s + new_offset:.2f} | 숏 구매 요건 유지로 포지션 유지"
+                    msg = f"🔄 {Target_Coin_Symbol} 숏 트레일링스탑 초기화 | 기존진입: {entryPrice_s:.2f} → 보정진입: {entryPrice_s + new_offset:.2f} (0.6% 수익구간) | 숏 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
                     #telegram_sender.SendMessage(msg)
                     # 즉시 JSON 파일 저장
@@ -965,11 +967,12 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                 
                 if has_long_signal:
                     # 롱 구매 요건이 있으면 트레일링스탑만 초기화하고 포지션 유지
-                    # 진입가는 그대로 두고, 보정값만 업데이트
+                    # 진입가는 그대로 두고, 보정값을 0.6% 수익 구간으로 설정
                     current_offset = json_long.get("entry_price_offset", 0)
-                    new_offset = coin_price - entryPrice_l  # 현재가 - 원래진입가
+                    # 0.6% 수익 구간으로 보정값 설정 (현재가 기준으로 0.6% 수익이 되는 진입가)
+                    new_offset = coin_price * 0.006 - entryPrice_l  # 0.6% 수익 구간
                     update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, None, new_offset)
-                    msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 기존진입: {entryPrice_l:.2f} → 보정진입: {entryPrice_l + new_offset:.2f} | 롱 구매 요건 유지로 포지션 유지"
+                    msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 기존진입: {entryPrice_l:.2f} → 보정진입: {entryPrice_l + new_offset:.2f} (0.6% 수익구간) | 롱 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
                     #telegram_sender.SendMessage(msg)
                     # 즉시 JSON 파일 저장
