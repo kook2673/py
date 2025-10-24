@@ -479,7 +479,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     leverage = 3
     amt_s = 0
     amt_l = 0
-    isolated = True
+    isolated = True  # 기본값, API에서 가져온 값으로 업데이트됨
     
     # 백테스트와 동일한 청산 파라미터
     charge = 0.0005  # 수수료율 0.05% (백테스트와 동일)
@@ -514,7 +514,9 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                            pos['symbol'].replace(':USDT', '') == Target_Coin_Ticker)
             
             if symbol_match:
-                logger.info(f"🔍 포지션 처리 중: side='{pos['side']}', contracts={pos['contracts']}, entryPrice={pos.get('entryPrice', 'N/A')}")
+                # isolated 값 동적으로 설정
+                isolated = pos.get('isolated', True)
+                logger.info(f"🔍 포지션 처리 중: side='{pos['side']}', contracts={pos['contracts']}, entryPrice={pos.get('entryPrice', 'N/A')}, isolated={isolated}")
                 
                 if pos['side'] == 'short':
                     amt_s = abs(float(pos['contracts']))  # 숏은 절댓값 사용
@@ -547,15 +549,18 @@ for Target_Coin_Ticker in Coin_Ticker_List:
     logger.info(f"entryPrice_s : {entryPrice_s}")
     logger.info(f"entryPrice_l : {entryPrice_l}")
     
-    # 격리모드 설정
+    # 격리모드 설정 (API에서 가져온 isolated 값에 따라)
     if isolated == False:
        try:
+           logger.info(f"🔧 격리모드로 변경 시도: {Target_Coin_Symbol}")
            logger.info(binanceX.fapiPrivate_post_margintype({'symbol': Target_Coin_Symbol, 'marginType': 'ISOLATED'}))
        except Exception as e:
            try:
                logger.info(binanceX.fapiprivate_post_margintype({'symbol': Target_Coin_Symbol, 'marginType': 'ISOLATED'}))
            except Exception as e:
                logger.error(f"error: {e}")
+    else:
+        logger.info(f"🔧 격리모드 유지: {Target_Coin_Symbol} (isolated={isolated})")
     
     # 포지션 정보는 바이낸스 API에서 직접 가져오므로 보정 불필요
     
