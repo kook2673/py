@@ -640,10 +640,10 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         
         # 수동 추가된 포지션에 트레일링스탑 설정 (0.5% 수익 후 활성화)
         update_coin_position(dic, Target_Coin_Symbol, "short_position", entryPrice_s, amt_s, None, 0)
-        msg += f"\n🔧 트레일링스탑: 0.5% 수익 후 활성화"
+        #msg += f"\n🔧 트레일링스탑: 0.5% 수익 후 활성화"
         
         telegram_sender.SendMessage(msg)
-        logger.info(f"🔍 {Target_Coin_Symbol} 숏 포지션 수동 추가 감지: 진입가={entryPrice_s:.2f}, 수량={amt_s:.3f}, 트레일링스탑=0.5% 수익 후 활성화")
+        logger.info(f"🔍 {Target_Coin_Symbol} 숏 포지션 수동 추가 감지: 진입가={entryPrice_s:.2f}, 수량={amt_s:.3f}")
     
     # 롱 포지션 수동 추가 감지
     json_has_long = json_long.get("entry_price", 0) > 0 and json_long.get("amount", 0) > 0
@@ -665,10 +665,10 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         
         # 수동 추가된 포지션에 트레일링스탑 설정 (0.5% 수익 후 활성화)
         update_coin_position(dic, Target_Coin_Symbol, "long_position", entryPrice_l, amt_l, None, 0)
-        msg += f"\n🔧 트레일링스탑: 0.5% 수익 후 활성화"
+        #msg += f"\n🔧 트레일링스탑: 0.5% 수익 후 활성화"
         
         telegram_sender.SendMessage(msg)
-        logger.info(f"🔍 {Target_Coin_Symbol} 롱 포지션 수동 추가 감지: 진입가={entryPrice_l:.2f}, 수량={amt_l:.3f}, 트레일링스탑=0.5% 수익 후 활성화")
+        logger.info(f"🔍 {Target_Coin_Symbol} 롱 포지션 수동 추가 감지: 진입가={entryPrice_l:.2f}, 수량={amt_l:.3f}")
     
     # ==================== JSON과 API 상태 동기화 ====================
     # API에서 포지션이 확인되면 JSON도 업데이트
@@ -799,7 +799,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         # 포지션 정보 저장 (코인별) - 트레일링스탑은 0.5% 수익 후 활성화
         update_coin_position(dic, Target_Coin_Symbol, "short_position", entry_price, first_amount, None, 0)
         
-        msg = f"🔻 {Target_Coin_Symbol} 숏 진입 | 가격: {entry_price:.2f}, 수량: {first_amount:.3f} | 트레일링스탑: 0.5% 수익 후 활성화"
+        msg = f"🔻 {Target_Coin_Symbol} 숏 진입 | 가격: {entry_price:.2f}, 수량: {first_amount:.3f}"
         telegram_sender.SendMessage(msg)
         logger.info(msg)
     
@@ -811,7 +811,7 @@ for Target_Coin_Ticker in Coin_Ticker_List:
         # 포지션 정보 저장 (코인별) - 트레일링스탑은 0.5% 수익 후 활성화
         update_coin_position(dic, Target_Coin_Symbol, "long_position", entry_price, first_amount, None, 0)
         
-        msg = f"🔺 {Target_Coin_Symbol} 롱 진입 | 가격: {entry_price:.2f}, 수량: {first_amount:.3f} | 트레일링스탑: 0.5% 수익 후 활성화"
+        msg = f"🔺 {Target_Coin_Symbol} 롱 진입 | 가격: {entry_price:.2f}, 수량: {first_amount:.3f}"
         telegram_sender.SendMessage(msg)
         logger.info(msg)
     
@@ -878,14 +878,17 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     # 현재 시점을 새로운 진입점으로 설정 (트레일링스탑 기준점 변경)
                     new_entry_price = coin_price  # 현재가를 새로운 진입가로 설정
                     
+                    # 진입가 보정값 계산 (기존 진입가와 새 진입가의 차이)
+                    entry_price_offset = entryPrice_s - new_entry_price
+                    
                     # 새로운 진입가 기준으로 수익률 계산 (0% 수익률)
                     new_pnl_pct = 0.0  # 현재가 = 진입가이므로 0% 수익률
                     
                     # 1단계 트레일링스탑 설정 (0.5% 수익 후 활성화)
                     initial_trailing_stop = new_entry_price * (1 + 0.005)  # 0.5% 수익 시 트레일링스탑
                     
-                    update_coin_position(dic, Target_Coin_Symbol, "short_position", new_entry_price, amt_s, initial_trailing_stop, 0)
-                    msg = f"🔄 {Target_Coin_Symbol} 숏 트레일링스탑 초기화 | 기존진입: {entryPrice_s:.2f} → 새진입: {new_entry_price:.2f} | 트레일링스탑: {initial_trailing_stop:.2f} (0.5% 수익 후 활성화) | 숏 구매 요건 유지로 포지션 유지"
+                    update_coin_position(dic, Target_Coin_Symbol, "short_position", new_entry_price, amt_s, initial_trailing_stop, entry_price_offset)
+                    msg = f"🔄 {Target_Coin_Symbol} 숏 트레일링스탑 초기화 | 기존진입: {entryPrice_s:.2f} → 새진입: {new_entry_price:.2f} | 숏 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
                     #telegram_sender.SendMessage(msg)
                     # 즉시 JSON 파일 저장
@@ -980,14 +983,17 @@ for Target_Coin_Ticker in Coin_Ticker_List:
                     # 현재 시점을 새로운 진입점으로 설정 (트레일링스탑 기준점 변경)
                     new_entry_price = coin_price  # 현재가를 새로운 진입가로 설정
                     
+                    # 진입가 보정값 계산 (기존 진입가와 새 진입가의 차이)
+                    entry_price_offset = entryPrice_l - new_entry_price
+                    
                     # 새로운 진입가 기준으로 수익률 계산 (0% 수익률)
                     new_pnl_pct = 0.0  # 현재가 = 진입가이므로 0% 수익률
                     
                     # 1단계 트레일링스탑 설정 (0.5% 수익 후 활성화)
                     initial_trailing_stop = new_entry_price * (1 - 0.005)  # 0.5% 수익 시 트레일링스탑
                     
-                    update_coin_position(dic, Target_Coin_Symbol, "long_position", new_entry_price, amt_l, initial_trailing_stop, 0)
-                    msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 기존진입: {entryPrice_l:.2f} → 새진입: {new_entry_price:.2f} | 트레일링스탑: {initial_trailing_stop:.2f} (0.5% 수익 후 활성화) | 롱 구매 요건 유지로 포지션 유지"
+                    update_coin_position(dic, Target_Coin_Symbol, "long_position", new_entry_price, amt_l, initial_trailing_stop, entry_price_offset)
+                    msg = f"🔄 {Target_Coin_Symbol} 롱 트레일링스탑 초기화 | 기존진입: {entryPrice_l:.2f} → 새진입: {new_entry_price:.2f} | 롱 구매 요건 유지로 포지션 유지"
                     logger.info(msg)
                     #telegram_sender.SendMessage(msg)
                     # 즉시 JSON 파일 저장
